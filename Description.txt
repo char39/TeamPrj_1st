@@ -1,0 +1,16 @@
+앵그리버드 스페이스
+    중력 각자 구현해서 서로 비교해보기
+
+방치형
+    
+카드게임 (트럼프 카드)
+    도둑잡기
+    원카드
+
+간단한 미니게임 세트?
+    미니게임천국
+    어몽어스
+    https://trevor-pupkin.itch.io/tech-dungeon-roguelite
+
+크레이지 아케이드
+https://github.com/KyungseoJung/Unity_Personal_CrazyArcade/tree/master/Assets/02.Scripts
