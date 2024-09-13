@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TeamPrj_1st_AngryBirdSpace.sln"
+    "dotnet.defaultSolution": "TeamPrj_1st.sln"
 }
