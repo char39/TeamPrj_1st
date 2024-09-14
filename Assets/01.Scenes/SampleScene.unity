@@ -696,6 +696,10 @@ MonoBehaviour:
   launchPoint: {fileID: 0}
   launchForce: 6.83
   maxStretch: 3
+<<<<<<< HEAD
+=======
+  startPos: {x: 0, y: 0}
+>>>>>>> 79b10550a9fcd56d2e5c19da6258aa30ed7827d0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
