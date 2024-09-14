@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 1794743752}
   - component: {fileID: 1794743754}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Slingshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,6 @@ MonoBehaviour:
   launchPoint: {fileID: 0}
   launchForce: 6.83
   maxStretch: 3
-  startPos: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
