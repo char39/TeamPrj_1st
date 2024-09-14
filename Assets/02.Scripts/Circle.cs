@@ -6,7 +6,6 @@ public class Circle : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
-        // Collider가 Capsule인지 확인합니다.
         if (col.CompareTag("Player"))
         {
             Rigidbody2D rb = col.GetComponent<Rigidbody2D>();
@@ -19,7 +18,7 @@ public class Circle : MonoBehaviour
                 float distance = Vector2.Distance(transform.position, col.transform.position);
 
                 // 거리에 반비례하는 중력 적용
-                float gravityForce = gravityStrength / distance;
+                float gravityForce = gravityStrength * 2;
 
                 // 물체에 중력 방향으로 힘을 가함
                 rb.AddForce(directionToPlanet * gravityForce);
