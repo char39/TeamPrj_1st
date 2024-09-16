@@ -5,7 +5,6 @@ public class DrawCircle : MonoBehaviour
 {
     public float GravityDistance = 7.5f;
     public float GravityPower = 1f;
-    public const float GravityForce = -9.81f;
     public Color color;
 
     private MeshFilter meshFilter;

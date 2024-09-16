@@ -4,7 +4,8 @@ public class ObjectGravity : MonoBehaviour
 {
     private Transform PlanetTr;
     private Rigidbody2D rb;
-    public Vector2 velocity = Vector2.zero;
+    public Vector2 velocity = Vector2.zero;         // 중력의 힘을 받아 가속하는 속도
+    public Vector2 velocity_R = Vector2.zero;       // 대기압 마찰을 구현하기 위한 반작용 속도
     public Vector2 GravityNormalVector;
     public float GravityDistance;
     public float GravityScalar;
@@ -16,32 +17,53 @@ public class ObjectGravity : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // 가까워질수록 중력 스케일 증가
-        // 원형이니까 행성기준 위는 +y, 아래는 -y, 왼쪽은 -x, 오른쪽은 x. 왜냐면 중력상수는 -9.81이라서
     }
 
     void FixedUpdate()
     {
-        if (IsGravityForceApply)
-            if (!IsGroundTouch)
-                velocity -= 0.1f * GravityScalar * GravityNormalVector;
-            else
-                velocity -= 0.025f * velocity;
-        else
-            velocity -= 0.005f * velocity;
+        VelocityApply();
+
         rb.velocity = velocity;
     }
 
+    private void VelocityApply()
+    {
+        if (!IsGroundTouch)
+        {
+            if (IsGravityForceApply)
+                velocity += 0.1f * GravityScalar * GravityNormalVector;
+            else
+                velocity -= 0.0025f * velocity;
+        }
+        else
+            velocity -= 0.01f * velocity;
+
+        velocity_R = -velocity;
+        velocity += 0.0025f * velocity_R;
+
+        if (Input.GetKey(KeyCode.W))        // 테스트 목적으로 잠시 넣어둠.
+            velocity += 0.3f * Vector2.up;
+        if (Input.GetKey(KeyCode.S))
+            velocity -= 0.3f * Vector2.up;
+        if (Input.GetKey(KeyCode.D))
+            velocity += 0.3f * Vector2.right;
+        if (Input.GetKey(KeyCode.A))
+            velocity -= 0.3f * Vector2.right;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Planet"))
-            {IsGroundTouch = true;}
+        {
+            IsGroundTouch = true;
+        }
     }
     private void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Planet"))
+        {
             IsGroundTouch = false;
+        }
     }
     private void OnTriggerStay2D(Collider2D col)
     {
@@ -49,7 +71,7 @@ public class ObjectGravity : MonoBehaviour
         {
             IsGravityForceApply = true;
             PlanetTr = col.transform;
-            GravityNormalVector = new Vector2(transform.position.x - PlanetTr.position.x, transform.position.y - PlanetTr.position.y).normalized;
+            GravityNormalVector = new Vector2(transform.position.x - PlanetTr.position.x, transform.position.y - PlanetTr.position.y).normalized * -1;
             GravityDistance = Vector2.Distance(transform.position, PlanetTr.position);
             GravityScalar = Mathf.Lerp(minScale, maxScale, GravityDistance / col.GetComponent<DrawCircle>().GravityDistance);
         }
@@ -59,8 +81,16 @@ public class ObjectGravity : MonoBehaviour
         if (col.CompareTag("PlanetGravity"))
         {
             IsGravityForceApply = false;
-            GravityNormalVector = Vector2.zero;
-            GravityScalar = 1;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(transform.position, velocity);
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, velocity_R);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(transform.position, GravityNormalVector);
     }
 }
