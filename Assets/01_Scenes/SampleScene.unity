@@ -133,11 +133,12 @@ GameObject:
   - component: {fileID: 20555690}
   - component: {fileID: 20555693}
   - component: {fileID: 20555692}
+  - component: {fileID: 20555696}
   - component: {fileID: 20555694}
   - component: {fileID: 20555691}
   - component: {fileID: 20555695}
   m_Layer: 0
-  m_Name: GravityDistance
+  m_Name: Gravity
   m_TagString: PlanetGravity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,9 +171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ce2328e4e64a6097eff116c11c0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityDistance: 20
-  GravityPower: 1
-  color: {r: 0, g: 0, b: 0, a: 0.5176471}
+  gravityPower: 1
+  groundRadius: 0
+  minScale: 1
+  maxScale: 5
+  gravityNormalVector: {x: 0, y: 0}
+  distance: 0
+  scalar: 0
 --- !u!33 &20555692
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -257,7 +262,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 20
 --- !u!114 &20555695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +275,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539695d919c494f6eaf80ab643231c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawCircle: {fileID: 0}
-  col_circle: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  circleRadius: 20
+--- !u!58 &20555696
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20555689}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &241456672
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +323,6 @@ GameObject:
   - component: {fileID: 241456674}
   - component: {fileID: 241456677}
   - component: {fileID: 241456676}
-  - component: {fileID: 241456678}
-  - component: {fileID: 241456675}
   - component: {fileID: 241456679}
   m_Layer: 0
   m_Name: Planet
@@ -309,21 +347,6 @@ Transform:
   - {fileID: 20555690}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &241456675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241456672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52ce2328e4e64a6097eff116c11c0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GravityDistance: 5
-  GravityPower: 1
-  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!33 &241456676
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -374,41 +397,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!58 &241456678
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241456672}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &241456679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,8 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539695d919c494f6eaf80ab643231c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawCircle: {fileID: 0}
-  col_circle: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  circleRadius: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +472,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -548,9 +536,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 5
+  m_LinearDrag: 0
   m_AngularDrag: 0.5
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -623,7 +611,7 @@ Transform:
   m_GameObject: {fileID: 1040028465}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.58, y: 7.52, z: 0}
+  m_LocalPosition: {x: -29.2, y: 7.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -642,13 +630,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  GravityNormalVector: {x: 0, y: 0}
-  GravityDistance: 0
-  GravityScalar: 0
-  maxScale: 1
-  minScale: 5
-  IsGravityForceApply: 0
-  IsGroundTouch: 0
+  velocity_R: {x: 0, y: 0}
+  gravityNormalVector: {x: 0, y: 0}
+  offset: 1
+  speed: 0
+  IsGrounded: 0
 --- !u!58 &1040028470
 CircleCollider2D:
   m_ObjectHideFlags: 0
