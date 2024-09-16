@@ -254,4 +254,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9aeea7899b8174c9339a9f21312c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityStrength: 9.8
