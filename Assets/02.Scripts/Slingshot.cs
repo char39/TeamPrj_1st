@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
-    public GameObject capsule;          // 발사할 obj
-    public Transform launchPoint;       // 발사 시작 위치
-    public float launchForce = 10f;     // 발사 힘
-    public float maxStretch = 3f;       // 새총의 최대 늘어남 거리
-
-    Vector2 startPos;
+    public GameObject capsule;  // 발사할 obj
+    Transform launchPoint;      // 발사 시작 위치
+    float launchForce = 3f;     // 발사 힘
+    float maxStretch = 2f;      // 새총의 최대 늘어남 거리
+    Vector2 startPos;           // 새로운 gameobject 위치 고정
     Camera cam;
     bool isStretching = false;
 
@@ -52,7 +51,7 @@ public class Slingshot : MonoBehaviour
         if (rb != null)
             rb.AddForce(direction * launchForce * distance, ForceMode2D.Impulse);
 
-        // 새총을 원래 위치로 되돌립니다.
+        // 새총을 원래 위치
         launchPoint.position = startPos;
     }
 }
