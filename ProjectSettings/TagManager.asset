@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - PlanetGravity
+  - Bird
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - ObjTouch
   - 
   - 
   - 

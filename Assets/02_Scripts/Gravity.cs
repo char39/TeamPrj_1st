@@ -2,70 +2,39 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    public const string playerTag = "Player";
-    public const float GravityForce = 9.81f;
-    private DrawCircle circleParent;
-    private DrawCircle circle;
+    [HideInInspector]
+    public float gravityPower;
+    [HideInInspector]
+    public float groundRadius;
+    [HideInInspector]
+    public float minScale;
+    [HideInInspector]
+    public float maxScale;
 
-    public float gravityPower = 1f;
-    private float groundRadius;
-    public float minScale = 1;
-    public float maxScale = 5;
-
-    private Vector2 gravityNormalVector = Vector2.zero;
-    private float distance;
-    private float scalar;
-
-    void Start()
-    {
-        transform.parent.TryGetComponent(out circleParent);
-        TryGetComponent(out circle);
-        groundRadius = circleParent.circleRadius;
-    }
+    [HideInInspector]
+    public Vector2 gravityNormalVector = Vector2.zero;
+    [HideInInspector]
+    public float distance;
+    [HideInInspector]
+    public float scalar;
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (circle == null) return;
-        if (col.CompareTag(playerTag))
+        if (col.CompareTag(Bird.birdTag))
         {
-            col.TryGetComponent(out ObjectGravity player);
+            col.TryGetComponent(out Bird bird);
             gravityNormalVector = new Vector2(col.transform.position.x - transform.position.x, col.transform.position.y - transform.position.y).normalized * -1;
             distance = Vector2.Distance(transform.position, col.transform.position);
-            scalar = Mathf.Lerp(minScale, maxScale, distance / circle.circleRadius);
+            scalar = Mathf.Lerp(minScale, maxScale, distance / 20);
 
-            player.gravityNormalVector = gravityNormalVector;
+            bird.gravityNormalVector = gravityNormalVector;
 
-            if (distance > groundRadius + (1.05f * col.GetComponent<CircleCollider2D>().radius))
-            {
-                player.IsGrounded = false;
-                player.Velocity += Time.deltaTime * gravityPower * GravityForce * scalar * gravityNormalVector;
-            }
+            if (bird.IsGrounded == true || bird.IsTouched == true)
+                bird.setVelocity = Vector2.Lerp(bird.setVelocity, gravityPower * scalar * gravityNormalVector, 1f * Time.deltaTime);
             else
-                player.IsGrounded = true;
-            player.ApplyFriction(scalar);
+                bird.setVelocity += Time.deltaTime * gravityPower * Planet.GravityForce * scalar * gravityNormalVector;
+
+            bird.ApplyFriction(scalar);     // 대기압 마찰 구현
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag(playerTag))
-        {
-            col.gameObject.TryGetComponent(out ObjectGravity player);
-            Vector2 collisionNormal = col.contacts[0].normal;
-            float reboundForce = 0.75f;
-            player.Velocity = Vector2.Reflect(player.Velocity, collisionNormal) * reboundForce;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 }
