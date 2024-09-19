@@ -38,14 +38,14 @@ public class Bird : MonoBehaviour
         // Raycast 거리가 1f 이상이면 해당 오브젝트의 반발 Count 초기화. (여러 Bird들이 상호작용하면 반발이 계속 일어날 수 있음. 이를 방지하는 것은 아직 미구현) 몰?루 누군가 고치지 않을까..
         if (hit.distance > 1f)
         {
-            hit.transform.gameObject.TryGetComponent(out ObjTouch objTouch);
+            hit.transform.gameObject.TryGetComponent(out ReboundCtrl objTouch);
             objTouch.ResetCount();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)    // 충돌 시 IsGrounded, IsTouched 설정
     {
-        if (col.gameObject.TryGetComponent(out ObjTouch objTouch))
+        if (col.gameObject.TryGetComponent(out ReboundCtrl objTouch))
         {
             if (objTouch.CompareTag(Planet.PlanetTag))      // 행성에 닿았을 때만 IsGrounded 설정
                 IsGrounded = true;
@@ -55,7 +55,7 @@ public class Bird : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D col)     // 충돌 해제 시 IsGrounded, IsTouched 설정
     {
-        if (col.gameObject.TryGetComponent(out ObjTouch objTouch))
+        if (col.gameObject.TryGetComponent(out ReboundCtrl objTouch))
         {
             if (objTouch.CompareTag(Planet.PlanetTag))      // 행성에서 떨어졌을 때만 IsGrounded 해제
                 IsGrounded = false;
@@ -86,7 +86,7 @@ public class Bird : MonoBehaviour
 
     public void ApplyFriction(float scalar)     // 대기압 마찰 구현. scalar는 Gravity.cs의 중력 세기
     {
-        float friction = scalar * 0.1f;
+        float friction = scalar * 0.05f;
         setVelocity *= 1 - friction * Time.deltaTime;
     }
 

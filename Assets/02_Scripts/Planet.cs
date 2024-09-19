@@ -4,11 +4,12 @@ public class Planet : MonoBehaviour
 {
     public const string PlanetTag = "Planet";
     public const float GravityForce = 9.81f;
-    public ObjTouch objTouch;               // 행성에 닿았을 때 반발 효과를 주기 위한 스크립트
+    public CircleRadius circleRadius;       // 행성의 반지름을 구하기 위한 스크립트
+    public ReboundCtrl reboundCtrl;         // 행성에 닿았을 때 반발 효과를 주기 위한 스크립트
     public Gravity gravity;                 // 중력을 적용하기 위한 스크립트
 
     public float gravityPower = 1f;         // 중력의 세기
-    public float groundRadius = 5f;         // 중력의 범위
+    private float groundRadius;             // 중력의 범위
     public float minScale = 1;              // 중력의 최소 크기
     public float maxScale = 5;              // 중력의 최대 크기
 
@@ -18,8 +19,11 @@ public class Planet : MonoBehaviour
 
     void Start()
     {
+        TryGetComponent(out circleRadius);
         transform.GetChild(0).TryGetComponent(out gravity);
-        TryGetComponent(out objTouch);
+        TryGetComponent(out reboundCtrl);
+
+        circleRadius.radius = groundRadius;
 
         // 중력 스크립트에 필요한 변수들을 이 클래스에서 직접 초기화
         gravity.gravityPower = gravityPower;
