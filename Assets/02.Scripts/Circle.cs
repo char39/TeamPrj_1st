@@ -22,7 +22,7 @@ public class Circle : MonoBehaviour
                 // 거리 계산
                 float distance = Vector2.Distance(tr.position, col.transform.position);
                 distance = Mathf.Max(1f, distance);  // 최소 거리 1로 설정
-                float gravityForce = gravityStrength;
+                float gravityForce = gravityStrength / distance;
                 gravityForce = Mathf.Min(gravityForce, 50f);  // 최대 중력 값을 설정
                 rb.AddForce(direction * gravityForce);
 
