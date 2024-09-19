@@ -31,7 +31,7 @@ public class Planet : MonoBehaviour
 
     void Update()
     {
-        // 중력 스크립트에 필요한 변수들을 이 클래스에서 직접 초기화
+        // 중력 스크립트에 필요한 변수들을 이 클래스에서 직접 초기화. 디버깅용 추후 삭제될 가능성 존재
         if (gravity.gravityPower != gravityPower)
             gravity.gravityPower = gravityPower;
         if (gravity.groundRadius != groundRadius)
