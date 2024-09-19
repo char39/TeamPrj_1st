@@ -14,6 +14,8 @@ public class Bird : MonoBehaviour
     public bool IsGrounded = false;
     public bool IsTouched = false;
 
+    public bool FirstRebound = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +23,7 @@ public class Bird : MonoBehaviour
 
     void FixedUpdate()
     {
+        Rotate();
         Move();
         Gravity();
     }
@@ -28,6 +31,7 @@ public class Bird : MonoBehaviour
     void Update()
     {
         ResetReboundCount();
+        FirstReboundCheck();
     }
 
     public void ResetReboundCount()             // 반발 Count 초기화
@@ -67,22 +71,39 @@ public class Bird : MonoBehaviour
     private void Move()                         // 테스트 목적으로 잠시 넣어둠. wsad로 이동
     {
         if (Input.GetKey(KeyCode.W))
-            setVelocity += 1f * Vector2.up;
+            setVelocity += 0.5f * Vector2.up;
         if (Input.GetKey(KeyCode.S))
-            setVelocity -= 1f * Vector2.up;
+            setVelocity -= 0.5f * Vector2.up;
         if (Input.GetKey(KeyCode.D))
-            setVelocity += 1f * Vector2.right;
+            setVelocity += 0.5f * Vector2.right;
         if (Input.GetKey(KeyCode.A))
-            setVelocity -= 1f * Vector2.right;
+            setVelocity -= 0.5f * Vector2.right;
     }
 
     private void Gravity()                      // 중력 구현
     {
-
         velocity = offset * setVelocity;        // setVelocity에 offset만큼 곱해줌. (offset이 최종 속도에 영향을 줌)
         rb.velocity = velocity;                 // Rigidbody2D의 속도
         speed = rb.velocity.magnitude;          // rb.velocity의 속도
     }
+
+    private void FirstReboundCheck()            // 첫 반발 체크
+    {
+        if (FirstRebound) return;
+        if (IsGrounded || IsTouched)
+            FirstRebound = true;
+    }
+
+    private void Rotate()                       // 처음 반발 전까지는 속도 벡터에 따라 회전
+    {
+        if (!FirstRebound)
+        {
+            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+            transform.localRotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+
+
 
     public void ApplyFriction(float scalar)     // 대기압 마찰 구현. scalar는 Gravity.cs의 중력 세기
     {
