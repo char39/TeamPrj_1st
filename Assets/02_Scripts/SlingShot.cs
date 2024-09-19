@@ -4,8 +4,6 @@ public class SlingShot : MonoBehaviour
 {
     public GameObject birdPrefab;   // 프리팹
     public Transform launchPoint;
-    public float launchForce = 4f;  // 발사 힘
-    public float maxStretch = 2f;   // 새총의 최대 늘어남 거리
     //public LineRendererCtrl _lineRendererCtrl;
 
     private _Bird _bird;
@@ -14,6 +12,8 @@ public class SlingShot : MonoBehaviour
     private Camera cam;
     private GameObject bird;         // 현재 당기고 있는 bird 인스턴스
     private Rigidbody2D birdRb;      // 현재 bird Rigidbody2D
+    private float launchForce = 4f;  // 발사 힘
+    private float maxStretch = 4f;   // 새총의 최대 늘어남 거리
     private bool isStretching = false;
 
     void Start()
