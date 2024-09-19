@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class _Bird : MonoBehaviour
 {
     private Transform tr;
     private CircleCollider2D col;

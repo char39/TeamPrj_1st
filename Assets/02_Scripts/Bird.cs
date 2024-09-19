@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class _Bird : MonoBehaviour
 {
     public const string birdTag = "Bird";
 

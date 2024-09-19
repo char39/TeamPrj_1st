@@ -20,9 +20,9 @@ public class Gravity : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag(Bird.birdTag))
+        if (col.CompareTag(_Bird.birdTag))
         {
-            col.TryGetComponent(out Bird bird);
+            col.TryGetComponent(out _Bird bird);
             gravityNormalVector = new Vector2(col.transform.position.x - transform.position.x, col.transform.position.y - transform.position.y).normalized * -1;
             distance = Vector2.Distance(transform.position, col.transform.position);
             scalar = Mathf.Lerp(minScale, maxScale, distance / 20);

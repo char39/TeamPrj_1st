@@ -18,9 +18,9 @@ public class ReboundCtrl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag(Bird.birdTag))
+        if (col.gameObject.CompareTag(_Bird.birdTag))
         {
-            col.gameObject.TryGetComponent(out Bird bird);
+            col.gameObject.TryGetComponent(out _Bird bird);
             if (infiniteRebound)            // 무한 반발
                 bird.setVelocity = Vector2.Reflect(bird.setVelocity, col.contacts[0].normal) * reboundForce;
             else if (reboundCount > 0)
