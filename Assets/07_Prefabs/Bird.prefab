@@ -165,6 +165,9 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   velocity_R: {x: 0, y: 0}
   gravityNormalVector: {x: 0, y: 0}
+  lookDirection: {x: 0, y: 0}
+  maxReboundCount: 3
+  reboundCount: 0
   offset: 1
   speed: 0
   IsGrounded: 0

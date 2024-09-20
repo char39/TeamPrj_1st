@@ -9,6 +9,12 @@ public class Bird : MonoBehaviour
     public Vector2 velocity = Vector2.zero;         // 중력의 힘을 받아 가속하는 속도
     public Vector2 velocity_R = Vector2.zero;       // 대기압 마찰을 구현하기 위한 반작용 속도. (였으나 아직 안씀ㅎ) 현재 디버깅용으로 사용됨.
     public Vector2 gravityNormalVector = Vector2.zero;
+    public Vector2 lookDirection = Vector2.zero;
+
+    [Range(0, 10)]
+    public int maxReboundCount = 3;
+    public int reboundCount;
+
     public float offset = 1;
     public float speed;
     public bool IsGrounded = false;
@@ -52,7 +58,20 @@ public class Bird : MonoBehaviour
         if (IsGrounded || IsTouched)
             FirstRebound = true;
     }
+    public void ResetCount() => reboundCount = maxReboundCount;    // 반발 횟수 초기화
     
+    public void ResetReboundCount()             // 충돌체에서 튀는 횟수 초기화
+    {
+        // 중력 벡터에 따른 Raycast
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, lookDirection, 100f, 1 << LayerMask.NameToLayer("ObjTouch"));
+
+        // Raycast 거리가 1f 이상이면 반발 횟수 초기화
+        if (reboundCount == maxReboundCount)    // 이미 초기화 되었으면, 초기화하지 않음
+            return;
+        if (hit.distance > 1f)
+            ResetCount();
+    }
+
     private void Rotate()                       // 처음 반발 전까지는 속도 벡터에 따라 회전
     {
         if (!FirstRebound)
@@ -60,19 +79,7 @@ public class Bird : MonoBehaviour
             float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
-    }
-    
-    public void ResetReboundCount()             // 충돌체에서 튀는 횟수 초기화
-    {
-        // 중력 벡터에 따른 Raycast
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, gravityNormalVector, 100f, 1 << LayerMask.NameToLayer("ObjTouch"));
-
-        // Raycast 거리가 1f 이상이면 해당 오브젝트의 반발 Count 초기화. (여러 Bird들이 상호작용하면 반발이 계속 일어날 수 있음. 이를 방지하는 것은 아직 미구현) 몰?루 누군가 고치지 않을까..
-        if (hit.distance > 1f)
-        {
-            hit.transform.gameObject.TryGetComponent(out ReboundCtrl objTouch);
-            objTouch.ResetCount();
-        }
+        lookDirection = rb.velocity.normalized;
     }
 
     private void OnCollisionEnter2D(Collision2D col)    // 충돌 시 IsGrounded, IsTouched 설정
@@ -83,6 +90,15 @@ public class Bird : MonoBehaviour
                 IsGrounded = true;
             else                                            // 그 외 오브젝트에 닿았을 때만 IsTouched 설정
                 IsTouched = true;
+
+            if (reboundCount > 0)                           // 반발 횟수가 남아있을 때만 반발
+            {
+                setVelocity = Vector2.Reflect(setVelocity, col.contacts[0].normal) * objTouch.reboundForce;
+                if (objTouch.infiniteRebound)               // 무한 반발일 때
+                    reboundCount = maxReboundCount;
+                else
+                    reboundCount--;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D col)     // 충돌 해제 시 IsGrounded, IsTouched 설정

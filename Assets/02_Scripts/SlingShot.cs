@@ -6,6 +6,7 @@ public class SlingShot : MonoBehaviour
     
     public GameObject birdPrefab;   // 프리팹
     public Vector2 launchPos;       // 발사 위치
+    
 
     private Vector2 startPos;          // 새총 본체. bird 생성될 때 위치
     private Camera cam;
@@ -20,6 +21,7 @@ public class SlingShot : MonoBehaviour
         cam = Camera.main;
         startPos = new Vector2(transform.position.x, transform.position.y);
         launchPos = new Vector2(transform.position.x, transform.position.y);
+        CreateBird();    // bird 생성
     }
 
     void Update()
@@ -27,7 +29,6 @@ public class SlingShot : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             isStretching = true;
-            CreateBird();    // bird 생성
             StretchPosition();  // 새총 당기기 처리
         }
 
@@ -35,6 +36,7 @@ public class SlingShot : MonoBehaviour
         {
             Shoot();  // 발사
             isStretching = false;
+            Invoke(nameof(CreateBird), 1f);  // 1초 후 Bird 생성
         }
     }
 
