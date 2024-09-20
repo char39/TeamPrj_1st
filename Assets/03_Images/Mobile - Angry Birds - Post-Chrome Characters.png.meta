@@ -203,8 +203,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,8 +224,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,8 +245,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,8 +266,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,8 +287,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,8 +308,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -329,8 +329,8 @@ TextureImporter:
         y: 985
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -453,7 +453,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1692
         y: 929
-        width: 111
+        width: 60
         height: 211
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -497,8 +497,8 @@ TextureImporter:
         y: 829
         width: 126
         height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -514,10 +514,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_16
       rect:
         serializedVersion: 2
-        x: 202
-        y: 959
-        width: 12
-        height: 11
+        x: 168
+        y: 845
+        width: 145
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -535,10 +535,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_17
       rect:
         serializedVersion: 2
-        x: 221
-        y: 967
-        width: 32
-        height: 17
+        x: 313
+        y: 852
+        width: 133
+        height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -556,10 +556,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_18
       rect:
         serializedVersion: 2
-        x: 328
-        y: 933
-        width: 109
-        height: 51
+        x: 446
+        y: 869
+        width: 115
+        height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -574,27 +574,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_19
-      rect:
-        serializedVersion: 2
-        x: 446
-        y: 874
-        width: 117
-        height: 110
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d94fecc97115124eae317b821601688
-      internalID: 713965032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Mobile - Angry Birds - Post-Chrome Characters_20
       rect:
         serializedVersion: 2
@@ -602,8 +581,8 @@ TextureImporter:
         y: 882
         width: 110
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -623,8 +602,8 @@ TextureImporter:
         y: 882
         width: 110
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -644,8 +623,8 @@ TextureImporter:
         y: 882
         width: 110
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -665,8 +644,8 @@ TextureImporter:
         y: 882
         width: 110
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -721,76 +700,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_26
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 892
-        width: 17
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1b993b270cf41d4d9ee35f9fe8ac9d8
-      internalID: -407630422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_27
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 888
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7698474d740f1704aae83c278e7e7f04
-      internalID: 158975430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_28
-      rect:
-        serializedVersion: 2
-        x: 374
-        y: 853
-        width: 72
-        height: 77
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f2097e3ac920b044822124c15c7a7e8
-      internalID: -2137327759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Mobile - Angry Birds - Post-Chrome Characters_29
       rect:
         serializedVersion: 2
         x: 1694
-        y: 829
-        width: 68
-        height: 98
+        y: 839
+        width: 65
+        height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,75 +742,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_31
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 860
-        width: 13
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf0a651d8e1921044a4eeb6c7a4252ea
-      internalID: 1010366116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_32
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 845
-        width: 58
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 386e78dd1ecf41f4b9e83e2daba39c88
-      internalID: -620911701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_33
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 863
-        width: 35
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8e037b588a25b842836750e56489c0a
-      internalID: 1420521003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Mobile - Angry Birds - Post-Chrome Characters_34
       rect:
         serializedVersion: 2
         x: 0
         y: 826
-        width: 39
+        width: 28
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -917,8 +770,8 @@ TextureImporter:
         y: 745
         width: 110
         height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -938,8 +791,8 @@ TextureImporter:
         y: 747
         width: 98
         height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -959,8 +812,8 @@ TextureImporter:
         y: 748
         width: 99
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -980,8 +833,8 @@ TextureImporter:
         y: 750
         width: 99
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1001,8 +854,8 @@ TextureImporter:
         y: 750
         width: 99
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1022,8 +875,8 @@ TextureImporter:
         y: 750
         width: 81
         height: 94
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0.37}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1043,8 +896,8 @@ TextureImporter:
         y: 751
         width: 99
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1061,11 +914,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 880
-        y: 751
+        y: 752
         width: 99
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1124,9 +977,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1595
-        y: 717
-        width: 114
-        height: 120
+        y: 729
+        width: 102
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1144,10 +997,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_46
       rect:
         serializedVersion: 2
-        x: 1719
-        y: 828
-        width: 4
-        height: 4
+        x: 1700
+        y: 755
+        width: 82
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1249,10 +1102,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_51
       rect:
         serializedVersion: 2
-        x: 1700
-        y: 794
-        width: 4
-        height: 4
+        x: 1752
+        y: 1014
+        width: 51
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1270,10 +1123,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_52
       rect:
         serializedVersion: 2
-        x: 1773
-        y: 795
-        width: 9
-        height: 23
+        x: 1752
+        y: 953
+        width: 51
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1292,9 +1145,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 691
-        width: 39
-        height: 102
+        y: 760
+        width: 10
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1304,27 +1157,6 @@ TextureImporter:
       bones: []
       spriteID: ea7efcf5be8f80b469f12d92509e4a1d
       internalID: 514219334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_54
-      rect:
-        serializedVersion: 2
-        x: 1773
-        y: 775
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39508f9e74dcdf04f893a23bb7ad4352
-      internalID: 1306995336
       vertices: []
       indices: 
       edges: []
@@ -1351,48 +1183,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_56
-      rect:
-        serializedVersion: 2
-        x: 1720
-        y: 756
-        width: 23
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e9699eeb3d1c024aae1b57a252c02c8
-      internalID: -1604979216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_57
-      rect:
-        serializedVersion: 2
-        x: 1759
-        y: 761
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 336e773523ebd19478d9f3e693cabd61
-      internalID: -216739433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Mobile - Angry Birds - Post-Chrome Characters_58
       rect:
         serializedVersion: 2
@@ -1400,8 +1190,8 @@ TextureImporter:
         y: 643
         width: 110
         height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1421,8 +1211,8 @@ TextureImporter:
         y: 647
         width: 98
         height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1442,8 +1232,8 @@ TextureImporter:
         y: 652
         width: 99
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1543,7 +1333,7 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_65
       rect:
         serializedVersion: 2
-        x: 870
+        x: 871
         y: 661
         width: 93
         height: 84
@@ -1629,7 +1419,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1457
         y: 624
-        width: 130
+        width: 124
         height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1648,9 +1438,9 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_70
       rect:
         serializedVersion: 2
-        x: 1689
+        x: 1694
         y: 641
-        width: 67
+        width: 62
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1690,10 +1480,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_72
       rect:
         serializedVersion: 2
-        x: 53
-        y: 624
-        width: 104
-        height: 48
+        x: 40
+        y: 550
+        width: 127
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1734,7 +1524,7 @@ TextureImporter:
         serializedVersion: 2
         x: 14
         y: 625
-        width: 26
+        width: 15
         height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1757,8 +1547,8 @@ TextureImporter:
         y: 542
         width: 98
         height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1775,11 +1565,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 285
-        y: 549
+        y: 550
         width: 81
         height: 94
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0.37}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1799,8 +1589,8 @@ TextureImporter:
         y: 556
         width: 98
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.56, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1945,9 +1735,9 @@ TextureImporter:
         x: 1586
         y: 541
         width: 60
-        height: 88
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 81
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1966,9 +1756,9 @@ TextureImporter:
         x: 1649
         y: 540
         width: 61
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 82
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2005,10 +1795,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_87
       rect:
         serializedVersion: 2
-        x: 39
-        y: 581
-        width: 19
-        height: 39
+        x: 27
+        y: 471
+        width: 12
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2026,10 +1816,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_88
       rect:
         serializedVersion: 2
-        x: 98
-        y: 552
-        width: 69
-        height: 68
+        x: 40
+        y: 426
+        width: 127
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2072,8 +1862,8 @@ TextureImporter:
         y: 534
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2114,8 +1904,8 @@ TextureImporter:
         y: 550
         width: 62
         height: 71
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5167079, y: 0.4562335}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2173,10 +1963,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_95
       rect:
         serializedVersion: 2
-        x: 54
-        y: 556
-        width: 32
-        height: 24
+        x: 40
+        y: 309
+        width: 127
+        height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2198,8 +1988,8 @@ TextureImporter:
         y: 485
         width: 62
         height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2219,8 +2009,8 @@ TextureImporter:
         y: 486
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2324,8 +2114,8 @@ TextureImporter:
         y: 495
         width: 62
         height: 71
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2342,11 +2132,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1219
-        y: 467
+        y: 468
         width: 100
         height: 115
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52874756, y: 0.49000138}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2383,10 +2173,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_105
       rect:
         serializedVersion: 2
-        x: 70
-        y: 526
-        width: 9
-        height: 9
+        x: 26
+        y: 326
+        width: 13
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2404,10 +2194,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_106
       rect:
         serializedVersion: 2
-        x: 86
-        y: 533
-        width: 28
-        height: 14
+        x: 0
+        y: 328
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2429,8 +2219,8 @@ TextureImporter:
         y: 440
         width: 98
         height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.56, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2471,8 +2261,8 @@ TextureImporter:
         y: 460
         width: 81
         height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0.37}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2513,8 +2303,8 @@ TextureImporter:
         y: 450
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2656,10 +2446,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_118
       rect:
         serializedVersion: 2
-        x: 27
-        y: 467
-        width: 27
-        height: 33
+        x: 0
+        y: 301
+        width: 11
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2677,10 +2467,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_119
       rect:
         serializedVersion: 2
-        x: 157
-        y: 479
-        width: 11
-        height: 12
+        x: 11
+        y: 301
+        width: 10
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2702,8 +2492,8 @@ TextureImporter:
         y: 400
         width: 62
         height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2887,10 +2677,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_129
       rect:
         serializedVersion: 2
-        x: 39
-        y: 309
-        width: 127
-        height: 154
+        x: 21
+        y: 302
+        width: 10
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2912,8 +2702,8 @@ TextureImporter:
         y: 365
         width: 56
         height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5542303, y: 0.45048657}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2930,9 +2720,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 441
-        y: 378
+        y: 419
         width: 42
-        height: 80
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2992,10 +2782,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_134
       rect:
         serializedVersion: 2
-        x: 1553
-        y: 456
-        width: 6
-        height: 4
+        x: 1526
+        y: 398
+        width: 62
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3013,10 +2803,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_135
       rect:
         serializedVersion: 2
-        x: 1568
-        y: 452
-        width: 5
-        height: 5
+        x: 1585
+        y: 627
+        width: 106
+        height: 93
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3094,27 +2884,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_139
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 452
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e7b105386308bb4a976dc28026ebf9f
-      internalID: 1210987199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Mobile - Angry Birds - Post-Chrome Characters_140
       rect:
         serializedVersion: 2
@@ -3122,8 +2891,8 @@ TextureImporter:
         y: 350
         width: 81
         height: 94
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0.37}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3143,8 +2912,8 @@ TextureImporter:
         y: 366
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3152,48 +2921,6 @@ TextureImporter:
       bones: []
       spriteID: 6355bf6227cf1a54ab56aa75f606e9c1
       internalID: 1195467201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_142
-      rect:
-        serializedVersion: 2
-        x: 1529
-        y: 441
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b7d0f4fde0fa1e4fb1c89514611fca5
-      internalID: -1842159597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_143
-      rect:
-        serializedVersion: 2
-        x: 1579
-        y: 442
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c43d483e91f93e4d9d84e08b701b866
-      internalID: 1881920008
       vertices: []
       indices: 
       edges: []
@@ -3248,8 +2975,8 @@ TextureImporter:
         y: 340
         width: 109
         height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3257,48 +2984,6 @@ TextureImporter:
       bones: []
       spriteID: 613e554214d2af24c99887bcad7e1048
       internalID: 851628249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_147
-      rect:
-        serializedVersion: 2
-        x: 1525
-        y: 426
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e42d1264a25e6d44ab0227ea8482a60
-      internalID: -1248661008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_148
-      rect:
-        serializedVersion: 2
-        x: 1583
-        y: 427
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e98f769d5a7329244a4cf7b71ae08bcf
-      internalID: 608711974
       vertices: []
       indices: 
       edges: []
@@ -3332,8 +3017,8 @@ TextureImporter:
         y: 301
         width: 105
         height: 119
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5477702, y: 0.43376428}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3362,48 +3047,6 @@ TextureImporter:
       bones: []
       spriteID: 8ce6deefbd8b635418f5f3db3ab0d805
       internalID: 1605904381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_152
-      rect:
-        serializedVersion: 2
-        x: 1529
-        y: 412
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1393ad6018286af4ba690ef446a35819
-      internalID: 1436395615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_153
-      rect:
-        serializedVersion: 2
-        x: 1579
-        y: 413
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1bc68f84d464d44489ba7cb1a9433e8
-      internalID: -1076945998
       vertices: []
       indices: 
       edges: []
@@ -3535,69 +3178,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_160
-      rect:
-        serializedVersion: 2
-        x: 1540
-        y: 402
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea140a0e21568ac4e803980afb623618
-      internalID: 543015309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_161
-      rect:
-        serializedVersion: 2
-        x: 1554
-        y: 398
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fccb2e96e7af90746814d15a5bc7b90f
-      internalID: 1995997414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_162
-      rect:
-        serializedVersion: 2
-        x: 1569
-        y: 402
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 304ecce86ca20b14a9fa06d39047a02b
-      internalID: 2019276290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Mobile - Angry Birds - Post-Chrome Characters_163
       rect:
         serializedVersion: 2
@@ -3668,8 +3248,8 @@ TextureImporter:
         y: 315
         width: 62
         height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3791,9 +3371,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 274
-        width: 39
-        height: 79
+        y: 275
+        width: 11
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3836,8 +3416,8 @@ TextureImporter:
         y: 240
         width: 109
         height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3857,8 +3437,8 @@ TextureImporter:
         y: 251
         width: 98
         height: 95
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.56, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3878,8 +3458,8 @@ TextureImporter:
         y: 231
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4086,8 +3666,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 255
-        width: 37
-        height: 20
+        width: 18
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4169,9 +3749,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 778
-        y: 146
+        y: 210
         width: 137
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4277,8 +3857,8 @@ TextureImporter:
         y: 154
         width: 81
         height: 94
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0.37}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4315,10 +3895,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_197
       rect:
         serializedVersion: 2
-        x: 0
-        y: 177
-        width: 35
-        height: 60
+        x: 3
+        y: 222
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4361,8 +3941,8 @@ TextureImporter:
         y: 140
         width: 109
         height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4382,8 +3962,8 @@ TextureImporter:
         y: 147
         width: 61
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4485,7 +4065,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2
         y: 163
-        width: 34
+        width: 14
         height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -4756,10 +4336,10 @@ TextureImporter:
       name: Mobile - Angry Birds - Post-Chrome Characters_218
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
-        width: 520
-        height: 124
+        x: 441
+        y: 380
+        width: 42
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4774,13 +4354,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Angry Birds - Post-Chrome Characters_219
+      name: Mobile - Angry Birds - Post-Chrome Characters_19
       rect:
         serializedVersion: 2
-        x: 455
-        y: 0
-        width: 937
-        height: 124
+        x: 30
+        y: 904
+        width: 10
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4788,7 +4368,490 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acfa09d82ddb7e74682ff185fa41e070
+      spriteID: 46450f1db652b4421bac081114733e7e
+      internalID: 713965032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_26
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 902
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da9cf15a7e5348c2a6aa8376012adcd
+      internalID: -407630422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 899
+        width: 17
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ee064d3b9dc498c8136b249c4d317a
+      internalID: 158975430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_28
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 827
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01527887584746aaac897e76033648f
+      internalID: -2137327759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_31
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 769
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f929f4b38a249f19970f9907d12e88
+      internalID: 1010366116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_32
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 762
+        width: 11
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ecf29a29df3408789666b1acd09b63
+      internalID: -620911701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_33
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 760
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50c131bb1ece4f4bb66f92bdd3be415
+      internalID: 1420521003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_220
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 739
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54116036d20404d58b9f41a6594dc0da
+      internalID: 105040161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_221
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 724
+        width: 10
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ae59346c2074821836167409b2e49b
+      internalID: -1209415742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_222
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 724
+        width: 10
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c53a7b3ff291469c91225d954e9ecbd
+      internalID: 1324779995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_223
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 10
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649079e7d14744876bb08824403202fd
+      internalID: -1615891255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_224
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 691
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2ffec72f2bf4a47bd9bce452a08aca
+      internalID: 666545239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_225
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 631
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8e122f597a347eca4f93ee942e2f91
+      internalID: -1786427149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_226
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 275
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8401bf4f469434927bd666eb5130f635
+      internalID: -383101830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_227
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 278
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb03262bcdfd42678bff03f9a9d5b1e
+      internalID: 585327896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_228
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 255
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf706dd4dea54b64a9d48df71db5b0d
+      internalID: 1291849639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_229
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 220
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9e6f95e8fa64f6fb6a75f205a0f4e7
+      internalID: 308462981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_230
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 206
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2746e12304f24406f8dad0d0b7a8090e
+      internalID: -1130420014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_231
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 207
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01145a95ec4454fd38eda4cdbdc984e5
+      internalID: -707374054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_232
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b76225cb83e146ab9742e567b5ca198
+      internalID: 1202789730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_233
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8402356c9f88d48e8a56fd47391d2ec0
+      internalID: -2060076382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_234
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9b6462aa291463f84974914cb13eea
+      internalID: 1900228708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_235
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 165
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36854475e06054e25ba6a35015555367
+      internalID: 1486548881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_219
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 146
+        width: 137
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fae6d8edbb74dbab8e201f26f4fbce
       internalID: -187357839
       vertices: []
       indices: 
@@ -4941,7 +5004,23 @@ TextureImporter:
       Mobile - Angry Birds - Post-Chrome Characters_218: -624322640
       Mobile - Angry Birds - Post-Chrome Characters_219: -187357839
       Mobile - Angry Birds - Post-Chrome Characters_22: -634444585
+      Mobile - Angry Birds - Post-Chrome Characters_220: 105040161
+      Mobile - Angry Birds - Post-Chrome Characters_221: -1209415742
+      Mobile - Angry Birds - Post-Chrome Characters_222: 1324779995
+      Mobile - Angry Birds - Post-Chrome Characters_223: -1615891255
+      Mobile - Angry Birds - Post-Chrome Characters_224: 666545239
+      Mobile - Angry Birds - Post-Chrome Characters_225: -1786427149
+      Mobile - Angry Birds - Post-Chrome Characters_226: -383101830
+      Mobile - Angry Birds - Post-Chrome Characters_227: 585327896
+      Mobile - Angry Birds - Post-Chrome Characters_228: 1291849639
+      Mobile - Angry Birds - Post-Chrome Characters_229: 308462981
       Mobile - Angry Birds - Post-Chrome Characters_23: -993854070
+      Mobile - Angry Birds - Post-Chrome Characters_230: -1130420014
+      Mobile - Angry Birds - Post-Chrome Characters_231: -707374054
+      Mobile - Angry Birds - Post-Chrome Characters_232: 1202789730
+      Mobile - Angry Birds - Post-Chrome Characters_233: -2060076382
+      Mobile - Angry Birds - Post-Chrome Characters_234: 1900228708
+      Mobile - Angry Birds - Post-Chrome Characters_235: 1486548881
       Mobile - Angry Birds - Post-Chrome Characters_24: 1923469163
       Mobile - Angry Birds - Post-Chrome Characters_25: -1524397499
       Mobile - Angry Birds - Post-Chrome Characters_26: -407630422
