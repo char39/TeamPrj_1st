@@ -4,22 +4,21 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     private Transform tr;
-    private CircleCollider2D col;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private SpriteRenderer effect;
-    [SerializeField] ParticleSystem burner;
+    public ParticleSystem burner;
     private float frictionScalar = 0.05f;  // 마찰력 계수
 
     void Start()
     {
         tr = transform;
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<CircleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         effect = transform.GetChild(0).GetComponent<SpriteRenderer>();
         effect.enabled = false;
         burner = transform.GetChild(1).GetComponent<ParticleSystem>();
+        burner.Stop();
     }
 
     void Update()
@@ -35,26 +34,27 @@ public class Bird : MonoBehaviour
 
             sprite.flipX = rb.velocity.x > 0 ? false : true;
 
+            // Bird의 회전 각도를 적용하지만, ParticleSystem에는 영향을 주지 않음
+            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+            tr.localRotation = Quaternion.Euler(0, 0, angle);
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "GRAVITY")
+        if (col.gameObject.CompareTag("GRAVITY"))
             StartCoroutine(ShowEffect());
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("GROUND"))
+        // 충돌 시 ParticleSystem 비활성화
+        if (burner != null && burner.isPlaying)
         {
-            GameObject temp = new GameObject("AfterBurner");
-            temp.transform.position = burner.transform.position;
-            burner.Stop();
-            Destroy(temp);
+            burner.Stop();  // 파티클 시스템 중지
+            burner.Clear(); // 파티클 제거
         }
     }
-
 
     IEnumerator ShowEffect()
     {

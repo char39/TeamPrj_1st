@@ -3,22 +3,21 @@ using UnityEngine;
 public class Slingshot : MonoBehaviour
 {
     public GameObject birdPrefab;   // 프리팹
-    public Transform launchPoint;
+    public Vector2 launchPos;
     public float launchForce = 4f;  // 발사 힘
     public float maxStretch = 2f;   // 새총의 최대 늘어남 거리
-    public LineRendererCtrl _lineRendererCtrl;
+    public bool isStretching = false;
 
     private Vector2 startPos;           // 새총 본체. 생성될 때 bird 위치
     private Camera cam;
     private GameObject bird;         // 현재 당기고 있는 bird 인스턴스
     private Rigidbody2D birdRb;      // 현재 bird Rigidbody2D
-    private bool isStretching = false;
 
     void Start()
     {
-        _lineRendererCtrl = GetComponent<LineRendererCtrl>();
         cam = Camera.main;
         startPos = GameObject.Find("startPosition").transform.position;
+        launchPos = new Vector2(startPos.x, startPos.y);
     }
 
     void Update()
@@ -28,39 +27,24 @@ public class Slingshot : MonoBehaviour
             isStretching = true;
             CreateBird();    // bird 생성
             StretchPosition();  // 새총 당기기 처리
-
-            if (_lineRendererCtrl != null)
-                _lineRendererCtrl.UpdateLineRenderer(bird.transform.position, startPos);  // 가이드라인 업데이트
         }
 
         else if (Input.GetMouseButtonUp(0) && isStretching)
         {
             Shoot();  // 발사
             isStretching = false;
-            if (_lineRendererCtrl != null)
-                _lineRendererCtrl.HideLineRenderer();  // 발사 후 가이드라인 비활성화
         }
     }
 
     // Bird 생성
     void CreateBird()
     {
-        // #1 ObjectPooling off
-        // if (bird == null)
-        // {
-        //     bird = ObjectPooling.poolingManager.GetBirdPool();
-        //     bird.SetActive(true);
-        //     birdRb = bird.GetComponent<Rigidbody2D>();
-        //     birdRb.isKinematic = true;  // 당기는 동안 물리 영향 받지 않도록 설정
-        // }
-        
         if (bird == null)
         {
             bird = Instantiate(birdPrefab, startPos, Quaternion.identity);
             birdRb = bird.GetComponent<Rigidbody2D>();
             birdRb.isKinematic = true;  // 당기는 동안 물리 영향 받지 않도록 설정
         }
-
     }
 
     // 새총 당기기 처리
@@ -70,10 +54,10 @@ public class Slingshot : MonoBehaviour
         Vector2 stretch = mousePos - startPos;
         //  float stretchDistance = Mathf.Min(stretch.magnitude, maxStretch);
         float stretchDistance = Mathf.Clamp(stretch.magnitude, 0f, maxStretch);
-        launchPoint.position = startPos + (Vector2)(stretch.normalized * stretchDistance);
+        launchPos = startPos + stretch.normalized * stretchDistance;
 
         if (bird != null)
-            bird.transform.position = launchPoint.position;
+            bird.transform.position = launchPos;
     }
 
     // 발사 처리
@@ -81,7 +65,7 @@ public class Slingshot : MonoBehaviour
     {
         if (bird != null)
         {
-            Vector2 direction = startPos - (Vector2)launchPoint.position;
+            Vector2 direction = startPos - launchPos;
             float distance = direction.magnitude;
             direction.Normalize();
 
@@ -90,10 +74,15 @@ public class Slingshot : MonoBehaviour
             birdRb.velocity = direction * launchForce * distance;
             Debug.Log(birdRb.velocity);
 
+            ParticleSystem Burner = bird.GetComponent<Bird>().burner;
+            ShowParticleSystem(Burner);
+
             bird = null;  // 발사 후 현재 Bird를 null로 설정
         }
 
         // 새총을 원래 위치로
-        launchPoint.position = startPos;
+        launchPos = startPos;
     }
+
+    void ShowParticleSystem(ParticleSystem burner) => burner.Play();
 }
