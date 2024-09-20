@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 2136976253}
   - component: {fileID: 2136976252}
   - component: {fileID: 2136976254}
+  - component: {fileID: 2136976255}
   m_Layer: 0
   m_Name: slingshot
   m_TagString: Untagged
@@ -396,10 +397,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdPrefab: {fileID: 3532719028602758532, guid: a01aa7138c446a142b140084a86bdcab, type: 3}
-  launchPoint: {fileID: 0}
+  launchPos: {x: 0, y: 0}
   launchForce: 4
   maxStretch: 1.5
   isStretching: 0
+--- !u!114 &2136976255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136976251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516d6e18fee34f340aebce51451e6ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slingshot: {fileID: 0}
+  preBirdPrefab: {fileID: 2412292001301436544, guid: af9932a8e3c14a746bf5805e7c2d56e5, type: 3}
+  launchPoint: {x: 0, y: 0}
+  gravityScale: 1
 --- !u!58 &998437013273856252
 CircleCollider2D:
   m_ObjectHideFlags: 0
