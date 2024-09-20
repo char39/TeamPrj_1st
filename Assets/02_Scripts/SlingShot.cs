@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
-    public GameObject birdPrefab;   // 프리팹
-    public Transform launchPoint;
-
     private Bird bird;
+    
+    public GameObject birdPrefab;   // 프리팹
+    public Vector2 launchPos;       // 발사 위치
 
     private Vector2 startPos;          // 새총 본체. bird 생성될 때 위치
     private Camera cam;
@@ -18,9 +18,8 @@ public class SlingShot : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        startPos = transform.GetChild(2).transform.position;
-        launchPoint = transform;
-        launchPoint.position = startPos;
+        startPos = new Vector2(transform.position.x, transform.position.y);
+        launchPos = new Vector2(transform.position.x, transform.position.y);
     }
 
     void Update()
@@ -55,11 +54,12 @@ public class SlingShot : MonoBehaviour
     {
         Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 stretch = mousePos - startPos;
+
         float stretchDistance = Mathf.Clamp(stretch.magnitude, 0f, maxStretch);
-        launchPoint.position = startPos + (Vector2)(stretch.normalized * stretchDistance);
+        launchPos = startPos + (Vector2)(stretch.normalized * stretchDistance);
 
         if (birdObj != null)
-            birdObj.transform.position = launchPoint.position;
+            birdObj.transform.position = launchPos;
     }
 
     // 발사 처리
@@ -68,7 +68,7 @@ public class SlingShot : MonoBehaviour
         if (birdObj != null)
         {
             bird = birdObj.GetComponent<Bird>();
-            Vector2 direction = startPos - (Vector2)launchPoint.position;
+            Vector2 direction = startPos - launchPos;
             float distance = direction.magnitude;
             direction.Normalize();
 
@@ -79,8 +79,8 @@ public class SlingShot : MonoBehaviour
 
             birdObj = null;  // 발사 후 현재 Bird를 null로 설정
         }
-
+        
         // 새총을 원래 위치로
-        launchPoint.position = startPos;
+        launchPos = startPos;
     }
 }

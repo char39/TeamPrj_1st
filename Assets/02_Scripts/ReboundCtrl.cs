@@ -5,16 +5,16 @@ public class ReboundCtrl : MonoBehaviour
     [Range(0f, 1f)]
     public float reboundForce = 0.75f;
     [Range(0, 10)]
-    public int reboundCountTemp = 3;
+    public int maxReboundCount = 3;
     private int reboundCount;
     public bool infiniteRebound = false;
 
     void Start()
     {
-        reboundCount = reboundCountTemp;
+        reboundCount = maxReboundCount;
     }
 
-    public void ResetCount() => reboundCount = reboundCountTemp;    // 호출용 함수
+    public void ResetCount() => reboundCount = maxReboundCount;    // 호출용 함수
 
     private void OnCollisionEnter2D(Collision2D col)
     {

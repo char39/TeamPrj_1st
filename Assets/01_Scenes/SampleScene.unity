@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reboundForce: 0.5
-  reboundCountTemp: 3
+  reboundCountTemp: 0
   infiniteRebound: 0
 --- !u!114 &20555699
 MonoBehaviour:
@@ -581,7 +581,6 @@ Transform:
   m_Children:
   - {fileID: 145490769}
   - {fileID: 496942494}
-  - {fileID: 1051264827}
   m_Father: {fileID: 1300710004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &534106969
@@ -597,9 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdPrefab: {fileID: 3761604719541177009, guid: a01aa7138c446a142b140084a86bdcab, type: 3}
-  launchPoint: {fileID: 0}
-  launchForce: 4
-  maxStretch: 2
+  launchPos: {x: 0, y: 0}
 --- !u!1 &782068838
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,37 +751,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 25
---- !u!1 &1051264826
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051264827}
-  m_Layer: 0
-  m_Name: StartPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1051264827
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051264826}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 534106968}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1300709999
 GameObject:
   m_ObjectHideFlags: 0

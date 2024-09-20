@@ -46,10 +46,6 @@ public class Bird : MonoBehaviour
         setVelocity *= 1 - friction * Time.deltaTime;
     }
 
-
-
-
-
     private void FirstReboundCheck()            // 첫 반발 체크. bird가 처음 닿기 전까진 향하는 방향으로 회전
     {
         if (FirstRebound) return;
