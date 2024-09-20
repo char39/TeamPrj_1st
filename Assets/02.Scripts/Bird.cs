@@ -46,9 +46,15 @@ public class Bird : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "GROUND")
+        if (col.gameObject.CompareTag("GROUND"))
+        {
+            GameObject temp = new GameObject("AfterBurner");
+            temp.transform.position = burner.transform.position;
             burner.Stop();
+            Destroy(temp);
+        }
     }
+
 
     IEnumerator ShowEffect()
     {
