@@ -3,30 +3,23 @@ using UnityEngine;
 public class SlingShot : MonoBehaviour
 {
     public GameObject birdPrefab;   // 프리팹
-    public Transform launchPoint;
-    //public LineRendererCtrl _lineRendererCtrl;
+    public Vector2 launchPos;       // 발사 위치
 
-    private _Bird _bird;
+    private Bird bird;
 
     private Vector2 startPos;          // 새총 본체. bird 생성될 때 위치
     private Camera cam;
-    private GameObject bird;         // 현재 당기고 있는 bird 인스턴스
+    private GameObject birdObj;         // 현재 당기고 있는 bird 인스턴스
     private Rigidbody2D birdRb;      // 현재 bird Rigidbody2D
-    private float launchForce = 4f;  // 발사 힘
-    private float maxStretch = 4f;   // 새총의 최대 늘어남 거리
+    internal float launchForce = 4f;  // 발사 힘
+    internal float maxStretch = 4f;   // 새총의 최대 늘어남 거리
     private bool isStretching = false;
 
     void Start()
     {
         cam = Camera.main;
         startPos = transform.GetChild(2).transform.position;
-
-        if (launchPoint == null)
-        {
-            GameObject temp = new GameObject("LaunchPoint");
-            launchPoint = temp.transform;
-            launchPoint.position = startPos;
-        }
+        launchPos = new Vector2(transform.position.x, transform.position.y);
     }
 
     void Update()
@@ -36,27 +29,22 @@ public class SlingShot : MonoBehaviour
             isStretching = true;
             CreateBird();    // bird 생성
             StretchPosition();  // 새총 당기기 처리
-
-            // if (_lineRendererCtrl != null)
-            //     _lineRendererCtrl.UpdateLineRenderer(bird.transform.position, startPos);  // 가이드라인 업데이트
         }
 
         else if (Input.GetMouseButtonUp(0) && isStretching)
         {
             Shoot();  // 발사
             isStretching = false;
-            // if (_lineRendererCtrl != null)
-            //     _lineRendererCtrl.HideLineRenderer();  // 발사 후 가이드라인 비활성화
         }
     }
 
     // Bird 생성
     void CreateBird()
     {
-        if (bird == null)
+        if (birdObj == null)
         {
-            bird = Instantiate(birdPrefab, startPos, Quaternion.identity);
-            birdRb = bird.GetComponent<Rigidbody2D>();
+            birdObj = Instantiate(birdPrefab, startPos, Quaternion.identity);
+            birdRb = birdObj.GetComponent<Rigidbody2D>();
             birdRb.isKinematic = true;  // 당기는 동안 물리 영향 받지 않도록 설정
         }
     }
@@ -66,33 +54,33 @@ public class SlingShot : MonoBehaviour
     {
         Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 stretch = mousePos - startPos;
-        //  float stretchDistance = Mathf.Min(stretch.magnitude, maxStretch);
-        float stretchDistance = Mathf.Clamp(stretch.magnitude, 0f, maxStretch);
-        launchPoint.position = startPos + (Vector2)(stretch.normalized * stretchDistance);
 
-        if (bird != null)
-            bird.transform.position = launchPoint.position;
+        float stretchDistance = Mathf.Clamp(stretch.magnitude, 0f, maxStretch);
+        launchPos = startPos + (Vector2)(stretch.normalized * stretchDistance);
+
+        if (birdObj != null)
+            birdObj.transform.position = launchPos;
     }
 
     // 발사 처리
     void Shoot()
     {
-        if (bird != null)
+        if (birdObj != null)
         {
-            _bird = bird.GetComponent<_Bird>();
-            Vector2 direction = startPos - (Vector2)launchPoint.position;
+            bird = birdObj.GetComponent<Bird>();
+            Vector2 direction = startPos - launchPos;
             float distance = direction.magnitude;
             direction.Normalize();
 
             // Rigidbody2D의 velocity를 직접 설정하여 발사
             birdRb.isKinematic = false;  // 물리 엔진의 영향을 받도록 설정
-            _bird.setVelocity = direction * launchForce * distance;
+            bird.setVelocity = direction * launchForce * distance;
             Debug.Log(birdRb.velocity);
 
-            bird = null;  // 발사 후 현재 Bird를 null로 설정
+            birdObj = null;  // 발사 후 현재 Bird를 null로 설정
         }
-
+        
         // 새총을 원래 위치로
-        launchPoint.position = startPos;
+        launchPos = startPos;
     }
 }
