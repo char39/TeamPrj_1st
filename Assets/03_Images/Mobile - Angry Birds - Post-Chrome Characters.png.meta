@@ -4857,6 +4857,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 904
+        width: 10
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46450f1db652b4421bac081114733e7e
+      internalID: 713965032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_26
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 902
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da9cf15a7e5348c2a6aa8376012adcd
+      internalID: -407630422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 899
+        width: 17
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ee064d3b9dc498c8136b249c4d317a
+      internalID: 158975430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Angry Birds - Post-Chrome Characters_28
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 827
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01527887584746aaac897e76033648f
+      internalID: -2137327759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
