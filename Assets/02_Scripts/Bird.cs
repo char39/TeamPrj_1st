@@ -1,3 +1,4 @@
+#pragma warning disable IDE0075
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -5,22 +6,22 @@ public class Bird : MonoBehaviour
     public const string birdTag = "Bird";
 
     private Rigidbody2D rb;
+    /// <summary> 변경 가능한 속도 벡터 </summary>
     public Vector2 setVelocity = Vector2.zero;
-    public Vector2 velocity = Vector2.zero;         // 중력의 힘을 받아 가속하는 속도
-    public Vector2 velocity_R = Vector2.zero;       // 대기압 마찰을 구현하기 위한 반작용 속도. (였으나 아직 안씀ㅎ) 현재 디버깅용으로 사용됨.
     public Vector2 gravityNormalVector = Vector2.zero;
-    public Vector2 lookDirection = Vector2.zero;
+    private Vector2 velocity = Vector2.zero;
+    private Vector2 velocity_R = Vector2.zero;
 
     [Range(0, 10)]
     public int maxReboundCount = 3;
     public int reboundCount;
 
-    public float offset = 1;
-    public float speed;
-    public bool IsGrounded = false;
-    public bool IsTouched = false;
+    public float offset = 1;                    // 최종 속도 벡터에 영향을 줌.
+    public float speed;                         // 현재 속도를 수치화. 디버깅용
 
-    public bool FirstRebound = false;
+    public bool IsGrounded { get; private set; } = false;
+    public bool IsTouched { get; private set; } = false;
+    public bool FirstRebound { get; private set; } = false;
 
     void Start()
     {
@@ -29,8 +30,8 @@ public class Bird : MonoBehaviour
 
     void FixedUpdate()
     {
+        SetGravity();
         Rotate();
-        Gravity();
     }
 
     void Update()
@@ -39,80 +40,86 @@ public class Bird : MonoBehaviour
         FirstReboundCheck();
     }
 
-    private void Gravity()                      // 중력 적용
+
+
+    /// <summary> 중력 적용 </summary>
+    private void SetGravity()
     {
-        velocity = offset * setVelocity;        // setVelocity에 offset만큼 곱해줌. (offset이 최종 속도에 영향을 줌)
-        rb.velocity = velocity;                 // Rigidbody2D의 속도
-        speed = rb.velocity.magnitude;          // rb.velocity의 속도
+        velocity = offset * setVelocity;
+        rb.velocity = velocity;
+        speed = rb.velocity.magnitude;
     }
 
-    public void ApplyFriction(float scalar)     // 대기압 마찰 구현. scalar는 Gravity.cs의 중력 세기
-    {
-        float friction = scalar * 0.05f;
-        setVelocity *= 1 - friction * Time.deltaTime;
-    }
-
-    private void FirstReboundCheck()            // 첫 반발 체크. bird가 처음 닿기 전까진 향하는 방향으로 회전
-    {
-        if (FirstRebound) return;
-        if (IsGrounded || IsTouched)
-            FirstRebound = true;
-    }
-    public void ResetCount() => reboundCount = maxReboundCount;    // 반발 횟수 초기화
-    
-    public void ResetReboundCount()             // 충돌체에서 튀는 횟수 초기화
-    {
-        // 중력 벡터에 따른 Raycast
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, lookDirection, 100f, 1 << LayerMask.NameToLayer("ObjTouch"));
-
-        // Raycast 거리가 1f 이상이면 반발 횟수 초기화
-        if (reboundCount == maxReboundCount)    // 이미 초기화 되었으면, 초기화하지 않음
-            return;
-        if (hit.distance > 1f)
-            ResetCount();
-    }
-
-    private void Rotate()                       // 처음 반발 전까지는 속도 벡터에 따라 회전
+    /// <summary> 속도 벡터에 따른 회전 </summary>
+    private void Rotate()
     {
         if (!FirstRebound)
         {
             float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
-        lookDirection = rb.velocity.normalized;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)    // 충돌 시 IsGrounded, IsTouched 설정
+    /// <summary> 반발 횟수 초기화 </summary>
+    private void ResetReboundCount()
+    {
+        if (reboundCount != maxReboundCount)
+            if (CheckRaycastHit(GetLookDirection()).distance > 1f)
+                ResetCount(out reboundCount);
+    }
+
+    /// <summary> 첫 반발 체크. bird가 처음 닿기 전까진 향하는 방향으로 회전 </summary>
+    private void FirstReboundCheck()
+    {
+        if (!FirstRebound && (IsGrounded || IsTouched))
+            FirstRebound = true;
+    }
+
+    /// <summary> 충돌 시 반발 처리 </summary>
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.TryGetComponent(out ReboundCtrl objTouch))
         {
-            if (objTouch.CompareTag(Planet.PlanetTag))      // 행성에 닿았을 때만 IsGrounded 설정
-                IsGrounded = true;
-            else                                            // 그 외 오브젝트에 닿았을 때만 IsTouched 설정
-                IsTouched = true;
+            bool compareTag = objTouch.CompareTag(Planet.PlanetTag);
+            IsGrounded = compareTag ? true : IsGrounded;    // 행성에 닿았을 때
+            IsTouched = compareTag ? IsTouched : true;      // 그 외 오브젝트에 닿았을 때
 
-            if (reboundCount > 0)                           // 반발 횟수가 남아있을 때만 반발
+            if (reboundCount > 0)                           // 반발 횟수가 남아있을 때만 반발, objTouch의 반발력을 적용하며, 무한 반발이 아닐 경우 반발 횟수 감소
             {
                 setVelocity = Vector2.Reflect(setVelocity, col.contacts[0].normal) * objTouch.reboundForce;
-                if (objTouch.infiniteRebound)               // 무한 반발일 때
-                    reboundCount = maxReboundCount;
-                else
-                    reboundCount--;
+                reboundCount = objTouch.infiniteRebound ? ResetCount() : reboundCount - 1;
             }
         }
     }
-    private void OnCollisionExit2D(Collision2D col)     // 충돌 해제 시 IsGrounded, IsTouched 설정
+
+    /// <summary> 충돌 해제 시 IsGrounded, IsTouched 설정 </summary>
+    private void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.TryGetComponent(out ReboundCtrl objTouch))
         {
-            if (objTouch.CompareTag(Planet.PlanetTag))      // 행성에서 떨어졌을 때만 IsGrounded 해제
-                IsGrounded = false;
-            else                                            // 그 외 오브젝트에서 떨어졌을 때만 IsTouched 해제
-                IsTouched = false;
+            bool compareTag = objTouch.CompareTag(Planet.PlanetTag);
+            IsGrounded = compareTag ? false : IsGrounded;   // 행성에서 떨어졌을 때
+            IsTouched = compareTag ? IsTouched : false;     // 그 외 오브젝트에서 떨어졌을 때
         }
     }
 
-    private void OnDrawGizmos()                 // 디버깅용
+
+
+    /// <summary> 현재 향하는 방향 </summary>
+    private Vector2 GetLookDirection() => rb.velocity.normalized;
+
+    /// <summary> 움직임 마찰 구현. 외부 호출용 </summary>
+    public void ApplyFriction(float scalar = 1) => setVelocity *= 1 - (scalar * 0.05f * Time.deltaTime); 
+
+    private int ResetCount() => maxReboundCount;
+    private void ResetCount(out int useCount) => useCount = maxReboundCount;
+
+    /// <summary> Raycast 충돌체 체크 </summary>
+    private RaycastHit2D CheckRaycastHit(Vector2 direction) => Physics2D.Raycast(transform.position, direction, 100f, 1 << LayerMask.NameToLayer("ObjTouch"));
+
+
+
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, velocity);

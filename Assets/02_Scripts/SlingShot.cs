@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
-    private Bird bird;
-    
-    public GameObject birdPrefab;   // 프리팹
-    public Vector2 launchPos;       // 발사 위치
-    
+    private GameObject birdPrefab;      // 프리팹
 
-    private Vector2 startPos;          // 새총 본체. bird 생성될 때 위치
-    private Camera cam;
     private GameObject birdObj;         // 현재 당기고 있는 bird 인스턴스
-    private Rigidbody2D birdRb;      // 현재 bird Rigidbody2D
-    internal float launchForce = 4f;  // 발사 힘
-    internal float maxStretch = 4f;   // 새총의 최대 늘어남 거리
+    private Rigidbody2D birdRb;         // 현재 bird Rigidbody2D
+    private Bird _bird;                 // 프리팹으로 인스턴스 생성한 후 GetComponent로 가져온 Bird 스크립트
+
+    private Camera cam;                 // 현재 마우스 위치를 가져오기 위한 카메라
+    private Vector2 launchPos;          // 발사 위치
+    private Vector2 startPos;           // 새총 본체. bird 생성될 때 위치
+
+    [HideInInspector] public float launchForce = 4f;    // 발사 힘
+    [HideInInspector] public float maxStretch = 4f;     // 새총의 최대 늘어남 거리
     private bool isStretching = false;
 
     void Start()
     {
+        birdPrefab = Resources.Load<GameObject>("Bird");
         cam = Camera.main;
         startPos = new Vector2(transform.position.x, transform.position.y);
         launchPos = new Vector2(transform.position.x, transform.position.y);
@@ -69,14 +70,14 @@ public class SlingShot : MonoBehaviour
     {
         if (birdObj != null)
         {
-            bird = birdObj.GetComponent<Bird>();
+            _bird = birdObj.GetComponent<Bird>();
             Vector2 direction = startPos - launchPos;
             float distance = direction.magnitude;
             direction.Normalize();
 
             // Rigidbody2D의 velocity를 직접 설정하여 발사
             birdRb.isKinematic = false;  // 물리 엔진의 영향을 받도록 설정
-            bird.setVelocity = direction * launchForce * distance;
+            _bird.setVelocity = direction * launchForce * distance;
             Debug.Log(birdRb.velocity);
 
             birdObj = null;  // 발사 후 현재 Bird를 null로 설정
