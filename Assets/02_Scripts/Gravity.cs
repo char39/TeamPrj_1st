@@ -37,14 +37,4 @@ public class Gravity : MonoBehaviour
             bird.ApplyFriction(scalar);     // 대기압 마찰 구현
         }
     }
-
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag(Bird.birdTag))
-        {
-            col.TryGetComponent(out Bird bird);
-            bird.gravityNormalVector = Vector2.zero;
-            bird.setVelocity = Vector2.zero;
-        }
-    }
 }

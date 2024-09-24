@@ -39,7 +39,6 @@ public class SlingShot : MonoBehaviour
             if (_prediction != null)
                 _prediction.ShowPrediction(direction * launchForce * distance);
         }
-
         else if (Input.GetMouseButtonUp(0) && isStretching)
         {
             Shoot();  // 발사
