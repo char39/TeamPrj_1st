@@ -6,6 +6,7 @@ public class Bird : MonoBehaviour
     public const string birdTag = "Bird";
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     /// <summary> 변경 가능한 속도 벡터 </summary>
     public Vector2 setVelocity = Vector2.zero;
     public Vector2 gravityNormalVector = Vector2.zero;
@@ -22,10 +23,17 @@ public class Bird : MonoBehaviour
     public bool IsGrounded { get; private set; } = false;
     public bool IsTouched { get; private set; } = false;
     public bool FirstRebound { get; private set; } = false;
+    public bool IsShot { get; set; } = false;
+
+    private static int instanceCount = 0;
+    public int ID { get; private set; }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        ID = instanceCount++;
+        ResetCount(out reboundCount);
     }
 
     void FixedUpdate()
@@ -41,11 +49,12 @@ public class Bird : MonoBehaviour
     }
 
 
-
+// 90 ~ 180, -180 ~ -90
     /// <summary> 중력 적용 </summary>
     private void SetGravity()
     {
         velocity = offset * setVelocity;
+        velocity_R = -velocity;
         rb.velocity = velocity;
         speed = rb.velocity.magnitude;
     }
@@ -57,6 +66,8 @@ public class Bird : MonoBehaviour
         {
             float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
+            if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) <= 180 && !IsShot)
+                sr.flipY = true;
         }
     }
 
@@ -64,7 +75,7 @@ public class Bird : MonoBehaviour
     private void ResetReboundCount()
     {
         if (reboundCount != maxReboundCount)
-            if (CheckRaycastHit(GetLookDirection()).distance > 1f)
+            if (CheckRaycastHit(GetLookDirection()).distance > 3f)
                 ResetCount(out reboundCount);
     }
 
@@ -88,6 +99,28 @@ public class Bird : MonoBehaviour
             {
                 setVelocity = Vector2.Reflect(setVelocity, col.contacts[0].normal) * objTouch.reboundForce;
                 reboundCount = objTouch.infiniteRebound ? ResetCount() : reboundCount - 1;
+            }
+        }
+        else if (col.gameObject.TryGetComponent(out Bird other))
+        {
+            if (other.ID < ID)
+            {
+                Vector2 tempVelo = setVelocity;
+                float speed = tempVelo.magnitude;                   // 스칼라
+                Vector2 tempDir = tempVelo.normalized;              // 방향벡터
+
+                Vector2 tempOtherVelo = other.setVelocity;
+                float otherSpeed = tempOtherVelo.magnitude;         // 스칼라
+                // Vector2 tempOtherDir = tempOtherVelo.normalized;    // 방향벡터
+
+                Vector2 reflectedVelocity = Vector2.Reflect(tempDir, col.contacts[0].normal) * (otherSpeed * 0.75f + speed * 0.25f) ;
+                Vector2 reflectedOtherVelocity = Vector2.Reflect(-tempDir, -col.contacts[0].normal) * (speed * 0.75f + otherSpeed * 0.25f);
+
+                setVelocity = reflectedVelocity * 0.75f;
+                other.setVelocity = reflectedOtherVelocity * 0.75f;
+
+                FirstRebound = true;
+                other.FirstRebound = true;
             }
         }
     }
@@ -125,7 +158,5 @@ public class Bird : MonoBehaviour
         Gizmos.DrawRay(transform.position, velocity);
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, velocity_R);
-        Gizmos.color = Color.black;
-        Gizmos.DrawRay(transform.position, 0.75f * gravityNormalVector);
     }
 }

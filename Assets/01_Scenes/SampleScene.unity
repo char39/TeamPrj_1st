@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b25a792bc3b44bca9821833a1363d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reboundForce: 0.5
+  reboundForce: 0.35
   infiniteRebound: 0
 --- !u!114 &20555699
 MonoBehaviour:
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchForce: 4
-  maxStretch: 4
+  maxStretch: 3
 --- !u!58 &534106970
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b25a792bc3b44bca9821833a1363d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reboundForce: 0.5
+  reboundForce: 0.35
   infiniteRebound: 0
 --- !u!114 &1300710001
 MonoBehaviour:
