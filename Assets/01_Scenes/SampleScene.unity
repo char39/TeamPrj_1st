@@ -559,7 +559,6 @@ GameObject:
   - component: {fileID: 534106968}
   - component: {fileID: 534106969}
   - component: {fileID: 534106970}
-  - component: {fileID: 534106971}
   - component: {fileID: 534106972}
   m_Layer: 0
   m_Name: SlingShot
@@ -600,7 +599,8 @@ MonoBehaviour:
   birdPrefab: {fileID: 3761604719541177009, guid: a01aa7138c446a142b140084a86bdcab, type: 3}
   launchPos: {x: 0, y: 0}
   isStretching: 0
-  lineRenderer: {fileID: 0}
+  lineRenderer: {fileID: 534106972}
+  gravity: {fileID: 782068844}
 --- !u!58 &534106970
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -636,18 +636,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &534106971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534106967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7cbd9c8ae46924b97c2b9efdaa4e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!120 &534106972
 LineRenderer:
   serializedVersion: 2
@@ -701,7 +689,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.046666265
         inSlope: 0
         outSlope: 0
         tangentMode: 0
