@@ -596,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099ffcced29a5514a9f08957ae48bf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prediction: {fileID: 0}
   birdPrefab: {fileID: 3761604719541177009, guid: a01aa7138c446a142b140084a86bdcab, type: 3}
   launchPos: {x: 0, y: 0}
   isStretching: 0
@@ -646,8 +647,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7cbd9c8ae46924b97c2b9efdaa4e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slingshot: {fileID: 0}
   preBirdPrefab: {fileID: 3761604719541177009, guid: 22b14906252714a46a4b4b2f83fa8111, type: 3}
-  timeStep: 0.1
+  launchPoint: {x: 0, y: 0}
+  gravityScale: 1
 --- !u!1 &782068838
 GameObject:
   m_ObjectHideFlags: 0

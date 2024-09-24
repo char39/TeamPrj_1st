@@ -34,29 +34,37 @@ public class PredictionCtrl : MonoBehaviour
 
     // 경로 계산 및 점 보여주기
     public void ShowPrediction(Vector2 startVelocity)
+{
+    Vector2 currentPos = launchPoint;
+    Vector2 currentVelocity = startVelocity;
+
+    // 중력장이 없을 때는 중력 벡터를 사용하지 않음
+    Vector2 gravityForce = Vector2.zero;
+    if (gravity != null)
     {
-        Vector2 currentPos = launchPoint;
-        Vector2 currentVelocity = startVelocity;
-
-        // 중력장이 없을 때는 중력 벡터를 사용하지 않음
-        Vector2 gravityForce = Vector2.zero;
-        if (gravity != null)
-        {
-            gravityForce = gravity.gravityNormalVector * gravity.gravityPower * gravity.scalar;
-        }
-
-        for (int i = 0; i < predictionPointsCount; i++)
-        {
-            // 예측된 위치에 작은 Bird 오브젝트 배치
-            predictionPoints[i].transform.position = currentPos;
-            predictionPoints[i].SetActive(true);  // 점 보이게
-
-            // 중력 적용
-            currentVelocity += gravityForce * timeStep;  // 중력에 의한 속도 변화
-
-            currentPos += currentVelocity * timeStep;  // 속도에 의한 위치 변화
-        }
+        gravityForce = gravity.gravityNormalVector * gravity.gravityPower * gravity.scalar;
     }
+
+    // PreBird의 속도를 가져오기
+    PreBird preBird = FindObjectOfType<PreBird>();
+    if (preBird != null)
+    {
+        currentVelocity += preBird.setVelocity;  // PreBird의 setVelocity를 currentVelocity에 추가
+    }
+
+    for (int i = 0; i < predictionPointsCount; i++)
+    {
+        // 예측된 위치에 작은 Bird 오브젝트 배치
+        predictionPoints[i].transform.position = currentPos;
+        predictionPoints[i].SetActive(true);  // 점 보이게
+
+        // 중력 적용
+        currentVelocity += gravityForce * timeStep;  // 중력에 의한 속도 변화
+
+        currentPos += currentVelocity * timeStep;  // 속도에 의한 위치 변화
+    }
+}
+
 
 
     // 경로 예측 점을 숨기기
