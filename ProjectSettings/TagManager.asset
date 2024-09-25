@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Gravity
-  - GROUND
-  - GRAVITY
+  - Planet
+  - PlanetGravity
+  - Bird
+  - PreBird
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - ObjTouch
   - 
   - 
   - 
