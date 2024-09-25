@@ -35,7 +35,7 @@ public class SlingShot : MonoBehaviour
         {
             isStretching = true;
             StretchPosition();  // 새총 당기기 처리
-            DrawTrajectory();    // 예상 궤적 그리기
+            //DrawTrajectory();    // 예상 궤적 그리기
         }
         else if (Input.GetMouseButtonUp(0) && isStretching)
         {
@@ -91,44 +91,44 @@ public class SlingShot : MonoBehaviour
         launchPos = startPos;
     }
 
-    // 예상 궤적 그리기
-    void DrawTrajectory()
-    {
-        lineRenderer.enabled = true; // 궤적 활성화
-        Vector2 direction = startPos - launchPos; // 발사 방향
-        float distance = direction.magnitude; // 발사 거리
-        direction.Normalize(); // 방향 정규화
+    // 예상 궤적 그리기 보류
+    // void DrawTrajectory()
+    // {
+    //     lineRenderer.enabled = true; // 궤적 활성화
+    //     Vector2 direction = startPos - launchPos; // 발사 방향
+    //     float distance = direction.magnitude; // 발사 거리
+    //     direction.Normalize(); // 방향 정규화
 
-        // 궤적 포인트 계산
-        for (int i = 0; i < lineRenderer.positionCount; i++)
-        {
-            float t = i * 0.1f; // 시간 비율
-            Vector2 trajectoryPoint = launchPos + direction * launchForce * distance * t; // 초기 위치
+    //     // 궤적 포인트 계산
+    //     for (int i = 0; i < lineRenderer.positionCount; i++)
+    //     {
+    //         float t = i * 0.1f; // 시간 비율
+    //         Vector2 trajectoryPoint = launchPos + direction * launchForce * distance * t; // 초기 위치
 
-            // 시간에 따른 중력 영향 적용
-            if (IsInGravityField(trajectoryPoint))
-            {
-                Vector2 gravityEffect = Vector2.down * gravity.gravityPower * t * t; // 중력의 효과
-                trajectoryPoint += gravityEffect; // 중력 추가
-            }
+    //         // 시간에 따른 중력 영향 적용
+    //         if (IsInGravityField(trajectoryPoint))
+    //         {
+    //             Vector2 gravityEffect = gravity.gravityPower * Planet.GravityForce * gravity.scalar * gravity.gravityNormalVector * t * t; // 중력의 효과
+    //             trajectoryPoint += gravityEffect; // 중력 추가
+    //         }
 
-            // 궤적 포지션 설정
-            lineRenderer.SetPosition(i, trajectoryPoint); // 포지션 설정
-        }
-    }
+    //         // 궤적 포지션 설정
+    //         lineRenderer.SetPosition(i, trajectoryPoint); // 포지션 설정
+    //     }
+    // }
 
-    // 중력장에 있는지 체크 (태그 사용)
-    private bool IsInGravityField(Vector2 position)
-    {
-        // 중력장 오브젝트를 체크
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.1f); // 작은 반경으로 체크
-        foreach (var collider in colliders)
-        {
-            if (collider.CompareTag("PlanetGravity")) // 태그가 'PlanetGravity'인지 확인
-            {
-                return true; // 중력장 안에 있다면 true
-            }
-        }
-        return false; // 중력장 안에 없다면 false
-    }
+    // // 중력장에 있는지 체크 (태그 사용)
+    // private bool IsInGravityField(Vector2 position)
+    // {
+    //     // 중력장 오브젝트를 체크
+    //     Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.1f); // 작은 반경으로 체크
+    //     foreach (var collider in colliders)
+    //     {
+    //         if (collider.CompareTag("PlanetGravity")) // 태그가 'PlanetGravity'인지 확인
+    //         {
+    //             return true; // 중력장 안에 있다면 true
+    //         }
+    //     }
+    //     return false; // 중력장 안에 없다면 false
+    // }
 }
