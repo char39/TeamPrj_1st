@@ -76,10 +76,14 @@ public class SlingShot : MonoBehaviour
             float distance = direction.magnitude;
             direction.Normalize();
 
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
             // Rigidbody2D의 velocity를 직접 설정하여 발사
             birdRb.isKinematic = false;  // 물리 엔진의 영향을 받도록 설정
             _bird.setVelocity = distance * launchForce * direction;
             _bird.IsShot = true;
+            if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) <= 180)
+                _bird.GetComponent<BirdRotate>().Flip();
 
             birdObj = null;  // 발사 후 현재 Bird를 null로 설정
         }

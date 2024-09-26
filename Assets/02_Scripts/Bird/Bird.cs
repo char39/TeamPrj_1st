@@ -3,18 +3,16 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    public const string birdTag = "Bird";
-
+    private BirdRotate _birdRotate;
     private Rigidbody2D rb;
-    private SpriteRenderer sr;
     /// <summary> 변경 가능한 속도 벡터 </summary>
     public Vector2 setVelocity = Vector2.zero;
     public Vector2 gravityNormalVector = Vector2.zero;
     private Vector2 velocity = Vector2.zero;
     private Vector2 velocity_R = Vector2.zero;
 
-    [Range(0, 10)]
-    public int maxReboundCount = 3;
+    [Range(0, 5)]
+    public int maxReboundCount = 2;
     public int reboundCount;
 
     public float offset = 1;                    // 최종 속도 벡터에 영향을 줌.
@@ -23,23 +21,22 @@ public class Bird : MonoBehaviour
     public bool IsGrounded { get; private set; } = false;
     public bool IsTouched { get; private set; } = false;
     public bool FirstRebound { get; private set; } = false;
-    public bool IsShot { get; set; } = false;
+    public bool IsShot = false;
 
-    private static int instanceCount = 0;
-    public int ID { get; private set; }
+    public const string birdTag = "Bird";
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        ID = instanceCount++;
+        TryGetComponent(out _birdRotate);
+        TryGetComponent(out rb);
         ResetCount(out reboundCount);
     }
 
     void FixedUpdate()
     {
         SetGravity();
-        Rotate();
+        if (_birdRotate != null)
+            _birdRotate.Rotate(FirstRebound);
     }
 
     void Update()
@@ -48,8 +45,6 @@ public class Bird : MonoBehaviour
         FirstReboundCheck();
     }
 
-
-// 90 ~ 180, -180 ~ -90
     /// <summary> 중력 적용 </summary>
     private void SetGravity()
     {
@@ -57,18 +52,6 @@ public class Bird : MonoBehaviour
         velocity_R = -velocity;
         rb.velocity = velocity;
         speed = rb.velocity.magnitude;
-    }
-
-    /// <summary> 속도 벡터에 따른 회전 </summary>
-    private void Rotate()
-    {
-        if (!FirstRebound)
-        {
-            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
-            transform.localRotation = Quaternion.Euler(0, 0, angle);
-            if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) <= 180 && !IsShot)
-                sr.flipY = true;
-        }
     }
 
     /// <summary> 반발 횟수 초기화 </summary>
@@ -103,18 +86,15 @@ public class Bird : MonoBehaviour
         }
         else if (col.gameObject.TryGetComponent(out Bird other))
         {
-            if (other.ID < ID)
+            if (other.GetComponent<BirdID>().ID < GetComponent<BirdID>().ID)
             {
-                Vector2 tempVelo = setVelocity;
-                float speed = tempVelo.magnitude;                   // 스칼라
-                Vector2 tempDir = tempVelo.normalized;              // 방향벡터
+                float speed = setVelocity.magnitude;                   // 스칼라
+                float otherSpeed = other.setVelocity.magnitude;        // 스칼라
+                Vector2 thisDir = setVelocity.normalized;              // 방향벡터
 
-                Vector2 tempOtherVelo = other.setVelocity;
-                float otherSpeed = tempOtherVelo.magnitude;         // 스칼라
-                // Vector2 tempOtherDir = tempOtherVelo.normalized;    // 방향벡터
-
-                Vector2 reflectedVelocity = Vector2.Reflect(tempDir, col.contacts[0].normal) * (otherSpeed * 0.75f + speed * 0.25f) ;
-                Vector2 reflectedOtherVelocity = Vector2.Reflect(-tempDir, -col.contacts[0].normal) * (speed * 0.75f + otherSpeed * 0.25f);
+                Vector2 normal = col.contacts[0].normal;
+                Vector2 reflectedVelocity = Vector2.Reflect(thisDir, normal) * (otherSpeed * 0.75f + speed * 0.25f) ;
+                Vector2 reflectedOtherVelocity = Vector2.Reflect(-thisDir, -normal) * (speed * 0.75f + otherSpeed * 0.25f);
 
                 setVelocity = reflectedVelocity * 0.75f;
                 other.setVelocity = reflectedOtherVelocity * 0.75f;

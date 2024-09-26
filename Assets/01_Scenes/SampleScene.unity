@@ -193,7 +193,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 4
 --- !u!212 &20555697
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 8, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3d48a8e152e4bc2b34a20855f63b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityPower: 0.5
-  minScale: 2
-  maxScale: 5
+  gravityPower: 1
+  minScale: 1
+  maxScale: 3
 --- !u!114 &20555700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb4160d44cdd4986badc2c66b94402a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  radius: 8
 --- !u!1 &145490768
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ce2328e4e64a6097eff116c11c0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityRadius: 0
   gravityPower: 0
   groundRadius: 0
   minScale: 0
@@ -923,7 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b25a792bc3b44bca9821833a1363d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reboundForce: 0.35
+  reboundForce: 0.15
   infiniteRebound: 0
 --- !u!114 &1300710001
 MonoBehaviour:

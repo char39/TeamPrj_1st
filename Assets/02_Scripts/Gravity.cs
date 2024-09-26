@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
+    private CircleRadius _circleRadius;
+    [HideInInspector] public float gravityRadius;
+
     [HideInInspector] public float gravityPower;
     [HideInInspector] public float groundRadius;
     [HideInInspector] public float minScale;
@@ -11,6 +14,12 @@ public class Gravity : MonoBehaviour
     [HideInInspector] public float distance;
     [HideInInspector] public float scalar;
 
+    void Start()
+    {
+        TryGetComponent(out _circleRadius);
+        gravityRadius = _circleRadius.radius;
+    }
+
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag(Bird.birdTag))
@@ -18,7 +27,7 @@ public class Gravity : MonoBehaviour
             col.TryGetComponent(out Bird _bird);
             gravityNormalVector = new Vector2(col.transform.position.x - transform.position.x, col.transform.position.y - transform.position.y).normalized * -1;
             distance = Vector2.Distance(transform.position, col.transform.position);
-            scalar = Mathf.Lerp(minScale, maxScale, distance / 20);
+            scalar = Mathf.Lerp(minScale, maxScale, (gravityRadius / (distance * 2)) - 1);
 
             _bird.gravityNormalVector = gravityNormalVector;
 
