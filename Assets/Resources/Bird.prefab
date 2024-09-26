@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 599849082800840161}
   - component: {fileID: 5437087105174116366}
   - component: {fileID: 2869186265199955596}
-  - component: {fileID: 761199308333572161}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Bird
@@ -169,7 +168,6 @@ MonoBehaviour:
   reboundCount: 0
   offset: 1
   speed: 0
-  FirstRebound: 0
   IsShot: 0
 --- !u!114 &2869186265199955596
 MonoBehaviour:
@@ -181,17 +179,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf434bb30eed544b7a482aebddb5bc42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &761199308333572161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3761604719541177009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6639665d5d81543e39cf4d7027457987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

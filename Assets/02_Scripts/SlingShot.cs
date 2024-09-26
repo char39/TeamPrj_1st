@@ -83,7 +83,7 @@ public class SlingShot : MonoBehaviour
             _bird.setVelocity = distance * launchForce * direction;
             _bird.IsShot = true;
             if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) <= 180)
-                _bird.GetComponent<BirdRotate>().Flip();
+                _bird.Flip();
 
             birdObj = null;  // 발사 후 현재 Bird를 null로 설정
         }

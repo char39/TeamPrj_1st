@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    private BirdRotate _birdRotate;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     /// <summary> 변경 가능한 속도 벡터 </summary>
     public Vector2 setVelocity = Vector2.zero;
     public Vector2 gravityNormalVector = Vector2.zero;
@@ -27,16 +27,15 @@ public class Bird : MonoBehaviour
 
     void Start()
     {
-        TryGetComponent(out _birdRotate);
         TryGetComponent(out rb);
+        TryGetComponent(out sr);
         ResetCount(out reboundCount);
     }
 
     void FixedUpdate()
     {
         SetGravity();
-        if (_birdRotate != null)
-            _birdRotate.Rotate(FirstRebound);
+        Rotate(FirstRebound);
     }
 
     void Update()
@@ -130,6 +129,24 @@ public class Bird : MonoBehaviour
     /// <summary> Raycast 충돌체 체크 </summary>
     private RaycastHit2D CheckRaycastHit(Vector2 direction) => Physics2D.Raycast(transform.position, direction, 100f, 1 << LayerMask.NameToLayer("ObjTouch"));
 
+
+
+    /// <summary> 속도 벡터에 따른 회전 </summary>
+    public void Rotate(bool FirstRebound)
+    {
+        if (!FirstRebound && rb != null && sr != null)
+        {
+            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+            transform.localRotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+
+    /// <summary> 발사할 때 각도를 판단하여 항상 머리가 위에 오도록 1회만 실행 </summary>
+    public void Flip()
+    {
+        if (sr != null)
+            sr.flipY = true;
+    }
 
 
     private void OnDrawGizmos()
