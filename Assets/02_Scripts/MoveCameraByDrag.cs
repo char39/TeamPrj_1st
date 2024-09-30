@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveCameraByDrag : MonoBehaviour
@@ -31,7 +29,7 @@ public class MoveCameraByDrag : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector2 pos = cam.ScreenToViewportPoint(- new Vector2(Input.mousePosition.x - firstClickPointX, 0));
-            Vector2 move = pos * Time.deltaTime * speed;
+            Vector2 move = speed * Time.deltaTime * pos;
 
             cam.transform.Translate(move);
         }

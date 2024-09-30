@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SlingShot : MonoBehaviour
+public class SlingShotTest : MonoBehaviour
 {
     private Bird _bird;
 
@@ -95,7 +96,6 @@ public class SlingShot : MonoBehaviour
                 preBirdObj.transform.position = launchPos;
                 preBirdObj.transform.localRotation = Quaternion.Euler(0, 0, angle);
 
-                preBirdObj.GetComponent<SpriteRenderer>().flipX = true;
                 preBirdObj.GetComponent<SpriteRenderer>().flipY = Mathf.Abs(angle) > 90 && Mathf.Abs(angle) <= 180;
             }
         }
@@ -108,9 +108,7 @@ public class SlingShot : MonoBehaviour
             isStretching = false;
             isClicked = false;
 
-            Destroy(preBirdObj);
             preBirdObj = null;
-            
             isSpawn = false;
             CreateBird();
 
