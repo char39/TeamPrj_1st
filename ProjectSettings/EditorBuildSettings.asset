@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01_Scenes/01.GameStartScene.unity
+    path: Assets/01_Scenes/GameStartScene.unity
     guid: b5b884876437a45329dc461ed5fc1833
   - enabled: 1
     path: Assets/01_Scenes/02.SelectPlanet.unity

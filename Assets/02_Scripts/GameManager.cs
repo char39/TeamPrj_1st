@@ -39,13 +39,13 @@ public class GameManager : MonoBehaviour
     // 씬이 로드된 후 호출되는 함수
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "01.GameStartScene")
+        if (scene.name == "GameStartScene")
         {
             // StartScene에서 playBtn 설정
             playBtn = GameObject.Find("Canvas_Start").transform.GetChild(2).GetComponent<Button>();
             playBtn.onClick.AddListener(LoadSelectPlanet);
         }
-        else if (scene.name == "02.SelectPlanet")
+        else if (scene.name == "PlanetScene")
         {
             // 02.SelectPlanet에서 행성 선택 버튼들 설정
             Transform planetTr = GameObject.Find("Canvas_Planet").transform;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadSelectPlanet()
     {
-        SceneManager.LoadScene("02.SelectPlanet");
+        SceneManager.LoadScene("PlanetScene");
     }
 
     public void LoadSelectLevel()
@@ -73,6 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadGameStart()
     {
-        SceneManager.LoadScene("01.GameStartScene");
+        SceneManager.LoadScene("GameStartScene");
     }
 }
