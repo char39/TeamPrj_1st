@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/01.Scenes/AllManagement.unity
+    guid: 732621399c2bb4ffea9dc12542d7fd42
+  - enabled: 1
     path: Assets/01.Scenes/GameStartScene.unity
     guid: b5b884876437a45329dc461ed5fc1833
   - enabled: 1
     path: Assets/01.Scenes/SelectPlanet/PlanetScene.unity
     guid: 17fb5464e595296478eb22e5d1d148dc
   - enabled: 1
-    path: Assets/01.Scenes/SelectPlanet/Cold/03.SelectLevel.unity
+    path: Assets/01.Scenes/SelectPlanet/Cold/Cold_SelectLevel.unity
     guid: 162e980d071902440b0bdaba9b617849
   - enabled: 1
-    path: Assets/01.Scenes/_LevelScene_Test.unity
+    path: Assets/01.Scenes/SelectPlanet/Cold/Cold_Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
