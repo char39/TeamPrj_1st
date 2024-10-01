@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7a5e0c7dc6646bba2e768c296028e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneChange: {fileID: 0}
+  isSceneChanging: 0
   playBtn: {fileID: 0}
   backBtn: {fileID: 0}
   coldcuts: {fileID: 0}
