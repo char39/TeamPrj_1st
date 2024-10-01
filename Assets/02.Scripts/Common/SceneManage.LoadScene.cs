@@ -39,6 +39,9 @@ public partial class SceneManage : MonoBehaviour
     /// <summary> Scene 전환 onoff Coroutine. </summary>
     private IEnumerator SceneChangeOnOff(bool on, float duration)
     {
+        sceneChange.interactable = true;
+        sceneChange.blocksRaycasts = true;
+
         float elapsed = 0f;
         float startAlpha = sceneChange.alpha;
         float endAlpha = on ? 1 : 0;
