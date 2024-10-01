@@ -497,7 +497,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1503127282}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MoveToPlanet
+        m_MethodName: LoadSelectPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
