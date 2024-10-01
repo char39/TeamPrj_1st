@@ -5,7 +5,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager g_instance;
+
     public Button playBtn;
+
+    [Header("SelectScene")]
+    public Button backBtn;
     public Button moon;
     public Button eggsteriods;
     public Button coldcuts;
@@ -44,14 +48,16 @@ public class GameManager : MonoBehaviour
         else if (scene.name == "02.SelectPlanet")
         {
             // 02.SelectPlanet에서 행성 선택 버튼들 설정
-            Transform planet = GameObject.Find("Canvas_Planet").transform;
-            moon = planet.GetChild(1).GetComponent<Button>();
-            eggsteriods = planet.GetChild(2).GetComponent<Button>();
-            coldcuts = planet.GetChild(3).GetComponent<Button>();
+            Transform planetTr = GameObject.Find("Canvas_Planet").transform;
+            moon = planetTr.GetChild(2).GetComponent<Button>();
+            eggsteriods = planetTr.GetChild(3).GetComponent<Button>();
+            coldcuts = planetTr.GetChild(4).GetComponent<Button>();
+            backBtn = planetTr.GetChild(5).GetChild(0).GetComponent<Button>();
 
             moon.onClick.AddListener(LoadSelectLevel);
             eggsteriods.onClick.AddListener(LoadSelectLevel);
             coldcuts.onClick.AddListener(LoadSelectLevel);
+            backBtn.onClick.AddListener(LoadGameStart);
         }
     }
 
@@ -63,5 +69,10 @@ public class GameManager : MonoBehaviour
     public void LoadSelectLevel()
     {
         SceneManager.LoadScene("03.SelectLevel");
+    }
+
+    public void LoadGameStart()
+    {
+        SceneManager.LoadScene("01.GameStartScene");
     }
 }
