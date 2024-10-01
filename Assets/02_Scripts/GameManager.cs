@@ -44,11 +44,14 @@ public class GameManager : MonoBehaviour
         else if (scene.name == "02.SelectPlanet")
         {
             // 02.SelectPlanet에서 행성 선택 버튼들 설정
-            moon = GameObject.Find("Canvas_Planet").transform.GetChild(1).GetComponent<Button>();
-            eggsteriods = GameObject.Find("Canvas_Planet").transform.GetChild(2).GetComponent<Button>();
-            coldcuts = GameObject.Find("Canvas_Planet").transform.GetChild(3).GetComponent<Button>();
+            Transform planet = GameObject.Find("Canvas_Planet").transform;
+            moon = planet.GetChild(1).GetComponent<Button>();
+            eggsteriods = planet.GetChild(2).GetComponent<Button>();
+            coldcuts = planet.GetChild(3).GetComponent<Button>();
 
+            moon.onClick.AddListener(LoadSelectLevel);
             eggsteriods.onClick.AddListener(LoadSelectLevel);
+            coldcuts.onClick.AddListener(LoadSelectLevel);
         }
     }
 
