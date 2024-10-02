@@ -9,6 +9,7 @@ TagManager:
   - Bird
   - PreBird
   - Level
+  - Ice
   layers:
   - Default
   - TransparentFX
