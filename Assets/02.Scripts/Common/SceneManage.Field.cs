@@ -20,5 +20,8 @@ public partial class SceneManage : MonoBehaviour
     public Button moon;
     public Button eggsteriods;
 
+    [Header("Cold_SelectLevel_Scene")]
+    public Button c_backBtn;
+
     
 }
