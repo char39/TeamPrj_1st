@@ -21,6 +21,22 @@ public class PlanetSpriteColliderMatch : Editor
         if (circle.TryGetComponent(out CircleCollider2D collider))
             collider.radius = circle.radius / 2f;
 
+        Transform parentTr = circle.transform;
+        if (parentTr != null && parentTr.CompareTag("PlanetGravity"))
+        {
+            foreach (Transform childTr in parentTr)
+            {
+                foreach (Transform grandChildTr in childTr)
+                {
+                    foreach (Transform greatGrandChildTr in grandChildTr)
+                    {
+                        greatGrandChildTr.localPosition = new Vector3(-(circle.radius / 2f), 0, 0);
+                        greatGrandChildTr.localScale = new Vector3(circle.radius / 7, circle.radius / 7, circle.radius / 7);
+                    }
+                }
+            }
+        }
+
         // 변경 사항이 있을 경우 씬을 다시 그리도록 설정
         if (GUI.changed)
             EditorUtility.SetDirty(circle);

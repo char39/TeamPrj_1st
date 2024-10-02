@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Atmosphere
+    uniqueID: 2030107975
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
