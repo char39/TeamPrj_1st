@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 30480989}
   - component: {fileID: 30480988}
   m_Layer: 5
-  m_Name: Planet (5)
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,19 +203,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 30480989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 207bd9fef95ccfa41806734e0245af5d, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &30480989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +255,7 @@ GameObject:
   - component: {fileID: 60486420}
   - component: {fileID: 60486419}
   m_Layer: 5
-  m_Name: Planet (6)
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,19 +323,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 60486420}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 207bd9fef95ccfa41806734e0245af5d, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &60486420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +375,7 @@ GameObject:
   - component: {fileID: 265375067}
   - component: {fileID: 265375066}
   m_Layer: 5
-  m_Name: Planet (7)
+  m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,19 +443,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 265375067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 207bd9fef95ccfa41806734e0245af5d, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &265375067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +743,7 @@ GameObject:
   - component: {fileID: 1056070882}
   - component: {fileID: 1056070881}
   m_Layer: 5
-  m_Name: Planet
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,19 +811,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1056070882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 207bd9fef95ccfa41806734e0245af5d, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1056070882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,7 +832,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1772744084, guid: 4968dd7de9bc1b946a189a1c02efa443, type: 3}
+  m_Sprite: {fileID: 164350939, guid: d166e3bf853222641bafcecda85d737c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

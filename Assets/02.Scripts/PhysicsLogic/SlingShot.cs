@@ -22,7 +22,6 @@ public class SlingShot : MonoBehaviour
     public bool isMouseOn = false;         // 당기기 전에 마우스가 위에 있는가
     public bool isClicked = false;         // 새를 클릭 했는가
     public bool isStretching = false;      // 당기고 있는가
-
     public bool isSpawn = false;           // preBird가 스폰이 됐는가
 
     void Start()
@@ -44,7 +43,6 @@ public class SlingShot : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
             OnEndDrag();
     }
-
     private void IsMouseInBird()
     {
         if (!Input.GetMouseButton(0)) return;

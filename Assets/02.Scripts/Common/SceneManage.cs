@@ -51,11 +51,14 @@ public partial class SceneManage : MonoBehaviour
             backBtn.onClick.AddListener(LoadGameStart);
         }
             
-        else if(scene.name == SceneList.name[100])
+        else if(scene.name == SceneList.name[100])  // (Cold Cuts) Planet
         {
-            c_backBtn = GameObject.Find("Canvas").transform.GetChild(2).GetChild(0).GetComponent<Button>();
+            Transform canvasTr = GameObject.Find("Canvas").transform;
+            c_backBtn = canvasTr.GetChild(2).GetChild(0).GetComponent<Button>();
+            level1 = canvasTr.GetChild(1).GetChild(0).GetComponent<Button>();
 
             c_backBtn.onClick.AddListener(LoadSelectPlanet);
+            level1.onClick.AddListener(LoadLevel);
         }
     }
 
@@ -72,5 +75,10 @@ public partial class SceneManage : MonoBehaviour
     public void LoadGameStart()
     {
         LoadSceneChange(1, 0.3f, 0.3f);
+    }
+
+    public void LoadLevel()
+    {
+        LoadSceneChange(101, 0.3f, 0.3f);
     }
 }
