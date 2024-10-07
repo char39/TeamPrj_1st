@@ -42,6 +42,7 @@ public class SlingShot : MonoBehaviour
             OnDrag();
         if (Input.GetMouseButtonUp(0))
             OnEndDrag();
+        startPos = launchPos;
     }
     private void IsMouseInBird()
     {

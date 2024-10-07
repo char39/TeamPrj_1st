@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1951172257886212797}
   - component: {fileID: 1549946781115126555}
   - component: {fileID: 5277794389158545335}
-  - component: {fileID: 1648445907049808707}
   - component: {fileID: -7166454666894801733}
   - component: {fileID: -7804588882982594679}
+  - component: {fileID: 1648445907049808707}
   m_Layer: 0
   m_Name: Ice_big
   m_TagString: Ice
@@ -123,19 +123,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.8
---- !u!114 &1648445907049808707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4228930484188757958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c64e3a0caec01e4da3435f573052b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
 --- !u!50 &-7166454666894801733
 Rigidbody2D:
   serializedVersion: 4
@@ -175,3 +162,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea064ea382105a4eb86c7b66a56ce3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1648445907049808707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228930484188757958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c64e3a0caec01e4da3435f573052b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
