@@ -8,10 +8,8 @@ public class IceStoneLocalScaleMatch : Editor
     {
         IceStone ice = (IceStone)target;
 
-        // 기본 인스펙터 그리기
         DrawDefaultInspector();
 
-        // SpriteRenderer와 Collider 크기 변경
         if (ice.TryGetComponent(out Transform tr))
             tr.localScale = new Vector3((int)ice.state, (int)ice.state, 1);
 
