@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 552354183441084606}
   - component: {fileID: 4263885612878661132}
   - component: {fileID: -1670302807737869369}
+  - component: {fileID: 6001389095216614965}
   m_Layer: 0
   m_Name: Ice_normal
   m_TagString: Ice
@@ -162,3 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+--- !u!114 &6001389095216614965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478471488233086879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea064ea382105a4eb86c7b66a56ce3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

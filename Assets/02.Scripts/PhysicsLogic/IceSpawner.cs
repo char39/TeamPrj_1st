@@ -22,10 +22,7 @@ public class IceScaler : MonoBehaviour
         iceSmall_obj = Resources.Load<GameObject>("Ice_small");
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        StartCoroutine(HandleCollision());
-    }
+    void OnTriggerEnter2D(Collider2D col) => StartCoroutine(HandleCollision());
 
     IEnumerator HandleCollision()
     {
@@ -40,18 +37,15 @@ public class IceScaler : MonoBehaviour
             case State.Big:
                 for (int i = 0; i < 3; i++)
                 {
-                    GameObject small = Instantiate(iceNormal_obj);
+                    GameObject normal = Instantiate(iceNormal_obj);
 
                     // 랜덤 각도에 각도 오프셋 추가
                     float angle = randomStartAngle + (i * angleOffset); // i에 따라 120도씩 추가
                     Vector2 offset = GetSpreadDirectionFromAngle(angle) * tr.localScale.x * transform.GetComponent<CircleCollider2D>().radius * 1.1f;
-                    small.transform.position = originPos + (Vector3)offset; // 원래 위치에서 떨어진 위치로 설정
+                    normal.transform.position = originPos + (Vector3)offset; // 원래 위치에서 떨어진 위치로 설정
 
                     Vector2 direction = GetSpreadDirectionFromAngle(angle); // 방향 설정
-                    small.GetComponent<Rigidbody2D>().velocity = direction * 4f;
-
-                    // 방향을 나타내는 선 그리기
-                    Debug.DrawLine(small.transform.position, small.transform.position + (Vector3)direction * 2f, Color.red, 2f);
+                    normal.GetComponent<Rigidbody2D>().velocity = direction * 4f;
                 }
                 Destroy(gameObject);
                 break;
@@ -68,9 +62,6 @@ public class IceScaler : MonoBehaviour
 
                     Vector2 direction = GetSpreadDirectionFromAngle(angle); // 방향 설정
                     small.GetComponent<Rigidbody2D>().velocity = direction * 4f;
-
-                    // 방향을 나타내는 선 그리기
-                    Debug.DrawLine(small.transform.position, small.transform.position + (Vector3)direction * 2f, Color.red, 2f);
                 }
                 Destroy(gameObject);
                 break;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1530260532649139077}
   - component: {fileID: -1182213638756812473}
   - component: {fileID: 2278096874027146742}
+  - component: {fileID: -2317262018190012164}
   m_Layer: 0
   m_Name: Ice_small
   m_TagString: Ice
@@ -162,3 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 2
+--- !u!114 &-2317262018190012164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566369216372802019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea064ea382105a4eb86c7b66a56ce3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
