@@ -5,15 +5,12 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     Transform tr;
+    public bool ispop = false;
 
     void Start()
     {
         tr = transform;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Destroy(this.gameObject);
-        Debug.Log("닿음");
-    }   
+    void OnTriggerEnter2D(Collider2D col) => ispop = true;
 }

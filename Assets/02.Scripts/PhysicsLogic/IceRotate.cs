@@ -16,6 +16,6 @@ public class IceRotate : MonoBehaviour
     void Update()
     {
         tr.Rotate(0, 0, rotSpeed * Time.deltaTime);
-        Debug.Log(rotSpeed);
+        //Debug.Log(rotSpeed);
     }
 }
