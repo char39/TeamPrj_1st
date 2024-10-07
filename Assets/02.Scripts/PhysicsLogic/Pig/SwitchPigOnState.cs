@@ -26,7 +26,7 @@ public class SwitchPigOnState : MonoBehaviour
             Destroy(gameObject);
             GameObject pigIce = Instantiate(pigIcePref);
             pigIce.transform.position = tr.position;
-            Destroy(pigIce, 2.0f);
+            Destroy(pigIce, 1.0f);
         }
     }
 }

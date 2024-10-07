@@ -5,15 +5,17 @@ using UnityEngine;
 public class IceRotate : MonoBehaviour
 {
     Transform tr;
-    float rotSpeed = 15f;
+    float rotSpeed;
 
     void Start()
     {
         tr = transform;
+        rotSpeed = Random.Range(5f, 15f);
     }
 
     void Update()
     {
         tr.Rotate(0, 0, rotSpeed * Time.deltaTime);
+        Debug.Log(rotSpeed);
     }
 }
