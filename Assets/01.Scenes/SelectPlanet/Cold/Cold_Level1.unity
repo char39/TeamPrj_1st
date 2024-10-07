@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 722714962}
   - component: {fileID: 722714961}
   m_Layer: 0
-  m_Name: Background
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efec964fdb0ad43833407b6ef24864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  bgSprite: {fileID: 0}
 --- !u!4 &2034425144
 Transform:
   m_ObjectHideFlags: 0
