@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoveCameraByDrag : MonoBehaviour
 {
-    SlingShot _slingshot;
+    [SerializeField]SlingShot _slingshot;
 
     private Transform tr;
     private Camera cam;
@@ -17,7 +17,7 @@ public class MoveCameraByDrag : MonoBehaviour
     {
         tr = transform;
         cam = Camera.main;
-        _slingshot = GameObject.Find("LaunchPlanet").transform.GetChild(0).GetComponent<SlingShot>();
+        _slingshot = GameObject.Find("SlingShot").GetComponent<SlingShot>();
         bgSprite = GameObject.Find("BG").GetComponent<SpriteRenderer>();
 
         bgSize = bgSprite.bounds.size;
