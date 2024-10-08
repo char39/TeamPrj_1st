@@ -8,12 +8,13 @@ public class CirclePlacer : MonoBehaviour
     [SerializeField] private GameObject woodPref;  // 배치할 나무 오브젝트 프리팹
     private int objectCount = 10; // 배치할 오브젝트 개수
     private float radius = 5f; // 원의 반지름
-    private GameObject woodGroup; // WoodGroup 오브젝트
+    private GameObject group; // WoodGroup 오브젝트
 
     void Start()
     {
         // WoodGroup을 미리 생성
-        woodGroup = new GameObject("WoodGroup");
+        group = new GameObject("Group");
+        group.transform.parent = this.transform;
         
         PlaceObjectsInCircle();
     }
@@ -35,7 +36,7 @@ public class CirclePlacer : MonoBehaviour
 
             // 선택한 프리팹을 인스턴스화
             GameObject obj = Instantiate(selectedPrefab, new Vector2(x, y), Quaternion.identity);
-            obj.transform.parent = woodGroup.transform;
+            obj.transform.parent = group.transform;
             obj.transform.Rotate(0, 0, angle * Mathf.Rad2Deg + 90);
         }
     }
