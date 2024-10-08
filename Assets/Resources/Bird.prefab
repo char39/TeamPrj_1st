@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 599849082800840161}
   - component: {fileID: 5437087105174116366}
   - component: {fileID: 2869186265199955596}
+  - component: {fileID: 2499992477617755584}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Bird
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3761604719541177009}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -162,13 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2090d0feee9419ba508cb193ba8563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setVelocity: {x: 0, y: 0}
-  gravityNormalVector: {x: 0, y: 0}
-  maxReboundCount: 3
-  reboundCount: 0
-  offset: 1
-  speed: 0
-  IsShot: 0
 --- !u!114 &2869186265199955596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +175,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf434bb30eed544b7a482aebddb5bc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2499992477617755584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761604719541177009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityOffset: 1
+  dragCoefficient: 0.1
+  isDrag: 0

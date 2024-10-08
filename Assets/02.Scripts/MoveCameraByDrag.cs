@@ -33,7 +33,7 @@ public class MoveCameraByDrag : MonoBehaviour
 
     void MoveCamer()
     {
-        if (_slingshot.isStretching) return;
+        // if (_slingshot.isStretching) return;
 
         if (Input.GetMouseButtonDown(0))
         {

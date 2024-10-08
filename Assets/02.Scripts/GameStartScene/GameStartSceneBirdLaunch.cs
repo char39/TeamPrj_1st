@@ -54,7 +54,7 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
     private void Launch(Vector2 launchPos, float launchForce, int index)
     {
         GameObject bird = Instantiate(birdPref, launchPos, Quaternion.identity);
-        bird.GetComponent<Bird>().setVelocity = (Vector2.zero - launchPos).normalized * launchForce;
+        //bird.GetComponent<Bird>().setVelocity = (Vector2.zero - launchPos).normalized * launchForce;
         bird.GetComponent<SpriteRenderer>().sprite = LoadBirdSprites.birds[index];
         Destroy(bird, 5f);
     }

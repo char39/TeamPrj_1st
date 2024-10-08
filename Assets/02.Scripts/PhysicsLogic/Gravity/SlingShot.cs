@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+
+
+
+
+
+
+/* 
     private Bird _bird;
 
     private GameObject birdPref;
@@ -130,5 +137,5 @@ public class SlingShot : MonoBehaviour
             Invoke(nameof(CreatePreBird), 1f);
         }
         launchPos = startPos;
-    }
+    } */
 }

@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+
+
+
+
+
+    
+/*  
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     /// <summary> 변경 가능한 속도 벡터 </summary>
@@ -155,5 +162,5 @@ public class Bird : MonoBehaviour
         Gizmos.DrawRay(transform.position, velocity);
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, velocity_R);
-    }
+    } */
 }
