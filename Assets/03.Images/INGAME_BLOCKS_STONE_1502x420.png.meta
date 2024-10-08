@@ -173,7 +173,1036 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ston_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 335
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84549f56166a3194595cafda3f57e33c
+      internalID: -951667629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_4
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 336
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b0faae88f3784418fc8ad27718c18d
+      internalID: -914713313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triangle_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 336
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0e5991880b69d4f8f8151fb3cf77f1
+      internalID: -361006653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle1
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 345
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc01e532d1b3fb4fb79446e5d5843e3
+      internalID: -1214987565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triangle_4
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 252
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd0213f359f25949828b53956f11cc1
+      internalID: -1991855055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: right_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 170
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788690b683ae79846970d8c6182529b5
+      internalID: -1701906468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_8
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 239
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84fabd7cd24458a4ea4d0f4e0516e0d6
+      internalID: 258518003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 219
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587e75cfcb868f6499a87afd422fd518
+      internalID: 1066528484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: right_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 89
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5ccf2d951c5134abebe95820d335d4
+      internalID: 1729394977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: right_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ef39e551785614c95e488cdd00dbd2
+      internalID: -1323812759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: right_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 6
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe5409dcae8797448b18b7beada26f1
+      internalID: -511281134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_15
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 4
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ad3fd861768f94da0192c16012e7a1
+      internalID: -1565451796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle_s3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 8
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29fab4a44d425b4fa249d605865e7bd
+      internalID: 1012513668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6719276d754476a4e9d39770725400a8
+      internalID: -1498548568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b03e921c671d5141bf354cc72ac4c97
+      internalID: 131341598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: square_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5bb76a43372e34498462e823a894cc
+      internalID: -1827976003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triangle_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 336
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f5a096de90eae46b7358979558e178
+      internalID: 114120708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triangle_3
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 336
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2bdba010a81aa4592a7e50f57b27d8
+      internalID: -1353980432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 261
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9115ee8dd323314e8f712216fb59314
+      internalID: 1981102753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle3
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 261
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97beaee3cf2c5e478f08d79ab8a9c33
+      internalID: -527653970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle4
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 261
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81f9bd5d37b26341b4f95e87c90eb83
+      internalID: 948796459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_6
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 219
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f9fc86da068f44abd529d559935801
+      internalID: 432491485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_24
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 176
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc324e1d0df1f44c8b013e5600bffe9
+      internalID: -279074748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_25
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 133
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2e20b273bb1d141b904c3a9c2dddcd
+      internalID: -229370693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_26
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 90
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70aad434fdf771d4ea05170e19a34dfd
+      internalID: 2111098179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_27
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 47
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41b0888ad29b46408b3fc43c1ebbede
+      internalID: 877207645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle_s2
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 51
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4454eeeaeacbe9b49a6ad16c74bbe5b9
+      internalID: 1251738808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle_s1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 94
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1264fd2897484404eb47d0547fd6e44e
+      internalID: 1337320261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle_s4
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 223
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d71074f0353bbd409af203fbb9addfe
+      internalID: -1608697013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xl1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 197
+        width: 203
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed71aaa42fd4918499ad1ce2b3491de6
+      internalID: -225343051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xl2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 175
+        width: 203
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06f585dc44d62a4b90c2889efc4754b
+      internalID: -63846910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xl3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 153
+        width: 203
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee2e55382ad8664aa48b207794225dc
+      internalID: -1988759969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xl4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 131
+        width: 203
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c07d4008397d34d83efa5d8be4757b
+      internalID: 197288786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: l1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 110
+        width: 167
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a15c5e13ee71a4c9dc9f13e0b85a6b
+      internalID: -1048212310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: l2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 86
+        width: 167
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a98924840046b84ca67c0473dee9a92
+      internalID: -487346634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: l3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 63
+        width: 167
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c25a6b7b65e9144a8a6aaeaa7e7a30
+      internalID: 1199353064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: l4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 41
+        width: 167
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b686d40e38146774d92330986083f368
+      internalID: -1107443221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: m3
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 23
+        width: 82
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65dfd54b2485454abbbe5610fa0a228
+      internalID: -1795467155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: m4
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 23
+        width: 82
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8937bd1c617be24408fcc2aff0e07cf2
+      internalID: -1238922159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: m1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 274
+        width: 82
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d90407466c3984c9140033d1eab73b
+      internalID: 75603212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_40
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 294
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51213eb8c161ca44a75833066cd660c
+      internalID: 127605593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_41
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 196
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde78bc5f7b992546bd35589e5ef3f8f
+      internalID: -6297380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_42
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 174
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04223539c33df04ba308e7d16663c22
+      internalID: -346386560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_STONE_1502x420_43
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 152
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce06c126d214c64b99fc43f5fbef865
+      internalID: -1100237780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: m2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 242
+        width: 82
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ab965950dfc154fa7202e70532fd76
+      internalID: -933284757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s2
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 109
+        width: 41
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce91fcbf98945bb49b6d9aec30a6e1d7
+      internalID: 1466309163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 87
+        width: 41
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65dd4a5772d041747899933fd5d1ce0f
+      internalID: 1386192615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s4
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 65
+        width: 41
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c604905218d3b814eacdee352fe7658e
+      internalID: 1825862649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s1
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 240
+        width: 41
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5b6caaa7c1200428522de262a6254b
+      internalID: 1800532158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -184,7 +1213,56 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      INGAME_BLOCKS_STONE_1502x420_15: -1565451796
+      INGAME_BLOCKS_STONE_1502x420_24: -279074748
+      INGAME_BLOCKS_STONE_1502x420_25: -229370693
+      INGAME_BLOCKS_STONE_1502x420_26: 2111098179
+      INGAME_BLOCKS_STONE_1502x420_27: 877207645
+      INGAME_BLOCKS_STONE_1502x420_40: 127605593
+      INGAME_BLOCKS_STONE_1502x420_41: -6297380
+      INGAME_BLOCKS_STONE_1502x420_42: -346386560
+      INGAME_BLOCKS_STONE_1502x420_43: -1100237780
+      INGAME_BLOCKS_STONE_1502x420_6: 432491485
+      INGAME_BLOCKS_STONE_1502x420_8: 258518003
+      INGAME_BLOCKS_STONE_1502x420_9: 1066528484
+      circle1: -1214987565
+      circle2: 1981102753
+      circle3: -527653970
+      circle4: 948796459
+      circle_s1: 1337320261
+      circle_s2: 1251738808
+      circle_s3: 1012513668
+      circle_s4: -1608697013
+      l1: -1048212310
+      l2: -487346634
+      l3: 1199353064
+      l4: -1107443221
+      m1: 75603212
+      m2: -933284757
+      m3: -1795467155
+      m4: -1238922159
+      right_1: -1323812759
+      right_2: -1701906468
+      right_3: 1729394977
+      right_4: -511281134
+      s1: 1800532158
+      s2: 1466309163
+      s3: 1386192615
+      s4: 1825862649
+      square_1: -1498548568
+      square_2: 131341598
+      square_3: -1827976003
+      square_4: -914713313
+      ston_1: -951667629
+      triangle_1: -361006653
+      triangle_2: 114120708
+      triangle_3: -1353980432
+      triangle_4: -1991855055
+      xl1: -225343051
+      xl2: -63846910
+      xl3: -1988759969
+      xl4: 197288786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
