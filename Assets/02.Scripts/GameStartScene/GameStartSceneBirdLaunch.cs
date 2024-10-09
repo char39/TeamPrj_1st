@@ -19,7 +19,7 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
         loadBirdSprites = GetComponent<LoadBirdSprites>();
         loadBirdSprites.Dummy();
         birdPref = Resources.Load<GameObject>("GameStartSceneBird");
-        grav = GameObject.Find("Planet").transform.GetChild(0).gameObject;
+        grav = GameObject.Find("Planet").transform.gameObject;
 
         StartCoroutine(BirdLaunch());
         StartCoroutine(OnOffGravity());
@@ -29,7 +29,7 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
 
             Vector2 launchPos = new(-25, Random.Range(minYpos, maxYpos));
             float launchForce = Mathf.Lerp(minForce, maxForce, (launchPos.y - minYpos) / (maxYpos - minYpos));
@@ -54,7 +54,7 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
     private void Launch(Vector2 launchPos, float launchForce, int index)
     {
         GameObject bird = Instantiate(birdPref, launchPos, Quaternion.identity);
-        bird.GetComponent<Bird>().setVelocity = (Vector2.zero - launchPos).normalized * launchForce;
+        bird.GetComponent<Rigidbody2D>().AddForce((Vector2.zero - launchPos).normalized * launchForce, ForceMode2D.Impulse);
         bird.GetComponent<SpriteRenderer>().sprite = LoadBirdSprites.birds[index];
         Destroy(bird, 5f);
     }

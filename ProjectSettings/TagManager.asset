@@ -5,11 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
-  - PlanetGravity
   - Bird
   - PreBird
   - Level
   - Ice
+  - Gravity
   layers:
   - Default
   - TransparentFX

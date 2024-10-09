@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 599849082800840161}
   - component: {fileID: 5437087105174116366}
   - component: {fileID: 2869186265199955596}
+  - component: {fileID: 6624773431663596906}
   m_Layer: 0
   m_Name: GameStartSceneBird
   m_TagString: Bird
@@ -100,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 0
@@ -162,13 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2090d0feee9419ba508cb193ba8563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setVelocity: {x: 0, y: 0}
-  gravityNormalVector: {x: 0, y: 0}
-  maxReboundCount: 3
-  reboundCount: 0
-  offset: 1
-  speed: 0
-  IsShot: 0
+  firstRebound: 0
+  isGroundTouched: 0
+  isOtherTouched: 0
+  velocity: {x: 0, y: 0}
+  velocity_magnitude: 0
 --- !u!114 &2869186265199955596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf434bb30eed544b7a482aebddb5bc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6624773431663596906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761604719541177009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityOffset: 1

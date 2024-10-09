@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CircleRadius : MonoBehaviour
+public class SurfaceRadius : MonoBehaviour
 {
     [HideInInspector]
     public float radius = 10f;
