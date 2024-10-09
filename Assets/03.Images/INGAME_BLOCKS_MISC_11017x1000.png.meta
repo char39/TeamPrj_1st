@@ -1624,7 +1624,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_MISC_11017x1000_70
+      name: Box
       rect:
         serializedVersion: 2
         x: 618
@@ -2033,6 +2033,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Box: 225941539
       INGAME_BLOCKS_MISC_11017x1000_0: -1787881927
       INGAME_BLOCKS_MISC_11017x1000_1: 886303147
       INGAME_BLOCKS_MISC_11017x1000_10: -2036095145
@@ -2101,7 +2102,6 @@ TextureImporter:
       INGAME_BLOCKS_MISC_11017x1000_68: -370605735
       INGAME_BLOCKS_MISC_11017x1000_69: 1290643389
       INGAME_BLOCKS_MISC_11017x1000_7: 135941386
-      INGAME_BLOCKS_MISC_11017x1000_70: 225941539
       INGAME_BLOCKS_MISC_11017x1000_71: 721396135
       INGAME_BLOCKS_MISC_11017x1000_72: -1994277191
       INGAME_BLOCKS_MISC_11017x1000_73: 1360920935
