@@ -10,10 +10,6 @@ public class GravityFieldRadiusMatch : Editor
 
         DrawDefaultInspector();
 
-        // size 슬라이더 추가
-        //G_Radius.radius = EditorGUILayout.Slider("Radius", G_Radius.radius, 1f, 300f);
-        //G_Radius.gravityPower = EditorGUILayout.Slider("Gravity Power", G_Radius.gravityPower, 0f, 50f);
-
         if (G_Radius.transform.GetChild(1).TryGetComponent(out SpriteRenderer spriteRenderer) && spriteRenderer.size.x != G_Radius.radius)
             spriteRenderer.size = new Vector2(G_Radius.radius, G_Radius.radius);
 
