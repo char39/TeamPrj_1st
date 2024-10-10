@@ -15,7 +15,7 @@ public class CirclePlacer : MonoBehaviour
         // WoodGroup을 미리 생성
         group = new GameObject("Group");
         group.transform.parent = this.transform;
-        
+        group.transform.localPosition = Vector3.zero;
         PlaceObjectsInCircle();
     }
 
@@ -27,7 +27,7 @@ public class CirclePlacer : MonoBehaviour
             float angle = i * Mathf.PI * 2 / objCnt;
 
             // 원의 좌표 계산
-            float x = Mathf.Cos(angle) * radius; // x 좌표
+            float x = Mathf.Cos(angle) * radius + transform.position.x; // x 좌표
             float y = Mathf.Sin(angle) * radius + transform.position.y; // y 좌표
 
             GameObject selectedPrefab = Random.Range(0, 2) == 0 ? stonePref : woodPref;
