@@ -36,7 +36,9 @@ public class CircularGravityField : GravityField
         {
             float gravityScalar = GravityForce * (1 - distance / (gravityRadius / 1.5f)) * gravityOffset * gravityPower;
             Vector2 gravity = direction.normalized * gravityScalar;
-            rb.AddForce(gravity, ForceMode2D.Force);    // 중력 적용
+
+            Vector2 adjustedGravity = rb.mass * gravity;
+            rb.AddForce(adjustedGravity, ForceMode2D.Force);    // 중력 적용
             
             rb.gameObject.TryGetComponent(out GravityFriction friction);
             if (friction != null)

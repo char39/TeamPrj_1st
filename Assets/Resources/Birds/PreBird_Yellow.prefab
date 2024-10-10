@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2271163090420051}
   - component: {fileID: 599849082800840161}
   m_Layer: 0
-  m_Name: PreBird
+  m_Name: PreBird_Yellow
   m_TagString: PreBird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1694074292, guid: 78f20341c2ee54c43bd9d1929882cffa, type: 3}
+  m_Sprite: {fileID: -283079355, guid: 78f20341c2ee54c43bd9d1929882cffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
