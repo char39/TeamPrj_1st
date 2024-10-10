@@ -8,7 +8,7 @@ public static class DataList
     {
         result = new Dictionary<int, ScoreData>()
         {
-            {1, new ScoreData(0, 0, 0)},    // 임시 score 저장
+            {1, new ScoreData(0, 0, 0)},    // 임시 score 저장용
 
             {101, new ScoreData(10000, 23000, 40000)},
             {102, new ScoreData(0, 0, 0)},

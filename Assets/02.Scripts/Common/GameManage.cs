@@ -30,33 +30,6 @@ public partial class GameManage : MonoBehaviour
     {
         int roomidx = (int)SceneManage.Instance.GetLoadScene();
 
-        /* if (curScore >= 10000)
-        {
-            scoreText.text = $"{curScore}";
-            empty_starL.GetComponent<Image>().sprite = star_l;
-            stars = 1;
-            GetStar(roomidx);
-            SetStar(roomidx, stars);
-        }
-        if (curScore >= 23000)
-        {
-            scoreText.text = $"{curScore}";
-            empty_starL.GetComponent<Image>().sprite = star_l;
-            empty_starM.GetComponent<Image>().sprite = star_m;
-            stars = 2;
-            GetStar(roomidx);
-            SetStar(roomidx, stars);
-        }
-        if (curScore >= 40000)
-        {
-            scoreText.text = $"{curScore}";
-            empty_starL.GetComponent<Image>().sprite = star_l;
-            empty_starM.GetComponent<Image>().sprite = star_m;
-            empty_starR.GetComponent<Image>().sprite = star_r;
-            stars = 3;
-            GetStar(roomidx);
-            SetStar(roomidx, stars);
-        } */
         if (DataList.result[roomidx].score >= DataList.result[roomidx].requireScore[2])
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
