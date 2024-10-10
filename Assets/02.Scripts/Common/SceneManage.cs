@@ -60,21 +60,6 @@ public partial class SceneManage : MonoBehaviour
         }
     }
 
-    // public int GetRoomIndex()
-    // {
-    //     Scene scene = SceneManager.GetActiveScene();
-        
-    //     if(scene.name == SceneList.name[101])
-    //     {
-    //         return 101;
-    //     }
-    //     else if(scene.name == SceneList.name[102])
-    //     {
-    //         return 102;
-    //     }
-    //     return 0;
-    // }
-
     public void LoadSelectPlanet() => LoadSceneChange(2, 0.3f, 0.3f);
 
     public void LoadSelectLevel() => LoadSceneChange(100, 0.3f, 0.3f);

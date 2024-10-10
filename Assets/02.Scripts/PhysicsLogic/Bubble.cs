@@ -12,5 +12,9 @@ public class Bubble : MonoBehaviour
         tr = transform;
     }
 
-    void OnTriggerEnter2D(Collider2D col) => ispop = true;
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        ispop = true;
+        GameManage.AddScore(1, 300);
+    }
 }

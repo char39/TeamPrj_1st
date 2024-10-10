@@ -14,57 +14,94 @@ public partial class GameManage : MonoBehaviour
     void Start()
     {
         canvas_score = GameObject.Find("Canvas_score").GetComponent<Canvas>();
-        Transform starTr = GameObject.Find("Canvas_score").transform.GetChild(0).GetChild(0);
+        canvas_score.enabled = false;
+        Transform starTr = canvas_score.transform.GetChild(0).GetChild(1);
         empty_starL = starTr.GetChild(0).gameObject;
         empty_starM = starTr.GetChild(1).gameObject;
         empty_starR = starTr.GetChild(2).gameObject;
-        scoreText = GameObject.Find("Canvas_score").transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>();
+        scoreText = canvas_score.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>();
+        Transform menu = canvas_score.transform.GetChild(0).GetChild(3);
+        replay = menu.transform.GetChild(1).GetChild(0).GetComponent<Button>();
+        replay.onClick.AddListener(Replay);
     }
 
     void Update()
     {
-        UpdateResult();
+        if (Input.GetKeyDown(KeyCode.Escape))
+            isClear = true;
+
+        if (isClear)
+            SetStarRating();
+
     }
 
-    private void UpdateResult()
+    private void SetStarRating()
     {
-        int roomidx = (int)SceneManage.Instance.GetLoadScene();
+        isClear = false;
+        canvas_score.enabled = true;
 
-        if (DataList.result[roomidx].score >= DataList.result[roomidx].requireScore[2])
+        int roomidx = (int)SceneManage.Instance.GetLoadScene();
+        SetScore(roomidx, GetScore(1));
+
+        if (DataList.starScore[roomidx].Star3)
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             empty_starM.GetComponent<Image>().sprite = star_m;
             empty_starR.GetComponent<Image>().sprite = star_r;
             SetStar(roomidx, 3);
+            scoreText.text = DataList.starScore[roomidx].score.ToString();
         }
-        else if (DataList.result[roomidx].score >= DataList.result[roomidx].requireScore[1])
+        else if (DataList.starScore[roomidx].Star2)
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             empty_starM.GetComponent<Image>().sprite = star_m;
             SetStar(roomidx, 2);
+            scoreText.text = DataList.starScore[roomidx].score.ToString();
         }
-        else if (DataList.result[roomidx].score >= DataList.result[roomidx].requireScore[0])
+        else if (DataList.starScore[roomidx].Star1)
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             SetStar(roomidx, 1);
+            scoreText.text = DataList.starScore[roomidx].score.ToString();
+        }
+        else
+        {
+            SetStar(roomidx, 0);
+            scoreText.text = DataList.starScore[roomidx].score.ToString();
         }
     }
 
-    public static void AddScore(int roomidx, int score = 0) => DataList.result[roomidx].score += score;
+    public static void AddScore(int roomidx, int score = 0)
+    {
+        DataList.starScore[roomidx].score += score;
+        Debug.Log(DataList.starScore[roomidx].score);
+    }
 
     public static void SetScore(int roomidx, int score = 0)
     {
-        if (DataList.result[roomidx].score > score) return;
-        DataList.result[roomidx].score = score;
+        if (DataList.starScore[roomidx].score > score) return;
+        DataList.starScore[roomidx].score = score;
     }
 
-    public static int GetScore(int roomidx) => DataList.result[roomidx].score;
+    public static int GetScore(int roomidx) => DataList.starScore[roomidx].score;
 
     public static void SetStar(int roomidx, int star = 0)
     {
-        if (DataList.result[roomidx].stars > star) return;
-        DataList.result[roomidx].stars = star;
+        if (DataList.starScore[roomidx].stars > star) return;
+        DataList.starScore[roomidx].stars = star;
     }
 
-    public static int GetStar(int roomidx) => DataList.result[roomidx].stars;
+    public static int GetStar(int roomidx) => DataList.starScore[roomidx].stars;
+
+    public static void Reset(int roomidx)
+    {
+        DataList.starScore[roomidx].score = 0;
+        DataList.starScore[roomidx].stars = 0;
+    }
+
+    public void Replay()
+    {
+        Reset(1);
+        SceneManage.Instance.LoadLevel((int)SceneManage.Instance.GetLoadScene());
+    }
 }

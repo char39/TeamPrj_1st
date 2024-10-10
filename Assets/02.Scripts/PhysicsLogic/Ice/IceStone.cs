@@ -66,6 +66,7 @@ public class IceStoneBig : IceStoneSelect
             Vector2 direction = GetSpreadDirectionFromAngle(angle);
             normal.GetComponent<Rigidbody2D>().velocity = direction * 6f;
         }
+        GameManage.AddScore(1, 2300);
         Destroy(gameObject);
     }
 }
@@ -92,6 +93,7 @@ public class IceStoneNormal : IceStoneSelect
             Vector2 direction = GetSpreadDirectionFromAngle(angle);
             small.GetComponent<Rigidbody2D>().velocity = direction * 3f;
         }
+        GameManage.AddScore(1, 1300);
         Destroy(gameObject);
     }
 }
@@ -100,6 +102,7 @@ public class IceStoneSmall : IceStoneSelect
 {
     protected override void OnTriggerStay2D(Collider2D col)
     {
+        GameManage.AddScore(1, 800);
         Destroy(gameObject);
     }
 }

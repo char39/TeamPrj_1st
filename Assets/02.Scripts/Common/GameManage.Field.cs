@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public partial class GameManage : MonoBehaviour
 {    
@@ -10,5 +11,7 @@ public partial class GameManage : MonoBehaviour
     private GameObject empty_starL;
     private GameObject empty_starM;
     private GameObject empty_starR;
+    [SerializeField]private Button replay;
     private TMP_Text scoreText;
+    public bool isClear = false;
 }

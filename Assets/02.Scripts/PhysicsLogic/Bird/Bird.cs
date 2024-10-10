@@ -21,7 +21,8 @@ public class Bird : MonoBehaviour
     {
         TryGetComponent(out rb);
         TryGetComponent(out sr);
-        transform.GetChild(0).TryGetComponent(out ps);
+        if(transform.childCount == 1)
+            transform.GetChild(0).TryGetComponent(out ps);
     }
 
     protected virtual void FixedUpdate()

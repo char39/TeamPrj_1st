@@ -2,13 +2,13 @@ using System.Collections.Generic;
 
 public static class DataList
 {
-    public static Dictionary<int, ScoreData> result;
+    public static Dictionary<int, ScoreData> starScore;
 
     static DataList()
     {
-        result = new Dictionary<int, ScoreData>()
+        starScore = new Dictionary<int, ScoreData>()
         {
-            {1, new ScoreData(0, 0, 0)},    // 임시 score 저장용
+            {1, new ScoreData()},    // 임시 score 저장용
 
             {101, new ScoreData(10000, 23000, 40000)},
             {102, new ScoreData(0, 0, 0)},

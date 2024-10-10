@@ -5,8 +5,11 @@ public class ScoreData
     public int score;
     public int stars;
     public int[] requireScore;
+    public bool Star1 => score >= requireScore[0];
+    public bool Star2 => score >= requireScore[1];
+    public bool Star3 => score >= requireScore[2];
 
-    public ScoreData(int oneStar, int twoStar, int threeStar)
+    public ScoreData(int oneStar = 0, int twoStar = 0, int threeStar = 0)
     {
         score = 0;
         stars = 0;
