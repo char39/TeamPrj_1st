@@ -79,5 +79,5 @@ public partial class SceneManage : MonoBehaviour
     private void UnloadScene(int index) => SceneManager.UnloadSceneAsync(SceneList.name[index], UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
 
     /// <summary> 현재 로드 중인 Scene을 반환. </summary>
-    private int? GetLoadScene() => SceneList.GetKeyByValue(SceneManager.GetActiveScene().name);
+    public int? GetLoadScene() => SceneList.GetKeyByValue(SceneManager.GetActiveScene().name);
 }

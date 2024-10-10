@@ -19,3 +19,5 @@ prebird 3개
 1만 1개
 2만3천 2개
 4만부터 별3개
+
+common에 ScoreHandler 스크립트 만듦

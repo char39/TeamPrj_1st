@@ -11,6 +11,4 @@ public partial class GameManage : MonoBehaviour
     private GameObject empty_starM;
     private GameObject empty_starR;
     private TMP_Text scoreText;
-    private int initScore;
-    public int score;
 }

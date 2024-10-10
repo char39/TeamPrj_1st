@@ -22,11 +22,6 @@ public partial class SceneManage : MonoBehaviour
         GameObject.Find("SceneChange").TryGetComponent(out sceneChange);
     }
 
-
-
-
-
-
     void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
@@ -50,7 +45,6 @@ public partial class SceneManage : MonoBehaviour
             coldcuts.onClick.AddListener(LoadSelectLevel);
             backBtn.onClick.AddListener(LoadGameStart);
         }
-
         else if (scene.name == SceneList.name[100])  // (Cold Cuts) Planet
         {
             Transform canvasTr = GameObject.Find("Canvas").transform;
@@ -60,29 +54,32 @@ public partial class SceneManage : MonoBehaviour
             level1 = levelTr.GetChild(0).GetComponent<Button>();
             level2 = levelTr.GetChild(1).GetComponent<Button>();
 
-            c_backBtn.onClick.AddListener(LoadSelectPlanet); level1.onClick.AddListener(() => LoadLevel(101));
+            c_backBtn.onClick.AddListener(LoadSelectPlanet); 
+            level1.onClick.AddListener(() => LoadLevel(101));
             level2.onClick.AddListener(() => LoadLevel(102));
-
         }
     }
 
-    public void LoadSelectPlanet()
-    {
-        LoadSceneChange(2, 0.3f, 0.3f);
-    }
+    // public int GetRoomIndex()
+    // {
+    //     Scene scene = SceneManager.GetActiveScene();
+        
+    //     if(scene.name == SceneList.name[101])
+    //     {
+    //         return 101;
+    //     }
+    //     else if(scene.name == SceneList.name[102])
+    //     {
+    //         return 102;
+    //     }
+    //     return 0;
+    // }
 
-    public void LoadSelectLevel()
-    {
-        LoadSceneChange(100, 0.3f, 0.3f);
-    }
+    public void LoadSelectPlanet() => LoadSceneChange(2, 0.3f, 0.3f);
 
-    public void LoadGameStart()
-    {
-        LoadSceneChange(1, 0.3f, 0.3f);
-    }
+    public void LoadSelectLevel() => LoadSceneChange(100, 0.3f, 0.3f);
 
-    public void LoadLevel(int idx)
-    {
-        LoadSceneChange(idx, 0.3f, 0.3f);
-    }
+    public void LoadGameStart() => LoadSceneChange(1, 0.3f, 0.3f);
+
+    public void LoadLevel(int idx) => LoadSceneChange(idx, 0.3f, 0.3f);
 }

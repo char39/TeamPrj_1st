@@ -73,9 +73,10 @@ public class IceStoneBig : IceStoneSelect
 public class IceStoneNormal : IceStoneSelect
 {
     protected override void OnTriggerStay2D(Collider2D col)
-    {
+    {        
         if (timeset < timesetLimit)
             return;
+
         float randomStartAngle = Random.Range(0f, 360f);
         float angleOffset = 120f;
 
