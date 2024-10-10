@@ -10,5 +10,6 @@ public class GravityTarget : MonoBehaviour
     void Start()
     {
         TryGetComponent(out rb);
+        rb.gravityScale = 0;
     }
 }

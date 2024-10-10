@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
+    protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
+    protected ParticleSystem ps;
 
     public bool firstRebound = false;
     public bool isGroundTouched = false;
@@ -16,18 +17,19 @@ public class Bird : MonoBehaviour
     // 수치 확인용 변수
     public float velocity_magnitude;
 
-    void Start()
+    protected virtual void Awake()    // Start로 되어있으면 우선순위에 밀려서 Flip이 실행이 안됨.
     {
         TryGetComponent(out rb);
         TryGetComponent(out sr);
+        transform.GetChild(0).TryGetComponent(out ps);
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         Rotate(firstRebound);
     }
 
-    void Update()
+    protected virtual void Update()
     {
         GetGravity();
         FirstReboundCheck();
@@ -36,17 +38,20 @@ public class Bird : MonoBehaviour
 
 
     /// <summary> 중력 수치 확인용 </summary>
-    private void GetGravity()
+    protected void GetGravity()
     {
         velocity = rb.velocity;
         velocity_magnitude = rb.velocity.magnitude;
     }
 
     /// <summary> 첫 반발 체크. bird가 처음 닿기 전까진 향하는 방향으로 회전 </summary>
-    private void FirstReboundCheck()
+    protected virtual void FirstReboundCheck()
     {
         if (!firstRebound && (isGroundTouched || isOtherTouched))
+        {
             firstRebound = true;
+            ps.Stop();
+        }
     }
 
 
@@ -62,7 +67,7 @@ public class Bird : MonoBehaviour
     }
 
     /// <summary> 발사할 때 각도를 판단하여 항상 머리가 위에 오도록 1회만 실행 </summary>
-    public void Flip()
+    public void FlipY()
     {
         if (sr != null)
             sr.flipY = true;
@@ -71,7 +76,7 @@ public class Bird : MonoBehaviour
 
 
     /// <summary> 충돌 시 반발 처리 </summary>
-    private void OnCollisionEnter2D(Collision2D col)
+    protected void OnCollisionEnter2D(Collision2D col)
     {
         bool compareTag = col.gameObject.CompareTag("Planet");
         isGroundTouched = compareTag ? true : isGroundTouched;    // 행성에 닿았을 때
@@ -79,14 +84,14 @@ public class Bird : MonoBehaviour
     }
 
     /// <summary> 충돌 해제 시 IsGrounded, IsTouched 설정 </summary>
-    private void OnCollisionExit2D(Collision2D col)
+    protected void OnCollisionExit2D(Collision2D col)
     {
         bool compareTag = col.gameObject.CompareTag("Planet");
         isGroundTouched = compareTag ? false : isGroundTouched;   // 행성에서 떨어졌을 때
         isOtherTouched = compareTag ? isOtherTouched : false;     // 그 외 오브젝트에서 떨어졌을 때
     }
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, velocity);

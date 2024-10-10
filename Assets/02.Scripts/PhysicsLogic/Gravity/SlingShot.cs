@@ -15,7 +15,7 @@ public class SlingShot : MonoBehaviour
     private Vector2 direction;
 
     [Range(0, 20)]
-    public int launchForce = 10;
+    public int launchForce = 5;
     [Range(2, 6)]
     public int maxStretch = 3;
 
@@ -26,8 +26,9 @@ public class SlingShot : MonoBehaviour
 
     void Start()
     {
-        birdPref = Resources.Load<GameObject>("Bird");
-        preBirdPref = Resources.Load<GameObject>("PreBird");
+        birdPref = BirdPrefs.birds[1];
+        preBirdPref = BirdPrefs.preBirds[1];
+
         launchPos = new Vector2(transform.position.x, transform.position.y);
         startPos = launchPos;
         CreatePreBird();
@@ -126,11 +127,13 @@ public class SlingShot : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             // 발사
-            birdObj.GetComponent<Rigidbody2D>().AddForce(distance * launchForce * direction, ForceMode2D.Impulse);
+            Vector2 finalLaunchForce = distance * launchForce * direction;
+            Vector2 adjustedLaunchForce = birdObj.GetComponent<Rigidbody2D>().mass * finalLaunchForce;
+            birdObj.GetComponent<Rigidbody2D>().AddForce(adjustedLaunchForce, ForceMode2D.Impulse);
 
             // 발사 후 birdObj의 방향 설정
             if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) <= 180)
-                _bird.Flip();
+                _bird.FlipY();
 
             // birdObj 초기화
             birdObj = null;
