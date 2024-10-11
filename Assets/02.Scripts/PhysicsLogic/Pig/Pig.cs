@@ -55,7 +55,5 @@ public class Pig : ColliderDetection
     {
         col.enabled = true;
         rb.simulated = true;
-        rb.velocity = Vector2.zero;
-        transform.localPosition = Vector3.zero;
     }
 }
