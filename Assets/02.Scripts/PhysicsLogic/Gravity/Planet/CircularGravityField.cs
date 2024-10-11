@@ -21,9 +21,9 @@ public class CircularGravityField : GravityField
 
     void FixedUpdate()
     {
-        GravityTarget[] _gravityReceivers = FindObjectsOfType<GravityTarget>();
+        GravityTarget[] _gravityTarget = FindObjectsOfType<GravityTarget>();
 
-        foreach (GravityTarget _receiver in _gravityReceivers)
+        foreach (GravityTarget _receiver in _gravityTarget)
             ApplyGravity(_receiver.GetComponent<Rigidbody2D>(), _receiver.gravityOffset);
     }
 
@@ -31,6 +31,9 @@ public class CircularGravityField : GravityField
     {
         Vector2 direction = (Vector2)transform.position - rb.position;
         float distance = direction.magnitude;
+
+        rb.gameObject.TryGetComponent(out GravityFriction friction);
+        rb.gameObject.TryGetComponent(out GravityTarget target);
 
         if (distance < (gravityRadius / 2))
         {
@@ -40,9 +43,13 @@ public class CircularGravityField : GravityField
             Vector2 adjustedGravity = rb.mass * gravity;
             rb.AddForce(adjustedGravity, ForceMode2D.Force);    // 중력 적용
             
-            rb.gameObject.TryGetComponent(out GravityFriction friction);
+            if (target != null)
+                target.isGravity = true;
             if (friction != null)
                 friction.nowFriction = true;
         }
+        else
+            if (target != null)
+                target.isGravity = false;
     }
 }

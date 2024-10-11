@@ -6,6 +6,7 @@ public class GravityTarget : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float gravityOffset = 1f;
+    public bool isGravity = false;
 
     void Start()
     {
