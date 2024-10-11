@@ -38,9 +38,7 @@ replay 하고 씬 불러올 때 canvas UI off
 - 여기 약간 수정 그그그그 clear 조건이랑 좀 겹쳐서 고쳐야됨
 
 3. clear 조건
-
-
-pig 남음 
+Pig.cs에서 OnDisable OnEnable 함수로 PigCnt 넘김
 
 4. clear 하면 star 띄우고 다음 행성 스프ㅏㄹ이트 바꾸ㅝ
 
