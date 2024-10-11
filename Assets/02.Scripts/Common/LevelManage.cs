@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public partial class GameManage : MonoBehaviour
+public partial class LevelManage : MonoBehaviour
 {
-    public static GameManage Instance;
+    public static LevelManage Instance;
 
     void Awake()
     {
@@ -26,83 +26,83 @@ public partial class GameManage : MonoBehaviour
         
         // 0 = red, 1 = yellow, 2 = blue
         // 방에 맞는 새의 순서를 설정
-        SetBirdOrder(101, new int[] { 0, 0, 0 });
-        SetBirdOrder(102, new int[] { 2, 1, 0 });
-        SetBirdOrder(103, new int[] { 1, 0, 2 });
+        // SetBirdOrder(101, new int[] { 0, 0, 0 });
+        // SetBirdOrder(102, new int[] { 2, 1, 0 });
+        // SetBirdOrder(103, new int[] { 1, 0, 2 });
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            DataList.starScore[1].isClear = true;
+            DataList.data[1].isClear = true;
 
-        if (DataList.starScore[1].isClear)
+        if (DataList.data[1].isClear)
             SetStarRating();
 
     }
 
     public void SetStarRating()
     {
-        DataList.starScore[1].isClear = false;
+        DataList.data[1].isClear = false;
         canvas_score.enabled = true;
 
         int roomidx = (int)SceneManage.GetLoadScene();
         SetScore(roomidx, GetScore(1));
 
-        if (DataList.starScore[roomidx].Star3)
+        if (DataList.data[roomidx].Star3)
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             empty_starM.GetComponent<Image>().sprite = star_m;
             empty_starR.GetComponent<Image>().sprite = star_r;
             SetStar(roomidx, 3);
-            scoreText.text = DataList.starScore[roomidx].score.ToString();
+            scoreText.text = DataList.data[roomidx].score.ToString();
         }
-        else if (DataList.starScore[roomidx].Star2)
+        else if (DataList.data[roomidx].Star2)
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             empty_starM.GetComponent<Image>().sprite = star_m;
             SetStar(roomidx, 2);
-            scoreText.text = DataList.starScore[roomidx].score.ToString();
+            scoreText.text = DataList.data[roomidx].score.ToString();
         }
-        else if (DataList.starScore[roomidx].Star1)
+        else if (DataList.data[roomidx].Star1)
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             SetStar(roomidx, 1);
-            scoreText.text = DataList.starScore[roomidx].score.ToString();
+            scoreText.text = DataList.data[roomidx].score.ToString();
         }
         else
         {
             SetStar(roomidx, 0);
-            scoreText.text = DataList.starScore[roomidx].score.ToString();
+            scoreText.text = DataList.data[roomidx].score.ToString();
         }
     }
 
     public static void AddScore(int roomidx, int score = 0)
     {
-        DataList.starScore[roomidx].score += score;
-        Debug.Log(DataList.starScore[roomidx].score);
+        DataList.data[roomidx].score += score;
+        Debug.Log(DataList.data[roomidx].score);
     }
 
     public static void SetScore(int roomidx, int score = 0)
     {
-        if (DataList.starScore[roomidx].score > score) return;
-        DataList.starScore[roomidx].score = score;
+        if (DataList.data[roomidx].score > score) return;
+        DataList.data[roomidx].score = score;
     }
 
-    public static int GetScore(int roomidx) => DataList.starScore[roomidx].score;
+    public static int GetScore(int roomidx) => DataList.data[roomidx].score;
 
     public static void SetStar(int roomidx, int star = 0)
     {
-        if (DataList.starScore[roomidx].stars > star) return;
-        DataList.starScore[roomidx].stars = star;
+        if (DataList.data[roomidx].stars > star) return;
+        DataList.data[roomidx].stars = star;
     }
 
-    public static int GetStar(int roomidx) => DataList.starScore[roomidx].stars;
+    public static int GetStar(int roomidx) => DataList.data[roomidx].stars;
 
     public static void Reset(int roomidx)
     {
-        DataList.starScore[roomidx].score = 0;
-        DataList.starScore[roomidx].stars = 0;
+        DataList.data[roomidx].score = 0;
+        DataList.data[roomidx].stars = 0;
     }
 
     public void Replay()
@@ -111,11 +111,11 @@ public partial class GameManage : MonoBehaviour
         SceneManage.Instance.LoadLevel((int)SceneManage.GetLoadScene());
     }
 
-    public void SetBirdOrder(int roomidx, int[] order)
-    {
-        if (DataList.starScore.ContainsKey(roomidx))
-        {
-            DataList.starScore[roomidx].AddBirdsInOrder(order);
-        }
-    }
+    // public void SetBirdOrder(int roomidx, int[] order)
+    // {
+    //     if (DataList.data.ContainsKey(roomidx))
+    //     {
+    //         DataList.data[roomidx].AddBirdsInOrder(order);
+    //     }
+    // }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public partial class GameManage : MonoBehaviour
+public partial class LevelManage : MonoBehaviour
 {    
     public Canvas canvas_score;
     [SerializeField] private Sprite star_l;

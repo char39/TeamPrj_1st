@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 1503127281}
   - component: {fileID: 1503127282}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1542,7 +1542,6 @@ MonoBehaviour:
   star_m: {fileID: 1781511696, guid: d166e3bf853222641bafcecda85d737c, type: 3}
   star_r: {fileID: -835450756, guid: d166e3bf853222641bafcecda85d737c, type: 3}
   replay: {fileID: 0}
-  isClear: 0
 --- !u!1 &1651541970
 GameObject:
   m_ObjectHideFlags: 0
