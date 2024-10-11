@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class ColliderDetection : MonoBehaviour
 {
-    protected Rigidbody2D rb;
+    internal Rigidbody2D rb;
     protected int score = 0;
     public float requireForce = 1f;
     protected bool canExplode = false;

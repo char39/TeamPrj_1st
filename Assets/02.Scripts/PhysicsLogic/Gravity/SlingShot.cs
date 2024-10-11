@@ -29,7 +29,7 @@ public class SlingShot : MonoBehaviour
 
     void Start()
     {
-        totalBird = DataList.starScore[(int)SceneManage.Instance.GetLoadScene()].BirdList.Count;
+        totalBird = DataList.starScore[(int)SceneManage.GetLoadScene()].BirdList.Count;
 
         launchPos = new Vector2(transform.position.x, transform.position.y);
         startPos = launchPos;
@@ -65,9 +65,15 @@ public class SlingShot : MonoBehaviour
     /// <summary> preBirdObj(상호작용 없는 객체) 생성 </summary>
     private void CreatePreBird()
     {
-        int idx = DataList.starScore[(int)SceneManage.Instance.GetLoadScene()].BirdList[curBirdCnt];
+        if (curBirdCnt == totalBird)
+            return;
+
+        int idx = DataList.starScore[(int)SceneManage.GetLoadScene()].BirdList[curBirdCnt];
         preBirdPref = BirdPrefs.preBirds[idx];
-        if (preBirdObj != null && isSpawn) return;
+
+        if (preBirdObj != null && isSpawn)
+            return;
+
         preBirdObj = Instantiate(preBirdPref, startPos, Quaternion.identity);
         isSpawn = true;
     }
@@ -75,9 +81,12 @@ public class SlingShot : MonoBehaviour
     /// <summary> 실제 발사를 위한 birdObj 생성 </summary>
     private void CreateBird()
     {
-        int idx = DataList.starScore[(int)SceneManage.Instance.GetLoadScene()].BirdList[curBirdCnt];
+        int idx = DataList.starScore[(int)SceneManage.GetLoadScene()].BirdList[curBirdCnt];
         birdPref = BirdPrefs.birds[idx];
-        if (birdObj != null) return;
+
+        if (birdObj != null)
+            return;
+
         birdObj = Instantiate(birdPref, launchPos, Quaternion.identity);
     }
 
@@ -145,10 +154,8 @@ public class SlingShot : MonoBehaviour
             // birdObj 초기화
             birdObj = null;
 
-            BirdCount();
-
-            if (curBirdCnt <= totalBird + 1)
-                Invoke(nameof(CreatePreBird), 1f);
+            ++curBirdCnt;
+            Invoke(nameof(CreatePreBird), 1f);
         }
 
         launchPos = startPos;
@@ -156,7 +163,6 @@ public class SlingShot : MonoBehaviour
 
     private void BirdCount()
     {
-        ++curBirdCnt;
 
         /*
         if( pigcnt == 0)

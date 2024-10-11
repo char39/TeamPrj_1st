@@ -16,9 +16,15 @@ public class Pig : ColliderDetection
         TryGetComponent(out col);
 
         if (transform.parent.TryGetComponent(out Bubble bubble))
+        {
             col.enabled = false;
+            rb.simulated = false;
+        }
         else
+        {
             col.enabled = true;
+            rb.simulated = true;
+        }
 
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(false);
@@ -43,5 +49,13 @@ public class Pig : ColliderDetection
             transform.GetChild(1).gameObject.SetActive(true);
             Invoke(nameof(OnDetection), 1f);
         }
+    }
+
+    public void Initialize()
+    {
+        col.enabled = true;
+        rb.simulated = true;
+        rb.velocity = Vector2.zero;
+        transform.localPosition = Vector3.zero;
     }
 }

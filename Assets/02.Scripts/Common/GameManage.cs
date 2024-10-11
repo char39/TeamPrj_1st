@@ -46,7 +46,7 @@ public partial class GameManage : MonoBehaviour
         DataList.starScore[1].isClear = false;
         canvas_score.enabled = true;
 
-        int roomidx = (int)SceneManage.Instance.GetLoadScene();
+        int roomidx = (int)SceneManage.GetLoadScene();
         SetScore(roomidx, GetScore(1));
 
         if (DataList.starScore[roomidx].Star3)
@@ -108,7 +108,7 @@ public partial class GameManage : MonoBehaviour
     public void Replay()
     {
         Reset(1);
-        SceneManage.Instance.LoadLevel((int)SceneManage.Instance.GetLoadScene());
+        SceneManage.Instance.LoadLevel((int)SceneManage.GetLoadScene());
     }
 
     public void SetBirdOrder(int roomidx, int[] order)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2073489378115412320}
   - component: {fileID: 3249423941428734271}
   - component: {fileID: 7021386450252436201}
+  - component: {fileID: 5768442769257997180}
   m_Layer: 0
   m_Name: Bubble
   m_TagString: Untagged
@@ -96,7 +97,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3525192720065133526}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b9468a1db4f54073969830ea46e3932, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -121,7 +122,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.51
+  m_Radius: 3.7
 --- !u!50 &3249423941428734271
 Rigidbody2D:
   serializedVersion: 4
@@ -162,4 +163,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requireForce: 0.1
-  canPop: 0
+--- !u!114 &5768442769257997180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525192720065133526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityOffset: 0.15
+  isGravity: 0

@@ -32,12 +32,12 @@ public class Bubble : ColliderDetection
 
         if (pig != null)
         {
+            rb.simulated = false;
             col.enabled = false;
-            pig.col.enabled = true;
+            pig.Initialize();
             pig.Frozon();
         }
         AddScore();
-        rb.simulated = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         this.enabled = false;
     }
