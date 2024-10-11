@@ -19,6 +19,9 @@ public class SlingShot : MonoBehaviour
     [Range(2, 6)]
     public int maxStretch = 3;
 
+    public int totalBird;
+    public int curBirdCnt = 0;
+
     public bool isMouseOn = false;         // 당기기 전에 마우스가 위에 있는가
     public bool isClicked = false;         // 새를 클릭 했는가
     public bool isStretching = false;      // 당기고 있는가
@@ -26,11 +29,11 @@ public class SlingShot : MonoBehaviour
 
     void Start()
     {
-        birdPref = BirdPrefs.birds[1];
-        preBirdPref = BirdPrefs.preBirds[1];
+        totalBird = DataList.starScore[(int)SceneManage.Instance.GetLoadScene()].BirdList.Count;
 
         launchPos = new Vector2(transform.position.x, transform.position.y);
         startPos = launchPos;
+
         CreatePreBird();
     }
 
@@ -62,6 +65,8 @@ public class SlingShot : MonoBehaviour
     /// <summary> preBirdObj(상호작용 없는 객체) 생성 </summary>
     private void CreatePreBird()
     {
+        int idx = DataList.starScore[(int)SceneManage.Instance.GetLoadScene()].BirdList[curBirdCnt];
+        preBirdPref = BirdPrefs.preBirds[idx];
         if (preBirdObj != null && isSpawn) return;
         preBirdObj = Instantiate(preBirdPref, startPos, Quaternion.identity);
         isSpawn = true;
@@ -70,6 +75,8 @@ public class SlingShot : MonoBehaviour
     /// <summary> 실제 발사를 위한 birdObj 생성 </summary>
     private void CreateBird()
     {
+        int idx = DataList.starScore[(int)SceneManage.Instance.GetLoadScene()].BirdList[curBirdCnt];
+        birdPref = BirdPrefs.birds[idx];
         if (birdObj != null) return;
         birdObj = Instantiate(birdPref, launchPos, Quaternion.identity);
     }
@@ -138,9 +145,31 @@ public class SlingShot : MonoBehaviour
             // birdObj 초기화
             birdObj = null;
 
-            // preBirdObj 생성
-            Invoke(nameof(CreatePreBird), 1f);
+            BirdCount();
+
+            if (curBirdCnt <= totalBird + 1)
+                Invoke(nameof(CreatePreBird), 1f);
         }
+
         launchPos = startPos;
+    }
+
+    private void BirdCount()
+    {
+        ++curBirdCnt;
+
+        /*
+        if( pigcnt == 0)
+        {
+            if(totalBird >= curBirdCnt)
+                DataList.isClear = true;
+        }
+
+        else if(pigcnt > 0)
+        {
+            if(totalBird <= curBirdCnt)
+                DataList.isClear = false;
+        }
+        */
     }
 }

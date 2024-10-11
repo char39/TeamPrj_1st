@@ -13,5 +13,4 @@ public partial class GameManage : MonoBehaviour
     private GameObject empty_starR;
     [SerializeField]private Button replay;
     private TMP_Text scoreText;
-    public bool isClear = false;
 }

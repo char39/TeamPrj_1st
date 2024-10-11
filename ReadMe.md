@@ -25,10 +25,22 @@ replay 하고 씬 불러올 때 canvas UI off
 
 1. 충돌시 +점수
 
-2. Dictionary의 List에 bird순서
-Dictionary +bool변수 clear
+2. Dictionary
+* Dictionary의 List에 bird순서
+- LevelData.cs에 AddBirdsInOrder() 생성
+- gamemanage.cs SetBirdOrder()를 만들어 bird의 순서 설정
+                Start()에서 SetBirdOrder() 호출
+
+* Dictionary +bool변수 clear
+- GameManagerField에 있는 isClear 지우고 LevelData에 bool 변수 isClear를 선언해 DataList.starScore[1].isClear = true;로 변경
+
+* slingshot.sc
+- 
 
 3. clear 조건
+
+
+pig 남음 
 
 4. clear 하면 star 띄우고 다음 행성 스프ㅏㄹ이트 바꾸ㅝ
 

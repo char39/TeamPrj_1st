@@ -23,21 +23,27 @@ public partial class GameManage : MonoBehaviour
         Transform menu = canvas_score.transform.GetChild(0).GetChild(3);
         replay = menu.transform.GetChild(1).GetChild(0).GetComponent<Button>();
         replay.onClick.AddListener(Replay);
+        
+        // 0 = red, 1 = yellow, 2 = blue
+        // 방에 맞는 새의 순서를 설정
+        SetBirdOrder(101, new int[] { 0, 0, 0 });
+        SetBirdOrder(102, new int[] { 2, 1, 0 });
+        SetBirdOrder(103, new int[] { 1, 0, 2 });
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            isClear = true;
+            DataList.starScore[1].isClear = true;
 
-        if (isClear)
+        if (DataList.starScore[1].isClear)
             SetStarRating();
 
     }
 
-    private void SetStarRating()
+    public void SetStarRating()
     {
-        isClear = false;
+        DataList.starScore[1].isClear = false;
         canvas_score.enabled = true;
 
         int roomidx = (int)SceneManage.Instance.GetLoadScene();
@@ -103,5 +109,13 @@ public partial class GameManage : MonoBehaviour
     {
         Reset(1);
         SceneManage.Instance.LoadLevel((int)SceneManage.Instance.GetLoadScene());
+    }
+
+    public void SetBirdOrder(int roomidx, int[] order)
+    {
+        if (DataList.starScore.ContainsKey(roomidx))
+        {
+            DataList.starScore[roomidx].AddBirdsInOrder(order);
+        }
     }
 }
