@@ -35,10 +35,10 @@ replay 하고 씬 불러올 때 canvas UI off
 - GameManagerField에 있는 isClear 지우고 LevelData에 bool 변수 isClear를 선언해 DataList.starScore[1].isClear = true;로 변경
 
 * slingshot.sc
-- 여기 약간 수정 그그그그 clear 조건이랑 좀 겹쳐서 고쳐야됨
 
 3. clear 조건
-Pig.cs에서 OnDisable OnEnable 함수로 PigCnt 넘김
+- Pig.cs에서 OnDisable OnEnable 함수로 PigCnt 넘김
+- Gamemanager 스크립트 만들어서 여기서 Game clear, Game Over 판단
 
 4. clear 하면 star 띄우고 다음 행성 스프ㅏㄹ이트 바꾸ㅝ
 

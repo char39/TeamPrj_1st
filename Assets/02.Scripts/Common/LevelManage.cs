@@ -23,19 +23,11 @@ public partial class LevelManage : MonoBehaviour
         Transform menu = canvas_score.transform.GetChild(0).GetChild(3);
         replay = menu.transform.GetChild(1).GetChild(0).GetComponent<Button>();
         replay.onClick.AddListener(Replay);
-        
-        // 0 = red, 1 = yellow, 2 = blue
-        // 방에 맞는 새의 순서를 설정
-        // SetBirdOrder(101, new int[] { 0, 0, 0 });
-        // SetBirdOrder(102, new int[] { 2, 1, 0 });
-        // SetBirdOrder(103, new int[] { 1, 0, 2 });
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            DataList.data[1].isClear = true;
-
+        //GameManager에서 게임 클리어 여부 판단
         if (DataList.data[1].isClear)
             SetStarRating();
 
@@ -43,7 +35,6 @@ public partial class LevelManage : MonoBehaviour
 
     public void SetStarRating()
     {
-        DataList.data[1].isClear = false;
         canvas_score.enabled = true;
 
         int roomidx = (int)SceneManage.GetLoadScene();
@@ -68,11 +59,6 @@ public partial class LevelManage : MonoBehaviour
         {
             empty_starL.GetComponent<Image>().sprite = star_l;
             SetStar(roomidx, 1);
-            scoreText.text = DataList.data[roomidx].score.ToString();
-        }
-        else
-        {
-            SetStar(roomidx, 0);
             scoreText.text = DataList.data[roomidx].score.ToString();
         }
     }

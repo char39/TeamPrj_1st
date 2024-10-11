@@ -1128,6 +1128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389e2b4029614d04da127855e27e9c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slingShot: {fileID: 0}
+  pigList: []
+  pigCnt: 0
 --- !u!1 &1164327947
 GameObject:
   m_ObjectHideFlags: 0

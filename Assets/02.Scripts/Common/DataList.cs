@@ -10,7 +10,7 @@ public static class DataList
         {
             {1, new LevelData()},    // 임시 score 저장용
 
-            {101, new LevelData(10000, 23000, 40000, new List<int>{ 0, 0, 0 })},
+            {101, new LevelData(0, 23000, 40000, new List<int>{ 0, 0, 0 })},
             {102, new LevelData(0, 0, 0, new List<int>{ 2, 1, 3 })},
             {103, new LevelData(0, 0, 0, new List<int>{ 1, 2, 3 })},
             {104, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
