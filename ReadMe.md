@@ -16,15 +16,23 @@ prebird 3개
 2만3천 2개
 4만부터 별3개
 
-common에 ScoreHandler 스크립트 만듦
-
-
-
-
-
-
 
 
 
 reset됐을 때 star sprite 초기화
 replay 하고 씬 불러올 때 canvas UI off
+
+
+1. 충돌시 +점수
+
+2. Dictionary의 List에 bird순서
+Dictionary +bool변수 clear
+
+3. clear 조건
+
+4. clear 하면 star 띄우고 다음 행성 스프ㅏㄹ이트 바꾸ㅝ
+
+5. AllManageMent - canvas_score - Board - menu , replay빼고 구현
+
+6. 오른쪽 상단 score, highscore
+왼쪽 상단 pause Button

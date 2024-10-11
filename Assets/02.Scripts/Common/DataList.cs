@@ -2,37 +2,37 @@ using System.Collections.Generic;
 
 public static class DataList
 {
-    public static Dictionary<int, ScoreData> starScore;
+    public static Dictionary<int, LevelData> starScore;
 
     static DataList()
     {
-        starScore = new Dictionary<int, ScoreData>()
+        starScore = new Dictionary<int, LevelData>()
         {
-            {1, new ScoreData()},    // 임시 score 저장용
+            {1, new LevelData()},    // 임시 score 저장용
 
-            {101, new ScoreData(10000, 23000, 40000)},
-            {102, new ScoreData(0, 0, 0)},
-            {103, new ScoreData(0, 0, 0)},
-            {104, new ScoreData(0, 0, 0)},
-            {105, new ScoreData(0, 0, 0)},
-            {106, new ScoreData(0, 0, 0)},
-            {107, new ScoreData(0, 0, 0)},
+            {101, new LevelData(10000, 23000, 40000)},
+            {102, new LevelData(0, 0, 0)},
+            {103, new LevelData(0, 0, 0)},
+            {104, new LevelData(0, 0, 0)},
+            {105, new LevelData(0, 0, 0)},
+            {106, new LevelData(0, 0, 0)},
+            {107, new LevelData(0, 0, 0)},
 
-            {201, new ScoreData(0, 0, 0)},
-            {202, new ScoreData(0, 0, 0)},
-            {203, new ScoreData(0, 0, 0)},
-            {204, new ScoreData(0, 0, 0)},
-            {205, new ScoreData(0, 0, 0)},
-            {206, new ScoreData(0, 0, 0)},
-            {207, new ScoreData(0, 0, 0)},
+            {201, new LevelData(0, 0, 0)},
+            {202, new LevelData(0, 0, 0)},
+            {203, new LevelData(0, 0, 0)},
+            {204, new LevelData(0, 0, 0)},
+            {205, new LevelData(0, 0, 0)},
+            {206, new LevelData(0, 0, 0)},
+            {207, new LevelData(0, 0, 0)},
 
-            {301, new ScoreData(0, 0, 0)},
-            {302, new ScoreData(0, 0, 0)},
-            {303, new ScoreData(0, 0, 0)},
-            {304, new ScoreData(0, 0, 0)},
-            {305, new ScoreData(0, 0, 0)},
-            {306, new ScoreData(0, 0, 0)},
-            {307, new ScoreData(0, 0, 0)},
+            {301, new LevelData(0, 0, 0)},
+            {302, new LevelData(0, 0, 0)},
+            {303, new LevelData(0, 0, 0)},
+            {304, new LevelData(0, 0, 0)},
+            {305, new LevelData(0, 0, 0)},
+            {306, new LevelData(0, 0, 0)},
+            {307, new LevelData(0, 0, 0)},
         };
     }
 }
