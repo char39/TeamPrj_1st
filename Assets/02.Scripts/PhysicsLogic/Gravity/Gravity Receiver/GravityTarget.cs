@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// 중력장의 중력을 적용받기 위한 주체가 되는 클래스
+// 중력장의 중력을 적용받는 객체가 가지는 클래스
 [RequireComponent(typeof(Rigidbody2D))]
 public class GravityTarget : MonoBehaviour
 {

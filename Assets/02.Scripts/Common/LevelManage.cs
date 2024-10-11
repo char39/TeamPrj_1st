@@ -13,21 +13,28 @@ public partial class LevelManage : MonoBehaviour
 
     void Start()
     {
-        canvas_score = GameObject.Find("Canvas_score").GetComponent<Canvas>();
-        canvas_score.enabled = false;
-        Transform starTr = canvas_score.transform.GetChild(0).GetChild(1);
-        empty_starL = starTr.GetChild(0).gameObject;
-        empty_starM = starTr.GetChild(1).gameObject;
-        empty_starR = starTr.GetChild(2).gameObject;
-        scoreText = canvas_score.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>();
-        Transform menu = canvas_score.transform.GetChild(0).GetChild(3);
-        replay = menu.transform.GetChild(1).GetChild(0).GetComponent<Button>();
-        replay.onClick.AddListener(Replay);
+        stars = new Image[3];
+        spr_Stars = new Sprite[3];
+        spr_EmptyStars = new Sprite[3];
+
+        GetAllVars();
+        SetButtonMethod();
+
+        level_UI.GetChild(0).gameObject.SetActive(false);
+        level_UI.GetChild(1).gameObject.SetActive(false);
     }
+
 
     void Update()
     {
-        //GameManager에서 게임 클리어 여부 판단
+
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            DataList.data[1].isClear = true;
+
         if (DataList.data[1].isClear)
             SetStarRating();
 
@@ -35,30 +42,46 @@ public partial class LevelManage : MonoBehaviour
 
     public void SetStarRating()
     {
-        canvas_score.enabled = true;
+        DataList.data[1].isClear = false;
+        level_UI.GetChild(0).gameObject.SetActive(true);
 
         int roomidx = (int)SceneManage.GetLoadScene();
         SetScore(roomidx, GetScore(1));
 
         if (DataList.data[roomidx].Star3)
         {
-            empty_starL.GetComponent<Image>().sprite = star_l;
-            empty_starM.GetComponent<Image>().sprite = star_m;
-            empty_starR.GetComponent<Image>().sprite = star_r;
+            stars[0].sprite = spr_Stars[0];
+            stars[1].sprite = spr_Stars[1];
+            stars[2].sprite = spr_Stars[2];
+
             SetStar(roomidx, 3);
             scoreText.text = DataList.data[roomidx].score.ToString();
         }
         else if (DataList.data[roomidx].Star2)
         {
-            empty_starL.GetComponent<Image>().sprite = star_l;
-            empty_starM.GetComponent<Image>().sprite = star_m;
+            stars[0].sprite = spr_Stars[0];
+            stars[1].sprite = spr_Stars[1];
+            stars[2].sprite = spr_EmptyStars[2];
+
             SetStar(roomidx, 2);
             scoreText.text = DataList.data[roomidx].score.ToString();
         }
         else if (DataList.data[roomidx].Star1)
         {
-            empty_starL.GetComponent<Image>().sprite = star_l;
+            stars[0].sprite = spr_Stars[0];
+            stars[1].sprite = spr_EmptyStars[1];
+            stars[2].sprite = spr_EmptyStars[2];
+
             SetStar(roomidx, 1);
+            scoreText.text = DataList.data[roomidx].score.ToString();
+        }
+        else
+        {
+            stars[0].sprite = spr_EmptyStars[0];
+            stars[1].sprite = spr_EmptyStars[1];
+            stars[2].sprite = spr_EmptyStars[2];
+
+            SetStar(roomidx, 0);
             scoreText.text = DataList.data[roomidx].score.ToString();
         }
     }
@@ -94,6 +117,7 @@ public partial class LevelManage : MonoBehaviour
     public void Replay()
     {
         Reset(1);
+        level_UI.GetChild(0).gameObject.SetActive(false);
         SceneManage.Instance.LoadLevel((int)SceneManage.GetLoadScene());
     }
 
