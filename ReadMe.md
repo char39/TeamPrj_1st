@@ -46,3 +46,12 @@ replay 하고 씬 불러올 때 canvas UI off
 
 6. 오른쪽 상단 score, highscore
 왼쪽 상단 pause Button
+
+========================
+1. clear 했을 때 UI 바로 나옴 -> 속도가 어떤 값 미만일 때 LevelManager에서 UI 띄우도록
+
+ - 걍 내 생각인데 DataList.data[roomidx].score가 0일 때만 replay 했을 때 UI true, false 잘 되는 것 같음 왜일까;;;
+
+2. 현재 점수가 최고 점수보다 낮으면 점수 변경 막는건 알겠는데 그래도 현재 점수가 몇 점인지 보여는 줘야됨
+ - 점수보여주는건 했는데 별 표시가 좀 에반데 => 완 ㅋㅋ
+

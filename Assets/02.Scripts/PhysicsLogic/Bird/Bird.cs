@@ -34,6 +34,7 @@ public class Bird : MonoBehaviour
     {
         GetGravity();
         FirstReboundCheck();
+        GameManager.Instance.UpdateBird();
     }
 
 
