@@ -2,34 +2,26 @@ using UnityEngine;
 
 public class MoveCameraByDrag : MonoBehaviour
 {
-    [SerializeField]SlingShot _slingshot;
+    private SlingShot _slingshot;
 
-    private Transform tr;
     private Camera cam;
+    public SpriteRenderer bgSprite;
+
+    private Vector2 min, max;
     private float speed = 5f;
     private float firstClickPointX = 0f;
-    [SerializeField] private SpriteRenderer bgSprite;
-
-    private Vector2 bgSize;
-    private Vector2 min, max;
 
     void Start()
     {
-        tr = transform;
         cam = Camera.main;
         _slingshot = GameObject.Find("SlingShot").GetComponent<SlingShot>();
         bgSprite = GameObject.Find("BG").GetComponent<SpriteRenderer>();
-
-        bgSize = bgSprite.bounds.size;
 
         // 카메라 이동 가능한 범위 계산
         CalculateCameraBounds();
     }
 
-    void Update()
-    {
-        MoveCamer();
-    }
+    void Update() => MoveCamer();
 
     void MoveCamer()
     {
@@ -49,10 +41,10 @@ public class MoveCameraByDrag : MonoBehaviour
             cam.transform.Translate(move);
 
             // 카메라 이동 범위 제한
-            Vector3 clampedPosition = cam.transform.position;
-            clampedPosition.x = Mathf.Clamp(clampedPosition.x, min.x, max.x);
-            clampedPosition.y = Mathf.Clamp(clampedPosition.y, min.y, max.y);
-            cam.transform.position = clampedPosition;
+            Vector3 limitCamPos = cam.transform.position;
+            limitCamPos.x = Mathf.Clamp(limitCamPos.x, min.x, max.x);
+            limitCamPos.y = Mathf.Clamp(limitCamPos.y, min.y, max.y);
+            cam.transform.position = limitCamPos;
         }
     }
 

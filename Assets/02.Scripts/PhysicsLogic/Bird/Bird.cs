@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+    private MoveCameraByDrag _moveCam; // MoveCameraByDrag 클래스의 인스턴스 참조
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
     protected ParticleSystem ps;
@@ -21,8 +22,13 @@ public class Bird : MonoBehaviour
     {
         TryGetComponent(out rb);
         TryGetComponent(out sr);
-        if(transform.childCount == 1)
+        if (transform.childCount == 1)
             transform.GetChild(0).TryGetComponent(out ps);
+    }
+
+    void Start()
+    {
+        _moveCam = GameObject.Find("DragCamera").GetComponent<MoveCameraByDrag>();
     }
 
     protected virtual void FixedUpdate()
@@ -35,9 +41,8 @@ public class Bird : MonoBehaviour
         GetGravity();
         FirstReboundCheck();
         GameManager.Instance.UpdateBird();
+        CheckOutOfBounds(); // 화면 밖으로 나갔는지 확인
     }
-
-
 
     /// <summary> 중력 수치 확인용 </summary>
     protected void GetGravity()
@@ -56,7 +61,19 @@ public class Bird : MonoBehaviour
         }
     }
 
+    /// <summary> 화면 밖으로 나갔는지 확인하고 나갔다면 객체를 삭제 </summary>
+    protected virtual void CheckOutOfBounds()
+    {
+        if (_moveCam == null) return;
 
+        Vector3 position = transform.position;
+        Vector2 bgSize = _moveCam.bgSprite.bounds.size;
+        Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
+
+        if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
+    position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
+            Destroy(gameObject);
+    }
 
     /// <summary> 속도 벡터에 따른 회전 </summary>
     public void Rotate(bool FirstRebound)
@@ -74,8 +91,6 @@ public class Bird : MonoBehaviour
         if (sr != null)
             sr.flipY = true;
     }
-
-
 
     /// <summary> 충돌 시 반발 처리 </summary>
     protected void OnCollisionEnter2D(Collision2D col)

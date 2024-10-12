@@ -75,5 +75,8 @@ public class Bird_Yellow : Bird
         }
     }
 
-    // 임시 구현 완. 추후 수정 필요
+    protected override void CheckOutOfBounds()
+    {
+        base.CheckOutOfBounds();
+    }
 }
