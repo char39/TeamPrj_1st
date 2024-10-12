@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         if (pigCnt == 0 && _slingShot != null)
         {
-            if (_bird != null && _bird.velocity.magnitude <= 50)
+            if (_bird.velocity.magnitude <= 5)
             {
                 DataList.data[1].isClear = true;
                 LevelManage.Instance.SetStarRating();

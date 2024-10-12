@@ -72,7 +72,7 @@ public class Bird : MonoBehaviour
 
         if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
     position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
-            Destroy(gameObject);
+            rb.velocity = Vector2.zero;
     }
 
     /// <summary> 속도 벡터에 따른 회전 </summary>
