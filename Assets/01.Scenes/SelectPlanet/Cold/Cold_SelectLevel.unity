@@ -1093,7 +1093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709164797}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Wave_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1247,7 @@ GameObject:
   - component: {fileID: 772343004}
   - component: {fileID: 772343003}
   m_Layer: 5
-  m_Name: Level7
+  m_Name: wave7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,7 +1444,7 @@ GameObject:
   - component: {fileID: 807208802}
   - component: {fileID: 807208801}
   m_Layer: 5
-  m_Name: Level3
+  m_Name: wave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1906,7 +1906,7 @@ GameObject:
   - component: {fileID: 1056070882}
   - component: {fileID: 1056070881}
   m_Layer: 5
-  m_Name: Level1
+  m_Name: wave1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2996,7 +2996,7 @@ GameObject:
   - component: {fileID: 1742538614}
   - component: {fileID: 1742538613}
   m_Layer: 5
-  m_Name: Level4
+  m_Name: wave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3118,7 +3118,7 @@ GameObject:
   - component: {fileID: 1759884971}
   - component: {fileID: 1759884970}
   m_Layer: 5
-  m_Name: Level2
+  m_Name: wave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3353,7 +3353,7 @@ GameObject:
   - component: {fileID: 1928821030}
   - component: {fileID: 1928821029}
   m_Layer: 5
-  m_Name: Level5
+  m_Name: wave5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3550,7 +3550,7 @@ GameObject:
   - component: {fileID: 1964571713}
   - component: {fileID: 1964571712}
   m_Layer: 5
-  m_Name: Level6
+  m_Name: wave6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3672,7 +3672,7 @@ GameObject:
   - component: {fileID: 1991199091}
   - component: {fileID: 1991199096}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Planet_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

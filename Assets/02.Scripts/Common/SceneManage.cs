@@ -47,7 +47,7 @@ public partial class SceneManage : MonoBehaviour
         }
         else if (scene.name == SceneList.name[100])  // (Cold Cuts) Planet
         {
-            Transform canvasTr = GameObject.Find("Canvas").transform;
+            Transform canvasTr = GameObject.Find("Planet_UI").transform;
             Transform levelTr = canvasTr.GetChild(1);
 
             c_backBtn = canvasTr.GetChild(2).GetChild(0).GetComponent<Button>();

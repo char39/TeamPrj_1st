@@ -13,7 +13,7 @@ public partial class LevelManage : MonoBehaviour
     private Sprite[] spr_Stars;              // 별 스프라이트
     private Sprite[] spr_EmptyStars;         // 빈 별 스프라이트
     private Text totalScoreText;             // 점수 텍스트
-    private Button selectLevel;              // 레벨 선택
+    private Button selectWave;              // 레벨 선택
     private Button replay;                   // 다시하기
     private Button nextLevel;                // 다음 레벨
 
@@ -21,9 +21,18 @@ public partial class LevelManage : MonoBehaviour
     private Button pause_inGame;         // 일시정지
     private Button replay_inGame;        // 다시하기
 
-    private Transform Score_UI;          // 점수 UI
+    private Transform score_UI;          // 점수 UI
     private Text scoreText;              // 점수 텍스트
     private Text highScoreText;          // 최고 점수 텍스트
+
+    [SerializeField] private Transform wave_UI;
+    [SerializeField] private Image[] wave1;
+    [SerializeField] private Image[] wave2;
+    [SerializeField] private Image[] wave3;
+    [SerializeField] private Image[] wave4;
+    [SerializeField] private Image[] wave5;
+    [SerializeField] private Image[] wave6;
+    [SerializeField] private Image[] wave7;
 
     private void GetAllVars()
     {
@@ -33,7 +42,7 @@ public partial class LevelManage : MonoBehaviour
         clear_UI.gameObject.SetActive(false);
         starTr = clear_UI.GetChild(1);
         totalScoreText = clear_UI.GetChild(2).GetComponent<Text>();
-        selectLevel = clear_UI.GetChild(3).GetChild(0).GetChild(0).GetComponent<Button>();
+        selectWave = clear_UI.GetChild(3).GetChild(0).GetChild(0).GetComponent<Button>();
         replay = clear_UI.GetChild(3).GetChild(1).GetChild(0).GetComponent<Button>();
         nextLevel = clear_UI.GetChild(3).GetChild(2).GetChild(0).GetComponent<Button>();
 
@@ -41,9 +50,9 @@ public partial class LevelManage : MonoBehaviour
         pause_inGame = inGame_UI.GetChild(0).GetChild(0).GetComponent<Button>();
         replay_inGame = inGame_UI.GetChild(1).GetChild(0).GetComponent<Button>();
 
-        Score_UI = level_UI.GetChild(2);
-        scoreText = Score_UI.GetChild(0).GetChild(0).GetComponent<Text>();
-        highScoreText = Score_UI.GetChild(1).GetChild(0).GetComponent<Text>();
+        score_UI = level_UI.GetChild(2);
+        scoreText = score_UI.GetChild(0).GetChild(0).GetComponent<Text>();
+        highScoreText = score_UI.GetChild(1).GetChild(0).GetComponent<Text>();
 
         Sprite[] allSprites = Resources.LoadAll<Sprite>("Sprite/MENU_ELEMENTS_1");
 
@@ -59,6 +68,7 @@ public partial class LevelManage : MonoBehaviour
     {
         replay.onClick.AddListener(Replay);
         replay_inGame.onClick.AddListener(Replay);
+        selectWave.onClick.AddListener(SelectWave);
     }
 
     public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();

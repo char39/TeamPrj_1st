@@ -50,20 +50,23 @@ replay 하고 씬 불러올 때 canvas UI off
 ========================
 # 2024-10-12 ~ 24-10-13
 1. clear 했을 때 UI 바로 나옴 -> Bird 속도가 어떤 값 미만일 때 LevelManager에서 UI 띄우도록
-- 화면 밖으로 나가는 Bird가 있으면 (삭제) -> 속도 0으로 수정. 그렇게 안해두면 속도가 n일 때라는 조건을 쓸 수가 없음 계속 날아가서
-- MoveCameraByDrag.cs의 bgSprite를 public으로 바꿈. Bird.cs에서 쓸거라서
-- Bird.cs에서 CheckOutOfBounds()로 화면 밖으로 나갔는지 확인
-- Bird.Yellow에서 CheckOutOfBounds() override
+- 화면 밖으로 나가는 Bird가 있으면 (삭제) -> 속도 n으로 수정. 그렇게 안해두면 속도가 n일 때라는 조건을 쓸 수가 없음 계속 날아가서
+  MoveCameraByDrag.cs의 bgSprite를 public으로 바꿈. Bird.cs에서 쓸거라서'''
+  Bird.cs에서 CheckOutOfBounds()로 화면 밖으로 나갔는지 확인
+  Bird.Yellow에서 CheckOutOfBounds() override
 
 - GameManager.cs 에서 clear 조건 Bird 속도 0으로만 만들게 아니라 모든 object의 속도 다 가져와서 n 미만일 때 clear를 해야될 것 같은데
-    => clear 조건 그냥 pig 다 없어지고 5초뒤로 해버리면 아주 간단하지 않나.... 그럼 CheckOutOfBounds() 이것도 안써도 되는데..
-    * 점수 나오는 UI 나올 때 뒤에 움직이는 obj 일시정지해야됨
+  => clear 조건 그냥 pig 다 없어지고 5초뒤로 했더니 오류뜸. 흠.
+  점수 나오는 UI 나올 때 뒤에 움직이는 obj 일시정지 해야할듯
 
 2. 현재 점수가 최고 점수보다 낮으면 점수 변경 막는건 알겠는데 그래도 현재 점수가 몇 점인지 보여는 줘야됨
- - 점수보여주는건 했는데 별 표시가 좀 에반데 => 완 ㅋㅋ
- - LevelManager에 UI 만들어서 score랑 HighScore 표시
-    => on, off를 slingshot 있냐 없냐로 판단
+- 점수보여주는건 했는데 별 표시가 좀 에반데 => 완 ㅋㅋ
+- LevelManager에 UI 만들어서 score랑 HighScore 표시 완
+  => on, off를 slingshot 있냐 없냐로 판단
+- DataList.starScore[roomidx].stars에 있는걸 바탕으로 UI sprite 변경
+
+3. GameManager.cs에다가 Planet UI 만들어서 DataList.starScore[roomidx].stars에 있는걸 바탕으로 UI sprite 변경 => 애매하게 완
+- DataList.data[101].stars 검색해서 이거 수정
 
 
-
-* DataList.data[roomidx].score가 0일 때만 replay 했을 때 UI true, false 잘 되는 것 같음 왜일까;;;
+* Level_UI true, false 왜이렇게 안되냐
