@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public partial class LevelManage : MonoBehaviour
 {
@@ -19,25 +18,35 @@ public partial class LevelManage : MonoBehaviour
 
         GetAllVars();
         SetButtonMethod();
-
-        level_UI.GetChild(0).gameObject.SetActive(false);
-        level_UI.GetChild(1).gameObject.SetActive(false);
     }
-
 
     void Update()
     {
+        UpdateSlingShot();
 
-
-
-
+        if (_slingShot != null)
+            ShowUI();
+        else if (_slingShot == null)
+        {
+            Score_UI.gameObject.SetActive(false);
+            inGame_UI.gameObject.SetActive(false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
             DataList.data[1].isClear = true;
 
         if (DataList.data[1].isClear)
             SetStarRating();
+    }
 
+    private void ShowUI()
+    {
+        Score_UI.gameObject.SetActive(true);
+        inGame_UI.gameObject.SetActive(true);
+
+        int curScore = GetScore(1);
+        scoreText.text = curScore.ToString();
+        highScoreText.text = DataList.data[(int)SceneManage.GetLoadScene()].score.ToString();
     }
 
     public void SetStarRating()
@@ -49,7 +58,7 @@ public partial class LevelManage : MonoBehaviour
         SetScore(roomidx, curScore);
 
         // 항상 curScore를 scoreText에 표시
-        scoreText.text = curScore.ToString();
+        totalScoreText.text = curScore.ToString();
 
         Debug.Log("RoomIdx: " + roomidx);
         Debug.Log("Score: " + DataList.data[roomidx].score);

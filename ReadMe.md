@@ -53,12 +53,16 @@ replay 하고 씬 불러올 때 canvas UI off
 - 화면 밖으로 나가는 Bird가 있으면 (삭제) -> 속도 0으로 수정. 그렇게 안해두면 속도가 n일 때라는 조건을 쓸 수가 없음 계속 날아가서
 - MoveCameraByDrag.cs의 bgSprite를 public으로 바꿈. Bird.cs에서 쓸거라서
 - Bird.cs에서 CheckOutOfBounds()로 화면 밖으로 나갔는지 확인
-- Bird.Yellow에서 CheckOutOfBounds()함수 override
+- Bird.Yellow에서 CheckOutOfBounds() override
 
-- GameManager.cs 에서 clear 조건 Bird 속도 0으로만 만들게 아니라 모든 object의 속도 다 가져와서 n 미만일 때 clear를 해야될 것 같은데 ... 그건 내일생각
+- GameManager.cs 에서 clear 조건 Bird 속도 0으로만 만들게 아니라 모든 object의 속도 다 가져와서 n 미만일 때 clear를 해야될 것 같은데
+    => clear 조건 그냥 pig 다 없어지고 5초뒤로 해버리면 아주 간단하지 않나.... 그럼 CheckOutOfBounds() 이것도 안써도 되는데..
+    점수 나오는 UI 나올 때 뒤에 움직이는 obj 일시정지됨
 
 2. 현재 점수가 최고 점수보다 낮으면 점수 변경 막는건 알겠는데 그래도 현재 점수가 몇 점인지 보여는 줘야됨
  - 점수보여주는건 했는데 별 표시가 좀 에반데 => 완 ㅋㅋ
+ - LevelManager에 UI 만들어서 score랑 HighScore 표시
+    => on, off를 slingshot 있냐 없냐로 판단
 
 
 

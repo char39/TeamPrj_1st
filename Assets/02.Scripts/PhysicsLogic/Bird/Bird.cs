@@ -41,7 +41,7 @@ public class Bird : MonoBehaviour
         GetGravity();
         FirstReboundCheck();
         GameManager.Instance.UpdateBird();
-        CheckOutOfBounds(); // 화면 밖으로 나갔는지 확인
+        // CheckOutOfBounds();
     }
 
     /// <summary> 중력 수치 확인용 </summary>
@@ -61,19 +61,18 @@ public class Bird : MonoBehaviour
         }
     }
 
-    /// <summary> 화면 밖으로 나갔는지 확인하고 나갔다면 객체를 삭제 </summary>
-    protected virtual void CheckOutOfBounds()
-    {
-        if (_moveCam == null) return;
+    // protected virtual void CheckOutOfBounds()
+    // {
+    //     if (_moveCam == null) return;
 
-        Vector3 position = transform.position;
-        Vector2 bgSize = _moveCam.bgSprite.bounds.size;
-        Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
+    //     Vector3 position = transform.position;
+    //     Vector2 bgSize = _moveCam.bgSprite.bounds.size;
+    //     Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
 
-        if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
-    position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
-            rb.velocity = Vector2.zero;
-    }
+    //     if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
+    // position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
+    //         rb.velocity = Vector2.zero;
+    // }
 
     /// <summary> 속도 벡터에 따른 회전 </summary>
     public void Rotate(bool FirstRebound)
