@@ -574,7 +574,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MENU_COMMON_ELEMENTS_1801x968_20
+      name: planet_lock
       rect:
         serializedVersion: 2
         x: 558
@@ -954,7 +954,6 @@ TextureImporter:
       MENU_COMMON_ELEMENTS_1801x968_18: 589889182
       MENU_COMMON_ELEMENTS_1801x968_19: 1732721913
       MENU_COMMON_ELEMENTS_1801x968_2: 301003429
-      MENU_COMMON_ELEMENTS_1801x968_20: 1772744084
       MENU_COMMON_ELEMENTS_1801x968_21: 661958330
       MENU_COMMON_ELEMENTS_1801x968_22: -963879672
       MENU_COMMON_ELEMENTS_1801x968_23: 1347004442
@@ -984,6 +983,7 @@ TextureImporter:
       MENU_COMMON_ELEMENTS_1801x968_7: -1773352346
       MENU_COMMON_ELEMENTS_1801x968_8: 457620785
       MENU_COMMON_ELEMENTS_1801x968_9: 1398639146
+      planet_lock: 1772744084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2087,6 +2087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afe989327711c64f90281c1b11d4ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slingShot: {fileID: 0}
 --- !u!1 &1651541970
 GameObject:
   m_ObjectHideFlags: 0
