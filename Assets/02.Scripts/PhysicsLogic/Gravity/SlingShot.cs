@@ -20,7 +20,7 @@ public class SlingShot : MonoBehaviour
     public int maxStretch = 3;
 
     public int totalBirdCnt;
-    public int usedBirdCnt = 0;
+    public int usedBirds = 0;
 
     public bool isMouseOn = false;         // 당기기 전에 마우스가 위에 있는가
     public bool isClicked = false;         // 새를 클릭 했는가
@@ -66,10 +66,10 @@ public class SlingShot : MonoBehaviour
     /// <summary> preBirdObj(상호작용 없는 객체) 생성 </summary>
     private void CreatePreBird()
     {
-        if (usedBirdCnt == totalBirdCnt)
+        if (usedBirds == totalBirdCnt)
             return;
 
-        int idx = DataList.data[(int)SceneManage.GetLoadScene()].birdList[usedBirdCnt];
+        int idx = DataList.data[(int)SceneManage.GetLoadScene()].birdList[usedBirds];
         preBirdPref = BirdPrefs.preBirds[idx];
 
         if (preBirdObj != null && isSpawn)
@@ -82,7 +82,7 @@ public class SlingShot : MonoBehaviour
     /// <summary> 실제 발사를 위한 birdObj 생성 </summary>
     private void CreateBird()
     {
-        int idx = DataList.data[(int)SceneManage.GetLoadScene()].birdList[usedBirdCnt];
+        int idx = DataList.data[(int)SceneManage.GetLoadScene()].birdList[usedBirds];
         birdPref = BirdPrefs.birds[idx];
 
         if (birdObj != null)
@@ -155,7 +155,7 @@ public class SlingShot : MonoBehaviour
             // birdObj 초기화
             birdObj = null;
 
-            ++usedBirdCnt;
+            ++usedBirds;
             Invoke(nameof(CreatePreBird), 1f);
         }
 

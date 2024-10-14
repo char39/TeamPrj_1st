@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        ClearCheck();
+    }
+
+    private void ClearCheck()
+    {
         if (pigCnt == 0 && _slingShot != null)
         {
             if (_bird != null && _bird.velocity.magnitude <= 5)
@@ -32,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         else if (_slingShot != null)
         {
-            if (_slingShot.totalBirdCnt == _slingShot.usedBirdCnt)
+            if (_slingShot.totalBirdCnt == _slingShot.usedBirds)
                 DataList.data[1].isClear = false;
         }
     }

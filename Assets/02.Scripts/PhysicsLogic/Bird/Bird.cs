@@ -63,15 +63,14 @@ public class Bird : MonoBehaviour
 
     protected virtual void CheckOutOfBounds()
     {
-        if (_moveCam == null) return;
-
-        Vector3 position = transform.position;
-        Vector2 bgSize = _moveCam.bgSprite.bounds.size;
-        Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
-
-        if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
-    position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
-            rb.velocity = Vector2.zero;
+        // #1 wave마다 크기 다르게 하는걸로 변경
+        //if (_moveCam == null) return;
+        // Vector3 position = transform.position;
+        // Vector2 bgSize = _moveCam.bgSprite.bounds.size;
+        // Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
+        //     if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
+        // position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
+        //         rb.velocity = Vector2.zero;
     }
 
     /// <summary> 속도 벡터에 따른 회전 </summary>
