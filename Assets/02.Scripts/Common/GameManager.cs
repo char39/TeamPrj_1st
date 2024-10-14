@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     {
         if (pigCnt == 0 && _slingShot != null)
         {
-            if (_bird != null && _bird.velocity.magnitude <= 5)
+            // #2 _bird.velocity.magnitude 말고 중력 받는 모든 클래스 검색하는걸로
+            if (_bird != null && _bird.velocity.magnitude <= 0.2)
             {
                 DataList.data[1].isClear = true;
                 LevelManage.Instance.SetStarRating();

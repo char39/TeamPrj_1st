@@ -63,7 +63,7 @@ public class Bird : MonoBehaviour
 
     protected virtual void CheckOutOfBounds()
     {
-        // #1 wave마다 크기 다르게 하는걸로 변경
+        // #1 중력 없는 wave에 필요한 코드, if문 조건 수정
         //if (_moveCam == null) return;
         // Vector3 position = transform.position;
         // Vector2 bgSize = _moveCam.bgSprite.bounds.size;
