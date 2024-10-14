@@ -1,195 +1,69 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
+using System.Collections.Generic;
 
 public partial class LevelManage : MonoBehaviour
 {
-    public static LevelManage Instance;
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
-    void Start()
-    {
-        stars = new Image[3];
-        spr_Stars = new Sprite[3];
-        spr_EmptyStars = new Sprite[3];
-
-        GetAllVars();
-        SetButtonMethod();
-    }
-
+    public SlingShot _slingShot;
+    public bool UIActive = false;
     void Update()
     {
-        UpdateSlingShot();
-
-        if ((int)SceneManage.GetLoadScene() == 100)
-            LoadWaveImg();
-
-        OnOffScoreUI();
-
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        //     DataList.data[1].isClear = true;
-
-        if (wave_UI != null && DataList.data[101].stars != 0){
-            SetPlanetStar();
-            ChangeUnLockImg();}
-    }
-
-    private void OnOffScoreUI()
-    {
-        if (_slingShot != null)
+        ClearCheck();
+        if (LevelDataList.levelData[1].isClear && !UIActive)
         {
-            score_UI.gameObject.SetActive(true);
-            inGame_UI.gameObject.SetActive(true);
-
-            int curScore = GetScore(1);
-            scoreText.text = curScore.ToString();
-            highScoreText.text = DataList.data[(int)SceneManage.GetLoadScene()].score.ToString();
-        }
-        else if (_slingShot == null)
-        {
-            score_UI.gameObject.SetActive(false);
-            inGame_UI.gameObject.SetActive(false);
+            Debug.Log("Clear");
+            UIActive = true;
+            Invoke(nameof(ASDF), 1.5f);
         }
     }
-
-    private void LoadWaveImg()
+    void ASDF()
     {
-        wave_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
-        wave1 = wave_UI.GetChild(0).GetComponentsInChildren<Image>();
-        wave2 = wave_UI.GetChild(1).GetComponentsInChildren<Image>().Skip(1).ToArray();
-        wave3 = wave_UI.GetChild(2).GetComponentsInChildren<Image>().Skip(1).ToArray();
-        wave4 = wave_UI.GetChild(3).GetComponentsInChildren<Image>().Skip(1).ToArray();
-        wave5 = wave_UI.GetChild(4).GetComponentsInChildren<Image>().Skip(1).ToArray();
-        wave6 = wave_UI.GetChild(5).GetComponentsInChildren<Image>().Skip(1).ToArray();
-        wave7 = wave_UI.GetChild(6).GetComponentsInChildren<Image>().Skip(1).ToArray();
+        GameManage.UI.SetStarRating();
     }
-
-    public void ChangeUnLockImg()
+    private void ClearCheck()
     {
-        int roomidx = (int)SceneManage.GetLoadScene();
-        //if(DataList.data[roomidx].isClear)
-        
-    }
+        if (_slingShot == null) return;
 
-    public void SetStarRating()
-    {
-        level_UI.GetChild(0).gameObject.SetActive(true);
-        int roomidx = (int)SceneManage.GetLoadScene();
-        int curScore = GetScore(1);
-        SetScore(roomidx, curScore);
-
-        totalScoreText.text = curScore.ToString();
-
-        // 테스트용
-        // Debug.Log("RoomIdx: " + roomidx);
-        // Debug.Log("Score: " + DataList.data[roomidx].score);
-        // Debug.Log("Stars: " + DataList.data[roomidx].stars);
-
-        if (DataList.data[roomidx].requireScore[2] <= curScore)
+        if (pigCnt == 0)
         {
-            stars[0].sprite = spr_Stars[0];
-            stars[1].sprite = spr_Stars[1];
-            stars[2].sprite = spr_Stars[2];
+            // #2 _bird.velocity.magnitude 말고 중력 받는 모든 클래스 검색하는걸로
+            GravityTarget[] _gravityTarget = FindObjectsOfType<GravityTarget>();
+            bool[] CheckLowSpeed = new bool[_gravityTarget.Length];
+            for (int i = 0; i < _gravityTarget.Length; i++)
+            {
+                CheckLowSpeed[i] = _gravityTarget[i].desiredSpeed;
+                Debug.Log(_gravityTarget[i].gameObject.name + CheckLowSpeed[i]);
+            }
 
-            SetStar(roomidx, 3);
+            for (int i = 0; i < CheckLowSpeed.Length; i++)
+            {
+                if (!CheckLowSpeed[i])
+                    return;
+            }
+            LevelDataList.levelData[1].isClear = true;
         }
-        else if (DataList.data[roomidx].requireScore[1] <= curScore)
-        {
-            stars[0].sprite = spr_Stars[0];
-            stars[1].sprite = spr_Stars[1];
-            stars[2].sprite = spr_EmptyStars[2];
 
-            SetStar(roomidx, 2);
-        }
-        else if (DataList.data[roomidx].requireScore[0] <= curScore)
-        {
-            stars[0].sprite = spr_Stars[0];
-            stars[1].sprite = spr_EmptyStars[1];
-            stars[2].sprite = spr_EmptyStars[2];
-
-            SetStar(roomidx, 1);
-        }
         else
         {
-            stars[0].sprite = spr_EmptyStars[0];
-            stars[1].sprite = spr_EmptyStars[1];
-            stars[2].sprite = spr_EmptyStars[2];
-
-            SetStar(roomidx, 0);
+            LevelDataList.levelData[1].isClear = false;
+            //LevelManage.Instance.SetStarRating();
         }
     }
+   public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
+    //ublic void UpdateBird() => _bird = FindObjectOfType<Bird>();
 
-    private void SetPlanetStar()
+    public void AddPig(Pig pig)
     {
-        int starCount = DataList.data[101].stars;
-
-        // if (starCount == 3)
-        // {
-        //     wave1[0].sprite = spr_Stars[0];
-        //     wave1[1].sprite = spr_Stars[1];
-        //     wave1[2].sprite = spr_Stars[2];
-        // }
-        // else if (starCount == 2)
-        // {
-        //     wave1[0].sprite = spr_Stars[0];
-        //     wave1[1].sprite = spr_Stars[1];
-        //     wave1[2].sprite = spr_EmptyStars[2];
-        // }
-        // else if (starCount == 1)
-        // {
-        //     wave1[0].sprite = spr_Stars[0];
-        //     wave1[1].sprite = spr_EmptyStars[1];
-        //     wave1[2].sprite = spr_EmptyStars[2];
-        // }
-
-        for (int i = 0; i < starCount; i++)
-            wave1[i].sprite = spr_Stars[i];
-        for (int i = starCount; i < 3; i++)
-            wave1[i].sprite = spr_EmptyStars[i];
+        pigList.Add(pig);
+        pigCnt = pigList.Count;
+        Debug.Log(pigCnt);
     }
 
-    public void Replay()
+    public void RemovePig(Pig pig)
     {
-        Reset(1);
-        level_UI.GetChild(0).gameObject.SetActive(false);
-        GameManager.Instance.UIActive = false;
-        SceneManage.Instance.LoadLevel((int)SceneManage.GetLoadScene());
+        pigList.Remove(pig);
+        pigCnt = pigList.Count;
+        Debug.Log(pigCnt);
     }
-
-    public void SelectWave()
-    {
-        SceneManage.Instance.LoadSelectLevel();
-    }
-
-    public static void AddScore(int roomidx, int score = 0)
-    {
-        // if (DataList.data[1].isClear) return;
-        // Debug.Log(DataList.data[1].isClear);
-
-        DataList.data[roomidx].score += score;
-    }
-    public static void SetScore(int roomidx, int curScore = 0)
-    {
-        if (DataList.data[roomidx].score > curScore) return;
-        DataList.data[roomidx].score = curScore;
-    }
-    public static int GetScore(int roomidx) => DataList.data[roomidx].score;
-
-    public static void SetStar(int roomidx, int star = 0)
-    {
-        if (DataList.data[roomidx].stars > star) return;
-        DataList.data[roomidx].stars = star;
-    }
-    public static int GetStar(int roomidx) => DataList.data[roomidx].stars;
-
-    public static void Reset(int roomidx)
-    {
-        DataList.data[roomidx].isClear = false;
-        DataList.data[roomidx].score = 0;
-        DataList.data[roomidx].stars = 0;
-    }
+    [SerializeField] private List<Pig> pigList = new();
+    public int pigCnt;
 }

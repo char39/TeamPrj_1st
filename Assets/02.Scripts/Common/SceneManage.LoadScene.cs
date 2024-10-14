@@ -39,23 +39,23 @@ public partial class SceneManage : MonoBehaviour
     /// <summary> Scene 전환 onoff Coroutine. </summary>
     private IEnumerator SceneChangeOnOff(bool on, float duration)
     {
-        sceneChange.interactable = true;
-        sceneChange.blocksRaycasts = true;
+        fadeEffect.interactable = true;
+        fadeEffect.blocksRaycasts = true;
 
         float elapsed = 0f;
-        float startAlpha = sceneChange.alpha;
+        float startAlpha = fadeEffect.alpha;
         float endAlpha = on ? 1 : 0;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            sceneChange.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed / duration);
+            fadeEffect.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed / duration);
             yield return null;
         }
 
-        sceneChange.alpha = endAlpha;
-        sceneChange.interactable = on;
-        sceneChange.blocksRaycasts = on;
+        fadeEffect.alpha = endAlpha;
+        fadeEffect.interactable = on;
+        fadeEffect.blocksRaycasts = on;
         isSceneChanging = false;
     }
 
@@ -79,5 +79,5 @@ public partial class SceneManage : MonoBehaviour
     private void UnloadScene(int index) => SceneManager.UnloadSceneAsync(SceneList.name[index], UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
 
     /// <summary> 현재 로드 중인 Scene을 반환. </summary>
-    public static int? GetLoadScene() => SceneList.GetKeyByValue(SceneManager.GetActiveScene().name);
+    public int? GetLoadScene() => SceneList.GetKeyByValue(SceneManager.GetActiveScene().name);
 }

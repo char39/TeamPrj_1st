@@ -30,11 +30,11 @@ public class GravityTarget : MonoBehaviour
 
     private void CheckOutOfBounds()
     {
-        int roomidx = (int)SceneManage.GetLoadScene();
-        float up = DataList.waveRoomSize[roomidx].up;
-        float down = DataList.waveRoomSize[roomidx].down;
-        float left = DataList.waveRoomSize[roomidx].left;
-        float right = DataList.waveRoomSize[roomidx].right;
+        int roomidx = (int)GameManage.Scene.GetLoadScene();
+        float up = LevelDataList.levelSize[roomidx].up;
+        float down = LevelDataList.levelSize[roomidx].down;
+        float left = LevelDataList.levelSize[roomidx].left;
+        float right = LevelDataList.levelSize[roomidx].right;
 
         if (!(down < tr.position.y && tr.position.y < up && left < tr.position.x && tr.position.x < right))
             rb.velocity = Vector2.zero;

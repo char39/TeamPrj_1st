@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4621d8853f0e54da79f275927297292e
+guid: d166e3bf853222641bafcecda85d737c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -301,7 +301,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star_empty_1
+      name: star_empty_l
       rect:
         serializedVersion: 2
         x: 365
@@ -322,7 +322,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star_2
+      name: star_m
       rect:
         serializedVersion: 2
         x: 37
@@ -406,7 +406,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MENU_ELEMENTS_1_12
+      name: planet_unlock
       rect:
         serializedVersion: 2
         x: 548
@@ -973,7 +973,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star_empty_2
+      name: star_empty_m
       rect:
         serializedVersion: 2
         x: 392
@@ -994,7 +994,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star_empty_3
+      name: star_empty_r
       rect:
         serializedVersion: 2
         x: 421
@@ -1015,7 +1015,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star_1
+      name: star_l
       rect:
         serializedVersion: 2
         x: 0
@@ -1036,7 +1036,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star_3
+      name: star_r
       rect:
         serializedVersion: 2
         x: 77
@@ -1071,7 +1071,6 @@ TextureImporter:
       MENU_ELEMENTS_1_1: 1891339369
       MENU_ELEMENTS_1_10: 1944303471
       MENU_ELEMENTS_1_11: 1776264650
-      MENU_ELEMENTS_1_12: 1243747566
       MENU_ELEMENTS_1_13: -672427363
       MENU_ELEMENTS_1_14: -1724093929
       MENU_ELEMENTS_1_15: -985774842
@@ -1111,13 +1110,14 @@ TextureImporter:
       MENU_ELEMENTS_1_5: -1623207407
       MENU_ELEMENTS_1_8: 1325907580
       MENU_ELEMENTS_1_9: -481076957
-      star_1: -1946513815
-      star_2: -1507178179
-      star_3: 92967569
-      star_empty_1: 504136869
-      star_empty_2: 1781511696
-      star_empty_3: -835450756
+      planet_unlock: 1243747566
+      star_empty_l: 504136869
+      star_empty_m: 1781511696
+      star_empty_r: -835450756
+      star_l: -1946513815
+      star_m: -1507178179
       star_one: -199521602
+      star_r: 92967569
       star_two: 1171152217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

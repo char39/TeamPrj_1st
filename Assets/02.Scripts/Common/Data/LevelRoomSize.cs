@@ -1,7 +1,7 @@
-public class WaveRoomSize
+public class LevelRoomSize
 {
     public float up, down, left, right;
-    public WaveRoomSize(float up, float down, float left, float right)
+    public LevelRoomSize(float up, float down, float left, float right)
     {
         this.up = up;
         this.down = down;

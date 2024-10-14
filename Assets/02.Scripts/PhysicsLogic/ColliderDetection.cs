@@ -33,6 +33,6 @@ public class ColliderDetection : MonoBehaviour
         DestroyThisObject();
     }
 
-    protected void AddScore(int roomidx = 1) => LevelManage.AddScore(roomidx, score);
+    protected void AddScore(int roomidx = 1) => GameManage.UI.AddScore(roomidx, score);
     protected void DestroyThisObject() => Destroy(gameObject);
 }

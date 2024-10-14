@@ -34,7 +34,7 @@ public class Bird : MonoBehaviour
     {
         GetGravity();
         FirstReboundCheck();
-        GameManager.Instance.UpdateBird();
+        // GameManage.Instance.UpdateBird();
     }
 
     /// <summary> 중력 수치 확인용 </summary>

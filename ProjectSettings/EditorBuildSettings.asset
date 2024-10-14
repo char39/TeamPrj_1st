@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/01.Scenes/GameStartScene.unity
     guid: b5b884876437a45329dc461ed5fc1833
   - enabled: 1
-    path: Assets/01.Scenes/SelectPlanet/PlanetScene.unity
+    path: Assets/01.Scenes/SelectPlanet/PlanetSelectScene.unity
     guid: 17fb5464e595296478eb22e5d1d148dc
   - enabled: 1
     path: Assets/01.Scenes/SelectPlanet/Cold/Cold_SelectLevel.unity

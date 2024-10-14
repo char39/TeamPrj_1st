@@ -5,8 +5,8 @@ public class LevelData
 {
     public int score;
     public int stars;
-    public int[] requireScore;
     public bool isClear;
+    public int[] requireScore;
     public List<int> birdList;
 
     public LevelData(int oneStar = 0, int twoStar = 0, int threeStar = 0, List<int> birdList = null)

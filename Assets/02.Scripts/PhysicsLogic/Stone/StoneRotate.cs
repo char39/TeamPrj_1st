@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceRotate : MonoBehaviour
+public class StoneRotate : MonoBehaviour
 {
     Transform tr;
     float rotSpeed;

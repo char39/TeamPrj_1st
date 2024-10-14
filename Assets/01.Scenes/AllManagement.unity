@@ -838,6 +838,9 @@ GameObject:
   m_Component:
   - component: {fileID: 525098315}
   - component: {fileID: 525098314}
+  - component: {fileID: 525098318}
+  - component: {fileID: 525098317}
+  - component: {fileID: 525098316}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -854,13 +857,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 525098313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389e2b4029614d04da127855e27e9c62, type: 3}
+  m_Script: {fileID: 11500000, guid: a1c3c7a0faec20443be560956e4dfbef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slingShot: {fileID: 0}
-  _bird: {fileID: 0}
   pigList: []
   pigCnt: 0
+  UIActive: 0
 --- !u!4 &525098315
 Transform:
   m_ObjectHideFlags: 0
@@ -876,6 +879,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &525098316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525098313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afe989327711c64f90281c1b11d4ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &525098317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525098313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7a5e0c7dc6646bba2e768c296028e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSceneChanging: 0
+  playBtn: {fileID: 0}
+  planetColdCuts_Btn: {fileID: 0}
+  planetEgg_Btn: {fileID: 0}
+  planetMoon_Btn: {fileID: 0}
+  planet_BackButton: {fileID: 0}
+  coldCuts_BackButton: {fileID: 0}
+  selectColdLevel_Button: []
+  eggsteroids_BackButton: {fileID: 0}
+  selectEggsteroidsLevel_Button: []
+  moon_BackButton: {fileID: 0}
+  selectMoonLevel_Button: []
+--- !u!114 &525098318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525098313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83258678e6420f64398eb23af47cf4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slingShot: {fileID: 0}
+  level_UI: {fileID: 0}
+  wave_UI: {fileID: 0}
+  wave1: []
+  wave2: []
+  wave3: []
+  wave4: []
+  wave5: []
+  wave6: []
+  wave7: []
+  unlockImg: {fileID: 0}
 --- !u!1 &618916764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,59 +1266,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996231414}
   m_CullTransparentMesh: 1
---- !u!1 &1036721588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1036721590}
-  - component: {fileID: 1036721589}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1036721589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036721588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7a5e0c7dc6646bba2e768c296028e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSceneChanging: 0
-  playBtn: {fileID: 0}
-  backBtn: {fileID: 0}
-  coldcuts: {fileID: 0}
-  moon: {fileID: 0}
-  eggsteriods: {fileID: 0}
-  c_backBtn: {fileID: 0}
-  wave1: {fileID: 0}
-  wave2: {fileID: 0}
---- !u!4 &1036721590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036721588}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046909181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,59 +2065,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404842327}
   m_CullTransparentMesh: 1
---- !u!1 &1503127280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1503127281}
-  - component: {fileID: 1503127282}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1503127281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503127280}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1503127282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503127280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afe989327711c64f90281c1b11d4ccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slingShot: {fileID: 0}
-  wave_UI: {fileID: 0}
-  wave1: []
-  wave2: []
-  wave3: []
-  wave4: []
-  wave5: []
-  wave6: []
-  wave7: []
 --- !u!1 &1651541970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,8 +2629,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 2132736507}
   - {fileID: 525098315}
-  - {fileID: 1503127281}
-  - {fileID: 1036721590}
   - {fileID: 1960174554}
   - {fileID: 1345345334}
   - {fileID: 1651541974}

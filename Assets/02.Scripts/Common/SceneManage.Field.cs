@@ -4,25 +4,35 @@ using UnityEngine.UI;
 public partial class SceneManage : MonoBehaviour
 {
     // Scene 전환에 사용되는 변수
-    private CanvasGroup sceneChange;
+    private CanvasGroup fadeEffect;
     public bool isSceneChanging = false;
 
+    internal const string SceneChangeObj = "SceneChange";
 
+    internal const string GameStartScene = "Canvas_Start";
+    internal const string PlanetSelectScene = "Canvas_Planet";
+    internal const string ColdSelectLevelScene = "Planet_UI";
+    internal const string EggsteroidsSelectLevelScene = "Eggsteroids_UI";
+    internal const string MoonSelectLevelScene = "Moon_UI";
 
+    // GameStartScene UI
+    private Button playBtn;
 
+    // PlanetSelectScene UI
+    private Button planetColdCuts_Btn;
+    private Button planetEgg_Btn;
+    private Button planetMoon_Btn;
+    private Button planet_BackBtn;
 
+    // Cold_SelectLevel_Scene UI
+    private Button coldCuts_BackBtn;
+    private Button[] selectColdLevel_Btn;
 
-    public Button playBtn;
+    // Eggsteroids_SelectLevel_Scene UI
+    private Button eggsteroids_BackBtn;
+    private Button[] selectEggsteroidsLevel_Btn;
 
-    [Header("SelectScene")]
-    public Button backBtn;
-    public Button coldcuts;
-    public Button moon;
-    public Button eggsteriods;
-
-    [Header("Cold_SelectLevel_Scene")]
-    public Button c_backBtn;
-    public Button[] cold_wave_button;
-
-
+    // Moon_SelectLevel_Scene UI
+    private Button moon_BackBtn;
+    private Button[] selectMoonLevel_Btn;
 }

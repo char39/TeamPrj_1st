@@ -13,7 +13,7 @@ public static class SceneList
         {
             {0, "AllManagement"},       // 사라지면 안되는 Scene
             {1, "GameStartScene"},
-            {2, "PlanetScene"},
+            {2, "PlanetSelectScene"},
 
             {100, "Cold_SelectLevel"},  // (Cold Cuts) Planet
             {101, "Cold_Level1"},

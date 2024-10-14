@@ -109,3 +109,16 @@ Bird.cs
     돼지 전부 디짐
 
     클리어 판정이 되고나서 약 1.5초뒤에 UI가 나오게 하기
+
+
+
+* 일시정지
+* Clear 판단해서 planet Img 변경
+* replay 했을 때 bir
+
+
+
+GameManage - 아래 클래스들을 관리
+UIManage - UI 관리
+LevelManage - Level 관리
+SceneManage - Scene 관리

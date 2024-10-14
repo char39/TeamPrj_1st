@@ -29,8 +29,8 @@ public class SlingShot : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.UpdateSlingShot();
-        totalBirdCnt = DataList.data[(int)SceneManage.GetLoadScene()].birdList.Count;
+        GameManage.Level.UpdateSlingShot();
+        totalBirdCnt = LevelDataList.levelData[(int)GameManage.Scene.GetLoadScene()].birdList.Count;
 
         launchPos = new Vector2(transform.position.x, transform.position.y);
         startPos = launchPos;
@@ -69,7 +69,7 @@ public class SlingShot : MonoBehaviour
         if (usedBirds == totalBirdCnt)
             return;
 
-        int idx = DataList.data[(int)SceneManage.GetLoadScene()].birdList[usedBirds];
+        int idx = LevelDataList.levelData[(int)GameManage.Scene.GetLoadScene()].birdList[usedBirds];
         preBirdPref = BirdPrefs.preBirds[idx];
 
         if (preBirdObj != null && isSpawn)
@@ -82,7 +82,7 @@ public class SlingShot : MonoBehaviour
     /// <summary> 실제 발사를 위한 birdObj 생성 </summary>
     private void CreateBird()
     {
-        int idx = DataList.data[(int)SceneManage.GetLoadScene()].birdList[usedBirds];
+        int idx = LevelDataList.levelData[(int)GameManage.Scene.GetLoadScene()].birdList[usedBirds];
         birdPref = BirdPrefs.birds[idx];
 
         if (birdObj != null)
