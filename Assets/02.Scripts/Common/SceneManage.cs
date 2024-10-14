@@ -51,12 +51,15 @@ public partial class SceneManage : MonoBehaviour
             Transform levelTr = canvasTr.GetChild(1);
 
             c_backBtn = canvasTr.GetChild(2).GetChild(0).GetComponent<Button>();
-            level1 = levelTr.GetChild(0).GetComponent<Button>();
-            level2 = levelTr.GetChild(1).GetComponent<Button>();
-
             c_backBtn.onClick.AddListener(LoadSelectPlanet); 
-            level1.onClick.AddListener(() => LoadLevel(101));
-            level2.onClick.AddListener(() => LoadLevel(102));
+
+            cold_wave_button = new Button[7];
+            for (int i = 0; i < 7; i++)
+            {
+                int index = i;
+                cold_wave_button[index] = levelTr.GetChild(index).GetComponent<Button>();
+                cold_wave_button[index].onClick.AddListener(() => LoadLevel(100 + index + 1));
+            }
         }
     }
 
@@ -66,5 +69,11 @@ public partial class SceneManage : MonoBehaviour
 
     public void LoadGameStart() => LoadSceneChange(1, 0.3f, 0.3f);
 
-    public void LoadLevel(int idx) => LoadSceneChange(idx, 0.3f, 0.3f);
+    public void LoadLevel(int idx)
+    {
+        LevelManage.Reset(1);
+        LevelManage.Instance.level_UI.GetChild(0).gameObject.SetActive(false);
+        GameManager.Instance.UIActive = false;
+        LoadSceneChange(idx, 0.3f, 0.3f);
+    }
 }

@@ -19,9 +19,21 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public bool UIActive = false;
     void Update()
     {
         ClearCheck();
+        if (DataList.data[1].isClear && !UIActive)
+        {
+            Debug.Log("Clear");
+            UIActive = true;
+            Invoke(nameof(ASDF), 1.5f);
+        }
+    }
+
+    void ASDF()
+    {
+        LevelManage.Instance.SetStarRating();
     }
 
     private void ClearCheck()
@@ -35,7 +47,7 @@ public class GameManager : MonoBehaviour
             bool[] CheckLowSpeed = new bool[_gravityTarget.Length];
             for (int i = 0; i < _gravityTarget.Length; i++)
             {
-                CheckLowSpeed[i] = _gravityTarget[i].lowSpeed;
+                CheckLowSpeed[i] = _gravityTarget[i].desiredSpeed;
                 Debug.Log(_gravityTarget[i].gameObject.name + CheckLowSpeed[i]);
             }
 
@@ -45,7 +57,6 @@ public class GameManager : MonoBehaviour
                     return;
             }
             DataList.data[1].isClear = true;
-            LevelManage.Instance.SetStarRating();
         }
 
         else

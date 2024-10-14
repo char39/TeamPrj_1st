@@ -11,7 +11,7 @@ public class GravityTarget : MonoBehaviour
     private const float speed = 0.5f;
     public float gravityOffset = 1f;
     public bool isGravity = false;
-    public bool lowSpeed = false;
+    public bool desiredSpeed = false;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class GravityTarget : MonoBehaviour
 
     void Update()
     {
-        lowSpeed = rb.velocity.magnitude <= speed;
+        desiredSpeed = rb.velocity.magnitude <= speed;
         if (test) return;
         CheckOutOfBounds();
     }

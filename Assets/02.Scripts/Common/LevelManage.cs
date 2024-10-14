@@ -33,8 +33,9 @@ public partial class LevelManage : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.Escape))
         //     DataList.data[1].isClear = true;
 
-        if (wave_UI != null && DataList.data[101].stars != 0)
+        if (wave_UI != null && DataList.data[101].stars != 0){
             SetPlanetStar();
+            ChangeUnLockImg();}
     }
 
     private void OnOffScoreUI()
@@ -58,13 +59,20 @@ public partial class LevelManage : MonoBehaviour
     private void LoadWaveImg()
     {
         wave_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
-        wave1 = wave_UI.GetChild(0).GetComponentsInChildren<Image>().Skip(1).ToArray();
+        wave1 = wave_UI.GetChild(0).GetComponentsInChildren<Image>();
         wave2 = wave_UI.GetChild(1).GetComponentsInChildren<Image>().Skip(1).ToArray();
         wave3 = wave_UI.GetChild(2).GetComponentsInChildren<Image>().Skip(1).ToArray();
         wave4 = wave_UI.GetChild(3).GetComponentsInChildren<Image>().Skip(1).ToArray();
         wave5 = wave_UI.GetChild(4).GetComponentsInChildren<Image>().Skip(1).ToArray();
         wave6 = wave_UI.GetChild(5).GetComponentsInChildren<Image>().Skip(1).ToArray();
         wave7 = wave_UI.GetChild(6).GetComponentsInChildren<Image>().Skip(1).ToArray();
+    }
+
+    public void ChangeUnLockImg()
+    {
+        int roomidx = (int)SceneManage.GetLoadScene();
+        //if(DataList.data[roomidx].isClear)
+        
     }
 
     public void SetStarRating()
@@ -119,30 +127,36 @@ public partial class LevelManage : MonoBehaviour
     {
         int starCount = DataList.data[101].stars;
 
-        if (starCount == 3)
-        {
-            wave1[0].sprite = spr_Stars[0];
-            wave1[1].sprite = spr_Stars[1];
-            wave1[2].sprite = spr_Stars[2];
-        }
-        else if (starCount == 2)
-        {
-            wave1[0].sprite = spr_Stars[0];
-            wave1[1].sprite = spr_Stars[1];
-            wave1[2].sprite = spr_EmptyStars[2];
-        }
-        else if (starCount == 1)
-        {
-            wave1[0].sprite = spr_Stars[0];
-            wave1[1].sprite = spr_EmptyStars[1];
-            wave1[2].sprite = spr_EmptyStars[2];
-        }
+        // if (starCount == 3)
+        // {
+        //     wave1[0].sprite = spr_Stars[0];
+        //     wave1[1].sprite = spr_Stars[1];
+        //     wave1[2].sprite = spr_Stars[2];
+        // }
+        // else if (starCount == 2)
+        // {
+        //     wave1[0].sprite = spr_Stars[0];
+        //     wave1[1].sprite = spr_Stars[1];
+        //     wave1[2].sprite = spr_EmptyStars[2];
+        // }
+        // else if (starCount == 1)
+        // {
+        //     wave1[0].sprite = spr_Stars[0];
+        //     wave1[1].sprite = spr_EmptyStars[1];
+        //     wave1[2].sprite = spr_EmptyStars[2];
+        // }
+
+        for (int i = 0; i < starCount; i++)
+            wave1[i].sprite = spr_Stars[i];
+        for (int i = starCount; i < 3; i++)
+            wave1[i].sprite = spr_EmptyStars[i];
     }
 
     public void Replay()
     {
         Reset(1);
         level_UI.GetChild(0).gameObject.SetActive(false);
+        GameManager.Instance.UIActive = false;
         SceneManage.Instance.LoadLevel((int)SceneManage.GetLoadScene());
     }
 
@@ -174,6 +188,7 @@ public partial class LevelManage : MonoBehaviour
 
     public static void Reset(int roomidx)
     {
+        DataList.data[roomidx].isClear = false;
         DataList.data[roomidx].score = 0;
         DataList.data[roomidx].stars = 0;
     }

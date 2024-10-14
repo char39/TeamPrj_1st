@@ -5,7 +5,7 @@ public partial class LevelManage : MonoBehaviour
 {
     public SlingShot _slingShot;
 
-    private Transform level_UI;
+    internal Transform level_UI;
 
     private Transform clear_UI;          // 클리어 UI
     private Transform starTr;                // 별 이미지

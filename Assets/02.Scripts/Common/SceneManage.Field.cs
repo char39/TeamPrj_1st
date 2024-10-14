@@ -22,8 +22,7 @@ public partial class SceneManage : MonoBehaviour
 
     [Header("Cold_SelectLevel_Scene")]
     public Button c_backBtn;
-    public Button level1;
-    public Button level2;
+    public Button[] cold_wave_button;
 
 
 }

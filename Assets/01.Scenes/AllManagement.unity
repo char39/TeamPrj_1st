@@ -1240,8 +1240,8 @@ MonoBehaviour:
   moon: {fileID: 0}
   eggsteriods: {fileID: 0}
   c_backBtn: {fileID: 0}
-  level1: {fileID: 0}
-  level2: {fileID: 0}
+  wave1: {fileID: 0}
+  wave2: {fileID: 0}
 --- !u!4 &1036721590
 Transform:
   m_ObjectHideFlags: 0
@@ -1579,6 +1579,7 @@ GameObject:
   - component: {fileID: 1164327948}
   - component: {fileID: 1164327950}
   - component: {fileID: 1164327949}
+  - component: {fileID: 1164327951}
   m_Layer: 5
   m_Name: Clear_UI
   m_TagString: Untagged
@@ -1647,6 +1648,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164327947}
   m_CullTransparentMesh: 1
+--- !u!225 &1164327951
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164327947}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1225255680
 GameObject:
   m_ObjectHideFlags: 0
