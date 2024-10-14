@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    private MoveCameraByDrag _moveCam; // MoveCameraByDrag 클래스의 인스턴스 참조
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
     protected ParticleSystem ps;
@@ -26,11 +25,6 @@ public class Bird : MonoBehaviour
             transform.GetChild(0).TryGetComponent(out ps);
     }
 
-    void Start()
-    {
-        _moveCam = GameObject.Find("DragCamera").GetComponent<MoveCameraByDrag>();
-    }
-
     protected virtual void FixedUpdate()
     {
         Rotate(firstRebound);
@@ -41,7 +35,6 @@ public class Bird : MonoBehaviour
         GetGravity();
         FirstReboundCheck();
         GameManager.Instance.UpdateBird();
-        CheckOutOfBounds();
     }
 
     /// <summary> 중력 수치 확인용 </summary>
@@ -59,18 +52,6 @@ public class Bird : MonoBehaviour
             firstRebound = true;
             ps.Stop();
         }
-    }
-
-    protected virtual void CheckOutOfBounds()
-    {
-        // #1 중력 없는 wave에 필요한 코드, if문 조건 수정
-        if (_moveCam == null) return;
-        Vector3 position = transform.position;
-        Vector2 bgSize = _moveCam.bgSprite.bounds.size;
-        Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
-            if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
-        position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
-                rb.velocity = Vector2.zero;
     }
 
     /// <summary> 속도 벡터에 따른 회전 </summary>

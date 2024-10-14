@@ -74,9 +74,4 @@ public class Bird_Yellow : Bird
             ps.Stop();
         }
     }
-
-    protected override void CheckOutOfBounds()
-    {
-        base.CheckOutOfBounds();
-    }
 }

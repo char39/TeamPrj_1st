@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public SlingShot _slingShot;
     public Bird _bird;
 
-    [SerializeField] private List<Pig> pigList = new List<Pig>();
+    [SerializeField] private List<Pig> pigList = new();
     public int pigCnt;
 
     void Awake()
@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
             GravityTarget[] _gravityTarget = FindObjectsOfType<GravityTarget>();
             bool[] CheckLowSpeed = new bool[_gravityTarget.Length];
             for (int i = 0; i < _gravityTarget.Length; i++)
+            {
                 CheckLowSpeed[i] = _gravityTarget[i].lowSpeed;
+                Debug.Log(_gravityTarget[i].gameObject.name + CheckLowSpeed[i]);
+            }
 
             for (int i = 0; i < CheckLowSpeed.Length; i++)
             {
@@ -59,11 +62,13 @@ public class GameManager : MonoBehaviour
     {
         pigList.Add(pig);
         pigCnt = pigList.Count;
+        Debug.Log(pigCnt);
     }
 
     public void RemovePig(Pig pig)
     {
         pigList.Remove(pig);
         pigCnt = pigList.Count;
+        Debug.Log(pigCnt);
     }
 }

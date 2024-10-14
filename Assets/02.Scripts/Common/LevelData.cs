@@ -6,9 +6,6 @@ public class LevelData
     public int score;
     public int stars;
     public int[] requireScore;
-    // public bool Star1 => score >= requireScore[0];
-    // public bool Star2 => score >= requireScore[1];
-    // public bool Star3 => score >= requireScore[2];
     public bool isClear;
     public List<int> birdList;
 

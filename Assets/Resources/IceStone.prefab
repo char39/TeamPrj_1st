@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5328026757216397053}
   - component: {fileID: -2317262018190012164}
   - component: {fileID: 2741832598751297244}
+  - component: {fileID: 3158533773309138932}
   m_Layer: 0
   m_Name: IceStone
   m_TagString: Ice
@@ -190,3 +191,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityOffset: 1
   isGravity: 0
+  lowSpeed: 0
+--- !u!114 &3158533773309138932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566369216372802019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7838537f3e9184946acedfd4e6d69c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowFriction: 0

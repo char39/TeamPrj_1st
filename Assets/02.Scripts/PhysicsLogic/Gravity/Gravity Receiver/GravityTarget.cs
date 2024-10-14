@@ -4,8 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class GravityTarget : MonoBehaviour
 {
+    public bool test = false;
+
     private Rigidbody2D rb;
-    private float speed = 0.5f;
+    private Transform tr;
+    private const float speed = 0.5f;
     public float gravityOffset = 1f;
     public bool isGravity = false;
     public bool lowSpeed = false;
@@ -13,11 +16,27 @@ public class GravityTarget : MonoBehaviour
     void Start()
     {
         TryGetComponent(out rb);
+        TryGetComponent(out tr);
         rb.gravityScale = 0;
     }
 
     void Update()
     {
-        if(rb.velocity.magnitude <= speed) lowSpeed = true;
+        lowSpeed = rb.velocity.magnitude <= speed;
+        if (test) return;
+        CheckOutOfBounds();
+    }
+
+
+    private void CheckOutOfBounds()
+    {
+        int roomidx = (int)SceneManage.GetLoadScene();
+        float up = DataList.waveRoomSize[roomidx].up;
+        float down = DataList.waveRoomSize[roomidx].down;
+        float left = DataList.waveRoomSize[roomidx].left;
+        float right = DataList.waveRoomSize[roomidx].right;
+
+        if (!(down < tr.position.y && tr.position.y < up && left < tr.position.x && tr.position.x < right))
+            rb.velocity = Vector2.zero;
     }
 }

@@ -596,10 +596,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099ffcced29a5514a9f08957ae48bf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 5
-  maxStretch: 3
-  totalBird: 0
-  curBirdCnt: 0
+  launchForce: 6
+  maxStretch: 4
+  totalBirdCnt: 0
+  usedBirds: 0
   isMouseOn: 0
   isClicked: 0
   isStretching: 0
@@ -777,7 +777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efec964fdb0ad43833407b6ef24864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slingshot: {fileID: 0}
   bgSprite: {fileID: 0}
 --- !u!4 &617435405
 Transform:
@@ -846,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5768442769257997180, guid: 00c9251fbe28944d4b8c7fcef2c6d3e7, type: 3}
+      propertyPath: gravityOffset
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -910,6 +913,10 @@ PrefabInstance:
     - target: {fileID: 3525192720065133526, guid: 00c9251fbe28944d4b8c7fcef2c6d3e7, type: 3}
       propertyPath: m_Name
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768442769257997180, guid: 00c9251fbe28944d4b8c7fcef2c6d3e7, type: 3}
+      propertyPath: gravityOffset
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1802,6 +1809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5768442769257997180, guid: 00c9251fbe28944d4b8c7fcef2c6d3e7, type: 3}
+      propertyPath: gravityOffset
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2099,7 +2110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efec964fdb0ad43833407b6ef24864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slingshot: {fileID: 0}
   bgSprite: {fileID: 0}
 --- !u!4 &2034425144
 Transform:
