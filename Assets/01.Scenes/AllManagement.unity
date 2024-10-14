@@ -2088,6 +2088,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slingShot: {fileID: 0}
+  wave_UI: {fileID: 0}
+  wave1: []
+  wave2: []
+  wave3: []
+  wave4: []
+  wave5: []
+  wave6: []
+  wave7: []
 --- !u!1 &1651541970
 GameObject:
   m_ObjectHideFlags: 0

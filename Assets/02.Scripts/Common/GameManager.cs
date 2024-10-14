@@ -26,20 +26,29 @@ public class GameManager : MonoBehaviour
 
     private void ClearCheck()
     {
-        if (pigCnt == 0 && _slingShot != null)
+        if (_slingShot == null) return;
+
+        if (pigCnt == 0)
         {
             // #2 _bird.velocity.magnitude 말고 중력 받는 모든 클래스 검색하는걸로
-            if (_bird != null && _bird.velocity.magnitude <= 0.2)
+            GravityTarget[] _gravityTarget = FindObjectsOfType<GravityTarget>();
+            bool[] CheckLowSpeed = new bool[_gravityTarget.Length];
+            for (int i = 0; i < _gravityTarget.Length; i++)
+                CheckLowSpeed[i] = _gravityTarget[i].lowSpeed;
+
+            for (int i = 0; i < CheckLowSpeed.Length; i++)
             {
-                DataList.data[1].isClear = true;
-                LevelManage.Instance.SetStarRating();
+                if (!CheckLowSpeed[i])
+                    return;
             }
+            DataList.data[1].isClear = true;
+            LevelManage.Instance.SetStarRating();
         }
 
-        else if (_slingShot != null)
+        else
         {
-            if (_slingShot.totalBirdCnt == _slingShot.usedBirds)
-                DataList.data[1].isClear = false;
+            DataList.data[1].isClear = false;
+            //LevelManage.Instance.SetStarRating();
         }
     }
 

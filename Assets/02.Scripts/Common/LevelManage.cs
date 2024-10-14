@@ -33,9 +33,6 @@ public partial class LevelManage : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.Escape))
         //     DataList.data[1].isClear = true;
 
-        if (DataList.data[1].isClear)
-            SetStarRating();
-
         if (wave_UI != null && DataList.data[101].stars != 0)
             SetPlanetStar();
     }
@@ -72,7 +69,6 @@ public partial class LevelManage : MonoBehaviour
 
     public void SetStarRating()
     {
-        DataList.data[1].isClear = false;
         level_UI.GetChild(0).gameObject.SetActive(true);
         int roomidx = (int)SceneManage.GetLoadScene();
         int curScore = GetScore(1);

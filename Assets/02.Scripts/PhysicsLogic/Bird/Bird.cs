@@ -64,13 +64,13 @@ public class Bird : MonoBehaviour
     protected virtual void CheckOutOfBounds()
     {
         // #1 중력 없는 wave에 필요한 코드, if문 조건 수정
-        //if (_moveCam == null) return;
-        // Vector3 position = transform.position;
-        // Vector2 bgSize = _moveCam.bgSprite.bounds.size;
-        // Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
-        //     if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
-        // position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
-        //         rb.velocity = Vector2.zero;
+        if (_moveCam == null) return;
+        Vector3 position = transform.position;
+        Vector2 bgSize = _moveCam.bgSprite.bounds.size;
+        Vector2 bgCenter = _moveCam.bgSprite.bounds.center;
+            if (position.y > bgCenter.y + bgSize.y / 2 || position.y < bgCenter.y - bgSize.y / 2 ||
+        position.x < bgCenter.x - bgSize.x / 2 || position.x > bgCenter.x + bgSize.x / 2)  //상하좌우
+                rb.velocity = Vector2.zero;
     }
 
     /// <summary> 속도 벡터에 따른 회전 </summary>
