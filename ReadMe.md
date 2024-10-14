@@ -120,5 +120,5 @@ Bird.cs
 
 GameManage - 아래 클래스들을 관리
 UIManage - UI 관리
-LevelManage - Level 관리
+LevelManage - Level 관리, clear 판단(AddPig, RemovePig)
 SceneManage - Scene 관리

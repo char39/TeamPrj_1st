@@ -10,7 +10,7 @@ public partial class UIManage : MonoBehaviour
     private Transform clear_UI;          // 클리어 UI
     private Transform starTr;                // 별 이미지
     private Image[] stars;                   // 별 이미지
-    private Sprite[] spr_Stars;              // 별 스프라이트
+    [SerializeField] private Sprite[] spr_Stars;              // 별 스프라이트
     private Sprite[] spr_EmptyStars;         // 빈 별 스프라이트
     private Text totalScoreText;             // 점수 텍스트
     private Button selectWave;              // 레벨 선택
@@ -62,8 +62,8 @@ public partial class UIManage : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             stars[i] = starTr.GetChild(i).GetComponent<Image>();
-            spr_Stars[i] = allSprites[36 + i];
-            spr_EmptyStars[i] = allSprites[39 + i];
+            spr_EmptyStars[i] = allSprites[36 + i];
+            spr_Stars[i] = allSprites[39 + i];
         }
     }
 

@@ -5,6 +5,7 @@ public partial class LevelManage : MonoBehaviour
 {
     public SlingShot _slingShot;
     public bool UIActive = false;
+    
     void Update()
     {
         ClearCheck();
@@ -31,7 +32,7 @@ public partial class LevelManage : MonoBehaviour
             for (int i = 0; i < _gravityTarget.Length; i++)
             {
                 CheckLowSpeed[i] = _gravityTarget[i].desiredSpeed;
-                Debug.Log(_gravityTarget[i].gameObject.name + CheckLowSpeed[i]);
+                // Debug.Log(_gravityTarget[i].gameObject.name + CheckLowSpeed[i]);
             }
 
             for (int i = 0; i < CheckLowSpeed.Length; i++)
@@ -48,8 +49,10 @@ public partial class LevelManage : MonoBehaviour
             //LevelManage.Instance.SetStarRating();
         }
     }
-   public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
-    //ublic void UpdateBird() => _bird = FindObjectOfType<Bird>();
+
+    [SerializeField] private List<Pig> pigList = new();
+    public int pigCnt;
+    public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
 
     public void AddPig(Pig pig)
     {
@@ -64,6 +67,4 @@ public partial class LevelManage : MonoBehaviour
         pigCnt = pigList.Count;
         Debug.Log(pigCnt);
     }
-    [SerializeField] private List<Pig> pigList = new();
-    public int pigCnt;
 }

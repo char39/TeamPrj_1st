@@ -61,8 +61,8 @@ public partial class UIManage : MonoBehaviour
 
     public void ChangeUnlockImg()
     {
-        if(LevelDataList.levelData[101].isClear)
-            wave2[0].sprite = unlockImg;
+        Debug.Log("ChangeUnlockImg");
+        wave2[0].sprite = unlockImg;
         
     }
 
