@@ -30,7 +30,7 @@ public class MoveCameraByDrag : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             firstClickPointX = Input.mousePosition.x;
-            Debug.Log(firstClickPointX);
+            //Debug.Log(firstClickPointX);
         }
 
         if (Input.GetMouseButton(0))
