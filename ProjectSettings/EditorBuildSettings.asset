@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/SelectPlanet/Cold/Cold_Level3.unity
     guid: ac74e37177e58814b9ad6f8ad81446ba
+  - enabled: 1
+    path: Assets/01.Scenes/SelectPlanet/Cold/Cold_Level4.unity
+    guid: 79203ab53f44dda4490d6e975f9cb50a
   m_configObjects: {}

@@ -616,7 +616,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_STONE_1502x420_6
+      name: Block_stone2
       rect:
         serializedVersion: 2
         x: 173
@@ -637,7 +637,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_STONE_1502x420_24
+      name: Block_stone3
       rect:
         serializedVersion: 2
         x: 173
@@ -658,7 +658,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_STONE_1502x420_25
+      name: Block_stone4
       rect:
         serializedVersion: 2
         x: 173
@@ -1015,7 +1015,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_STONE_1502x420_40
+      name: Block_stone1
       rect:
         serializedVersion: 2
         x: 407
@@ -1214,16 +1214,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Block_stone1: 127605593
+      Block_stone2: 432491485
+      Block_stone3: -279074748
+      Block_stone4: -229370693
       INGAME_BLOCKS_STONE_1502x420_15: -1565451796
-      INGAME_BLOCKS_STONE_1502x420_24: -279074748
-      INGAME_BLOCKS_STONE_1502x420_25: -229370693
       INGAME_BLOCKS_STONE_1502x420_26: 2111098179
       INGAME_BLOCKS_STONE_1502x420_27: 877207645
-      INGAME_BLOCKS_STONE_1502x420_40: 127605593
       INGAME_BLOCKS_STONE_1502x420_41: -6297380
       INGAME_BLOCKS_STONE_1502x420_42: -346386560
       INGAME_BLOCKS_STONE_1502x420_43: -1100237780
-      INGAME_BLOCKS_STONE_1502x420_6: 432491485
       INGAME_BLOCKS_STONE_1502x420_8: 258518003
       INGAME_BLOCKS_STONE_1502x420_9: 1066528484
       circle1: -1214987565

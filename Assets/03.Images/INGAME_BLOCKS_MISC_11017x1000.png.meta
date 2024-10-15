@@ -238,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ston
+      name: stone
       rect:
         serializedVersion: 2
         x: 619
@@ -2121,7 +2121,7 @@ TextureImporter:
       INGAME_BLOCKS_MISC_11017x1000_87: 1836166545
       INGAME_BLOCKS_MISC_11017x1000_88: 955357464
       INGAME_BLOCKS_MISC_11017x1000_9: 1027975552
-      ston: 1295473303
+      stone: 1295473303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
