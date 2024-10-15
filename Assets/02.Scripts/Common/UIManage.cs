@@ -23,10 +23,15 @@ public partial class UIManage : MonoBehaviour
 
         OnOffScoreUI();
 
-        if (wave_UI != null && LevelDataList.levelData[101].stars != 0)
+        if (wave_UI != null)
         {
             SetPlanetStar();
-            ChangeUnlockImg();
+
+            for (int i = 101; i < 107; i++)
+            {
+                if (LevelDataList.levelData[i].isClear)
+                    ChangeUnlockImg(LevelDataList.levelData[i].isClear, i);
+            }
         }
     }
 
@@ -60,12 +65,28 @@ public partial class UIManage : MonoBehaviour
         wave7 = wave_UI.GetChild(6).GetComponentsInChildren<Image>();
     }
 
-    public void ChangeUnlockImg()
+    public void ChangeUnlockImg(bool clear, int level)
+{
+    Debug.Log("ChangeUnlockImg");
+
+    Sprite unlock = clear ? unlockImg : lockImg;
+
+    var wave = level switch
     {
-        Debug.Log("ChangeUnlockImg");
-        wave2[0].sprite = unlockImg;
-        
+        101 => wave2,
+        102 => wave3,
+        103 => wave4,
+        104 => wave5,
+        105 => wave6,
+        106 => wave7,
+        _ => null
+    };
+
+    if (wave != null && unlock != null)
+    {
+        wave[0].sprite = unlock;
     }
+}
 
     public void SetStarRating()
     {
@@ -73,6 +94,7 @@ public partial class UIManage : MonoBehaviour
         int roomidx = GameManage.Scene.GetLoadScene();
         int curScore = GetScore(1);
         SetScore(roomidx, curScore);
+        LevelDataList.levelData[roomidx].isClear = true;
 
         totalScoreText.text = curScore.ToString();
 
@@ -128,4 +150,4 @@ public partial class UIManage : MonoBehaviour
     {
         GameManage.Scene.LoadColdSelectLevel();
     }
-}
+}   

@@ -10,7 +10,7 @@ public partial class UIManage : MonoBehaviour
     private Transform clear_UI;          // 클리어 UI
     private Transform starTr;                // 별 이미지
     private Image[] stars;                   // 별 이미지
-    [SerializeField] private Sprite[] spr_Stars;              // 별 스프라이트
+    private Sprite[] spr_Stars;              // 별 스프라이트
     private Sprite[] spr_EmptyStars;         // 빈 별 스프라이트
     private Text totalScoreText;             // 점수 텍스트
     private Button selectWave;              // 레벨 선택
@@ -25,16 +25,17 @@ public partial class UIManage : MonoBehaviour
     private Text scoreText;              // 점수 텍스트
     private Text highScoreText;          // 최고 점수 텍스트
 
-    [SerializeField] private Transform wave_UI;
-    [SerializeField] private Image[] wave1;
-    [SerializeField] private Image[] wave2;
-    [SerializeField] private Image[] wave3;
-    [SerializeField] private Image[] wave4;
-    [SerializeField] private Image[] wave5;
-    [SerializeField] private Image[] wave6;
-    [SerializeField] private Image[] wave7;
+    private Transform wave_UI;
+    private Image[] wave1;
+    private Image[] wave2;
+    private Image[] wave3;
+    private Image[] wave4;
+    private Image[] wave5;
+    private Image[] wave6;
+    private Image[] wave7;
     
-    public Sprite unlockImg;
+    private Sprite unlockImg;
+    [SerializeField] private Sprite lockImg;
 
     private void GetAllVars()
     {
@@ -61,6 +62,8 @@ public partial class UIManage : MonoBehaviour
     {
         Sprite[] allSprites = Resources.LoadAll<Sprite>("Sprite/MENU_ELEMENTS_1");
         unlockImg = allSprites[35];
+        Sprite[] sprites = Resources.LoadAll<Sprite>("Sprite/MENU_COMMON_ELEMENTS_1801x968");
+        lockImg = sprites[35];
 
         for (int i = 0; i < 3; i++)
         {

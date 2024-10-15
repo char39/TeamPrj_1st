@@ -12,7 +12,7 @@ public partial class LevelManage : MonoBehaviour
         {
             Debug.Log("Clear");
             UIActive = true;
-            Invoke(nameof(ASDF), 1.5f);
+            Invoke(nameof(ASDF), 1f);
         }
     }
     void ASDF()
