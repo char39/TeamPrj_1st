@@ -860,10 +860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c3c7a0faec20443be560956e4dfbef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slingShot: {fileID: 0}
-  pigList: []
-  pigCnt: 0
-  UIActive: 0
 --- !u!4 &525098315
 Transform:
   m_ObjectHideFlags: 0
@@ -891,6 +887,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afe989327711c64f90281c1b11d4ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pigList: []
+  pigCnt: 0
+  _slingShot: {fileID: 0}
+  UIActive: 0
 --- !u!114 &525098317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,17 +904,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSceneChanging: 0
-  playBtn: {fileID: 0}
-  planetColdCuts_Btn: {fileID: 0}
-  planetEgg_Btn: {fileID: 0}
-  planetMoon_Btn: {fileID: 0}
-  planet_BackButton: {fileID: 0}
-  coldCuts_BackButton: {fileID: 0}
-  selectColdLevel_Button: []
-  eggsteroids_BackButton: {fileID: 0}
-  selectEggsteroidsLevel_Button: []
-  moon_BackButton: {fileID: 0}
-  selectMoonLevel_Button: []
 --- !u!114 &525098318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,17 +916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83258678e6420f64398eb23af47cf4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slingShot: {fileID: 0}
-  level_UI: {fileID: 0}
   wave_UI: {fileID: 0}
-  wave1: []
-  wave2: []
-  wave3: []
-  wave4: []
-  wave5: []
-  wave6: []
-  wave7: []
-  unlockImg: {fileID: 0}
+  waveBtn: []
 --- !u!1 &618916764
 GameObject:
   m_ObjectHideFlags: 0

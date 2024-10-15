@@ -25,7 +25,7 @@ public partial class UIManage : MonoBehaviour
     private Text scoreText;              // 점수 텍스트
     private Text highScoreText;          // 최고 점수 텍스트
 
-    private Transform wave_UI;
+    [SerializeField] private Transform wave_UI;
     private Image[] wave1;
     private Image[] wave2;
     private Image[] wave3;
@@ -33,9 +33,19 @@ public partial class UIManage : MonoBehaviour
     private Image[] wave5;
     private Image[] wave6;
     private Image[] wave7;
-    
+    private Button[] waveBtn1;
+    private Button[] waveBtn2;
+    private Button[] waveBtn3;
+    private Button[] waveBtn4;
+    private Button[] waveBtn5;
+    private Button[] waveBtn6;
+    private Button[] waveBtn7;
+
+    [SerializeField] private Image[,] wave;
+    [SerializeField] private Button[] waveBtn;
+
     private Sprite unlockImg;
-    [SerializeField] private Sprite lockImg;
+    private Sprite lockImg;
 
     private void GetAllVars()
     {
