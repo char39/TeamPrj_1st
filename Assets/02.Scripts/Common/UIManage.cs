@@ -87,7 +87,6 @@ public partial class UIManage : MonoBehaviour
         }
     }
 
-
     public void ChangeNextImgUnlock(bool clear, int level)
     {
         Debug.Log("ChangeUnlockImg");

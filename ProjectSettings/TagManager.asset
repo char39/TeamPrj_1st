@@ -10,6 +10,7 @@ TagManager:
   - Level
   - Ice
   - Gravity
+  - StoneBlock
   layers:
   - Default
   - TransparentFX

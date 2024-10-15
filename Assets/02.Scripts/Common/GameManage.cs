@@ -13,5 +13,7 @@ public class GameManage : MonoBehaviour
         TryGetComponent(out UI);
         TryGetComponent(out Level);
         TryGetComponent(out Scene);
+
+        Sprites.Load();     // Load all sprites
     }
 }

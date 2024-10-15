@@ -13,7 +13,7 @@ public static class LevelDataList
             // 0: red, 1: yellow, 2: blue
             {101, new LevelData(0, 23000, 40000, new List<int>{ 0, 0, 0 })},
             {102, new LevelData(0, 0, 0, new List<int>{ 1, 1, 1, 1, 1, 1, 1, 1, 1 })},
-            {103, new LevelData(0, 0, 0, new List<int>{ 0, 1, 2 })},
+            {103, new LevelData(0, 0, 0, new List<int>{ 0, 1, 2, 1, 1, 1, 1, 1 ,1 })},
             {104, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {105, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {106, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
@@ -41,7 +41,7 @@ public static class LevelDataList
             {101, new LevelRoomSize(30, -30, -60, 60)},
             {102, new LevelRoomSize(30, -25, -55, 50)},
             {103, new LevelRoomSize(25, -23, -47, 80)},
-            {104, new LevelRoomSize(0, 0, 0, 0)},
+            {104, new LevelRoomSize(20, -30, -41, 30)},
             {105, new LevelRoomSize(0, 0, 0, 0)},
             {106, new LevelRoomSize(0, 0, 0, 0)},
             {107, new LevelRoomSize(0, 0, 0, 0)},

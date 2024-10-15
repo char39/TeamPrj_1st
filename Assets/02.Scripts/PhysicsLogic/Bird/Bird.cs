@@ -72,7 +72,7 @@ public class Bird : MonoBehaviour
     }
 
     /// <summary> 충돌 시 반발 처리 </summary>
-    protected void OnCollisionEnter2D(Collision2D col)
+    protected virtual void OnCollisionEnter2D(Collision2D col)
     {
         bool compareTag = col.gameObject.CompareTag("Planet");
         isGroundTouched = compareTag ? true : isGroundTouched;    // 행성에 닿았을 때
@@ -80,7 +80,7 @@ public class Bird : MonoBehaviour
     }
 
     /// <summary> 충돌 해제 시 IsGrounded, IsTouched 설정 </summary>
-    protected void OnCollisionExit2D(Collision2D col)
+    protected virtual void OnCollisionExit2D(Collision2D col)
     {
         bool compareTag = col.gameObject.CompareTag("Planet");
         isGroundTouched = compareTag ? false : isGroundTouched;   // 행성에서 떨어졌을 때

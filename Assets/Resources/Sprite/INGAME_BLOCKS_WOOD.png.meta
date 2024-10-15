@@ -469,7 +469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_WOOD_1464x417_17
+      name: s3
       rect:
         serializedVersion: 2
         x: 422
@@ -889,7 +889,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_WOOD_1464x417_20
+      name: s4
       rect:
         serializedVersion: 2
         x: 422
@@ -910,7 +910,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: INGAME_BLOCKS_WOOD_1464x417_35
+      name: s2
       rect:
         serializedVersion: 2
         x: 422
@@ -1202,11 +1202,9 @@ TextureImporter:
       INGAME_BLOCKS_WOOD_1464x417_14: -2016716841
       INGAME_BLOCKS_WOOD_1464x417_15: 544130818
       INGAME_BLOCKS_WOOD_1464x417_16: -850264680
-      INGAME_BLOCKS_WOOD_1464x417_17: 107403315
       INGAME_BLOCKS_WOOD_1464x417_18: 1751174987
       INGAME_BLOCKS_WOOD_1464x417_19: -742375112
       INGAME_BLOCKS_WOOD_1464x417_2: -997999067
-      INGAME_BLOCKS_WOOD_1464x417_20: 937977601
       INGAME_BLOCKS_WOOD_1464x417_21: -495252423
       INGAME_BLOCKS_WOOD_1464x417_22: 548988685
       INGAME_BLOCKS_WOOD_1464x417_23: -24922724
@@ -1221,7 +1219,6 @@ TextureImporter:
       INGAME_BLOCKS_WOOD_1464x417_31: -2117546699
       INGAME_BLOCKS_WOOD_1464x417_32: 310107240
       INGAME_BLOCKS_WOOD_1464x417_34: -224139392
-      INGAME_BLOCKS_WOOD_1464x417_35: 1973313956
       INGAME_BLOCKS_WOOD_1464x417_36: -274654410
       INGAME_BLOCKS_WOOD_1464x417_37: -1974060396
       INGAME_BLOCKS_WOOD_1464x417_38: -461615746
@@ -1241,6 +1238,9 @@ TextureImporter:
       INGAME_BLOCKS_WOOD_1464x417_8: 2003623563
       INGAME_BLOCKS_WOOD_1464x417_9: 1486428377
       s1: -56845750
+      s2: 1973313956
+      s3: 107403315
+      s4: 937977601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
