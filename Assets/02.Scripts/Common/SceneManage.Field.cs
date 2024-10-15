@@ -7,13 +7,16 @@ public partial class SceneManage : MonoBehaviour
     private CanvasGroup fadeEffect;
     public bool isSceneChanging = false;
 
+    // (SceneList.name[0]), Fade 효과 오브젝트 이름
     internal const string SceneChangeObj = "SceneChange";
-
+    // (SceneList.name[1])
     internal const string GameStartScene = "Canvas_Start";
     internal const string PlanetSelectScene = "Canvas_Planet";
+    // (SceneList.name[100, 200, 300])
     internal const string ColdSelectLevelScene = "Planet_UI";
     internal const string EggsteroidsSelectLevelScene = "Eggsteroids_UI";
     internal const string MoonSelectLevelScene = "Moon_UI";
+
 
     // GameStartScene UI
     private Button playBtn;

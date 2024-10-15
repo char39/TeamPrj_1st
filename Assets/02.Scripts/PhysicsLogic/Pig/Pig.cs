@@ -5,7 +5,7 @@ public class Pig : ColliderDetection
 {
     internal GravityTarget _gravityTarget;
     internal CapsuleCollider2D col;
-    private bool isFrozon = false;
+    //private bool isFrozon = false;
 
     protected override void Start()
     {
@@ -44,7 +44,6 @@ public class Pig : ColliderDetection
     {
         if (_gravityTarget != null && !_gravityTarget.isGravity)
         {
-            isFrozon = true;
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
             Invoke(nameof(OnDetection), 1f);

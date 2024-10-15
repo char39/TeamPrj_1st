@@ -44,11 +44,11 @@ public static class SceneList
         };
     }
 
-    public static int? GetKeyByValue(string value)
+    public static int GetKeyByValue(string value)
     {
         foreach (var n in name)
             if (n.Value == value)
                 return n.Key;
-        return null;
+        return -1;
     }
 }

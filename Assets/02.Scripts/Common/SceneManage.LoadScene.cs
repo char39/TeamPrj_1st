@@ -21,14 +21,13 @@ public partial class SceneManage : MonoBehaviour
     {
         isSceneChanging = true;
         StartCoroutine(SceneChangeOnOff(true, duration));
+
         while (isSceneChanging)
-        {
             yield return null;
-        }
 
         if (SceneIndex != -1)
         {
-            UnloadScene((int)GetLoadScene());
+            UnloadScene(GetLoadScene());
             LoadScene(SceneIndex);
         }
 
@@ -67,6 +66,7 @@ public partial class SceneManage : MonoBehaviour
     /// <para> </para> 활성화 안하면 슬픈일이 벌어짐.. </summary>
     private void LoadScene(int index)
     {
+        if (index == -1) return;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneList.name[index], LoadSceneMode.Additive);
         asyncLoad.completed += (AsyncOperation op) =>
         {
@@ -79,5 +79,5 @@ public partial class SceneManage : MonoBehaviour
     private void UnloadScene(int index) => SceneManager.UnloadSceneAsync(SceneList.name[index], UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
 
     /// <summary> 현재 로드 중인 Scene을 반환. </summary>
-    public int? GetLoadScene() => SceneList.GetKeyByValue(SceneManager.GetActiveScene().name);
+    public int GetLoadScene() => SceneList.GetKeyByValue(SceneManager.GetActiveScene().name);
 }

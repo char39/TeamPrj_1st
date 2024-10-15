@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 public partial class LevelManage : MonoBehaviour
 {
-    public SlingShot _slingShot;
-    public bool UIActive = false;
+
     
     void Update()
     {

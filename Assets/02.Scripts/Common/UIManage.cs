@@ -10,6 +10,7 @@ public partial class UIManage : MonoBehaviour
         spr_EmptyStars = new Sprite[3];
 
         GetAllVars();
+        SetAllVars();
         SetButtonMethod();
     }
 
@@ -17,7 +18,7 @@ public partial class UIManage : MonoBehaviour
     {
         UpdateSlingShot();
 
-        if ((int)GameManage.Scene.GetLoadScene() == 100)
+        if (GameManage.Scene.GetLoadScene() == 100)
             LoadWaveImg();
 
         OnOffScoreUI();
@@ -38,7 +39,7 @@ public partial class UIManage : MonoBehaviour
 
             int curScore = GetScore(1);
             scoreText.text = curScore.ToString();
-            highScoreText.text = LevelDataList.levelData[(int)GameManage.Scene.GetLoadScene()].score.ToString();
+            highScoreText.text = LevelDataList.levelData[GameManage.Scene.GetLoadScene()].score.ToString();
         }
         else if (_slingShot == null)
         {
@@ -69,7 +70,7 @@ public partial class UIManage : MonoBehaviour
     public void SetStarRating()
     {
         level_UI.GetChild(0).gameObject.SetActive(true);
-        int roomidx = (int)GameManage.Scene.GetLoadScene();
+        int roomidx = GameManage.Scene.GetLoadScene();
         int curScore = GetScore(1);
         SetScore(roomidx, curScore);
 
@@ -77,36 +78,32 @@ public partial class UIManage : MonoBehaviour
 
         if (LevelDataList.levelData[roomidx].requireScore[2] <= curScore)
         {
-            for (int i = 0; i < 3; i++)
-                stars[i].sprite = spr_Stars[i];
-
+            SetStarSprite(3);
             SetStar(roomidx, 3);
         }
         else if (LevelDataList.levelData[roomidx].requireScore[1] <= curScore)
         {
-            for (int i = 0; i < 2; i++)
-                stars[i].sprite = spr_Stars[i];
-            for (int i = 2; i < 3; i++)
-                stars[i].sprite = spr_EmptyStars[i];
-
+            SetStarSprite(2);
             SetStar(roomidx, 2);
         }
         else if (LevelDataList.levelData[roomidx].requireScore[0] <= curScore)
         {
-            for (int i = 0; i < 1; i++)
-                stars[i].sprite = spr_Stars[i];
-            for (int i = 1; i < 3; i++)
-                stars[i].sprite = spr_EmptyStars[i];
-
+            SetStarSprite(1);
             SetStar(roomidx, 1);
         }
         else
         {
-            for (int i = 0; i < 3; i++)
-                stars[i].sprite = spr_EmptyStars[i];
-
+            SetStarSprite(0);
             SetStar(roomidx, 0);
         }
+    }
+
+    private void SetStarSprite(int starCount)
+    {
+        for (int i = 0; i < starCount; i++)
+            stars[i].sprite = spr_Stars[i];
+        for (int i = starCount; i < 3; i++)
+            stars[i].sprite = spr_EmptyStars[i];
     }
 
     private void SetPlanetStar()
@@ -124,7 +121,7 @@ public partial class UIManage : MonoBehaviour
         ResetRoomData(1);
         level_UI.GetChild(0).gameObject.SetActive(false);
         GameManage.Level.UIActive = false;
-        GameManage.Scene.LoadLevel((int)GameManage.Scene.GetLoadScene());
+        GameManage.Scene.LoadLevel(GameManage.Scene.GetLoadScene());
     }
 
     public void SelectWave()

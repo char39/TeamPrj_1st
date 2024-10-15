@@ -55,7 +55,10 @@ public partial class UIManage : MonoBehaviour
         score_UI = level_UI.GetChild(2);
         scoreText = score_UI.GetChild(0).GetChild(0).GetComponent<Text>();
         highScoreText = score_UI.GetChild(1).GetChild(0).GetComponent<Text>();
+    }
 
+    private void SetAllVars()
+    {
         Sprite[] allSprites = Resources.LoadAll<Sprite>("Sprite/MENU_ELEMENTS_1");
         unlockImg = allSprites[35];
 

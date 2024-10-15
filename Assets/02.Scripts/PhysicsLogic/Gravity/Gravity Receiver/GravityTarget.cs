@@ -30,7 +30,7 @@ public class GravityTarget : MonoBehaviour
 
     private void CheckOutOfBounds()
     {
-        int roomidx = (int)GameManage.Scene.GetLoadScene();
+        int roomidx = GameManage.Scene.GetLoadScene();
         float up = LevelDataList.levelSize[roomidx].up;
         float down = LevelDataList.levelSize[roomidx].down;
         float left = LevelDataList.levelSize[roomidx].left;

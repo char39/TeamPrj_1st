@@ -29,10 +29,7 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
-
-            Vector2 launchPos = new(-25, Random.Range(minYpos, maxYpos));
-            float launchForce = Mathf.Lerp(minForce, maxForce, (launchPos.y - minYpos) / (maxYpos - minYpos));
+            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
 
             while (true)
             {
@@ -41,8 +38,10 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
                 tempIndex = Random.Range(0, 4);
                 yield return new WaitForSeconds(0.01f);
             }
-            
             spriteIndex = tempIndex;
+
+            Vector2 launchPos = new(-25, Random.Range(minYpos, maxYpos));
+            float launchForce = Mathf.Lerp(minForce, maxForce, (launchPos.y - minYpos) / (maxYpos - minYpos));
 
             Launch(launchPos, launchForce, spriteIndex);
 
@@ -50,6 +49,7 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
                 break;
         }
     }
+
 
     private void Launch(Vector2 launchPos, float launchForce, int index)
     {
