@@ -472,9 +472,9 @@ TextureImporter:
       name: s3
       rect:
         serializedVersion: 2
-        x: 422
+        x: 423
         y: 83
-        width: 41
+        width: 39
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -829,9 +829,9 @@ TextureImporter:
       name: s1
       rect:
         serializedVersion: 2
-        x: 398
+        x: 399
         y: 270
-        width: 41
+        width: 39
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -892,9 +892,9 @@ TextureImporter:
       name: s4
       rect:
         serializedVersion: 2
-        x: 422
+        x: 423
         y: 61
-        width: 41
+        width: 39
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -913,9 +913,9 @@ TextureImporter:
       name: s2
       rect:
         serializedVersion: 2
-        x: 422
+        x: 423
         y: 105
-        width: 41
+        width: 39
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
