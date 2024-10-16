@@ -11,7 +11,7 @@ public static class LevelDataList
         {
             {1, new LevelData()},    // 임시 score 저장용
             // 0: red, 1: yellow, 2: blue
-            {101, new LevelData(0, 23000, 40000, new List<int>{ 0, 0, 0 })},
+            {101, new LevelData(0, 23000, 40000, new List<int>{ 2, 2, 2 })},
             {102, new LevelData(0, 0, 0, new List<int>{ 1, 1, 1, 1, 1, 1, 1, 1, 1 })},
             {103, new LevelData(0, 0, 0, new List<int>{ 0, 1, 2 })},
             {104, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })},

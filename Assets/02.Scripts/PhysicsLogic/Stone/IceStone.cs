@@ -37,7 +37,7 @@ public class StoneSelect : MonoBehaviour
         timeset += Time.deltaTime;
     }
 
-    protected virtual void OnTriggerStay2D(Collider2D col) { }
+    protected virtual void OnCollisionEnter2D(Collision2D col) { }
 
     protected Vector2 GetSpreadDirectionFromAngle(float angle)
     {
@@ -48,7 +48,7 @@ public class StoneSelect : MonoBehaviour
 
 public class IceStoneBig : StoneSelect
 {
-    protected override void OnTriggerStay2D(Collider2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {
         if (timeset < timesetLimit)
             return;
@@ -75,7 +75,7 @@ public class IceStoneBig : StoneSelect
 
 public class IceStoneNormal : StoneSelect
 {
-    protected override void OnTriggerStay2D(Collider2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {        
         if (timeset < timesetLimit)
             return;
@@ -103,7 +103,7 @@ public class IceStoneNormal : StoneSelect
 
 public class IceStoneSmall : StoneSelect
 {
-    protected override void OnTriggerStay2D(Collider2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {
         GameManage.UI.AddScore(1, 800);
         Destroy(gameObject);

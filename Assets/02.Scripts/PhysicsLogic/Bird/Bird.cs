@@ -8,9 +8,7 @@ public class Bird : MonoBehaviour
     protected ParticleSystem ps;
 
     public bool firstRebound = false;
-    public bool isGroundTouched = false;
-    public bool isOtherTouched = false;
-    public bool IsTouched { get { return isGroundTouched || isOtherTouched; } }
+    public bool IsTouched { get; set; }
 
     // 수치 확인용 변수
     public Vector2 velocity = Vector2.zero;
@@ -47,7 +45,7 @@ public class Bird : MonoBehaviour
     /// <summary> 첫 반발 체크. bird가 처음 닿기 전까진 향하는 방향으로 회전 </summary>
     protected virtual void FirstReboundCheck()
     {
-        if (!firstRebound && (isGroundTouched || isOtherTouched))
+        if (!firstRebound && IsTouched)
         {
             firstRebound = true;
             ps.Stop();
@@ -71,21 +69,8 @@ public class Bird : MonoBehaviour
             sr.flipY = true;
     }
 
-    /// <summary> 충돌 시 반발 처리 </summary>
-    protected virtual void OnCollisionEnter2D(Collision2D col)
-    {
-        bool compareTag = col.gameObject.CompareTag("Planet");
-        isGroundTouched = compareTag ? true : isGroundTouched;    // 행성에 닿았을 때
-        isOtherTouched = compareTag ? isOtherTouched : true;      // 그 외 오브젝트에 닿았을 때
-    }
-
-    /// <summary> 충돌 해제 시 IsGrounded, IsTouched 설정 </summary>
-    protected virtual void OnCollisionExit2D(Collision2D col)
-    {
-        bool compareTag = col.gameObject.CompareTag("Planet");
-        isGroundTouched = compareTag ? false : isGroundTouched;   // 행성에서 떨어졌을 때
-        isOtherTouched = compareTag ? isOtherTouched : false;     // 그 외 오브젝트에서 떨어졌을 때
-    }
+    protected virtual void OnCollisionEnter2D(Collision2D col) => IsTouched = true;
+    protected virtual void OnCollisionExit2D(Collision2D col) => IsTouched = false;
 
     protected void OnDrawGizmos()
     {

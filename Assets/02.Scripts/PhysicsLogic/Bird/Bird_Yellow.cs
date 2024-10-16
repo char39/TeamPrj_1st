@@ -19,15 +19,16 @@ public class Bird_Yellow : Bird
     {
         base.Update();
         ClickToDash();
-        ResetNormalState();
 
         if (sr != null && !flipCheck && useDash)
             FlipCheck();
+        if (firstRebound)
+            _gravityTarget.gravityOffset = 1f;
     }
 
     private void ClickToDash()
     {
-        if (Input.GetMouseButton(0) && !useDash)
+        if (Input.GetMouseButton(0) && !useDash && !firstRebound)
         {
             useDash = true;
             Vector2 direction = rb.position - (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -57,17 +58,9 @@ public class Bird_Yellow : Bird
         }
     }
 
-    private void ResetNormalState()
-    {
-        if (firstRebound || IsTouched)
-        {
-            _gravityTarget.gravityOffset = 1f;
-        }
-    }
-
     protected override void FirstReboundCheck()
     {
-        if (!firstRebound && (isGroundTouched || isOtherTouched))
+        if (!firstRebound && IsTouched)
         {
             firstRebound = true;
             useDash = true;

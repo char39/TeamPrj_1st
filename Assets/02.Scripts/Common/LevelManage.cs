@@ -62,13 +62,11 @@ public partial class LevelManage : MonoBehaviour
     {
         pigList.Add(pig);
         pigCnt = pigList.Count;
-        Debug.Log(pigCnt);
     }
 
     public void RemovePig(Pig pig)
     {
         pigList.Remove(pig);
         pigCnt = pigList.Count;
-        Debug.Log(pigCnt);
     }
 }

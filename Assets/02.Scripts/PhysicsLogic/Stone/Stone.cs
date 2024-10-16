@@ -24,7 +24,7 @@ public class StoneBig: StoneSelect
     {
         stonePrefab = Resources.Load<GameObject>("Stone");
     }
-    protected override void OnTriggerStay2D(Collider2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {
         if (timeset < timesetLimit)
             return;
@@ -55,7 +55,7 @@ public class StoneNormal : StoneSelect
     {
         stonePrefab = Resources.Load<GameObject>("Stone");
     }
-    protected override void OnTriggerStay2D(Collider2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {        
         if (timeset < timesetLimit)
             return;
@@ -83,7 +83,7 @@ public class StoneNormal : StoneSelect
 
 public class StoneSmall : StoneSelect
 {
-    protected override void OnTriggerStay2D(Collider2D col)
+    protected override void OnCollisionEnter2D(Collision2D col)
     {
         GameManage.UI.AddScore(1, 800);
         Destroy(gameObject);
