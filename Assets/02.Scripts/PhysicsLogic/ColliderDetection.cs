@@ -5,7 +5,7 @@ public class ColliderDetection : MonoBehaviour
 {
     internal Rigidbody2D rb;
     protected int score = 0;
-    public float requireForce = 1f;
+    public float requireForce;
     protected bool canExplode = false;
     protected bool isTouched = false;
 
@@ -26,8 +26,12 @@ public class ColliderDetection : MonoBehaviour
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D col) => isTouched = true;
-    protected virtual void OnCollisionExit2D(Collision2D col) => Invoke(nameof(CollisionExit), 0.5f);
-    protected void CollisionExit() => isTouched = false;
+    //protected virtual void OnCollisionExit2D(Collision2D col) => Invoke(nameof(CollisionExit), 0.5f);
+    protected void CollisionExit()
+    {
+        if (gameObject != null)
+            isTouched = false;
+    }
     protected virtual void Detection(int roomidx = 1)
     {
         AddScore();

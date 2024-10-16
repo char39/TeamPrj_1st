@@ -10,18 +10,21 @@ public class Blocks : ColliderDetection
     protected SpriteRenderer sr;
     protected Sprite[] blockSprite;
     protected float[] force;
-    public float requireForceTemp; 
+    protected float requireForceTemp; 
+
+    protected virtual void Awake()
+    {
+        blockSprite = new Sprite[4];
+        force = new float[4];
+        for (int i = 0; i < 4; i++)
+            force[i] = (i + 1) / 4f; 
+    }
 
     protected override void Start()
     {
         base.Start();
         TryGetComponent(out col);
         TryGetComponent(out sr);
-        requireForceTemp = requireForce;  
-        blockSprite = new Sprite[4];
-        force = new float[4];
-        for (int i = 0; i < 4; i++)
-            force[i] = (i + 1) / 4; 
     }
 
     protected override void Update()
@@ -65,16 +68,16 @@ public class Blocks : ColliderDetection
         switch (state)
         {
             case State.Block1:
-                AddScore(score);
+                AddScore(score, 1);
                 break;
             case State.Block2:
-                AddScore(score * (int)force[2]);
+                AddScore((int)(score * force[2]), 1);
                 break;
             case State.Block3:
-                AddScore(score * (int)force[1]);
+                AddScore((int)(score * force[1]), 1);
                 break;
             case State.Block4:
-                AddScore(score * (int)force[0]);
+                AddScore((int)(score * force[0]), 1);
                 break;
         }
         DestroyThisObject();
@@ -87,28 +90,29 @@ public class Blocks : ColliderDetection
         {
             case State.Block1:
                 if (rb.velocity.magnitude > force[2] * requireForceTemp)       // 1 ~ 0.76 > 0.75 ~ 0.5999...
-                    StateScore(State.Block4, (int)force[2]);
+                    StateScore(State.Block4, (int)(score * force[2]));
                 else if (rb.velocity.magnitude > force[1] * requireForceTemp)  // 0.75 ~ 0.6
-                    StateScore(State.Block3, (int)force[1]);
+                    StateScore(State.Block3, (int)(score * force[1]));
                 else if (rb.velocity.magnitude > force[0] * requireForceTemp)  // 0.5 ~ 0.25
-                    StateScore(State.Block2, (int)force[0]);
+                    StateScore(State.Block2, (int)(score * force[0]));
                 break;
             case State.Block2:
                 if (rb.velocity.magnitude > force[1] * requireForceTemp)        // 0.75 ~ 0.5
-                    StateScore(State.Block4, (int)force[1]);
+                    StateScore(State.Block4, (int)(score * force[1]));
                 else if (rb.velocity.magnitude > force[0] * requireForceTemp)   // 0.5 ~ 0.25
-                    StateScore(State.Block3, (int)force[0]);
+                    StateScore(State.Block3, (int)(score * force[0]));
                 break;
             case State.Block3:
                 if (rb.velocity.magnitude > force[0] * requireForceTemp)        // 0.5 ~ 0.25
-                    StateScore(State.Block4, (int)force[0]);
+                    StateScore(State.Block4, (int)(score * force[0]));
                 break;
         }
 
         void StateScore(State _state, int _score)   // 로컬 함수
         {
+            Debug.Log(_score);
             this.state = _state;
-            AddScore(score * _score);
+            AddScore(score * _score, 1);
         }
     }
 }

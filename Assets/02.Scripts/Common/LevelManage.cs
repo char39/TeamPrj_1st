@@ -3,10 +3,15 @@ using System.Collections.Generic;
 
 public partial class LevelManage : MonoBehaviour
 {
-
-    
     void Update()
     {
+        // test
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     LevelDataList.levelData[1].isClear = true;
+        //     UIActive = false;
+        // }
+
         ClearCheck();
         if (LevelDataList.levelData[1].isClear && !UIActive)
         {

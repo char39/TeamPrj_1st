@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class GlassBlock : Blocks
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        requireForce = 10f;
+        requireForceTemp = requireForce;  
+        score = 100;
+    }
+
     protected override void Start()
     {
-        requireForce = 5f;
-        score = 50;
         base.Start();
         for (int i = 0; i < 4; i++)
             blockSprite[i] = Sprites.InGameBlocksGlass[13 + i];

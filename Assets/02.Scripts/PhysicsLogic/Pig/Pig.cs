@@ -15,7 +15,7 @@ public class Pig : ColliderDetection
         TryGetComponent(out _gravityTarget);
         TryGetComponent(out col);
         
-        if (transform.parent.TryGetComponent(out Bubble bubble))
+        if (transform.parent != null && transform.parent.TryGetComponent(out Bubble bubble))
         {
             col.enabled = false;
             rb.simulated = false;

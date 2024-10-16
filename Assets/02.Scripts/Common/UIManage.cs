@@ -32,6 +32,7 @@ public partial class UIManage : MonoBehaviour
                 if (LevelDataList.levelData[i].isClear)
                     ChangeNextImgUnlock(LevelDataList.levelData[i].isClear, i);
             }
+
         }
     }
 
