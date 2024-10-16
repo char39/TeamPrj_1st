@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 20
-  gravityPower: 10
+  gravityPower: 3.5
 --- !u!114 &4734723248487948220
 MonoBehaviour:
   m_ObjectHideFlags: 0

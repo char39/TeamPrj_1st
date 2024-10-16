@@ -70,7 +70,7 @@ public class Bird : MonoBehaviour
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D col) => IsTouched = true;
-    protected virtual void OnCollisionExit2D(Collision2D col) => IsTouched = false;
+    protected virtual void OnCollisionExit2D(Collision2D col) { }
 
     protected void OnDrawGizmos()
     {

@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ef66e42a507214b915ab164cb95d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requireForce: 1
+  requireForce: 2
 --- !u!114 &642899427985815639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 0
   gravityOffset: 0.5
   isGravity: 0
+  desiredSpeed: 0
 --- !u!1001 &2127371452882648552
 PrefabInstance:
   m_ObjectHideFlags: 0

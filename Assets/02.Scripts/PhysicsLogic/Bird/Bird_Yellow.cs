@@ -5,6 +5,7 @@ public class Bird_Yellow : Bird
     private GravityTarget _gravityTarget;
     private float angle;
     public bool useDash = false;
+    private bool canDash = true;
     private bool flipCheck = false;
 
     protected override void Awake()
@@ -17,20 +18,20 @@ public class Bird_Yellow : Bird
 
     protected override void Update()
     {
-        base.Update();
+        GetGravity();
+        FirstReboundCheck();
         ClickToDash();
 
         if (sr != null && !flipCheck && useDash)
             FlipCheck();
-        if (firstRebound)
-            _gravityTarget.gravityOffset = 1f;
     }
 
     private void ClickToDash()
     {
-        if (Input.GetMouseButton(0) && !useDash && !firstRebound)
+        if (Input.GetMouseButton(0) && canDash && !firstRebound)
         {
             useDash = true;
+            canDash = false;
             Vector2 direction = rb.position - (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction.Normalize();
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -38,7 +39,7 @@ public class Bird_Yellow : Bird
             _gravityTarget.gravityOffset = 0f;
 
             rb.velocity = Vector2.zero;
-            rb.AddForce(20f * rb.mass * -direction, ForceMode2D.Impulse);
+            rb.AddForce(25f * rb.mass * -direction, ForceMode2D.Impulse);
         }
     }
 
@@ -58,12 +59,20 @@ public class Bird_Yellow : Bird
         }
     }
 
+    protected override void OnCollisionEnter2D(Collision2D col)
+    {
+        base.OnCollisionEnter2D(col);
+        canDash = false;
+
+    }
+
     protected override void FirstReboundCheck()
     {
         if (!firstRebound && IsTouched)
         {
             firstRebound = true;
-            useDash = true;
+            canDash = false;
+            _gravityTarget.gravityOffset = 1f;
             ps.Stop();
         }
     }

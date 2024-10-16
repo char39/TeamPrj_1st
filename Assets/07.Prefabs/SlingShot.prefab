@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4160571384328483280}
   m_Layer: 0
   m_Name: SlingShot
-  m_TagString: Untagged
+  m_TagString: SlingShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,8 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099ffcced29a5514a9f08957ae48bf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 10
+  launchForce: 6
   maxStretch: 3
+  totalBirdCnt: 0
+  usedBirds: 0
   isMouseOn: 0
   isClicked: 0
   isStretching: 0

@@ -7,7 +7,7 @@ public class MoveCameraByDrag : MonoBehaviour
     private Camera cam;
     public SpriteRenderer bgSprite;
 
-    private Vector2 min, max;
+    public Vector2 min, max;
     private float speed = 5f;
     private float firstClickPointX = 0f;
 
