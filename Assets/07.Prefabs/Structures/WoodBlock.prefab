@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5271327507669065948}
   - component: {fileID: 8733962715984555369}
   - component: {fileID: 4451593285398044454}
+  - component: {fileID: 2164600283002178387}
   m_Layer: 0
   m_Name: WoodBlock
   m_TagString: Untagged
@@ -158,3 +159,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2164600283002178387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337867219439688194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c9045c9a1228b43b33c2d67b95c1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requireForce: 1
+  state: 1
+  requireForceTemp: 0

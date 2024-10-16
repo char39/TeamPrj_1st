@@ -44,8 +44,8 @@ public partial class UIManage : MonoBehaviour
     [SerializeField] private Image[,] wave;
     [SerializeField] private Button[] waveBtn;
 
-    private Sprite unlockImg;
-    private Sprite lockImg;
+    [SerializeField] private Sprite unlockImg = null;
+    private Sprite lockImg = null;
 
     private void GetAllVars()
     {
@@ -70,16 +70,14 @@ public partial class UIManage : MonoBehaviour
 
     private void SetAllVars()
     {
-        Sprite[] allSprites = Resources.LoadAll<Sprite>("Sprite/MENU_ELEMENTS_1");
-        unlockImg = allSprites[35];
-        Sprite[] sprites = Resources.LoadAll<Sprite>("Sprite/MENU_COMMON_ELEMENTS_1801x968");
-        lockImg = sprites[35];
+        unlockImg = Sprites.MenuElements1[14];
+        lockImg = Sprites.MenuCommon[22];
 
         for (int i = 0; i < 3; i++)
         {
             stars[i] = starTr.GetChild(i).GetComponent<Image>();
-            spr_EmptyStars[i] = allSprites[36 + i];
-            spr_Stars[i] = allSprites[39 + i];
+            spr_EmptyStars[i] = Sprites.MenuElements1[15 + i];
+            spr_Stars[i] = Sprites.MenuElements1[18 + i];
         }
     }
 

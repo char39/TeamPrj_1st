@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Sprites
+public static class Sprites
 {
     public static Sprite[] MenuElements1;
     public static Sprite[] AngryBirdsCharacters;
@@ -10,9 +10,9 @@ public class Sprites
     public static Sprite[] InGameBlocksGlass;
     public static Sprite[] InGameBlocksWood;
 
-    public Sprites()
+    static Sprites()
     {
-        MenuElements1 = Resources.LoadAll<Sprite>("Sprite/MenuElements1");
+        MenuElements1 = Resources.LoadAll<Sprite>("Sprite/MENU_ELEMENTS1");
         AngryBirdsCharacters = Resources.LoadAll<Sprite>("Sprite/AngryBirdsCharacters");
         MenuCommon = Resources.LoadAll<Sprite>("Sprite/MENU_COMMON");
 

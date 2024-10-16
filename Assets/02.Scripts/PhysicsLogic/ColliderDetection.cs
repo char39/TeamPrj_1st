@@ -26,7 +26,8 @@ public class ColliderDetection : MonoBehaviour
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D col) => isTouched = true;
-
+    protected virtual void OnCollisionExit2D(Collision2D col) => Invoke(nameof(CollisionExit), 0.5f);
+    protected void CollisionExit() => isTouched = false;
     protected virtual void Detection(int roomidx = 1)
     {
         AddScore();
@@ -34,5 +35,6 @@ public class ColliderDetection : MonoBehaviour
     }
 
     protected void AddScore(int roomidx = 1) => GameManage.UI.AddScore(roomidx, score);
+    protected void AddScore(int score, int roomidx = 1) => GameManage.UI.AddScore(roomidx, score);
     protected void DestroyThisObject() => Destroy(gameObject);
 }
