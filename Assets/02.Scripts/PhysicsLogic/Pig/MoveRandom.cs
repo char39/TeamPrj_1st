@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveRandom : MonoBehaviour
 {
+    private CircleCollider2D col;
     Transform tr;
     Vector3 minBounds = new Vector3(-3f, -17f, 0);
     Vector3 maxBounds = new Vector3(7f, 8f, 0);
@@ -14,10 +15,14 @@ public class MoveRandom : MonoBehaviour
     {
         tr = transform;
         RandomPos();
+        col = GetComponent<CircleCollider2D>();
     }
 
     void Update()
     {
+        if (!col.enabled) return;
+
+        tr.position = Vector3.MoveTowards(tr.position, desiredPos, speed * Time.deltaTime);
         tr.position = Vector3.MoveTowards(tr.position, desiredPos, speed * Time.deltaTime);
 
         if (Vector3.Distance(tr.position, desiredPos) < 0.1f)
