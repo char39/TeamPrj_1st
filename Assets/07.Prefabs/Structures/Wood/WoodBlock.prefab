@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5271327507669065948}
   - component: {fileID: 8733962715984555369}
   - component: {fileID: 4451593285398044454}
+  - component: {fileID: 7868775485837712282}
+  - component: {fileID: 964694329062004198}
   - component: {fileID: 2164600283002178387}
   m_Layer: 0
   m_Name: WoodBlock
@@ -123,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.41, y: 0.2}
+    oldSize: {x: 0.39, y: 0.2}
     newSize: {x: 3, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -159,6 +161,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7868775485837712282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337867219439688194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7838537f3e9184946acedfd4e6d69c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowFriction: 0
+--- !u!114 &964694329062004198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337867219439688194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: 0
+  gravityOffset: 1
+  isGravity: 0
+  desiredSpeed: 0
 --- !u!114 &2164600283002178387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,4 +204,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requireForce: 1
   state: 1
-  requireForceTemp: 0

@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -414,6 +418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8733962715984555369, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Size.x
       value: 1.5
@@ -487,6 +495,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -646,6 +658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -686,6 +702,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgSprite: {fileID: 0}
+  min: {x: 0, y: 0}
+  max: {x: 0, y: 0}
 --- !u!4 &617435405
 Transform:
   m_ObjectHideFlags: 0
@@ -756,6 +774,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -904,6 +926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8733962715984555369, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Size.x
       value: 1.5
@@ -978,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1043,6 +1073,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1192,6 +1226,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1402,6 +1440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1467,6 +1509,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1534,6 +1580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1599,6 +1649,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1807,6 +1861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8733962715984555369, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Size.x
       value: 1.5
@@ -1881,6 +1939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1945,7 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2752537871905926293, guid: 6a70c22bf453246a694448d4f793a154, type: 3}
       propertyPath: launchForce
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2007,6 +2069,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2077,6 +2143,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8733962715984555369, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Size.x
@@ -2319,6 +2389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2384,6 +2458,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2523,6 +2601,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8733962715984555369, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Size.x
@@ -2917,6 +2999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgSprite: {fileID: 0}
+  min: {x: 0, y: 0}
+  max: {x: 0, y: 0}
 --- !u!4 &2034425144
 Transform:
   m_ObjectHideFlags: 0
@@ -2988,6 +3072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3057,6 +3145,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8733962715984555369, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Size.x
@@ -3131,6 +3223,10 @@ PrefabInstance:
     - target: {fileID: 5337867219439688194, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
       propertyPath: m_Name
       value: StoneBlock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059970619681327570, guid: 3c7fc6e9341e0a349ab83a874cdbebfb, type: 3}
+      propertyPath: localRequireForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

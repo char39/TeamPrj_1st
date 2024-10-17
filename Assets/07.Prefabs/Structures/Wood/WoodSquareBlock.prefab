@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 486109545510816478}
   - component: {fileID: 5865783110190412748}
   - component: {fileID: 8395951131521836709}
+  - component: {fileID: 8519870561598608807}
+  - component: {fileID: -8347389281666424772}
+  - component: {fileID: -1734992662749923828}
+  - component: {fileID: 2019586771893330812}
   m_Layer: 0
   m_Name: WoodSquareBlock
   m_TagString: Untagged
@@ -130,3 +134,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2, y: 2.2}
   m_EdgeRadius: 0
+--- !u!50 &8519870561598608807
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100231652123253698}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 6
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-8347389281666424772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100231652123253698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7838537f3e9184946acedfd4e6d69c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowFriction: 0
+--- !u!114 &-1734992662749923828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100231652123253698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: 0
+  gravityOffset: 1
+  isGravity: 0
+  desiredSpeed: 0
+--- !u!114 &2019586771893330812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100231652123253698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7f35e9e03515a4d9e0a07007388612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requireForce: 0
+  state: 1
