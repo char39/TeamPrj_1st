@@ -11,11 +11,11 @@ public static class LevelDataList
         {
             {1, new LevelData()},    // 임시 score 저장용
             // 0: red, 1: yellow, 2: blue
-            {101, new LevelData(0, 23000, 40000, new List<int>{ 2, 2, 2 })},
+            {101, new LevelData(0, 23000, 40000, new List<int>{ 0, 0, 0 })},
             {102, new LevelData(0, 0, 0, new List<int>{ 1, 1, 1 })},
             {103, new LevelData(0, 0, 0, new List<int>{ 0, 1, 2 })},
             {104, new LevelData(0, 0, 0, new List<int>{ 2, 1, 1 })},
-            {105, new LevelData(0, 0, 0, new List<int>{ 2, 2, 1 })},
+            {105, new LevelData(0, 15000, 20000, new List<int>{ 0, 2, 2, 1  })},
             {106, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {107, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
 
@@ -42,8 +42,8 @@ public static class LevelDataList
             {102, new LevelRoomSize(30, -25, -55, 50)},
             {103, new LevelRoomSize(25, -23, -47, 80)},
             {104, new LevelRoomSize(20, -30, -41, 30)},
-            {105, new LevelRoomSize(21, -21, -41, 30)},
-            {106, new LevelRoomSize(0, 0, 0, 0)},
+            {105, new LevelRoomSize(21, -21, -41, 32)},
+            {106, new LevelRoomSize(-25, 25, -40, 42)},
             {107, new LevelRoomSize(0, 0, 0, 0)},
 
             {201, new LevelRoomSize(0, 0, 0, 0)},

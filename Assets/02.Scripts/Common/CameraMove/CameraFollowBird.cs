@@ -5,7 +5,7 @@ public class CameraFollowBird : MonoBehaviour
     private readonly string preBirdTag = "PreBird";
 
     Transform camTr;
-    MoveCameraByDrag _moveCam;
+    [SerializeField] MoveCameraByDrag _moveCam;
 
     void Start()
     {
@@ -35,11 +35,14 @@ public class CameraFollowBird : MonoBehaviour
             }
         }
 
-        // 카메라 이동 범위 제한
-        Vector3 limitPos = camTr.position;
-        limitPos.x = Mathf.Clamp(limitPos.x, _moveCam.min.x, _moveCam.max.x);
-        limitPos.y = Mathf.Clamp(limitPos.y, _moveCam.min.y, _moveCam.max.y);
-        limitPos.z = -10f;
-        camTr.position = limitPos;
+        if (_moveCam != null)
+        {
+            // 카메라 이동 범위 제한
+            Vector3 limitPos = camTr.position;
+            limitPos.x = Mathf.Clamp(limitPos.x, _moveCam.min.x, _moveCam.max.x);
+            limitPos.y = Mathf.Clamp(limitPos.y, _moveCam.min.y, _moveCam.max.y);
+            limitPos.z = -10f;
+            camTr.position = limitPos;
+        }
     }
 }
