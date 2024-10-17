@@ -55,7 +55,4 @@ public class Pig : ColliderDetection
         col.enabled = true;
         rb.simulated = true;
     }
-
-    private void OnEnable() => GameManage.Level.AddPig(this);
-    private void OnDisable() => GameManage.Level.RemovePig(this);
 }

@@ -686,6 +686,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgSprite: {fileID: 0}
+  min: {x: 0, y: 0}
+  max: {x: 0, y: 0}
 --- !u!4 &617435405
 Transform:
   m_ObjectHideFlags: 0
@@ -1945,7 +1947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2752537871905926293, guid: 6a70c22bf453246a694448d4f793a154, type: 3}
       propertyPath: launchForce
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2917,6 +2919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgSprite: {fileID: 0}
+  min: {x: 0, y: 0}
+  max: {x: 0, y: 0}
 --- !u!4 &2034425144
 Transform:
   m_ObjectHideFlags: 0

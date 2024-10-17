@@ -24,6 +24,10 @@ public partial class SceneManage : MonoBehaviour
             Scene2(scene, mode);
         else if (scene.name == SceneList.name[100])
             Scene100(scene, mode);
+        else if (scene.name == SceneList.name[200])
+            Scene200(scene, mode);
+        else if (scene.name == SceneList.name[300])
+            Scene300(scene, mode);
     }
 
     private void Scene1(Scene scene, LoadSceneMode mode)
@@ -46,7 +50,11 @@ public partial class SceneManage : MonoBehaviour
     }
     private void Scene100(Scene scene, LoadSceneMode mode)
     {
-        Transform canvasTr = GameObject.Find(ColdSelectLevelScene).transform;
+        GameManage.UI.LoadWaveImg();
+        for (int i = 0; i < 7; i++)
+            GameManage.UI.ChangeNextImgUnlock(1, i + 1);
+
+        Transform canvasTr = GameObject.Find(SelectLevelScene).transform;
         Transform levelTr = canvasTr.GetChild(1);
 
         coldCuts_BackBtn = canvasTr.GetChild(2).GetChild(0).GetComponent<Button>();
@@ -58,6 +66,48 @@ public partial class SceneManage : MonoBehaviour
             int index = i;
             selectColdLevel_Btn[index] = levelTr.GetChild(index).GetComponent<Button>();
             selectColdLevel_Btn[index].onClick.AddListener(() => LoadLevel(100 + index + 1));
+        }
+    }
+
+    private void Scene200(Scene scene, LoadSceneMode mode)
+    {
+        GameManage.UI.LoadWaveImg();
+        for (int i = 0; i < 7; i++)
+            GameManage.UI.ChangeNextImgUnlock(2, i + 1);
+
+        Transform canvasTr = GameObject.Find(SelectLevelScene).transform;
+        Transform levelTr = canvasTr.GetChild(1);
+
+        eggsteroids_BackBtn = canvasTr.GetChild(2).GetChild(0).GetComponent<Button>();
+        eggsteroids_BackBtn.onClick.AddListener(LoadSelectPlanet);
+
+        selectEggsteroidsLevel_Btn = new Button[7];
+        for (int i = 0; i < 7; i++)
+        {
+            int index = i;
+            selectEggsteroidsLevel_Btn[index] = levelTr.GetChild(index).GetComponent<Button>();
+            selectEggsteroidsLevel_Btn[index].onClick.AddListener(() => LoadLevel(200 + index + 1));
+        }
+    }
+
+    private void Scene300(Scene scene, LoadSceneMode mode)
+    {
+        GameManage.UI.LoadWaveImg();
+        for (int i = 0; i < 7; i++)
+            GameManage.UI.ChangeNextImgUnlock(3, i + 1);
+
+        Transform canvasTr = GameObject.Find(SelectLevelScene).transform;
+        Transform levelTr = canvasTr.GetChild(1);
+
+        moon_BackBtn = canvasTr.GetChild(2).GetChild(0).GetComponent<Button>();
+        moon_BackBtn.onClick.AddListener(LoadSelectPlanet);
+
+        selectMoonLevel_Btn = new Button[7];
+        for (int i = 0; i < 7; i++)
+        {
+            int index = i;
+            selectMoonLevel_Btn[index] = levelTr.GetChild(index).GetComponent<Button>();
+            selectMoonLevel_Btn[index].onClick.AddListener(() => LoadLevel(300 + index + 1));
         }
     }
 }

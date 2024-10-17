@@ -13,9 +13,7 @@ public partial class SceneManage : MonoBehaviour
     internal const string GameStartScene = "Canvas_Start";
     internal const string PlanetSelectScene = "Canvas_Planet";
     // (SceneList.name[100, 200, 300])
-    internal const string ColdSelectLevelScene = "Planet_UI";
-    internal const string EggsteroidsSelectLevelScene = "Eggsteroids_UI";
-    internal const string MoonSelectLevelScene = "Moon_UI";
+    internal const string SelectLevelScene = "Planet_UI";
 
 
     // GameStartScene UI

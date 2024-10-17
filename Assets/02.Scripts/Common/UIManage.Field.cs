@@ -3,48 +3,43 @@ using UnityEngine.UI;
 
 public partial class UIManage : MonoBehaviour
 {
-    internal SlingShot _slingShot;
+    #region AllManagement UI ----------------------------------------------------
+    [HideInInspector] public Transform level_UI;
 
-    internal Transform level_UI;
+    // 클리어 UI (행성으로 돌아가기, 다시하기, 다음 레벨)
+    private Transform clear_UI;             // 클리어 UI
+    private Transform starTr;                   // 별 이미지
+    private Image[] stars;                      // 별 이미지
+    private Sprite[] spr_Stars;                 // 별 스프라이트
+    private Sprite[] spr_EmptyStars;            // 빈 별 스프라이트
+    private Text totalScoreText;                // 점수 텍스트
+    private Button selectWave;                  // 레벨 선택
+    private Button replay;                      // 다시하기
+    private Button nextLevel;                   // 다음 레벨
 
-    private Transform clear_UI;          // 클리어 UI
-    private Transform starTr;                // 별 이미지
-    private Image[] stars;                   // 별 이미지
-    private Sprite[] spr_Stars;              // 별 스프라이트
-    private Sprite[] spr_EmptyStars;         // 빈 별 스프라이트
-    private Text totalScoreText;             // 점수 텍스트
-    private Button selectWave;              // 레벨 선택
-    private Button replay;                   // 다시하기
-    private Button nextLevel;                // 다음 레벨
+    // 인게임 UI (일시정지 메뉴, 다시하기)
+    private Transform inGame_UI;            // 인게임 UI
+    private Button pause_inGame;            // 일시정지 버튼
+    private Button replay_inGame;           // 다시하기 버튼
+    private Transform pause_UI;             // 일시정지 UI
+    private Button pause_UI_replay;         // 일시정지 다시하기 버튼
+    private Button pause_UI_Menu;           // 일시정지 메뉴 버튼
+    private Button pause_UI_Resume;         // 일시정지 재개 버튼
+    private Text levelText;                 // 레벨 텍스트
+    
+    // 점수 UI (현재 점수, 최고 점수)
+    private Transform score_UI;             // 점수 UI
+    private Text scoreText;                 // 점수 텍스트
+    private Text highScoreText;             // 최고 점수 텍스트
+    #endregion //-----------------------------------------------------------------
 
-    private Transform inGame_UI;         // 인게임 UI
-    private Button pause_inGame;         // 일시정지
-    private Button replay_inGame;        // 다시하기
 
-    private Transform score_UI;          // 점수 UI
-    private Text scoreText;              // 점수 텍스트
-    private Text highScoreText;          // 최고 점수 텍스트
+    private Transform planet_UI;
 
-    [SerializeField] private Transform wave_UI;
-    private Image[] wave1;
-    private Image[] wave2;
-    private Image[] wave3;
-    private Image[] wave4;
-    private Image[] wave5;
-    private Image[] wave6;
-    private Image[] wave7;
-    private Button[] waveBtn1;
-    private Button[] waveBtn2;
-    private Button[] waveBtn3;
-    private Button[] waveBtn4;
-    private Button[] waveBtn5;
-    private Button[] waveBtn6;
-    private Button[] waveBtn7;
+    private Image[,] wave;
+    private Button[] waveBtn;
 
-    [SerializeField] private Image[,] wave;
-    [SerializeField] private Button[] waveBtn;
-
-    [SerializeField] private Sprite unlockImg = null;
+    private Sprite unlockImg = null;
     private Sprite lockImg = null;
 
     private void GetAllVars()
@@ -52,7 +47,6 @@ public partial class UIManage : MonoBehaviour
         GameObject.Find("Level_UI").TryGetComponent(out level_UI);
 
         clear_UI = level_UI.GetChild(0);
-        clear_UI.gameObject.SetActive(false);
         starTr = clear_UI.GetChild(1);
         totalScoreText = clear_UI.GetChild(2).GetComponent<Text>();
         selectWave = clear_UI.GetChild(3).GetChild(0).GetChild(0).GetComponent<Button>();
@@ -62,14 +56,26 @@ public partial class UIManage : MonoBehaviour
         inGame_UI = level_UI.GetChild(1);
         pause_inGame = inGame_UI.GetChild(0).GetChild(0).GetComponent<Button>();
         replay_inGame = inGame_UI.GetChild(1).GetChild(0).GetComponent<Button>();
+        pause_UI = inGame_UI.GetChild(2);
+        pause_UI_replay = pause_UI.GetChild(0).GetChild(1).GetChild(0).GetComponent<Button>();
+        pause_UI_Menu = pause_UI.GetChild(0).GetChild(2).GetChild(0).GetComponent<Button>();
+        pause_UI_Resume = pause_UI.GetChild(0).GetChild(3).GetChild(0).GetComponent<Button>();
+        levelText = pause_UI.GetChild(0).GetChild(0).GetComponent<Text>();
 
         score_UI = level_UI.GetChild(2);
         scoreText = score_UI.GetChild(0).GetChild(0).GetComponent<Text>();
         highScoreText = score_UI.GetChild(1).GetChild(0).GetComponent<Text>();
+
+        stars = new Image[3];
+        spr_Stars = new Sprite[3];
+        spr_EmptyStars = new Sprite[3];
     }
 
     private void SetAllVars()
     {
+        clear_UI.gameObject.SetActive(false);
+        pause_UI.gameObject.SetActive(false);
+
         unlockImg = Sprites.MenuElements1[14];
         lockImg = Sprites.MenuCommon[22];
 
@@ -85,8 +91,11 @@ public partial class UIManage : MonoBehaviour
     {
         replay.onClick.AddListener(Replay);
         replay_inGame.onClick.AddListener(Replay);
+        nextLevel.onClick.AddListener(NextLevel);
+        pause_inGame.onClick.AddListener(Pause);
+        pause_UI_replay.onClick.AddListener(Replay);
+        pause_UI_Menu.onClick.AddListener(SelectWave);
+        pause_UI_Resume.onClick.AddListener(Pause);
         selectWave.onClick.AddListener(SelectWave);
     }
-
-    public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
 }

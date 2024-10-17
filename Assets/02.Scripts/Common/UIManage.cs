@@ -5,105 +5,85 @@ public partial class UIManage : MonoBehaviour
 {
     void Start()
     {
-        stars = new Image[3];
-        spr_Stars = new Sprite[3];
-        spr_EmptyStars = new Sprite[3];
-
         GetAllVars();
-        SetAllVars();
         SetButtonMethod();
+        SetAllVars();
+
+        GameManage.UI.OnOffClearUI(false);
+        GameManage.UI.OnOffIngameUI(false, false);
+        GameManage.UI.OnOffScoreUI(false);
     }
 
     void Update()
     {
-        UpdateSlingShot();
 
-        if (GameManage.Scene.GetLoadScene() == 100)
-            LoadWaveImg();
-
-        OnOffScoreUI();
-
-        if (wave_UI != null)
-        {
-            SetPlanetStar();
-
-            for (int i = 101; i < 107; i++)
-            {
-                if (LevelDataList.levelData[i].isClear)
-                    ChangeNextImgUnlock(LevelDataList.levelData[i].isClear, i);
-            }
-
-        }
     }
 
-    private void OnOffScoreUI()
+    public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false);
+    public void SetAllIngameUI()
     {
-        if (_slingShot != null)
-        {
-            score_UI.gameObject.SetActive(true);
-            inGame_UI.gameObject.SetActive(true);
-
-            int curScore = GetScore(1);
-            scoreText.text = curScore.ToString();
-            highScoreText.text = LevelDataList.levelData[GameManage.Scene.GetLoadScene()].score.ToString();
-        }
-        else if (_slingShot == null)
-        {
-            score_UI.gameObject.SetActive(false);
-            inGame_UI.gameObject.SetActive(false);
-        }
+        OnOffUI(false, true, false, true);
+        ResetRoomData(1);
+        UpdateScoreUI();
+        GameManage.Level.UIActive = false;
     }
 
-    private void LoadWaveImg()
+    private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI)
     {
-        wave_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
+        GameManage.UI.OnOffClearUI(clearUI);
+        GameManage.UI.OnOffIngameUI(inGameUI, inGameUIPause);
+        GameManage.UI.OnOffScoreUI(scoreUI);
+    }
 
-        /* 아래 코드로 수정
-        // wave1 = wave_UI.GetChild(0).GetComponentsInChildren<Image>();
-        // waveBtn1 = wave_UI.GetChild(0).GetComponentsInChildren<Button>();
-        // wave2 = wave_UI.GetChild(1).GetComponentsInChildren<Image>();
-        // waveBtn2 = wave_UI.GetChild(1).GetComponentsInChildren<Button>();
-        // wave3 = wave_UI.GetChild(2).GetComponentsInChildren<Image>();
-        // waveBtn3 = wave_UI.GetChild(2).GetComponentsInChildren<Button>();
-        // wave4 = wave_UI.GetChild(3).GetComponentsInChildren<Image>();
-        // waveBtn4 = wave_UI.GetChild(3).GetComponentsInChildren<Button>();
-        // wave5 = wave_UI.GetChild(4).GetComponentsInChildren<Image>();
-        // waveBtn5 = wave_UI.GetChild(4).GetComponentsInChildren<Button>();
-        // wave6 = wave_UI.GetChild(5).GetComponentsInChildren<Image>();
-        // waveBtn6 = wave_UI.GetChild(5).GetComponentsInChildren<Button>();
-        // wave7 = wave_UI.GetChild(6).GetComponentsInChildren<Image>();
-        // waveBtn7 = wave_UI.GetChild(6).GetComponentsInChildren<Button>();
-        */
+    public void LoadWaveImg()
+    {
+        planet_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
 
+        wave = null;
+        waveBtn = null;
         wave = new Image[7, 4];
         waveBtn = new Button[7];
 
         for (int i = 0; i < 7; i++)
         {
-            wave[i, 0] = wave_UI.GetChild(i).GetComponent<Image>();
-            waveBtn[i] = wave_UI.GetChild(i).GetComponent<Button>();
+            wave[i, 0] = planet_UI.GetChild(i).GetComponent<Image>();
+            waveBtn[i] = planet_UI.GetChild(i).GetComponent<Button>();
 
             for (int j = 1; j < 4; j++)
-                wave[i, j] = wave_UI.GetChild(i).GetChild(0).GetChild(j - 1).GetComponent<Image>();
+                wave[i, j] = planet_UI.GetChild(i).GetChild(0).GetChild(j - 1).GetComponent<Image>();
         }
     }
-
-    public void ChangeNextImgUnlock(bool clear, int level)
+    public void ChangeNextImgUnlock(int planetNum, int levelNum)
     {
-        Debug.Log("ChangeUnlockImg");
+        int roomidx = planetNum * 100 + levelNum;
+        int starCount = LevelDataList.levelData[roomidx].stars;
+        
+        for (int i = 0; i < starCount; i++)
+            wave[levelNum - 1, i + 1].sprite = spr_Stars[i];
+        for (int i = starCount; i < 3; i++)
+            wave[levelNum - 1, i + 1].sprite = spr_EmptyStars[i];
 
+        if (levelNum == 7) return;
+        bool clear = LevelDataList.levelData[roomidx].isClear;
         Sprite img = clear ? unlockImg : lockImg;
 
-        int leveIdx = level - 100;
-        Image _wave = wave[leveIdx, 0];
-        Button _waveBtn = waveBtn[leveIdx];
+        wave[levelNum, 0].sprite = img;
+        SetWaveBtnInteractable(waveBtn[levelNum], wave[levelNum, 0], unlockImg);
+    }
+    private void SetPlanetStar()
+    {
+        int starCount;
 
-        if (_wave != null && img != null)
+        for (int i = 0; i < 7; i++)
         {
-            _wave.sprite = img;
-            SetWaveBtnInteractable(_waveBtn, _wave, unlockImg);
+            starCount = LevelDataList.levelData[101 + i].stars;   // 101 ~ 107 기존 코드는 101 하나로 7번 돌림
+            for (int j = 0; j < starCount; j++)
+                wave[i, j + 1].sprite = spr_Stars[j];
+            for (int j = starCount; j < 3; j++)
+                wave[i, j + 1].sprite = spr_EmptyStars[j];
         }
     }
+
 
     private void SetWaveBtnInteractable(Button waveBtn, Image waveImages, Sprite unlockImage)
     {
@@ -152,32 +132,5 @@ public partial class UIManage : MonoBehaviour
             stars[i].sprite = spr_Stars[i];
         for (int i = starCount; i < 3; i++)
             stars[i].sprite = spr_EmptyStars[i];
-    }
-
-    private void SetPlanetStar()
-    {
-        int starCount;
-
-        for (int i = 0; i < 7; i++)
-        {
-            starCount = LevelDataList.levelData[101 + i].stars;   // 101 ~ 107 기존 코드는 101 하나로 7번 돌림
-            for (int j = 0; j < starCount; j++)
-                wave[i, j + 1].sprite = spr_Stars[j];
-            for (int j = starCount; j < 3; j++)
-                wave[i, j + 1].sprite = spr_EmptyStars[j];
-        }
-    }
-
-    public void Replay()
-    {
-        ResetRoomData(1);
-        level_UI.GetChild(0).gameObject.SetActive(false);
-        GameManage.Level.UIActive = false;
-        GameManage.Scene.LoadLevel(GameManage.Scene.GetLoadScene());
-    }
-
-    public void SelectWave()
-    {
-        GameManage.Scene.LoadColdSelectLevel();
     }
 }
