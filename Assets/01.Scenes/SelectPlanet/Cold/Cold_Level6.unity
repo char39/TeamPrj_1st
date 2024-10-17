@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7357498700436605681, guid: d3cf26e92e7a33a48adab6539d8fd7e0, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7946298812104635625, guid: d3cf26e92e7a33a48adab6539d8fd7e0, type: 3}
       propertyPath: gravityOffset
@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7357498700436605681, guid: d3cf26e92e7a33a48adab6539d8fd7e0, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7946298812104635625, guid: d3cf26e92e7a33a48adab6539d8fd7e0, type: 3}
       propertyPath: gravityOffset
@@ -1243,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019586771893330812, guid: 723efad6c7842f7489612575454ea574, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4100231652123253698, guid: 723efad6c7842f7489612575454ea574, type: 3}
       propertyPath: m_Name
@@ -1357,7 +1357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019586771893330812, guid: 723efad6c7842f7489612575454ea574, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4100231652123253698, guid: 723efad6c7842f7489612575454ea574, type: 3}
       propertyPath: m_Name
@@ -1581,7 +1581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164600283002178387, guid: 0e4129aa6764fa644b7804654469a7f3, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2588538906012975688, guid: 0e4129aa6764fa644b7804654469a7f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1976,7 +1976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164600283002178387, guid: 0e4129aa6764fa644b7804654469a7f3, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2588538906012975688, guid: 0e4129aa6764fa644b7804654469a7f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2070,7 +2070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164600283002178387, guid: 0e4129aa6764fa644b7804654469a7f3, type: 3}
       propertyPath: localRequireForce
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2588538906012975688, guid: 0e4129aa6764fa644b7804654469a7f3, type: 3}
       propertyPath: m_LocalPosition.x

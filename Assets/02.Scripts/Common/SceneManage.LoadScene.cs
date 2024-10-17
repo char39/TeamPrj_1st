@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public partial class SceneManage : MonoBehaviour
 {
+    /// <summary> 자동 Scene onoff 전환.
+    /// <para> </para> SceneIndex = SceneList의 index. duration = fade 시간. delay = 대기 시간. </summary>
+    private void LoadSceneChange(Action action, int SceneIndex, float duration = 0.5f, float delay = 0.3f) => StartCoroutine(SceneChange(action, SceneIndex, duration, delay));
+
     /// <summary> 자동 Scene onoff 전환.
     /// <para> </para> SceneIndex = SceneList의 index. duration = fade 시간. delay = 대기 시간. </summary>
     private void LoadSceneChange(int SceneIndex, float duration = 0.5f, float delay = 0.3f) => StartCoroutine(SceneChange(SceneIndex, duration, delay));
@@ -15,6 +20,26 @@ public partial class SceneManage : MonoBehaviour
     /// <summary> 수동 Scene 전환 onoff를 조절.
     /// <para> </para> duration = fade 시간. delay = 대기 시간. </summary>
     private void LoadSceneChange(bool on = true, float duration = 0.5f) => StartCoroutine(SceneChangeOnOff(on, duration));
+
+    /// <summary> Scene 전환 Coroutine. </summary>
+    private IEnumerator SceneChange(Action action, int SceneIndex = -1, float duration = 0.5f, float delay = 0.3f)
+    {
+        isSceneChanging = true;
+        StartCoroutine(SceneChangeOnOff(true, duration));
+
+        while (isSceneChanging)
+            yield return null;
+
+        if (SceneIndex != -1)
+        {
+            UnloadScene(GetLoadScene());
+            LoadScene(SceneIndex);
+        }
+
+        yield return new WaitForSeconds(delay);
+        action?.Invoke();
+        StartCoroutine(SceneChangeOnOff(false, duration));
+    }
 
     /// <summary> Scene 전환 Coroutine. </summary>
     private IEnumerator SceneChange(int SceneIndex = -1, float duration = 0.5f, float delay = 0.3f)
