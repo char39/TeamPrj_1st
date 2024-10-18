@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EggsteroidStone : Blocks
+public class GlassSquareBlock2 : Blocks
 {
     public float localRequireForce;
-
     protected override void Awake()
     {
         base.Awake();
         requireForce = localRequireForce;
-        requireForceTemp = requireForce;
+        requireForceTemp = requireForce;  
         score = 50;
     }
 
@@ -18,6 +17,6 @@ public class EggsteroidStone : Blocks
     {
         base.Start();
         for (int i = 0; i < 4; i++)
-            blockSprite[i] = Sprites.InGameBlocksMisc[3];
+            blockSprite[i] = Sprites.InGameBlocksGlass[26 + i];
     }
 }

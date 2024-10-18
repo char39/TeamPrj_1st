@@ -573,6 +573,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_MISC_11017x1000_0
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 212
+        width: 84
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f52281acace73f4d9eb45efd95a4eed
+      internalID: -1787881927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_MISC_11017x1000_1
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 299
+        width: 123
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb23edbc30863b9408c73d31ace3ac96
+      internalID: 886303147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BLOCKS_MISC_11017x1000_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 127
+        width: 84
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3054684e48708a469357d06a21d4d07
+      internalID: 1775909740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -608,6 +671,7 @@ TextureImporter:
       INGAME_BLOCKS_MISC_11017x1000_27: 574566074
       INGAME_BLOCKS_MISC_11017x1000_28: -2110084190
       INGAME_BLOCKS_MISC_11017x1000_29: 178544772
+      INGAME_BLOCKS_MISC_11017x1000_3: 1775909740
       INGAME_BLOCKS_MISC_11017x1000_30: -780871434
       INGAME_BLOCKS_MISC_11017x1000_31: 1340670760
       INGAME_BLOCKS_MISC_11017x1000_32: -392768328

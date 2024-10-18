@@ -19,8 +19,8 @@ public static class LevelDataList
             {106, new LevelData(0, 25000, 31000, new List<int>{ 1, 2, 1, 2, 1 })},
             {107, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
 
-            {201, new LevelData(0, 0, 0, new List<int>{ 2, 2, 0, 2, 1 })},
-            {202, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
+            {201, new LevelData(0, 15000, 0, new List<int>{ 2, 2, 0, 2, 1 })},
+            {202, new LevelData(0, 25000, 37000, new List<int>{ 1, 0, 1, 2, 1, 2 })},
             {203, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {204, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {205, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
@@ -47,7 +47,7 @@ public static class LevelDataList
             {107, new LevelRoomSize(23, -23, -39, 39)},
 
             {201, new LevelRoomSize(30, -30, -48, 48)},
-            {202, new LevelRoomSize(0, 0, 0, 0)},
+            {202, new LevelRoomSize(36, -50, -50, 63)},
             {203, new LevelRoomSize(0, 0, 0, 0)},
             {204, new LevelRoomSize(0, 0, 0, 0)},
             {205, new LevelRoomSize(0, 0, 0, 0)},

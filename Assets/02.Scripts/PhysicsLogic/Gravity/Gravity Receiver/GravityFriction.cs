@@ -15,10 +15,12 @@ public class GravityFriction : MonoBehaviour
     void Update()
     {
         isFriction = nowFriction;
-        
+
         if (nowFriction)
             rb.drag = 0.15f;
         else
             rb.drag = 0f;
     }
+
+    private void OnCollisionEnter2D(Collision2D col) => nowFriction = true;
 }

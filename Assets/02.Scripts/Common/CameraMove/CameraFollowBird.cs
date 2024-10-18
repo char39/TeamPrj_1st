@@ -2,18 +2,14 @@ using UnityEngine;
 
 public class CameraFollowBird : MonoBehaviour
 {
-    private readonly string preBirdTag = "PreBird";
-
     private Transform camTr;
     private Vector3 pos = Vector3.zero;
-    [SerializeField] MoveCameraByDrag _moveCam;
+    private MoveCameraByDrag _moveCam;
 
     void Start()
     {
         camTr = Camera.main.transform;
         _moveCam = FindObjectOfType<MoveCameraByDrag>();
-
-        //camTr.position = GameObject.FindWithTag(preBirdTag).transform.position;
     }
 
     void LateUpdate()
@@ -57,6 +53,8 @@ public class CameraFollowBird : MonoBehaviour
 
     private void ApplyPos()
     {
+        if (_moveCam.isDragging)
+            return;
         camTr.position = Vector3.Lerp(camTr.position, pos, Time.deltaTime * 2.5f);
     }
 }
