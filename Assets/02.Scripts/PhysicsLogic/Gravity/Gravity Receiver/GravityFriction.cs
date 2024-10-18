@@ -4,7 +4,8 @@ using UnityEngine;
 public class GravityFriction : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [HideInInspector] public bool nowFriction = false;
+    internal bool nowFriction = false;
+    [SerializeField] private bool isFriction = false;
 
     void Start()
     {
@@ -13,6 +14,8 @@ public class GravityFriction : MonoBehaviour
 
     void Update()
     {
+        isFriction = nowFriction;
+        
         if (nowFriction)
             rb.drag = 0.15f;
         else

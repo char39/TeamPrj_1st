@@ -26,7 +26,7 @@ public class ColliderDetection : MonoBehaviour
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D col) => isTouched = true;
-    //protected virtual void OnCollisionExit2D(Collision2D col) => Invoke(nameof(CollisionExit), 0.5f);
+    protected virtual void OnCollisionExit2D(Collision2D col) => Invoke(nameof(CollisionExit), 0.2f);
     protected void CollisionExit()
     {
         if (gameObject != null)

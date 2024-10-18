@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7082706098124584116}
   - component: {fileID: 2499992477617755584}
   - component: {fileID: 2254854309390704630}
+  - component: {fileID: 5537464564619040962}
   m_Layer: 0
   m_Name: Bird_Blue
   m_TagString: Bird
@@ -165,10 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstRebound: 0
-  isGroundTouched: 0
-  isOtherTouched: 0
   velocity: {x: 0, y: 0}
   velocity_magnitude: 0
+  isClick: 0
 --- !u!114 &2499992477617755584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c949567c51e0f441789ec20c898659f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 0
   gravityOffset: 1
+  isGravity: 0
+  desiredSpeed: 0
 --- !u!114 &2254854309390704630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +198,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowFriction: 0
+--- !u!114 &5537464564619040962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761604719541177009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b8eb424b8f4496f88d43f25e57f41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0}
+  destroyTime: 3
 --- !u!1 &9204117605234635425
 GameObject:
   m_ObjectHideFlags: 0

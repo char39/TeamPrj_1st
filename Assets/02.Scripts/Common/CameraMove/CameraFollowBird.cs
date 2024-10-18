@@ -4,7 +4,8 @@ public class CameraFollowBird : MonoBehaviour
 {
     private readonly string preBirdTag = "PreBird";
 
-    Transform camTr;
+    private Transform camTr;
+    private Vector3 pos = Vector3.zero;
     [SerializeField] MoveCameraByDrag _moveCam;
 
     void Start()
@@ -12,10 +13,17 @@ public class CameraFollowBird : MonoBehaviour
         camTr = Camera.main.transform;
         _moveCam = FindObjectOfType<MoveCameraByDrag>();
 
-        camTr.position = GameObject.FindWithTag(preBirdTag).transform.position;
+        //camTr.position = GameObject.FindWithTag(preBirdTag).transform.position;
     }
 
     void LateUpdate()
+    {
+        Follow();
+        MoveLimit();
+        ApplyPos();
+    }
+
+    private void Follow()
     {
         Bird[] birds = FindObjectsOfType<Bird>();
         Rigidbody2D[] rb = new Rigidbody2D[birds.Length];
@@ -24,25 +32,31 @@ public class CameraFollowBird : MonoBehaviour
         for (int i = 0; i < birds.Length; i++)
         {
             rb[i] = birds[i].GetComponent<Rigidbody2D>();
-            if (rb[i].velocity.magnitude > 1f)
+            if (rb[i].velocity.magnitude > 0.75f)
             {
-                camTr.position = new Vector3(birds[i].transform.position.x, 0f, -10f);
+                pos = new Vector3(birds[i].transform.position.x, 0f, -10f);
                 break;
             }
             else
-            {
-                camTr.position = new Vector3(slingShot.transform.position.x, 0f, -10f);
-            }
+                pos = new Vector3(slingShot.transform.position.x, 0f, -10f);
         }
+    }
 
+    private void MoveLimit()
+    {
         if (_moveCam != null)
         {
             // 카메라 이동 범위 제한
-            Vector3 limitPos = camTr.position;
+            Vector3 limitPos = pos;
             limitPos.x = Mathf.Clamp(limitPos.x, _moveCam.min.x, _moveCam.max.x);
             limitPos.y = Mathf.Clamp(limitPos.y, _moveCam.min.y, _moveCam.max.y);
             limitPos.z = -10f;
-            camTr.position = limitPos;
+            pos = limitPos;
         }
+    }
+
+    private void ApplyPos()
+    {
+        camTr.position = Vector3.Lerp(camTr.position, pos, Time.deltaTime * 2.5f);
     }
 }

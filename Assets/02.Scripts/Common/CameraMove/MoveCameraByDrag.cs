@@ -21,7 +21,10 @@ public class MoveCameraByDrag : MonoBehaviour
         CalculateCameraBounds();
     }
 
-    void Update() => MoveCamer();
+    void LateUpdate()
+    {
+        MoveCamer();
+    }
 
     void MoveCamer()
     {

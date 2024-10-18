@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Blocks : ColliderDetection
@@ -110,7 +108,7 @@ public class Blocks : ColliderDetection
 
         void StateScore(State _state, int _score)   // 로컬 함수
         {
-            Debug.Log(_score);
+            //Debug.Log(_score);
             this.state = _state;
             AddScore(score * _score, 1);
         }
