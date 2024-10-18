@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlassBlock : Blocks
+public class GlassSquareBlock : Blocks
 {
     public float localRequireForce;
     protected override void Awake()
     {
         base.Awake();
         requireForce = localRequireForce;
-        requireForceTemp = requireForce;  
+        requireForceTemp = requireForce;
         score = 50;
     }
 
@@ -17,6 +17,6 @@ public class GlassBlock : Blocks
     {
         base.Start();
         for (int i = 0; i < 4; i++)
-            blockSprite[i] = Sprites.InGameBlocksGlass[13 + i];
+            blockSprite[i] = Sprites.InGameBlocksGlass[30 + i];
     }
 }
