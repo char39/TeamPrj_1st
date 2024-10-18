@@ -14,18 +14,13 @@ public partial class UIManage : MonoBehaviour
         GameManage.UI.OnOffScoreUI(false);
     }
 
-    void Update()
-    {
-
-    }
-
     public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false);
     public void SetAllIngameUI()
     {
         OnOffUI(false, true, false, true);
         ResetRoomData(1);
         UpdateScoreUI();
-        GameManage.Level.UIActive = false;
+        GameManage.Level.ForceTimerOff = false;
     }
 
     private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI)

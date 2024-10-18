@@ -6,6 +6,7 @@ public class Bird : MonoBehaviour
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
     protected ParticleSystem ps;
+    protected GravityFriction _gravityFriction;
 
     public bool firstRebound = false;
     public bool IsTouched { get; set; }
@@ -19,6 +20,7 @@ public class Bird : MonoBehaviour
     {
         TryGetComponent(out rb);
         TryGetComponent(out sr);
+        TryGetComponent(out _gravityFriction);
         if (transform.childCount == 1)
             transform.GetChild(0).TryGetComponent(out ps);
     }
@@ -50,7 +52,11 @@ public class Bird : MonoBehaviour
             firstRebound = true;
             ps.Stop();
         }
+
+        if (_gravityFriction != null && firstRebound)
+            _gravityFriction.nowFriction = true;
     }
+    
 
     /// <summary> 속도 벡터에 따른 회전 </summary>
     public void Rotate(bool FirstRebound)

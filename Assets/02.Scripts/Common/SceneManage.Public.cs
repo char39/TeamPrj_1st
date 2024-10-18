@@ -16,6 +16,7 @@ public partial class SceneManage : MonoBehaviour
     // 레벨로 이동. (레벨에 들어가기 전 초기화)
     public void LoadLevel(int idx)
     {
+        GameManage.Level.ForceTimerOff = true;
         LoadSceneChange(GameManage.UI.SetAllIngameUI, idx, 0.3f, 0.3f);
     }
 }

@@ -1,58 +1,66 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
 
 public partial class LevelManage : MonoBehaviour
 {
     void Update()
     {
-        // test
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        // {
-        //     LevelDataList.levelData[1].isClear = true;
-        //     UIActive = false;
-        // }
+        Timer();
+        SetTimerCondition();
+        SetClearCondition();
 
-        ClearCheck();
-        if (LevelDataList.levelData[1].isClear && !UIActive)
+        if (IsClear && !LevelDataList.levelData[1].isClear)
         {
-            Debug.Log("Clear");
-            UIActive = true;
-            Invoke(nameof(ASDF), 1f);
+            LevelDataList.levelData[1].isClear = true;
+            Invoke(nameof(Clear), 0.2f);
         }
     }
-    void ASDF()
+    
+    private void Timer()
+    {
+        if (ForceTimerOff)
+        {
+            TimerOn = false;
+            return;
+        }
+
+        if (TimerOn)
+            clearTimer += Time.deltaTime;
+        else
+            clearTimer = 0f;
+    }
+
+    private void Clear()
     {
         GameManage.UI.SetStarRating();
     }
 
-    private void ClearCheck()
+    private void SetTimerCondition()
     {
-        if (_slingShot == null) return;
+        if (_slingShot == null)
+            return;
         int pigCnt = FindObjectsOfType<Pig>().Length;
+
         if (pigCnt == 0)
         {
-            // #2 _bird.velocity.magnitude 말고 중력 받는 모든 클래스 검색하는걸로
             GravityTarget[] _gravityTarget = FindObjectsOfType<GravityTarget>();
             bool[] CheckLowSpeed = new bool[_gravityTarget.Length];
+
             for (int i = 0; i < _gravityTarget.Length; i++)
-            {
                 CheckLowSpeed[i] = _gravityTarget[i].desiredSpeed;
-                // Debug.Log(_gravityTarget[i].gameObject.name + CheckLowSpeed[i]);
-            }
 
             for (int i = 0; i < CheckLowSpeed.Length; i++)
             {
                 if (!CheckLowSpeed[i])
+                {
+                    TimerOn = false;
                     return;
+                }
             }
-            LevelDataList.levelData[1].isClear = true;
-        }
-        else
-        {
-            LevelDataList.levelData[1].isClear = false;
+            TimerOn = true;
         }
     }
+
+    private void SetClearCondition() => IsClear = clearTimer >= clearTime;
 
     public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
 }

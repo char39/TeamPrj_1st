@@ -33,13 +33,13 @@ public class Bird_Yellow : Bird
             useDash = true;
             canDash = false;
             Vector2 direction = rb.position - (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction.Normalize();
-            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg;
 
             _gravityTarget.gravityOffset = 0f;
 
+            float dashForce = rb.velocity.magnitude * 1.3f;
             rb.velocity = Vector2.zero;
-            rb.AddForce(25f * rb.mass * -direction, ForceMode2D.Impulse);
+            rb.AddForce(rb.mass * dashForce * -direction.normalized, ForceMode2D.Impulse);
         }
     }
 
@@ -63,7 +63,6 @@ public class Bird_Yellow : Bird
     {
         base.OnCollisionEnter2D(col);
         canDash = false;
-
     }
 
     protected override void FirstReboundCheck()

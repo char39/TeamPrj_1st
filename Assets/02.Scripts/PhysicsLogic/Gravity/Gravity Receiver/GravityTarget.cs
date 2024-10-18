@@ -8,7 +8,7 @@ public class GravityTarget : MonoBehaviour
 
     private Rigidbody2D rb;
     private Transform tr;
-    private const float speed = 0.5f;
+    public float Speed { get; set; } = 5f;
     public float gravityOffset = 1f;
     public bool isGravity = false;
     public bool desiredSpeed = false;
@@ -22,7 +22,7 @@ public class GravityTarget : MonoBehaviour
 
     void Update()
     {
-        desiredSpeed = rb.velocity.magnitude <= speed;
+        desiredSpeed = rb.velocity.magnitude <= Speed;
         if (test) return;
         CheckOutOfBounds();
     }
@@ -38,5 +38,13 @@ public class GravityTarget : MonoBehaviour
 
         if (!(down < tr.position.y && tr.position.y < up && left < tr.position.x && tr.position.x < right))
             rb.velocity = Vector2.zero;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (!UnityEditor.EditorApplication.isPlaying)
+            return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)rb.velocity);
     }
 }
