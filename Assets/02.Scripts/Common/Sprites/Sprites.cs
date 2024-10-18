@@ -5,10 +5,11 @@ public static class Sprites
     public static Sprite[] MenuElements1;
     public static Sprite[] AngryBirdsCharacters;
     public static Sprite[] MenuCommon;
-    
+
     public static Sprite[] InGameBlocksStone;
     public static Sprite[] InGameBlocksGlass;
     public static Sprite[] InGameBlocksWood;
+    public static Sprite[] InGameBlocksMisc;
 
     static Sprites()
     {
@@ -19,6 +20,7 @@ public static class Sprites
         InGameBlocksStone = Resources.LoadAll<Sprite>("Sprite/INGAME_BLOCKS_STONE");
         InGameBlocksGlass = Resources.LoadAll<Sprite>("Sprite/INGAME_BLOCKS_GLASS");
         InGameBlocksWood = Resources.LoadAll<Sprite>("Sprite/INGAME_BLOCKS_WOOD");
+        InGameBlocksMisc = Resources.LoadAll<Sprite>("Sprite/INGAME_BLOCKS_MISC_11017x1000");
     }
 
     public static void Load() { }       // Dummy < 생성자 호출을 위해 1회 호출

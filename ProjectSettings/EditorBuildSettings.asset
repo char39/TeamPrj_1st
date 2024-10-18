@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/01.Scenes/SelectPlanet/Egg/Egg_Level1.unity
     guid: 563fb4b7f572e47619cde9a7aa1a5868
   - enabled: 1
+    path: Assets/01.Scenes/SelectPlanet/Egg/Egg_Level2.unity
+    guid: e765145bd0a1e90499416c78465ce121
+  - enabled: 1
     path: Assets/01.Scenes/SelectPlanet/Moon/Moon_SelectLevel.unity
     guid: 70398bd7f7f9e426783f918eccd1dc19
   - enabled: 1
