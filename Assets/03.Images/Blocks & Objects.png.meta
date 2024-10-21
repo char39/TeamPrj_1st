@@ -190,7 +190,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 540104b52658244e7971ad058c4ffaa4
-      internalID: 12964888
+      internalID: 8142293969209679351
       vertices: []
       indices: 
       edges: []
@@ -211,7 +211,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e16a8d086c6b44389b706ff26ae988b5
-      internalID: 974094979
+      internalID: 3251332049596681981
       vertices: []
       indices: 
       edges: []
@@ -232,7 +232,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bf5d0803764f64615833257a021db18a
-      internalID: 1373049977
+      internalID: 6270288447450708293
       vertices: []
       indices: 
       edges: []
@@ -253,7 +253,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a1a33353076ca416bb319cfef257b9ac
-      internalID: 1362111906
+      internalID: -4425730628851473981
       vertices: []
       indices: 
       edges: []
@@ -262,19 +262,19 @@ TextureImporter:
       name: Blocks & Objects_4
       rect:
         serializedVersion: 2
-        x: 2299
-        y: 978
-        width: 214
-        height: 219
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 43938b229ac4e3544afb61b1092a71ee
-      internalID: 1420888633
+      spriteID: 573e3c1e5eb09dfd0800000000000000
+      internalID: -2316807451342281867
       vertices: []
       indices: 
       edges: []
@@ -282,7 +282,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -290,11 +290,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blocks & Objects_0: 12964888
-      Blocks & Objects_1: 974094979
-      Blocks & Objects_2: 1373049977
-      Blocks & Objects_3: 1362111906
-      Blocks & Objects_4: 1420888633
+      Blocks & Objects_0: 8142293969209679351
+      Blocks & Objects_1: 3251332049596681981
+      Blocks & Objects_2: 6270288447450708293
+      Blocks & Objects_3: -4425730628851473981
+      Blocks & Objects_4: -2316807451342281867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
