@@ -54,7 +54,7 @@ public static class LevelDataList
             {206, new LevelRoomSize(0, 0, 0, 0)},
             {207, new LevelRoomSize(0, 0, 0, 0)},
 
-            {301, new LevelRoomSize(0, 0, 0, 0)},
+            {301, new LevelRoomSize(30, -40, -45, 90)},
             {302, new LevelRoomSize(0, 0, 0, 0)},
             {303, new LevelRoomSize(0, 0, 0, 0)},
             {304, new LevelRoomSize(0, 0, 0, 0)},

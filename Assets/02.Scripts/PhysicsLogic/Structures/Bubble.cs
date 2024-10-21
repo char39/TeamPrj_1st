@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -42,4 +41,6 @@ public class Bubble : ColliderDetection
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         enabled = false;
     }
+
+    public void SetDetection() => Detection();
 }
