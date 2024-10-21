@@ -16,7 +16,8 @@ public class GlassSquareBlock : Blocks
     protected override void Start()
     {
         base.Start();
-        for (int i = 0; i < 4; i++)
-            blockSprite[i] = Sprites.InGameBlocksGlass[30 + i];
+        blockSprite[0] = Sprites.InGameBlocksGlass[34];
+        for (int i = 0; i < 3; i++)
+            blockSprite[i] = Sprites.InGameBlocksGlass[4 + i];
     }
 }
