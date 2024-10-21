@@ -2,6 +2,8 @@ using UnityEngine;
 
 public partial class UIManage : MonoBehaviour
 {
+    // 추후 Level Data 관련은 LevelManage로 이동할 예정
+
     #region Level Data 관련
     /// <summary> 해당 Room의 점수를 추가. </summary>
     public void AddScore(int roomidx, int score = 0)
@@ -36,20 +38,29 @@ public partial class UIManage : MonoBehaviour
 
 
     #region 버튼 이벤트
-    public void Replay() => GameManage.Scene.LoadLevel(GameManage.Scene.GetLoadScene());
+    public void Replay()
+    {
+        SetTimeScale(false);
+        GameManage.Scene.LoadLevel(GameManage.Scene.GetLoadScene());
+    }
     public void Pause()
     {
         bool isPause = pause_UI.gameObject.activeSelf;
         if (isPause)
         {
-            
+            SetTimeScale(false);
         }
         else
         {
             PauseLevelText();
+            SetTimeScale(true);
         }
         OnOffUI(false, true, !isPause, true);
     }
+
+    public void SetTimeScale(bool isPause) => Time.timeScale = isPause ? 0 : 1;
+
+    /// <summary> 일시정지 시, 좌상단에 있는 Text 변경. </summary>
     public void PauseLevelText()
     {
         int roomidx = GameManage.Scene.GetLoadScene();
@@ -57,8 +68,12 @@ public partial class UIManage : MonoBehaviour
         int levelNum = roomidx % 100;   // 1 ~ 7
         levelText.text = planetNum + " - " + levelNum;
     }
+
+    /// <summary> 다음 레벨로 이동. </summary>
     public void NextLevel()
     {
+        SetTimeScale(false);
+
         int roomidx = GameManage.Scene.GetLoadScene();
         int planetNum = roomidx / 100;  // 1 ~ 3
         int levelNum = roomidx % 100;   // 1 ~ 7
@@ -76,8 +91,10 @@ public partial class UIManage : MonoBehaviour
         }
     }
 
-    public void SelectWave()
+    /// <summary> 해당 행성의 Level 선택 Scene으로 돌아가기. </summary>
+    public void LoadSelectLevelScene()
     {
+        SetTimeScale(false);
         int roomidx = GameManage.Scene.GetLoadScene();
 
         if (100 < roomidx && roomidx < 200)         // 101 ~ 199

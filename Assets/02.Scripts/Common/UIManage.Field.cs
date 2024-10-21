@@ -42,6 +42,7 @@ public partial class UIManage : MonoBehaviour
     private Sprite unlockImg = null;
     private Sprite lockImg = null;
 
+    /// <summary> Start()에서 모든 변수들을 가져옴. </summary>
     private void GetAllVars()
     {
         GameObject.Find("Level_UI").TryGetComponent(out level_UI);
@@ -71,6 +72,7 @@ public partial class UIManage : MonoBehaviour
         spr_EmptyStars = new Sprite[3];
     }
 
+    /// <summary> Start()에서 필요한 모든 변수들을 설정함. </summary>
     private void SetAllVars()
     {
         clear_UI.gameObject.SetActive(false);
@@ -87,6 +89,7 @@ public partial class UIManage : MonoBehaviour
         }
     }
 
+    /// <summary> Start()에서 모든 버튼들의 이벤트를 할당함. </summary>
     private void SetButtonMethod()
     {
         replay.onClick.AddListener(Replay);
@@ -94,8 +97,8 @@ public partial class UIManage : MonoBehaviour
         nextLevel.onClick.AddListener(NextLevel);
         pause_inGame.onClick.AddListener(Pause);
         pause_UI_replay.onClick.AddListener(Replay);
-        pause_UI_Menu.onClick.AddListener(SelectWave);
+        pause_UI_Menu.onClick.AddListener(LoadSelectLevelScene);
         pause_UI_Resume.onClick.AddListener(Pause);
-        selectWave.onClick.AddListener(SelectWave);
+        selectWave.onClick.AddListener(LoadSelectLevelScene);
     }
 }

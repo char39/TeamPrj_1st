@@ -15,6 +15,4 @@ public class LoadBirdSprites : MonoBehaviour
         birds[2] = Sprites.AngryBirdsCharacters[8];
         birds[3] = Sprites.AngryBirdsCharacters[13];
     }
-
-    //public void Dummy() { }
 }

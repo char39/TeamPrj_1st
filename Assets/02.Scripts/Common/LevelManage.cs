@@ -15,6 +15,7 @@ public partial class LevelManage : MonoBehaviour
         }
     }
     
+    /// <summary> Timer 값 할당만 다룸. </summary>
     private void Timer()
     {
         if (ForceTimerOff)
@@ -34,6 +35,7 @@ public partial class LevelManage : MonoBehaviour
         GameManage.UI.SetStarRating();
     }
 
+    /// <summary> Level Clear 조건을 만족할 시, Timer을 흐르게 함. </summary>
     private void SetTimerCondition()
     {
         if (_slingShot == null)
@@ -60,7 +62,9 @@ public partial class LevelManage : MonoBehaviour
         }
     }
 
+    /// <summary> Level Clear 조건을 모두 만족할 시, IsClear를 true로 변경. </summary>
     private void SetClearCondition() => IsClear = clearTimer >= clearTime;
 
+    /// <summary> Level 내부에 slingshot이 무조건 있기에, Timer조건 함수 실행 여부를 판단하기 위해 할당. </summary>
     public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
 }

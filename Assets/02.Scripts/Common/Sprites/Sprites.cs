@@ -22,7 +22,4 @@ public static class Sprites
         InGameBlocksWood = Resources.LoadAll<Sprite>("Sprite/INGAME_BLOCKS_WOOD");
         InGameBlocksMisc = Resources.LoadAll<Sprite>("Sprite/INGAME_BLOCKS_MISC_11017x1000");
     }
-
-    public static void Load() { }       // Dummy < 생성자 호출을 위해 1회 호출
-    // 이제 Sprites.MenuElements1[0] 이런식으로 사용 가능
 }

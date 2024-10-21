@@ -17,7 +17,6 @@ public class GameStartSceneBirdLaunch : MonoBehaviour
     {
         gameObject.AddComponent<LoadBirdSprites>();
         loadBirdSprites = GetComponent<LoadBirdSprites>();
-        //loadBirdSprites.Dummy();
         birdPref = Resources.Load<GameObject>("GameStartSceneBird");
         grav = GameObject.Find("Planet").transform.gameObject;
 

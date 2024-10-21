@@ -6,11 +6,12 @@ public partial class SceneManage : MonoBehaviour
 {
     private void Start()
     {
-        GetVars();                          // 변수 초기화, 할당.
+        GetVars();
         LoadScene(1);                       // GameStartScene 로드.
         LoadSceneChange(false, 0.8f);       // Fade 효과.
     }
 
+    /// <summary> 모든 변수 초기화, 할당. </summary>
     private void GetVars() => GameObject.Find(SceneChangeObj).TryGetComponent(out fadeEffect);    // Fade 효과 오브젝트 할당.
 
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;       // Scene 로드 시 이벤트 발생.

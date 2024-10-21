@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7946298812104635625}
   - component: {fileID: 2088647428798186787}
   m_Layer: 0
-  m_Name: GlassSquareBlock2
+  m_Name: GlassBlock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

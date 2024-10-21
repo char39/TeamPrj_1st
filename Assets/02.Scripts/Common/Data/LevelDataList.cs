@@ -12,16 +12,16 @@ public static class LevelDataList
             {1, new LevelData()},    // 임시 score 저장용
             // 0: red, 1: yellow, 2: blue
             {101, new LevelData(0, 23000, 40000, new List<int>{ 0, 0, 0 })},
-            {102, new LevelData(0, 0, 0, new List<int>{ 1, 1, 1 })},
-            {103, new LevelData(0, 0, 0, new List<int>{ 0, 1, 2 })},
-            {104, new LevelData(0, 0, 0, new List<int>{ 2, 1, 1 })},
+            {102, new LevelData(0, 15000, 18000, new List<int>{ 1, 0, 1 })},
+            {103, new LevelData(0, 12000, 18000, new List<int>{ 0, 1, 2 })},
+            {104, new LevelData(0, 16000, 30000, new List<int>{ 2, 1, 1 })},
             {105, new LevelData(0, 15000, 20000, new List<int>{ 0, 2, 2, 1})},
-            {106, new LevelData(0, 25000, 31000, new List<int>{ 1, 2, 1, 2, 1 })},
-            {107, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
+            {106, new LevelData(0, 25000, 30000, new List<int>{ 1, 2, 1, 2, 1 })},
+            {107, new LevelData(0, 9700, 14000, new List<int>{ 0, 0, 0 })},
 
-            {201, new LevelData(0, 15000, 0, new List<int>{ 2, 2, 0, 2, 1 })},
-            {202, new LevelData(0, 25000, 37000, new List<int>{ 1, 0, 1, 2, 1, 2 })},
-            {203, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
+            {201, new LevelData(0, 15000, 20000, new List<int>{ 2, 1, 0 })},
+            {202, new LevelData(0, 25000, 37000, new List<int>{ 1, 0, 2, 1, 2 })},
+            {203, new LevelData(0, 20000, 30000, new List<int>{ 1, 0, 1, 2, 0 })},
             {204, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {205, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
             {206, new LevelData(0, 0, 0, new List<int>{ 0, 0, 0 })},
@@ -48,7 +48,7 @@ public static class LevelDataList
 
             {201, new LevelRoomSize(30, -30, -48, 48)},
             {202, new LevelRoomSize(36, -50, -50, 63)},
-            {203, new LevelRoomSize(0, 0, 0, 0)},
+            {203, new LevelRoomSize(35, -40, -50, 80)},
             {204, new LevelRoomSize(0, 0, 0, 0)},
             {205, new LevelRoomSize(0, 0, 0, 0)},
             {206, new LevelRoomSize(0, 0, 0, 0)},

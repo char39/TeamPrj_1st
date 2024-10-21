@@ -14,7 +14,9 @@ public partial class UIManage : MonoBehaviour
         GameManage.UI.OnOffScoreUI(false);
     }
 
+    /// <summary> Level Select Scene에서 UI를 Off로 설정함. </summary>
     public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false);
+    /// <summary> Level 진입, 재시작 시 임시 Level Data 리셋. <para></para> UI도 초기화. </summary>
     public void SetAllIngameUI()
     {
         OnOffUI(false, true, false, true);
@@ -23,6 +25,7 @@ public partial class UIManage : MonoBehaviour
         GameManage.Level.ForceTimerOff = false;
     }
 
+    /// <summary> Level 내부에서 사용되는 UI들의 OnOff를 담당함. </summary>
     private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI)
     {
         GameManage.UI.OnOffClearUI(clearUI);
@@ -30,6 +33,7 @@ public partial class UIManage : MonoBehaviour
         GameManage.UI.OnOffScoreUI(scoreUI);
     }
 
+    /// <summary> Level Select Scene에서 사용되는 UI들을 가져옴. </summary>
     public void LoadWaveImg()
     {
         planet_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
@@ -48,6 +52,8 @@ public partial class UIManage : MonoBehaviour
                 wave[i, j] = planet_UI.GetChild(i).GetChild(0).GetChild(j - 1).GetComponent<Image>();
         }
     }
+
+    /// <summary> Level Select Scene에서 사용되는 UI들을 초기화함. </summary>
     public void ChangeNextImgUnlock(int planetNum, int levelNum)
     {
         int roomidx = planetNum * 100 + levelNum;
@@ -66,6 +72,7 @@ public partial class UIManage : MonoBehaviour
         SetWaveBtnInteractable(waveBtn[levelNum], wave[levelNum, 0], unlockImg);
     }
 
+    /// <summary> Level Select Scene에서 사용되는 버튼들의 상호작용 여부를 변경함. </summary>
     private void SetWaveBtnInteractable(Button waveBtn, Image waveImages, Sprite unlockImage)
     {
         if (waveImages.sprite == unlockImage)
@@ -74,7 +81,7 @@ public partial class UIManage : MonoBehaviour
             waveBtn.interactable = false;
     }
 
-
+    /// <summary> Level Clear UI를 띄움. <para></para> 해당 Level의 데이터 저장. </summary>
     public void SetStarRating()
     {
         level_UI.GetChild(0).gameObject.SetActive(true);
@@ -107,6 +114,7 @@ public partial class UIManage : MonoBehaviour
         }
     }
 
+    /// <summary> Level Clear UI의 Star 이미지를 변경함. </summary>
     private void SetStarSprite(int starCount)
     {
         for (int i = 0; i < starCount; i++)
