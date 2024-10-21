@@ -715,7 +715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5707f36fe614629acfd5f0200c7d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveCam: {fileID: 0}
 --- !u!1 &575261378
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &617435404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,9 +827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efec964fdb0ad43833407b6ef24864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgSprite: {fileID: 0}
   min: {x: 0, y: 0}
   max: {x: 0, y: 0}
+  isDragging: 0
+  isMouseOn: 0
 --- !u!4 &617435405
 Transform:
   m_ObjectHideFlags: 0

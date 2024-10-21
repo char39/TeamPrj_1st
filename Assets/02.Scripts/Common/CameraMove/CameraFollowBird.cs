@@ -53,8 +53,9 @@ public class CameraFollowBird : MonoBehaviour
 
     private void ApplyPos()
     {
-        if (_moveCam.isDragging)
-            return;
-        camTr.position = Vector3.Lerp(camTr.position, pos, Time.deltaTime * 2.5f);
+        if (_moveCam != null && _moveCam.isDragging)
+            camTr.position = Vector3.Lerp(camTr.position, pos, Time.deltaTime * 2.5f);
+        else
+            camTr.position = new Vector3(camTr.position.x, camTr.position.y, -10f);
     }
 }

@@ -262,12 +262,12 @@ TextureImporter:
       name: Blocks & Objects_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 5
+        y: 1050
+        width: 150
+        height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,10 +279,31 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Blocks & Objects_5
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 980
+        width: 217
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1db0ca266d8a4ea9b9611152ff8125f
+      internalID: -1662682662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c3c6cd4ef5699431691565f0d7a4d388
     internalID: 0
     vertices: []
     indices: 
@@ -295,6 +316,7 @@ TextureImporter:
       Blocks & Objects_2: 6270288447450708293
       Blocks & Objects_3: -4425730628851473981
       Blocks & Objects_4: -2316807451342281867
+      Blocks & Objects_5: -1662682662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

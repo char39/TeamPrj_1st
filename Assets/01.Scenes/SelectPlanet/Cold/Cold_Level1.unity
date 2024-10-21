@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5707f36fe614629acfd5f0200c7d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveCam: {fileID: 0}
 --- !u!4 &552891387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4803399078476973909, guid: 27d2ace725e6b4a41b1f4c4002d85424, type: 3}
@@ -959,7 +958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2034425144
 Transform:
   m_ObjectHideFlags: 0
@@ -987,9 +986,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efec964fdb0ad43833407b6ef24864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgSprite: {fileID: 0}
   min: {x: 0, y: 0}
   max: {x: 0, y: 0}
+  isDragging: 0
+  isMouseOn: 0
 --- !u!4 &4002111362152925435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9166665563507789425, guid: 4272e7744bed54ddba950de8cabd89ec, type: 3}
