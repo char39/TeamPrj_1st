@@ -11,7 +11,7 @@ public class Bird_Yellow : Bird
     protected override void Awake()
     {
         base.Awake();
-        rb.mass = 4f;
+        rb.mass = 5f;
 
         TryGetComponent(out _gravityTarget);
     }

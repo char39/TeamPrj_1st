@@ -183,7 +183,7 @@ TextureImporter:
         width: 153
         height: 207
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,7 +204,7 @@ TextureImporter:
         width: 123
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,7 +225,7 @@ TextureImporter:
         width: 110
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,7 +246,7 @@ TextureImporter:
         width: 104
         height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,6 +254,27 @@ TextureImporter:
       bones: []
       spriteID: a1a33353076ca416bb319cfef257b9ac
       internalID: 1362111906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocks & Objects_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1051
+        width: 149
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4add14fca46b240958e392656cb4ef69
+      internalID: -1914565023
       vertices: []
       indices: 
       edges: []
@@ -273,6 +294,7 @@ TextureImporter:
       Blocks & Objects_1: 974094979
       Blocks & Objects_2: 1373049977
       Blocks & Objects_3: 1362111906
+      Blocks & Objects_4: -1914565023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

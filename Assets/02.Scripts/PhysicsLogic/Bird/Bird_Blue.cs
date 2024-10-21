@@ -7,7 +7,7 @@ public class Bird_Blue : Bird
     protected override void Awake()
     {
         base.Awake();
-        rb.mass = 3f;
+        rb.mass = 4f;
     }
     //어디에 부딪혔으면 3개 안되도록
 

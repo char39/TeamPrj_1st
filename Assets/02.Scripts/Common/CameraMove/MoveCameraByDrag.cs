@@ -13,7 +13,7 @@ public class MoveCameraByDrag : MonoBehaviour
     private Vector3 limitCamPos;
     internal float moveSpeed = 1f;
 
-    internal float time = 2f;
+    internal float time = 2.5f;
     private float timer = 0f;
     public bool isDragging = false;
     public bool isMouseOn = false;
@@ -67,7 +67,6 @@ public class MoveCameraByDrag : MonoBehaviour
                 move = moveSpeed * Time.deltaTime * new Vector3(-delta.x, 0, 0);
                 lastMousePosition = Input.mousePosition;
             }
-            isMouseOn = false;
         }
         else
             isMouseOn = false;
