@@ -17,7 +17,7 @@ public static class LevelDataList
             {104, new LevelData(0, 16000, 30000, new List<int>{ 2, 1, 1 })},
             {105, new LevelData(0, 15000, 20000, new List<int>{ 0, 2, 2, 1})},
             {106, new LevelData(0, 25000, 30000, new List<int>{ 1, 2, 1, 2, 1 })},
-            {107, new LevelData(0, 9700, 14000, new List<int>{ 0, 0, 0 })},
+            {107, new LevelData(0, 9700, 13400, new List<int>{ 0, 0, 0 })},
 
             {201, new LevelData(0, 15000, 20000, new List<int>{ 2, 1, 0 })},
             {202, new LevelData(0, 25000, 37000, new List<int>{ 1, 0, 2, 1, 2 })},
