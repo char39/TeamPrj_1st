@@ -19,6 +19,8 @@ public partial class SceneManage : MonoBehaviour
         GameManage.Level.ForceTimerOff = true;
         GameManage.Level.isClear = false;
         GameManage.Level.isFail = false;
+        GameManage.Level.clearTimer = 0f;
+        GameManage.Level.failTimer = 0f;
         LoadSceneChange(GameManage.UI.SetAllIngameUI, idx, 0.3f, 0.3f);
     }
 }

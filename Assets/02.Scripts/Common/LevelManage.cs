@@ -4,55 +4,50 @@ public partial class LevelManage : MonoBehaviour
 {
     void Update()
     {
-        Timer();
+        Timer(ref clearTimer);
         SetTimerCondition();
 
         if (pigCnt == 0)
-            SetClearOrFailCondition(out isClear);
+            SetClearOrFailCondition(out isClear, clearTimer);
         else if (_slingShot.totalBirdCnt == _slingShot.usedBirds && _slingShot != null)
-            SetClearOrFailCondition(out isFail);
+        {
+            Timer(ref failTimer);
+            SetClearOrFailCondition(out isFail, failTimer);
+        }
 
         if (isClear && !LevelDataList.levelData[1].isClear)
         {
             LevelDataList.levelData[1].isClear = true;
-            Invoke(nameof(Clear), 0.2f);
+            Clear();
         }
         else if (isFail)
-        {
             Fail();
-        }
     }
 
     /// <summary> Timer 값 할당만 다룸. </summary>
-    private void Timer()
+    private void Timer(ref float timer)
     {
         if (ForceTimerOff)
         {
             timerOn = false;
-            timer = 0f;
+            timer = 0f; //강제 초기화
             return;
         }
 
         if (timerOn)
             timer += Time.deltaTime;
         else
-            timer = 0f;
+            timer = 0f; //움직임 있을 시, 초기화
     }
 
-    private void Clear()
-    {
-        GameManage.UI.SetStarRating();
-    }
-
+    private void Clear() => GameManage.UI.SetStarRating();
     private void Fail() => GameManage.UI.LevelFailUI();
 
-
-    int pigCnt;
     /// <summary> 조건을 만족할 시, Timer을 흐르게 함. </summary>
     private void SetTimerCondition()
     {
-        if (_slingShot == null)
-            return;
+        if (_slingShot == null) return;
+
         pigCnt = FindObjectsOfType<Pig>().Length;
 
         FindGravityTargets();
@@ -74,11 +69,12 @@ public partial class LevelManage : MonoBehaviour
                 return;
             }
         }
+
         timerOn = true;
     }
 
     /// <summary> 조건을 만족할 시, condition 변경. </summary>
-    private void SetClearOrFailCondition(out bool condition) => condition = timer >= waitTime;
+    private void SetClearOrFailCondition(out bool condition, float timer) => condition = timer >= waitTime;
 
     /// <summary> Level 내부에 slingshot이 무조건 있기에, Timer조건 함수 실행 여부를 판단하기 위해 할당. </summary>
     public void UpdateSlingShot() => _slingShot = FindObjectOfType<SlingShot>();
