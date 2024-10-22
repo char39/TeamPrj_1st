@@ -123,8 +123,6 @@ UIManage - UI 관리
 LevelManage - Level 관리, clear 판단(AddPig, RemovePig)
 SceneManage - Scene 관리
 
-
-============
-# 241015
-배열 변수에 각 종류별 스프라이트들을 저장해서 필요할 때마다 불러오는 식으로 변경
-Sprites.cs에서 불러오는거 너무 많으니까 필요한 스프라이트만 slice
+=========
+# 241023
+1. AnglePush.cs를 wave7에 추가해서 angle 받아서 bird 밀어냄

@@ -183,7 +183,7 @@ TextureImporter:
         width: 76
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,6 +191,27 @@ TextureImporter:
       bones: []
       spriteID: 86df7a6518de2ba40a9ea7c2d2d26f90
       internalID: -1396309316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INGAME_BOSS_1619x855_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 293
+        width: 332
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc140c1f4fcf984c949e262d0d948f4
+      internalID: -1067065967
       vertices: []
       indices: 
       edges: []
@@ -207,6 +228,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       INGAME_BOSS_1619x855_0: -1396309316
+      INGAME_BOSS_1619x855_1: -1067065967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

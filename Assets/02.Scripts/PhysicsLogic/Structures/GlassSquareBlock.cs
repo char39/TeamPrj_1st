@@ -17,7 +17,7 @@ public class GlassSquareBlock : Blocks
     {
         base.Start();
         blockSprite[0] = Sprites.InGameBlocksGlass[34];
-        for (int i = 0; i < 3; i++)
-            blockSprite[i] = Sprites.InGameBlocksGlass[4 + i];
+        for (int i = 1; i < 3; i++)
+            blockSprite[i] = Sprites.InGameBlocksGlass[3 + i];
     }
 }
