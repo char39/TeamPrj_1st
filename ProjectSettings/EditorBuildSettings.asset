@@ -69,6 +69,12 @@ EditorBuildSettings:
     path: Assets/01.Scenes/SelectPlanet/Moon/Moon_Level2.unity
     guid: ef4403808cd944d81a9cf14dae9cdd23
   - enabled: 1
+    path: Assets/01.Scenes/SelectPlanet/Moon/Moon_Level3.unity
+    guid: 76c2912a3ce654db4ad39a89c2c8eac2
+  - enabled: 1
+    path: Assets/01.Scenes/SelectPlanet/Moon/Moon_Level4.unity
+    guid: 35edf642ddd274a8f81599e32dd3f360
+  - enabled: 1
     path: Assets/01.Scenes/SelectPlanet/Moon/Moon_SelectLevel.unity
     guid: 70398bd7f7f9e426783f918eccd1dc19
   m_configObjects: {}

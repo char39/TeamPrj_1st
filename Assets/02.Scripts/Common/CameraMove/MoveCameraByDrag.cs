@@ -39,13 +39,12 @@ public class MoveCameraByDrag : MonoBehaviour
     // 배경 이미지 크기와 카메라 크기를 기반으로 이동 가능한 범위 계산
     private void CalculateCameraBounds()
     {
-        // 카메라 절반 크기 계산 (카메라의 뷰포트 크기)
-        float camHeight = _cam.orthographicSize * 2f;
+        float camHeight = _cam.orthographicSize;
         float camWidth = camHeight * _cam.aspect;
 
         // 카메라가 이동할 수 있는 최소, 최대 범위 설정
-        min = new Vector2(bgSprite.bounds.min.x + camWidth / 2, bgSprite.bounds.min.y + camHeight / 2);
-        max = new Vector2(bgSprite.bounds.max.x - camWidth / 2, bgSprite.bounds.max.y - camHeight / 2);
+        min = new Vector2(bgSprite.bounds.min.x + camWidth, bgSprite.bounds.min.y + camHeight);
+        max = new Vector2(bgSprite.bounds.max.x - camWidth, bgSprite.bounds.max.y - camHeight);
     }
 
     private void GetMouseCondition()

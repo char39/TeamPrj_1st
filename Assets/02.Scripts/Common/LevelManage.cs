@@ -13,6 +13,9 @@ public partial class LevelManage : MonoBehaviour
             LevelDataList.levelData[1].isClear = true;
             Invoke(nameof(Clear), 0.2f);
         }
+
+        
+        // 
     }
     
     /// <summary> Timer 값 할당만 다룸. </summary>
@@ -21,6 +24,7 @@ public partial class LevelManage : MonoBehaviour
         if (ForceTimerOff)
         {
             TimerOn = false;
+            clearTimer = 0f;
             return;
         }
 
