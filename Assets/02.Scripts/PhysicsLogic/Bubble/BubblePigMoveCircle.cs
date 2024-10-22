@@ -55,7 +55,7 @@ public class BubblePigMoveCircle : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (!(col.TryGetComponent(out Bubble bubble) || col.TryGetComponent(out Pig pig)))
+        if (!(col.TryGetComponent(out Bubble bubble) || col.TryGetComponent(out Pig pig) || col.TryGetComponent(out StoneSelect stone)))
         {
             move = false;
             this.col.enabled = false;
