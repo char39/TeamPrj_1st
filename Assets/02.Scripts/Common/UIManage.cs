@@ -12,25 +12,27 @@ public partial class UIManage : MonoBehaviour
         GameManage.UI.OnOffClearUI(false);
         GameManage.UI.OnOffIngameUI(false, false);
         GameManage.UI.OnOffScoreUI(false);
+        GameManage.UI.OffFailUI(false);
     }
 
     /// <summary> Level Select Scene에서 UI를 Off로 설정함. </summary>
-    public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false);
+    public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false, false);
     /// <summary> Level 진입, 재시작 시 임시 Level Data 리셋. <para></para> UI도 초기화. </summary>
     public void SetAllIngameUI()
     {
-        OnOffUI(false, true, false, true);
+        OnOffUI(false, true, false, true, false);
         ResetRoomData(1);
         UpdateScoreUI();
         GameManage.Level.ForceTimerOff = false;
     }
 
     /// <summary> Level 내부에서 사용되는 UI들의 OnOff를 담당함. </summary>
-    private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI)
+    private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI, bool failUI)
     {
         GameManage.UI.OnOffClearUI(clearUI);
         GameManage.UI.OnOffIngameUI(inGameUI, inGameUIPause);
         GameManage.UI.OnOffScoreUI(scoreUI);
+        GameManage.UI.OffFailUI(failUI);
     }
 
     /// <summary> Level Select Scene에서 사용되는 UI들을 가져옴. </summary>
@@ -121,5 +123,10 @@ public partial class UIManage : MonoBehaviour
             stars[i].sprite = spr_Stars[i];
         for (int i = starCount; i < 3; i++)
             stars[i].sprite = spr_EmptyStars[i];
+    }
+
+    public void LevelFailUI()
+    {
+        fail_UI.gameObject.SetActive(true);
     }
 }

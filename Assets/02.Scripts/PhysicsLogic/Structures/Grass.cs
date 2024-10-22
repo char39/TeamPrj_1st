@@ -25,7 +25,7 @@ public class Grass : ColliderDetection
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!(col.TryGetComponent(out Grass grass) || (col.transform.parent != null && col.transform.parent.TryGetComponent(out CircularGravityField circularGravityField))))
+        if (!(col.TryGetComponent(out Grass grass) || col.TryGetComponent(out IceStone iceStone) || (col.transform.parent != null && col.transform.parent.TryGetComponent(out CircularGravityField circularGravityField))))
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0f);
             this.col.isTrigger = false;

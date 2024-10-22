@@ -7,7 +7,7 @@ public partial class UIManage : MonoBehaviour
     [HideInInspector] public Transform level_UI;
 
     // 클리어 UI (행성으로 돌아가기, 다시하기, 다음 레벨)
-    private Transform clear_UI;             // 클리어 UI
+    private Transform clear_UI;                 // 클리어 UI
     private Transform starTr;                   // 별 이미지
     private Image[] stars;                      // 별 이미지
     private Sprite[] spr_Stars;                 // 별 스프라이트
@@ -31,6 +31,11 @@ public partial class UIManage : MonoBehaviour
     private Transform score_UI;             // 점수 UI
     private Text scoreText;                 // 점수 텍스트
     private Text highScoreText;             // 최고 점수 텍스트
+
+    // 실패 UI (레벨 선택, 다시하기)
+    private Transform fail_UI; // 실패 UI
+    private Button selectWave_fail; // 레벨 선택 버튼
+    private Button replay_fail; // 다시하기 버튼
     #endregion //-----------------------------------------------------------------
 
 
@@ -67,6 +72,10 @@ public partial class UIManage : MonoBehaviour
         scoreText = score_UI.GetChild(0).GetChild(0).GetComponent<Text>();
         highScoreText = score_UI.GetChild(1).GetChild(0).GetComponent<Text>();
 
+        fail_UI = level_UI.GetChild(3);
+        selectWave_fail = fail_UI.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>();
+        replay_fail = fail_UI.GetChild(2).GetChild(1).GetChild(0).GetComponent<Button>();
+
         stars = new Image[3];
         spr_Stars = new Sprite[3];
         spr_EmptyStars = new Sprite[3];
@@ -77,6 +86,7 @@ public partial class UIManage : MonoBehaviour
     {
         clear_UI.gameObject.SetActive(false);
         pause_UI.gameObject.SetActive(false);
+        fail_UI.gameObject.SetActive(false);
 
         unlockImg = Sprites.MenuElements1[14];
         lockImg = Sprites.MenuCommon[22];
@@ -100,5 +110,7 @@ public partial class UIManage : MonoBehaviour
         pause_UI_Menu.onClick.AddListener(LoadSelectLevelScene);
         pause_UI_Resume.onClick.AddListener(Pause);
         selectWave.onClick.AddListener(LoadSelectLevelScene);
+        selectWave_fail.onClick.AddListener(LoadSelectLevelScene);
+        replay_fail.onClick.AddListener(Replay);
     }
 }

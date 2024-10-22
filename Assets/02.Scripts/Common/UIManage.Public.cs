@@ -55,7 +55,7 @@ public partial class UIManage : MonoBehaviour
             PauseLevelText();
             SetTimeScale(true);
         }
-        OnOffUI(false, true, !isPause, true);
+        OnOffUI(false, true, !isPause, true, false);
     }
 
     public void SetTimeScale(bool isPause) => Time.timeScale = isPause ? 0 : 1;
@@ -116,6 +116,7 @@ public partial class UIManage : MonoBehaviour
         pause_UI.gameObject.SetActive(pauseUI);
     }
     public void OnOffScoreUI(bool UI) => score_UI.gameObject.SetActive(UI);
+    public void OffFailUI(bool UI) => fail_UI.gameObject.SetActive(UI);
 
     public void UpdateScoreUI()
     {
