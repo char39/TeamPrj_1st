@@ -51,12 +51,27 @@ public class StoneBig: StoneSelect
 
 public class StoneNormal : StoneSelect
 {
+    Collider2D col;
+    Rigidbody2D rb;
     protected override void Start()
     {
         stonePrefab = Resources.Load<GameObject>("Stone");
+        col = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
+
+        if (transform.parent != null && transform.parent.TryGetComponent(out Bubble bubble))
+        {
+            col.enabled = false;
+            rb.simulated = false;
+        }
+        else
+        {
+            col.enabled = true;
+            rb.simulated = true;
+        }
     }
     protected override void OnCollisionEnter2D(Collision2D col)
-    {        
+    {
         if (timeset < timesetLimit)
             return;
 

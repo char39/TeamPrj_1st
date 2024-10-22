@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -5,6 +6,7 @@ public class Bubble : ColliderDetection
 {
     private CircleCollider2D col;
     private Pig pig;
+    private StoneSelect _stone;
 
     protected override void Start()
     {
@@ -12,10 +14,18 @@ public class Bubble : ColliderDetection
         score = 1000;
         requireForce = 0.1f;
 
+        Task.Delay(10);
+
         TryGetComponent(out col);
         if (transform.childCount > 0)
-            transform.GetChild(0).TryGetComponent(out pig);
-
+        {
+            if (transform.GetChild(0).TryGetComponent(out pig)) { }
+            else if (transform.GetChild(0).TryGetComponent(out _stone))
+            {
+                _stone.gameObject.GetComponent<Rigidbody2D>().simulated = false;
+                _stone.gameObject.GetComponent<Collider2D>().enabled = false;
+            }
+        }
     }
 
     protected override void Update()
@@ -37,6 +47,14 @@ public class Bubble : ColliderDetection
             pig.Initialize();
             pig.Frozon();
         }
+
+        else if(_stone != null)
+        {
+            col.enabled = false;
+            _stone.gameObject.GetComponent<Rigidbody2D>().simulated = true;
+            _stone.gameObject.GetComponent<Collider2D>().enabled = true;
+        }
+
         AddScore();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         enabled = false;
