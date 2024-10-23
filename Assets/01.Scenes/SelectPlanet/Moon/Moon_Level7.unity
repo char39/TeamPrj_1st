@@ -795,10 +795,9 @@ GameObject:
   - component: {fileID: 126810945}
   - component: {fileID: 126810944}
   - component: {fileID: 126810946}
-  - component: {fileID: 126810947}
   m_Layer: 0
   m_Name: Object
-  m_TagString: Untagged
+  m_TagString: Reflect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,19 +914,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5395997, y: 2.4760413}
   m_EdgeRadius: 0
---- !u!114 &126810947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126810943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793f0dfdcfb7eda49b469bc109b79eea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pushForce: 60
 --- !u!1001 &145841490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2258,10 +2244,9 @@ GameObject:
   - component: {fileID: 525678680}
   - component: {fileID: 525678679}
   - component: {fileID: 525678681}
-  - component: {fileID: 525678682}
   m_Layer: 0
   m_Name: Object
-  m_TagString: Untagged
+  m_TagString: Reflect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2378,19 +2363,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5395997, y: 2.4760413}
   m_EdgeRadius: 0
---- !u!114 &525678682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525678678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793f0dfdcfb7eda49b469bc109b79eea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pushForce: 60
 --- !u!1 &555795408
 GameObject:
   m_ObjectHideFlags: 0
@@ -5808,10 +5780,9 @@ GameObject:
   - component: {fileID: 1539941117}
   - component: {fileID: 1539941116}
   - component: {fileID: 1539941118}
-  - component: {fileID: 1539941119}
   m_Layer: 0
   m_Name: Object
-  m_TagString: Untagged
+  m_TagString: Reflect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5928,19 +5899,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5395997, y: 2.4760413}
   m_EdgeRadius: 0
---- !u!114 &1539941119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539941115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793f0dfdcfb7eda49b469bc109b79eea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pushForce: 60
 --- !u!1001 &1548480062
 PrefabInstance:
   m_ObjectHideFlags: 0

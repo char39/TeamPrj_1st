@@ -11,6 +11,8 @@ TagManager:
   - Ice
   - Gravity
   - StoneBlock
+  - SlingShot
+  - Reflect
   layers:
   - Default
   - TransparentFX
