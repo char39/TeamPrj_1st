@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BubblePigMoveCircle : MonoBehaviour
+public class BubbleStone : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D col;
@@ -53,15 +55,14 @@ public class BubblePigMoveCircle : MonoBehaviour
         transform.position = new Vector2(x, y);
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (!(col.TryGetComponent(out Bubble bubble) || col.TryGetComponent(out Pig pig) || col.TryGetComponent(out BubbleStone bubstone)))
+        if (col.TryGetComponent(out Bird _bird) && !col.TryGetComponent(out BubbleStone bubstone))
         {
-            move = false;
+            this.GetComponent<SpriteRenderer>().enabled = false;
             this.col.enabled = false;
-            this.transform.GetChild(0).TryGetComponent(out Bubble bubbleThis);
-            bubbleThis.SetDetection();
+            this.transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true;
+            this.transform.GetChild(0).GetComponent<Rigidbody2D>().simulated = true;
         }
     }
 }
-
