@@ -63,6 +63,7 @@ public class BubbleStone : MonoBehaviour
             this.col.enabled = false;
             this.transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true;
             this.transform.GetChild(0).GetComponent<Rigidbody2D>().simulated = true;
+            enabled = false;
         }
     }
 }
