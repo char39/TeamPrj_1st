@@ -55,7 +55,7 @@ public partial class UIManage : MonoBehaviour
             PauseLevelText();
             SetTimeScale(true);
         }
-        OnOffUI(false, true, !isPause, true, false);
+        OnOffUI(false, true, !isPause, true, false, !bird_UI.gameObject.activeSelf);
     }
 
     public void SetTimeScale(bool isPause) => Time.timeScale = isPause ? 0 : 1;
@@ -109,7 +109,10 @@ public partial class UIManage : MonoBehaviour
 
 
     #region 호출 함수
-    public void OnOffClearUI(bool UI) => clear_UI.gameObject.SetActive(UI);
+    public void OnOffClearUI(bool UI)
+    {
+        clear_UI.gameObject.SetActive(UI);
+    }
     public void OnOffIngameUI(bool UI, bool pauseUI)
     {
         inGame_UI.gameObject.SetActive(UI);
@@ -117,6 +120,7 @@ public partial class UIManage : MonoBehaviour
     }
     public void OnOffScoreUI(bool UI) => score_UI.gameObject.SetActive(UI);
     public void OffFailUI(bool UI) => fail_UI.gameObject.SetActive(UI);
+    public void OnOffBirdCntUI(bool UI) => bird_UI.gameObject.SetActive(UI);
 
     public void UpdateScoreUI()
     {
@@ -124,6 +128,12 @@ public partial class UIManage : MonoBehaviour
         int roomidx = GameManage.Scene.GetLoadScene();
         scoreText.text = curScore.ToString();
         highScoreText.text = LevelDataList.levelData[roomidx].score.ToString();
+    }
+
+    public void UpdateBirdUI(int totalBird, int usedBird)
+    {
+        totalBirdText.text = $"TOTAL BIRD: {totalBird}";
+        usedBirdText.text = $"USED BIRD: {usedBird}";
     }
     #endregion
 }

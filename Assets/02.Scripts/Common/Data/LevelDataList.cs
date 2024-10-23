@@ -33,7 +33,7 @@ public static class LevelDataList
             {304, new LevelData(0, 25000, 27000, new List<int>{ 2, 1, 0, 2 })},
             {305, new LevelData(0, 40000, 55000, new List<int>{ 1, 2, 0, 1 })},
             {306, new LevelData(0, 20000, 38000, new List<int>{ 2, 0 })},
-            {307, new LevelData(0, 0, 0, new List<int>{ 1, 2, 2, 1, 1})},
+            {307, new LevelData(0, 25000, 0, new List<int>{ 1, 2, 2, 1, 1})},
         };
 
         levelSize = new Dictionary<int, LevelRoomSize>()

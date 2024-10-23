@@ -36,6 +36,10 @@ public partial class UIManage : MonoBehaviour
     private Transform fail_UI; // 실패 UI
     private Button selectWave_fail; // 레벨 선택 버튼
     private Button replay_fail; // 다시하기 버튼
+
+    private Transform bird_UI; // 점수 이미지 UI
+    private Text totalBirdText;             // 남은 새 텍스트
+    private Text usedBirdText;              // 사용한 새 텍스트
     #endregion //-----------------------------------------------------------------
 
 
@@ -76,6 +80,11 @@ public partial class UIManage : MonoBehaviour
         selectWave_fail = fail_UI.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>();
         replay_fail = fail_UI.GetChild(2).GetChild(1).GetChild(0).GetComponent<Button>();
 
+        bird_UI = level_UI.GetChild(4);
+        totalBirdText = bird_UI.GetChild(0).GetComponent<Text>();
+        usedBirdText = bird_UI.GetChild(1).GetComponent<Text>();
+
+
         stars = new Image[3];
         spr_Stars = new Sprite[3];
         spr_EmptyStars = new Sprite[3];
@@ -87,6 +96,7 @@ public partial class UIManage : MonoBehaviour
         clear_UI.gameObject.SetActive(false);
         pause_UI.gameObject.SetActive(false);
         fail_UI.gameObject.SetActive(false);
+        bird_UI.gameObject.SetActive(false);
 
         unlockImg = Sprites.MenuElements1[14];
         lockImg = Sprites.MenuCommon[22];

@@ -47,7 +47,7 @@ public class SlingShot : MonoBehaviour
             OnDrag();
         if (Input.GetMouseButtonUp(0))
             OnEndDrag();
-        //startPos = launchPos; //테스트
+        GameManage.UI.UpdateBirdUI(totalBirdCnt, usedBirds);
     }
 
     /// <summary> 마우스가 preBirdObj 위에 있는지 확인. </summary>

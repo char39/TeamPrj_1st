@@ -9,30 +9,32 @@ public partial class UIManage : MonoBehaviour
         SetButtonMethod();
         SetAllVars();
 
-        GameManage.UI.OnOffClearUI(false);
-        GameManage.UI.OnOffIngameUI(false, false);
-        GameManage.UI.OnOffScoreUI(false);
-        GameManage.UI.OffFailUI(false);
+        OnOffClearUI(false);
+        OnOffIngameUI(false, false);
+        OnOffScoreUI(false);
+        OffFailUI(false);
+        OnOffBirdCntUI(false);
     }
 
     /// <summary> Level Select Scene에서 UI를 Off로 설정함. </summary>
-    public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false, false);
+    public void SetAllSelectLevelUI() => OnOffUI(false, false, false, false, false, false);
     /// <summary> Level 진입, 재시작 시 임시 Level Data 리셋. <para></para> UI도 초기화. </summary>
     public void SetAllIngameUI()
     {
-        OnOffUI(false, true, false, true, false);
+        OnOffUI(false, true, false, true, false, true);
         ResetRoomData(1);
         UpdateScoreUI();
         GameManage.Level.ForceTimerOff = false;
     }
 
     /// <summary> Level 내부에서 사용되는 UI들의 OnOff를 담당함. </summary>
-    private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI, bool failUI)
+    private void OnOffUI(bool clearUI, bool inGameUI, bool inGameUIPause, bool scoreUI, bool failUI, bool birdCntUI)
     {
-        GameManage.UI.OnOffClearUI(clearUI);
-        GameManage.UI.OnOffIngameUI(inGameUI, inGameUIPause);
-        GameManage.UI.OnOffScoreUI(scoreUI);
-        GameManage.UI.OffFailUI(failUI);
+        OnOffClearUI(clearUI);
+        OnOffIngameUI(inGameUI, inGameUIPause);
+        OnOffScoreUI(scoreUI);
+        OffFailUI(failUI);
+        OnOffBirdCntUI(birdCntUI);
     }
 
     /// <summary> Level Select Scene에서 사용되는 UI들을 가져옴. </summary>
@@ -86,6 +88,7 @@ public partial class UIManage : MonoBehaviour
     /// <summary> Level Clear UI를 띄움. <para></para> 해당 Level의 데이터 저장. </summary>
     public void SetStarRating()
     {
+        OnOffBirdCntUI(false);
         level_UI.GetChild(0).gameObject.SetActive(true);
         int roomidx = GameManage.Scene.GetLoadScene();
         int curScore = GetScore(1);
@@ -127,6 +130,7 @@ public partial class UIManage : MonoBehaviour
 
     public void LevelFailUI()
     {
+        OnOffBirdCntUI(false);
         fail_UI.gameObject.SetActive(true);
     }
 }

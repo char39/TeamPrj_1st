@@ -14,7 +14,7 @@ public class Pig : ColliderDetection
 
         TryGetComponent(out _gravityTarget);
         TryGetComponent(out col);
-        
+
         if (transform.parent != null && transform.parent.TryGetComponent(out Bubble bubble))
         {
             col.enabled = false;
@@ -54,5 +54,11 @@ public class Pig : ColliderDetection
     {
         col.enabled = true;
         rb.simulated = true;
+    }
+
+    protected override void Detection(int roomidx = 1)
+    {
+        GameManage.Score.CreateScoreImg(transform);
+        base.Detection();
     }
 }
