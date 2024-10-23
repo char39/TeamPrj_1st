@@ -6290,7 +6290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityCenter: {fileID: 1495031862}
-  moveSpeed: 1
+  moveSpeed: 0.1
   clockwise: 0
 --- !u!50 &8699914328275627371
 Rigidbody2D:
