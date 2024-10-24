@@ -94,7 +94,10 @@ public class SlingShot : MonoBehaviour
     public void OnBeginDrag()
     {
         if (isMouseOn)
+        {
             isClicked = true;
+            GameManage.Sound.PlaySlingshotStretched();
+        }
     }
 
     public void OnDrag()
@@ -142,6 +145,8 @@ public class SlingShot : MonoBehaviour
             float distance = direction.magnitude;
             direction.Normalize();
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            GameManage.Sound.PlayBirdFly();
 
             // 발사
             Vector2 finalLaunchForce = distance * launchForce * direction;

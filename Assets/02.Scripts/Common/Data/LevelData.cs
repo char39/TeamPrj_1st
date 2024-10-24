@@ -6,6 +6,7 @@ public class LevelData
     public int score;
     public int stars;
     public bool isClear;
+    public bool isFail;
     public int[] requireScore;
     public List<int> birdList;
 
@@ -15,6 +16,7 @@ public class LevelData
         stars = 0;
         requireScore = new int[] { oneStar, twoStar, threeStar };
         isClear = false;
+        isFail = false;
         this.birdList = birdList;
     }
 }

@@ -20,8 +20,11 @@ public partial class LevelManage : MonoBehaviour
             LevelDataList.levelData[1].isClear = true;
             Clear();
         }
-        else if (isFail)
+        else if (isFail && !LevelDataList.levelData[1].isFail)
+        {
+            LevelDataList.levelData[1].isFail = true;
             Fail();
+        }
     }
 
     /// <summary> Timer 값 할당만 다룸. </summary>

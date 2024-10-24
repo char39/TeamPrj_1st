@@ -4,14 +4,14 @@ using UnityEngine;
 
 public partial class SoundManage : MonoBehaviour
 {
-    [HideInInspector] public AudioClip enterWave;
+    [HideInInspector] public AudioClip enterWave;   //완
     [HideInInspector] public AudioClip fallOnPlanet;
     [HideInInspector] public AudioClip enterAtmosphere;
     [HideInInspector] public AudioClip exitAtmosphere;
     [HideInInspector] public AudioClip clear;
-    [HideInInspector] public AudioClip fail;
-    [HideInInspector] public AudioClip slingshotStretched;
-    [HideInInspector] public AudioClip birdFly;
+    [HideInInspector] public AudioClip birdFly; //완
+    [HideInInspector] public AudioClip fail;    //완
+    [HideInInspector] public AudioClip slingshotStretched;  //완
     [HideInInspector] public AudioClip freezePig;
 
     void Start()

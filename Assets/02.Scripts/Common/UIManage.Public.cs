@@ -31,6 +31,7 @@ public partial class UIManage : MonoBehaviour
     public void ResetRoomData(int roomidx)
     {
         LevelDataList.levelData[roomidx].isClear = false;
+        LevelDataList.levelData[roomidx].isFail = false;
         LevelDataList.levelData[roomidx].score = 0;
         LevelDataList.levelData[roomidx].stars = 0;
     }

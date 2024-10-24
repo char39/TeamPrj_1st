@@ -88,6 +88,7 @@ public partial class UIManage : MonoBehaviour
     /// <summary> Level Clear UI를 띄움. <para></para> 해당 Level의 데이터 저장. </summary>
     public void SetStarRating()
     {
+        GameManage.Sound.PlayClear();
         OnOffBirdCntUI(false);
         level_UI.GetChild(0).gameObject.SetActive(true);
         int roomidx = GameManage.Scene.GetLoadScene();
@@ -130,6 +131,7 @@ public partial class UIManage : MonoBehaviour
 
     public void LevelFailUI()
     {
+        GameManage.Sound.PlayFail();
         OnOffBirdCntUI(false);
         fail_UI.gameObject.SetActive(true);
     }
