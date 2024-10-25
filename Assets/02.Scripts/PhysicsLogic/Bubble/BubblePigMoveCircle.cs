@@ -61,6 +61,7 @@ public class BubblePigMoveCircle : MonoBehaviour
             this.col.enabled = false;
             this.transform.GetChild(0).TryGetComponent(out Bubble bubbleThis);
             bubbleThis.SetDetection();
+            this.enabled = false;
         }
     }
 }
