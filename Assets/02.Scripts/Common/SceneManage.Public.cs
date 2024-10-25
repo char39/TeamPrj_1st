@@ -22,6 +22,5 @@ public partial class SceneManage : MonoBehaviour
         GameManage.Level.clearTimer = 0f;
         GameManage.Level.failTimer = 0f;
         LoadSceneChange(GameManage.UI.SetAllIngameUI, idx, 0.3f, 0.3f);
-        GameManage.Sound.PlayEnterWave();
     }
 }

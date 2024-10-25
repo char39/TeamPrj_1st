@@ -14,7 +14,8 @@ public class GravityTarget : MonoBehaviour
     public bool desiredSpeed = false;
 
     internal bool isPlayer = false;
-    private bool soundPlayed = false;   // false는 중력장 밖, true는 중력장 안
+    internal bool soundPlayed = false;   // false는 중력장 밖, true는 중력장 안
+    public bool isInsideGravitySpawn;
 
     void Start()
     {
@@ -31,11 +32,15 @@ public class GravityTarget : MonoBehaviour
         SoundForPlayer();
     }
 
-
-    private void SoundForPlayer()
+    private void SoundForPlayer()   // 처음 무중력에서 exit이 안나오게 해야됨 나머진 정상
     {
         if (!isPlayer) return;
-       
+        
+        SoundPlay();
+    }
+
+    private void SoundPlay()
+    {
         if (isGravity && !soundPlayed)
         {
             soundPlayed = true;

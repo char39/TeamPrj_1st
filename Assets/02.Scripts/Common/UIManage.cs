@@ -25,6 +25,16 @@ public partial class UIManage : MonoBehaviour
         ResetRoomData(1);
         UpdateScoreUI();
         GameManage.Level.ForceTimerOff = false;
+        GameManage.Sound.PlayEnterWave();
+
+        int roomidx = GameManage.Scene.GetLoadScene();
+        int planetNum = roomidx / 100;
+        switch (planetNum)
+        {
+            case 1: GameManage.Sound.PlayColdFryTheme(); break;
+            case 2: GameManage.Sound.PlayEggTheme(); break;
+            case 3: GameManage.Sound.PlayColdFryTheme(); break;
+        }
     }
 
     /// <summary> Level 내부에서 사용되는 UI들의 OnOff를 담당함. </summary>

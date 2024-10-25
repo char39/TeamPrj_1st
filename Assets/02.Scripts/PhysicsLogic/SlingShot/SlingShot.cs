@@ -27,6 +27,8 @@ public class SlingShot : MonoBehaviour
     public bool isStretching = false;      // 당기고 있는가
     public bool isSpawn = false;           // preBird가 스폰이 됐는가
 
+    public bool isInsideGravitySpawn = true;
+
     void Start()
     {
         GameManage.Level.UpdateSlingShot();
@@ -89,6 +91,7 @@ public class SlingShot : MonoBehaviour
             return;
 
         birdObj = Instantiate(birdPref, launchPos, Quaternion.identity);
+        birdObj.GetComponent<GravityTarget>().isInsideGravitySpawn = isInsideGravitySpawn;
     }
 
     public void OnBeginDrag()

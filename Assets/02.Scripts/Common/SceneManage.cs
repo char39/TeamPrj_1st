@@ -33,11 +33,13 @@ public partial class SceneManage : MonoBehaviour
 
     private void Scene1(Scene scene, LoadSceneMode mode)
     {
+        GameManage.Sound.PlayGameStartTheme();
         playBtn = GameObject.Find(GameStartScene).transform.GetChild(2).GetComponent<Button>();
         playBtn.onClick.AddListener(LoadSelectPlanet);
     }
     private void Scene2(Scene scene, LoadSceneMode mode)
     {
+        GameManage.Sound.PlayMenuTheme();
         Transform planetTr = GameObject.Find(PlanetSelectScene).transform;
         planetColdCuts_Btn = planetTr.GetChild(2).GetComponent<Button>();
         planetEgg_Btn = planetTr.GetChild(3).GetComponent<Button>();
@@ -51,6 +53,7 @@ public partial class SceneManage : MonoBehaviour
     }
     private void Scene100(Scene scene, LoadSceneMode mode)
     {
+        GameManage.Sound.PlayMenuTheme();
         GameManage.UI.LoadWaveImg();
         for (int i = 0; i < 7; i++)
             GameManage.UI.ChangeNextImgUnlock(1, i + 1);
@@ -72,6 +75,7 @@ public partial class SceneManage : MonoBehaviour
 
     private void Scene200(Scene scene, LoadSceneMode mode)
     {
+        GameManage.Sound.PlayMenuTheme();
         GameManage.UI.LoadWaveImg();
         for (int i = 0; i < 7; i++)
             GameManage.UI.ChangeNextImgUnlock(2, i + 1);
@@ -93,6 +97,7 @@ public partial class SceneManage : MonoBehaviour
 
     private void Scene300(Scene scene, LoadSceneMode mode)
     {
+        GameManage.Sound.PlayMenuTheme();
         GameManage.UI.LoadWaveImg();
         for (int i = 0; i < 7; i++)
             GameManage.UI.ChangeNextImgUnlock(3, i + 1);

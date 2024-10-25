@@ -52,3 +52,10 @@ SoundManage
 - 날아갈 때 bird shot-a2
 // - 뒤로가기 눌렀을 때 ButtonBack
 - pig 얼면 light damage a3
+
+
+1~3번 음악은 테마곡
+4번 음악 PlanetSelectScene, 행성_SelectLevel
+
+5번 음악은 Cold, Moon의 Level play Bgm
+6번 음악은 Egg의 Level 노래
