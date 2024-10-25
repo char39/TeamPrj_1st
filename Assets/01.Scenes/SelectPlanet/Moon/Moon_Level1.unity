@@ -328,6 +328,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &120150957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +939,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &731750536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,6 +1134,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &886324484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,6 +1314,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &890432468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,6 +1479,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1008960228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,6 +1736,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1095756574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,6 +1906,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1177614571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2506,6 +2513,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1532522176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2705,6 +2713,10 @@ PrefabInstance:
       propertyPath: launchForce
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2752537871905926293, guid: 6a70c22bf453246a694448d4f793a154, type: 3}
+      propertyPath: isInsideGravitySpawn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2762,6 +2774,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1663162576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3351,6 +3364,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1713652319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,6 +3544,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1769393023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4070,6 +4085,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1900898338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4249,6 +4265,7 @@ MonoBehaviour:
   gravityOffset: 0
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &1980288827
 MonoBehaviour:
   m_ObjectHideFlags: 0

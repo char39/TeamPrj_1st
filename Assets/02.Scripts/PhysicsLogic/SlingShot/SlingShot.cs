@@ -27,7 +27,7 @@ public class SlingShot : MonoBehaviour
     public bool isStretching = false;      // 당기고 있는가
     public bool isSpawn = false;           // preBird가 스폰이 됐는가
 
-    public bool isInsideGravitySpawn = true;
+    public bool isInsideGravitySpawn = false;
 
     void Start()
     {

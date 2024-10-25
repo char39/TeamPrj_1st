@@ -17,15 +17,24 @@ public class GravityTarget : MonoBehaviour
     internal bool soundPlayed = false;   // false는 중력장 밖, true는 중력장 안
     public bool isInsideGravitySpawn;
 
+    private float timer = 0f;
+    private bool SoundPlayForMinTimer { get => timer < 0.1f; }
+
     void Start()
     {
         TryGetComponent(out rb);
         TryGetComponent(out tr);
         rb.gravityScale = 0;
+
+        if (isInsideGravitySpawn)
+            soundPlayed = true;
     }
 
     void Update()
     {
+        if (timer < 0.1f)
+            timer += Time.deltaTime;
+
         desiredSpeed = rb.velocity.magnitude <= Speed;
         if (test) return;
         CheckOutOfBounds();
@@ -41,7 +50,12 @@ public class GravityTarget : MonoBehaviour
 
     private void SoundPlay()
     {
-        if (isGravity && !soundPlayed)
+        if (SoundPlayForMinTimer)
+            return;
+        else
+            {}
+
+        if (isGravity && !soundPlayed)  
         {
             soundPlayed = true;
             GameManage.Sound.PlayEnterAtmosphere();

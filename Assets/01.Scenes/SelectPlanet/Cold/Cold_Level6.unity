@@ -360,6 +360,7 @@ MonoBehaviour:
   gravityOffset: 1
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &112564911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +790,7 @@ MonoBehaviour:
   gravityOffset: 1
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &516610650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1595,7 @@ MonoBehaviour:
   gravityOffset: 1
   isGravity: 0
   desiredSpeed: 0
+  isInsideGravitySpawn: 0
 --- !u!114 &844252902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2055,10 @@ PrefabInstance:
     - target: {fileID: 2752537871905926293, guid: 6a70c22bf453246a694448d4f793a154, type: 3}
       propertyPath: launchForce
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752537871905926293, guid: 6a70c22bf453246a694448d4f793a154, type: 3}
+      propertyPath: isInsideGravitySpawn
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
