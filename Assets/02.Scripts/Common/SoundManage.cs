@@ -10,6 +10,7 @@ public partial class SoundManage : MonoBehaviour
         GameObject sound = Instantiate(originSound, transform);
         AudioSource source = sound.AddComponent<AudioSource>();
         source.PlayOneShot(clip);
+        Debug.Log("PlaySound: " + clip.name);
         Destroy(sound, clip.length);
     }
 

@@ -13,6 +13,9 @@ public class GravityTarget : MonoBehaviour
     public bool isGravity = false;
     public bool desiredSpeed = false;
 
+    internal bool isPlayer = false;
+    private bool soundPlayed = false;   // false는 중력장 밖, true는 중력장 안
+
     void Start()
     {
         TryGetComponent(out rb);
@@ -25,8 +28,25 @@ public class GravityTarget : MonoBehaviour
         desiredSpeed = rb.velocity.magnitude <= Speed;
         if (test) return;
         CheckOutOfBounds();
+        SoundForPlayer();
     }
 
+
+    private void SoundForPlayer()
+    {
+        if (!isPlayer) return;
+       
+        if (isGravity && !soundPlayed)
+        {
+            soundPlayed = true;
+            GameManage.Sound.PlayEnterAtmosphere();
+        }
+        else if (!isGravity && soundPlayed)
+        {
+            soundPlayed = false;
+            GameManage.Sound.PlayExitAtmosphere();
+        }
+    }
 
     private void CheckOutOfBounds()
     {

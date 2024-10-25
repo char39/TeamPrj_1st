@@ -34,6 +34,7 @@ public class ColliderDetection : MonoBehaviour
     }
     protected virtual void Detection(int roomidx = 1)
     {
+        GameManage.Sound.PlayFreezePig();
         AddScore();
         DestroyThisObject();
     }

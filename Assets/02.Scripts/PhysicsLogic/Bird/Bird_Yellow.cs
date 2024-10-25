@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bird_Yellow : Bird
 {
-    private GravityTarget _gravityTarget;
     private float angle;
     public bool useDash = false;
     private bool canDash = true;
@@ -12,8 +11,6 @@ public class Bird_Yellow : Bird
     {
         base.Awake();
         rb.mass = 5f;
-
-        TryGetComponent(out _gravityTarget);
     }
 
     protected override void Update()

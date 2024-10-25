@@ -7,6 +7,7 @@ public class Bird : MonoBehaviour
     protected SpriteRenderer sr;
     protected ParticleSystem ps;
     protected GravityFriction _gravityFriction;
+    protected GravityTarget _gravityTarget;
 
     public bool firstRebound = false;
     public bool IsTouched { get; set; }
@@ -21,6 +22,8 @@ public class Bird : MonoBehaviour
         TryGetComponent(out rb);
         TryGetComponent(out sr);
         TryGetComponent(out _gravityFriction);
+        TryGetComponent(out _gravityTarget);
+        _gravityTarget.isPlayer = true;
         if (transform.childCount == 1)
             transform.GetChild(0).TryGetComponent(out ps);
     }
@@ -75,7 +78,7 @@ public class Bird : MonoBehaviour
             sr.flipY = true;
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D col) => IsTouched = true;
+    protected virtual void OnCollisionEnter2D(Collision2D col){ IsTouched = true; GameManage.Sound.PlayFallOnPlanet();}
     protected virtual void OnCollisionExit2D(Collision2D col) { }
 
     protected void OnDrawGizmos()
