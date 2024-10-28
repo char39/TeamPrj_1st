@@ -5,7 +5,7 @@ public class GravityFriction : MonoBehaviour
 {
     private Rigidbody2D rb;
     internal bool nowFriction = false;
-    [SerializeField] private bool isFriction = false;
+    //[SerializeField] private bool isFriction = false;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class GravityFriction : MonoBehaviour
 
     void Update()
     {
-        isFriction = nowFriction;
+        //isFriction = nowFriction;
 
         if (nowFriction)
             rb.drag = 0.15f;
