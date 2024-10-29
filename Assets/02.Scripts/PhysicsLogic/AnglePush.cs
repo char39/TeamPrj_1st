@@ -14,7 +14,7 @@ public class AnglePush : MonoBehaviour
 
     void Update()
     {
-        velocity = rb.velocity; // 테스트용 추후 삭제
+        velocity = rb.velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D col)

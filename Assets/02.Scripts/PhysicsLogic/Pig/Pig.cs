@@ -38,7 +38,11 @@ public class Pig : ColliderDetection
             Detection();
     }
 
-    private void OnDetection() => Detection();
+    private void OnDetection()
+    {
+        Detection();
+        GameManage.Sound.PlayFreezePig();
+    }
 
     public void Frozon()
     {
