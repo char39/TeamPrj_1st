@@ -3,9 +3,8 @@ using UnityEngine;
 public class BirdDestroyTime : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private Bird _bird;
-    private float speedForDestroy = 0.3f;
-    private float noGravitySpeedForDestroy = 0.5f;
+    private float destroySpeed = 0.3f;
+    private float noGravityDestroySpeed = 0.5f;
     private float destroyTime = 5f;
     private float destroyTimer = 0f;
     [SerializeField] private bool TimerOn;
@@ -14,7 +13,6 @@ public class BirdDestroyTime : MonoBehaviour
     void Start()
     {
         TryGetComponent(out rb);
-        TryGetComponent(out _bird);
     }
 
     void Update()
@@ -25,9 +23,9 @@ public class BirdDestroyTime : MonoBehaviour
 
     private void SetTimerCondition()
     {
-        if (rb.velocity.magnitude < speedForDestroy && IsTouched)
+        if (rb.velocity.magnitude < destroySpeed && IsTouched)
             TimerOn = true;
-        else if (rb.velocity.magnitude < noGravitySpeedForDestroy && !IsTouched)
+        else if (rb.velocity.magnitude < noGravityDestroySpeed && !IsTouched)
             TimerOn = true;
         else
             TimerOn = false;
