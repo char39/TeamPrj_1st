@@ -41,7 +41,7 @@ public class GravityTarget : MonoBehaviour
         SoundForPlayer();
     }
 
-    private void SoundForPlayer()   // 처음 무중력에서 exit이 안나오게 해야됨 나머진 정상
+    private void SoundForPlayer()
     {
         if (!isPlayer) return;
         
