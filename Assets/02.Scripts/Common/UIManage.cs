@@ -50,7 +50,7 @@ public partial class UIManage : MonoBehaviour
     /// <summary> Level Select Scene에서 사용되는 UI들을 가져옴. </summary>
     public void LoadWaveImg()
     {
-        planet_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
+        wave_UI = GameObject.Find("Planet_UI").transform.GetChild(1);
 
         wave = null;
         waveBtn = null;
@@ -59,11 +59,11 @@ public partial class UIManage : MonoBehaviour
 
         for (int i = 0; i < 7; i++)
         {
-            wave[i, 0] = planet_UI.GetChild(i).GetComponent<Image>();
-            waveBtn[i] = planet_UI.GetChild(i).GetComponent<Button>();
+            wave[i, 0] = wave_UI.GetChild(i).GetComponent<Image>();
+            waveBtn[i] = wave_UI.GetChild(i).GetComponent<Button>();
 
             for (int j = 1; j < 4; j++)
-                wave[i, j] = planet_UI.GetChild(i).GetChild(0).GetChild(j - 1).GetComponent<Image>();
+                wave[i, j] = wave_UI.GetChild(i).GetChild(0).GetChild(j - 1).GetComponent<Image>();
         }
     }
 

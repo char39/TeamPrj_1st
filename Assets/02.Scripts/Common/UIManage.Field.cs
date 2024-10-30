@@ -43,7 +43,7 @@ public partial class UIManage : MonoBehaviour
     #endregion //-----------------------------------------------------------------
 
 
-    private Transform planet_UI;
+    private Transform wave_UI;
 
     private Image[,] wave;
     private Button[] waveBtn;
