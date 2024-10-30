@@ -34,7 +34,7 @@ public class Bubble : ColliderDetection
             // rb.simulated = false;
             col.enabled = false;
             pig.Initialize();
-            pig.Frozon();
+            pig.Frozen();
         }
 
         AddScore();

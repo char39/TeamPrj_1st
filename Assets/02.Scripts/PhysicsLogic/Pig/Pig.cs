@@ -5,7 +5,6 @@ public class Pig : ColliderDetection
 {
     internal GravityTarget _gravityTarget;
     internal CapsuleCollider2D col;
-    //private bool isFrozon = false;
 
     protected override void Start()
     {
@@ -26,8 +25,8 @@ public class Pig : ColliderDetection
             rb.simulated = true;
         }
 
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(true);   // pigNormal
+        transform.GetChild(1).gameObject.SetActive(false);  // pigIce
     }
 
     protected override void Update()
@@ -44,7 +43,7 @@ public class Pig : ColliderDetection
         GameManage.Sound.PlayFreezePig();
     }
 
-    public void Frozon()
+    public void Frozen()
     {
         if (_gravityTarget != null && !_gravityTarget.isGravity)
         {
@@ -66,3 +65,4 @@ public class Pig : ColliderDetection
         base.Detection();
     }
 }
+
