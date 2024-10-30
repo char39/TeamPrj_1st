@@ -81,8 +81,6 @@ public class GravityTarget : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!UnityEditor.EditorApplication.isPlaying)
-            return;
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + (Vector3)rb.velocity);
     }
