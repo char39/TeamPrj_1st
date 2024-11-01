@@ -4,15 +4,15 @@ public partial class LevelManage : MonoBehaviour
 {
     void Update()
     {
-        Timer(ref clearTimer);
+        Timer(ref clearTIMER);
         SetTimerCondition();
 
         if (pigCnt == 0)
-            SetClearOrFailCondition(out isClear, clearTimer);
+            SetClearOrFailCondition(out isClear, clearTIMER);
         else if (_slingShot.totalBirdCnt == _slingShot.usedBirds && _slingShot != null)
         {
-            Timer(ref failTimer);
-            SetClearOrFailCondition(out isFail, failTimer);
+            Timer(ref failTIMER);
+            SetClearOrFailCondition(out isFail, failTIMER);
         }
 
         if (isClear && !LevelDataList.levelData[1].isClear)
@@ -28,19 +28,19 @@ public partial class LevelManage : MonoBehaviour
     }
 
     /// <summary> Timer 값 할당만 다룸. </summary>
-    private void Timer(ref float timer)
+    private void Timer(ref float TIMER)
     {
         if (ForceTimerOff)
         {
             timerOn = false;
-            timer = 0f; //강제 초기화
+            TIMER = 0f; //강제 초기화
             return;
         }
 
         if (timerOn)
-            timer += Time.deltaTime;
+            TIMER += Time.deltaTime;
         else
-            timer = 0f; //움직임 있을 시, 초기화
+            TIMER = 0f; //움직임 있을 시, 초기화
     }
 
     private void Clear() => GameManage.UI.SetStarRating();

@@ -29,7 +29,7 @@ public class StoneBubble : MonoBehaviour
             small.GetComponent<Rigidbody2D>().velocity = direction * 6f;
             small.GetComponent<GravityFriction>().nowFriction = true;
         }
-        GameManage.UI.AddScore(1, 2300);
+        GameManage.Level.AddScore(1, 2300);
         Destroy(gameObject);
     }
 

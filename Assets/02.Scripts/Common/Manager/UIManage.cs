@@ -22,7 +22,7 @@ public partial class UIManage : MonoBehaviour
     public void SetAllIngameUI()
     {
         OnOffUI(false, true, false, true, false, true);
-        ResetRoomData(1);
+        GameManage.Level.ResetRoomData(1);
         UpdateScoreUI();
         GameManage.Level.ForceTimerOff = false;
         GameManage.Sound.PlayEnterWave();
@@ -102,8 +102,8 @@ public partial class UIManage : MonoBehaviour
         OnOffBirdCntUI(false);
         level_UI.GetChild(0).gameObject.SetActive(true);
         int roomidx = GameManage.Scene.GetLoadScene();
-        int curScore = GetScore(1);
-        SetScore(roomidx, curScore);
+        int curScore = GameManage.Level.GetScore(1);
+        GameManage.Level.SetScore(roomidx, curScore);
         LevelDataList.levelData[roomidx].isClear = true;
 
         totalScoreText.text = curScore.ToString();
@@ -111,22 +111,22 @@ public partial class UIManage : MonoBehaviour
         if (LevelDataList.levelData[roomidx].requireScore[2] <= curScore)
         {
             SetStarSprite(3);
-            SetStar(roomidx, 3);
+            GameManage.Level.SetStar(roomidx, 3);
         }
         else if (LevelDataList.levelData[roomidx].requireScore[1] <= curScore)
         {
             SetStarSprite(2);
-            SetStar(roomidx, 2);
+            GameManage.Level.SetStar(roomidx, 2);
         }
         else if (LevelDataList.levelData[roomidx].requireScore[0] <= curScore)
         {
             SetStarSprite(1);
-            SetStar(roomidx, 1);
+            GameManage.Level.SetStar(roomidx, 1);
         }
         else
         {
             SetStarSprite(0);
-            SetStar(roomidx, 0);
+            GameManage.Level.SetStar(roomidx, 0);
         }
     }
 

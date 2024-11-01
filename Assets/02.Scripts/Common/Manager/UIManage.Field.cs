@@ -51,6 +51,14 @@ public partial class UIManage : MonoBehaviour
     private Sprite unlockImg = null;
     private Sprite lockImg = null;
 
+    #region 점수 추가하는 UI를 담당 --------------------------------------------------
+
+    private GameObject s_5;
+    private GameObject s_10;
+
+
+    #endregion //-----------------------------------------------------------------
+
     /// <summary> Start()에서 모든 변수들을 가져옴. </summary>
     private void GetAllVars()
     {
@@ -88,6 +96,9 @@ public partial class UIManage : MonoBehaviour
         stars = new Image[3];
         spr_Stars = new Sprite[3];
         spr_EmptyStars = new Sprite[3];
+
+        s_5 = Resources.Load<GameObject>("ScoreImg/Score_5000");
+        s_10 = Resources.Load<GameObject>("ScoreImg/Score_10000");
     }
 
     /// <summary> Start()에서 필요한 모든 변수들을 설정함. </summary>

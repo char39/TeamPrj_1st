@@ -38,7 +38,7 @@ public class ColliderDetection : MonoBehaviour
         DestroyThisObject();
     }
 
-    protected void AddScore(int roomidx = 1) => GameManage.UI.AddScore(roomidx, score);
-    protected void AddScore(int score, int roomidx = 1) => GameManage.UI.AddScore(roomidx, score);
+    protected void AddScore(int roomidx = 1) => GameManage.Level.AddScore(roomidx, score);
+    protected void AddScore(int score, int roomidx = 1) => GameManage.Level.AddScore(roomidx, score);
     protected void DestroyThisObject() => Destroy(gameObject);
 }

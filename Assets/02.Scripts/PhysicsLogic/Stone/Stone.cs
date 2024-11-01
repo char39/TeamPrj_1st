@@ -44,7 +44,7 @@ public class StoneBig: StoneSelect
             normal.GetComponent<Rigidbody2D>().velocity = direction * 12f;
             normal.GetComponent<GravityFriction>().nowFriction = true;
         }
-        GameManage.UI.AddScore(1, 2300);
+        GameManage.Level.AddScore(1, 2300);
         Destroy(gameObject);
     }
 }
@@ -76,7 +76,7 @@ public class StoneNormal : StoneSelect
             small.GetComponent<Rigidbody2D>().velocity = direction * 6f;
             small.GetComponent<GravityFriction>().nowFriction = true;
         }
-        GameManage.UI.AddScore(1, 1300);
+        GameManage.Level.AddScore(1, 1300);
         Destroy(gameObject);
     }
 }
@@ -85,7 +85,7 @@ public class StoneSmall : StoneSelect
 {
     protected override void OnCollisionEnter2D(Collision2D col)
     {
-        GameManage.UI.AddScore(1, 800);
+        GameManage.Level.AddScore(1, 800);
         Destroy(gameObject);
     }
 }

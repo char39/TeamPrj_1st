@@ -1442,12 +1442,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525098315}
-  - component: {fileID: 525098314}
+  - component: {fileID: 525098320}
+  - component: {fileID: 525098319}
   - component: {fileID: 525098318}
   - component: {fileID: 525098317}
   - component: {fileID: 525098316}
-  - component: {fileID: 525098319}
-  - component: {fileID: 525098320}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1455,18 +1454,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &525098314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525098313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c3c7a0faec20443be560956e4dfbef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &525098315
 Transform:
   m_ObjectHideFlags: 0
@@ -1492,12 +1479,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 525098313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afe989327711c64f90281c1b11d4ccd, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dee7ef2b32364c6c9c179ffd0a150ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerOn: 0
-  isClear: 0
-  isFail: 0
+  level_UI: {fileID: 0}
 --- !u!114 &525098317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1507,10 +1492,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 525098313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7a5e0c7dc6646bba2e768c296028e5, type: 3}
+  m_Script: {fileID: 11500000, guid: fafde7958bbdb4c3cbd9dedbee0ea1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSceneChanging: 0
+  enterWave: {fileID: 0}
+  fallOnPlanet: {fileID: 0}
+  enterAtmosphere: {fileID: 0}
+  exitAtmosphere: {fileID: 0}
+  clear: {fileID: 0}
+  birdFly: {fileID: 0}
+  fail: {fileID: 0}
+  slingshotStretched: {fileID: 0}
+  freezePig: {fileID: 0}
+  gameTheme: {fileID: 0}
+  menuTheme: {fileID: 0}
+  ColdFryTheme: {fileID: 0}
+  EggTheme: {fileID: 0}
 --- !u!114 &525098318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,10 +1517,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 525098313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83258678e6420f64398eb23af47cf4f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4028bc0b9da7d49d0af7b3c933b2a9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level_UI: {fileID: 0}
+  isSceneChanging: 0
 --- !u!114 &525098319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,9 +1530,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 525098313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c77bfbff3269b34aa299ec2e4857eaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a23b1c1de00a455f8c61d05d4f86308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerOn: 0
+  isClear: 0
+  isFail: 0
 --- !u!114 &525098320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,18 +1545,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 525098313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253d7905ef2f40542a78466bbf58d726, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a489270923944fd7916f1d90e32c32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterWave: {fileID: 0}
-  fallOnPlanet: {fileID: 0}
-  enterAtmosphere: {fileID: 0}
-  exitAtmosphere: {fileID: 0}
-  clear: {fileID: 0}
-  fail: {fileID: 0}
-  slingshotStretched: {fileID: 0}
-  birdFly: {fileID: 0}
-  freezePig: {fileID: 0}
 --- !u!1 &616131220
 GameObject:
   m_ObjectHideFlags: 0

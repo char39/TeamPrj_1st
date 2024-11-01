@@ -61,7 +61,7 @@ public class Pig : ColliderDetection
 
     protected override void Detection(int roomidx = 1)
     {
-        GameManage.Score.CreateScoreImg(transform);
+        GameManage.UI.CreateScoreImg(transform);
         base.Detection();
     }
 }

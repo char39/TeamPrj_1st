@@ -87,3 +87,90 @@ UI 디자인 및 구성 요소 설명 (점수 표시, 리트라이 버튼 등)
 완성된 주요 기능 설명 (점수 증가, 장애물 반응, 스프라이트 변화)
 향후 개선 계획 (추가하고 싶은 부분이나 업데이트할 기능)
 프로젝트를 통해 배운 점과 성장한 부분
+
+
+Script
+  >Common
+    >CameraMove
+      CameraFolloPGKSBird.cs
+      MoveCameraByDrag.cs
+    >Data
+      LevelData.cs
+      LevelDataList.cs
+      LevelRoomSize.cs
+      SceneList.cs
+    >Manage
+      GameManage.cs
+      SoundManage.cs              PlaySound
+      SoundManage.Field.cs        Resources.Load<AudioClip>
+      LevelManage.cs              Timer(속도 낮으면 켜짐), SetClearOrFailCondition, Clear() Fail()
+      LevelManage.Field.cs        선언..
+      LevelManage.Public.cs       AddScore, SetStar ~ ResetRoomData, 기타등등
+      SceneManage.cs              Scene_N{onClick.AddListener(LoadSelectPlanet)}
+      SceneManage.Fiele.cs        tjsdjs
+      SceneManage.LoadScene.cs    SceneChange, SceneChangeOnOff, (alpha, blocksRaycasts)
+      SceneManage.Public.cs       이동(레벨선택화면으로 이동, 레벨로 이동 등등)
+      UIManage.cs                 UIOnOff, 초기화, waveImg가져옴, 언락img, 버튼막기, Clear UI를 띄우고 데이터 저장 SetStarSprite, LevelFailUI
+      UIManage.Field.cs           AddListener
+      UIManage.Public.cs          Level Data 관련 잇음, Replay, Pause, TimeScale, (planetNum == N )
+                                                                                 GameManage.Scene.LoadPLANETselectLevel();
+    >Sprite
+      Sprites.cs
+  >GameStartScene
+    GameStartSceneBirdLaunch.cs
+    LoadBirdSprites.cs
+  >PhysicsLogic
+    >Bird
+      Bird_Blue.cs
+      Bird_Red.cs
+      Bird_Yellow.cs
+      Bird.cs
+      BirdDestroyTime.cs
+      BirdPrefs.cs
+    >Bubble
+      Bubble.cs
+      BubblePigMoveCircle.cs
+      BubblePigMoveCircleRebound.cs
+      BubbleStone.cs
+    >Gravity
+      >BaseScripts
+        GravityField.cs
+        IGravityField.cs
+      >Gravity Receiver
+        GravityFriction.cs
+        GravityTarget.cs
+      >Planet
+        CircularGravvityField.cs
+        GravityFieldRadius.cs
+        SurfaceRadius.cs
+    >Pig
+      CirclePlacer.cs
+      MoveRandom.cs
+      Pig.cs
+      SwitchPigOnState.cs
+    >Slingshot
+      Slingshot.cs
+    >Stone
+      IceStone.cs
+      Stone.cs
+      StoneBubble.cs
+      StoneRotate.cs
+    >Structures
+      Blocks.cs
+      EggsteroidStone.cs
+      Frame.cs
+      Frame2.cs
+      GrameLong.cs
+      GlassBlock.cs
+      GlassSquareBlock.cs
+      GlassSquareBlock2.cs
+      Grass.cs
+      StoneBlock.cs
+      StoneBlock2.cs
+      WoodBlock.cs
+      WoodBlock2.cs
+      WoodSquareBlock.cs
+      WoodTriBlock.cs
+    AnglePush.cs
+    ColliderDetection.cs
+    
